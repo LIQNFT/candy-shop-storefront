@@ -3,7 +3,7 @@ import { CandyShop } from '@liqnft/candy-shop'
 import { Chip, LinearProgress, Paper, Snackbar } from '@material-ui/core'
 import Alert from '@material-ui/lab/Alert'
 import * as anchor from '@project-serum/anchor'
-import { useAnchorWallet, useConnection } from '@solana/wallet-adapter-react'
+import { useAnchorWallet } from '@solana/wallet-adapter-react'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 // import { WalletMultiButton } from '@solana/wallet-adapter-ant-design'
 
@@ -37,6 +37,7 @@ const WalletContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
 `
 
@@ -141,6 +142,7 @@ const Menu = styled.ul`
   list-style: none;
   display: inline-flex;
   flex: 1 0 auto;
+  margin-bottom: 0;
 
   li {
     margin: 0 12px;
@@ -563,8 +565,6 @@ const Home = (props: HomeProps) => {
     isPresale,
   ])
 
-  const { connection } = useConnection()
-
   const candyShop = useMemo(
     () =>
       new CandyShop(
@@ -814,7 +814,7 @@ const Home = (props: HomeProps) => {
               path='/my-collection'
               element={
                 <MyCollection
-                  connection={connection}
+                  connection={props.connection}
                   walletPublicKey={wallet?.publicKey}
                   candyShop={candyShop}
                   walletConnectComponent={<WalletMultiButton />}
