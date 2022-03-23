@@ -1980,10 +1980,10 @@
   resolved "https://registry.yarnpkg.com/@ledgerhq/logs/-/logs-6.10.0.tgz#c012c1ecc1a0e53d50e6af381618dca5268461c1"
   integrity sha512-lLseUPEhSFUXYTKj6q7s2O3s2vW2ebgA11vMAlKodXGf5AFw4zUoEbTz9CoFOC9jS6xY4Qr8BmRnxP/odT4Uuw==
 
-"@liqnft/candy-shop@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.3.2.tgz#6300ccbc9340bf1cd68e79073a939955fd0dde1a"
-  integrity sha512-DuoiFQ/BuLB58DYHpVmt6f/kL2Md9tQzszMXu3nLmmr9qDIcKRnwnoyDDyGqQclDgc4/q5ffcLNh9peyg4Avxw==
+"@liqnft/candy-shop@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.3.3.tgz#d90cc178abaa7f7c58c1fe3e0108b363e107f067"
+  integrity sha512-8GE5mn2mNw9vM311UwWVCgzDd0XOXK/qiWa/qjuZ5WlRwj+P4ldxkrgVSbG0c4Z/hvrS+2aRWM2+CVtPt6Or5w==
   dependencies:
     "@project-serum/anchor" "^0.23.0"
     "@solana/spl-token" "^0.2.0"

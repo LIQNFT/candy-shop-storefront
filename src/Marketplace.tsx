@@ -1,4 +1,4 @@
-import { CandyShop, Orders } from '@liqnft/candy-shop'
+import { CandyShop, Orders, Stat } from '@liqnft/candy-shop'
 import { PublicKey } from '@solana/web3.js'
 import styled from 'styled-components'
 
@@ -19,6 +19,12 @@ const Marketplace: React.FC<OrdersProps> = ({
 }) => {
   return (
     <DesContainer>
+      <Stat
+        candyShop={candyShop}
+        title={'Marketplace'}
+        description={'Candy Shop is an open source on-chain protocol that empowers DAOs, NFT projects and anyone interested in creating an NFT marketplace to do so within minutes!'}
+        style={{ paddingBottom: 50 }}
+      />
       <Orders
         walletPublicKey={walletPublicKey}
         candyShop={candyShop}

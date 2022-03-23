@@ -24,3 +24,12 @@ p {
 h3 {
   font-weight: normal;
 }
+
+.candy-stat p {
+  text-align: left;
+}
+
+.ant-statistic-content-value,
+.ant-statistic-content-suffix {
+  color: #fff;
+}
