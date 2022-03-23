@@ -13,6 +13,8 @@ Key features:
 
 Forked and modified from Candy Machine V2 repo: https://github.com/Fulgurus/candy-machine-v2-responsive-ui
 
+<img width="1379" alt="Candy Shop Marketplace" src="https://user-images.githubusercontent.com/89616076/159664783-edba253b-7e1e-4e3b-8b77-acf3c2db12c6.png">
+
 **Prod-ready Responsive UI** which can be easily customized in 5mn.
 
 All Candy Machine V2 functionalities are implemented, auto detected and maintained up-to-date:
