@@ -14,7 +14,7 @@
   resolved "https://registry.yarnpkg.com/@ant-design/icons-svg/-/icons-svg-4.2.1.tgz#8630da8eb4471a4aabdaed7d1ff6a97dcb2cf05a"
   integrity sha512-EB0iwlKDGpG93hW8f85CTJTs4SvMX7tt5ceupvhALp1IF44SeUFOMhKUOYqpsoYWQKAOuTRDMqn75rEaKDp0Xw==
 
-"@ant-design/icons@^4.0.0", "@ant-design/icons@^4.7.0":
+"@ant-design/icons@^4.7.0":
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/@ant-design/icons/-/icons-4.7.0.tgz#8c3cbe0a556ba92af5dc7d1e70c0b25b5179af0f"
   integrity sha512-aoB4Z7JA431rt6d4u+8xcNPPCrdufSRMUOpxa1ab6mz1JCQZOEVolj2WVs/tDFmN62zzK30mNelEsprLYsSF3g==
@@ -2292,17 +2292,6 @@
     "@solana/web3.js" "^1.32.0"
     start-server-and-test "^1.14.0"
 
-"@solana/wallet-adapter-ant-design@^0.11.4":
-  version "0.11.4"
-  resolved "https://registry.yarnpkg.com/@solana/wallet-adapter-ant-design/-/wallet-adapter-ant-design-0.11.4.tgz#0efbf7c38137de3cbb3e3a32bde7e4e700694707"
-  integrity sha512-KaPPzGJgmCN+rI9ekv8a2gFYLOI1wjVZ94rAwv5i3FiO4rgHakrrPDHkiECOdOng3nO/ljDuNSdJTl4uGgei7g==
-  dependencies:
-    "@ant-design/icons" "^4.0.0"
-    "@solana/wallet-adapter-base" "^0.9.4"
-    "@solana/wallet-adapter-react" "^0.15.3"
-    "@solana/web3.js" "^1.36.0"
-    antd "^4.19.1"
-
 "@solana/wallet-adapter-base@^0.7.1":
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/@solana/wallet-adapter-base/-/wallet-adapter-base-0.7.1.tgz#9d352e946f406b5d5342515f2e14c82f11425c1c"
@@ -2382,7 +2371,7 @@
   resolved "https://registry.yarnpkg.com/@solana/wallet-adapter-react/-/wallet-adapter-react-0.13.1.tgz#7014f85b4d60a1c2b0e8c72c12baa0b1b5172854"
   integrity sha512-Sk45AuOF8EgmR28zcib5NquvOwTpBlyDA8Iku1MVdXUQ9giA/tBwfJw21HIf1r+TVepg+V0xAP5FhP+MX0p6QQ==
 
-"@solana/wallet-adapter-react@^0.15.0", "@solana/wallet-adapter-react@^0.15.3":
+"@solana/wallet-adapter-react@^0.15.0":
   version "0.15.4"
   resolved "https://registry.yarnpkg.com/@solana/wallet-adapter-react/-/wallet-adapter-react-0.15.4.tgz#413c3fa6893e9d809e5a6dd4730695fba942967b"
   integrity sha512-QB8tE1IqYxvHrdDZP3DGICuCq6xydvjUYhW+usIahORmHniFF62Mp/LPfdAGZRDFF7U2/rZPktGFiOxWUJA7Qw==

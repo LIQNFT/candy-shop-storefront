@@ -5,7 +5,6 @@ import Alert from '@material-ui/lab/Alert'
 import * as anchor from '@project-serum/anchor'
 import { useAnchorWallet } from '@solana/wallet-adapter-react'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
-// import { WalletMultiButton } from '@solana/wallet-adapter-ant-design'
 
 import { LAMPORTS_PER_SOL, PublicKey } from '@solana/web3.js'
 import confetti from 'canvas-confetti'
@@ -588,19 +587,13 @@ const Home = (props: HomeProps) => {
           </Logo>
           <Menu>
             <li>
-              <Link to='/'>Mint 1</Link>
-            </li>
-            <li>
-              <Link to='/'>Mint 2</Link>
-            </li>
-            <li>
-              <Link to='/'>Mint 3</Link>
+              <Link to='/'>Home</Link>
             </li>
             <li>
               <Link to='/marketplace'>Marketplace</Link>
             </li>
             <li>
-              <Link to='/my-collection'>My Collection</Link>
+              <Link to='/sell'>Sell</Link>
             </li>
           </Menu>
           <Wallet>
@@ -614,7 +607,6 @@ const Home = (props: HomeProps) => {
             )}
           </Wallet>
         </WalletContainer>
-        <ShimmerTitle>MINT IS LIVE !</ShimmerTitle>
         <br />
         <MintContainer>
           <Routes>
@@ -624,6 +616,7 @@ const Home = (props: HomeProps) => {
                 <>
                   <DesContainer>
                     <NFT elevation={3}>
+                      <ShimmerTitle>MINT IS LIVE!</ShimmerTitle>
                       <h2>My NFT</h2>
                       <br />
                       <div>
@@ -811,7 +804,7 @@ const Home = (props: HomeProps) => {
           </Routes>
           <Routes>
             <Route
-              path='/my-collection'
+              path='/sell'
               element={
                 <MyCollection
                   connection={props.connection}

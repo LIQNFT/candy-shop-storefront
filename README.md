@@ -1,10 +1,21 @@
-# Introduction
+# Solana Candy Machine V2 + Candy Shop
 
-### SOON : Setup Multi-Mint using this repository, explained in video by 'Stractors' https://www.youtube.com/channel/UCf-oH3TIq8xHVtVogrpTm7g
+This repo allows you to sell NFTs through Candy Machine V2 and host your own secondary marketplace with [Candy Shop](https://github.com/LIQNFT/candy-shop).
+
+Candy Shop is a marketplace protocol & toolset with a full suite of data endpoints and command APIs to help users deliver a simplistic, seamless and efficient NFT marketplace experience.
+
+Key features:
+* **Simple Integration.** Integrate marketplace features into your website easily with Candy Shop SDK - your marketplace could be fully operational within a few minutes.
+* **Seamless User Experience.** The commands and data endpoints have been designed in a way to simplify user journey and provide a seamless experience for browsing, buying and selling NFTs on your in-house marketplace.
+* **Give More, Earn More.** Users save on transaction fees when they transact on your Candy Shop marketplace, and you will also earn 20% of the 1% transaction fee.
+* **Candy Shop Network.** Standardized implementation allows you to import other Candy Shop NFT listings directly onto your marketplace or vice versa - creating a network effect of listings for maximum traffic flow
+* **Transparency.** Candy Shop is an open source and on-chain protocol, providing your community with full transparency on what is happening behind the scene for your marketplace.
+
+Forked and modified from Candy Machine V2 repo: https://github.com/Fulgurus/candy-machine-v2-responsive-ui
 
 **Prod-ready Responsive UI** which can be easily customized in 5mn.
 
-All Candy Machine V2 functionalities are implemented, auto detected and maintained up-to-date :
+All Candy Machine V2 functionalities are implemented, auto detected and maintained up-to-date:
 
 - public mint (with countdown when date in future)
 - civic support (gatekeeper)

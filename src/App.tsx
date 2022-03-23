@@ -17,7 +17,6 @@ import {
 } from '@solana/wallet-adapter-wallets'
 
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
-// import { WalletModalProvider } from '@solana/wallet-adapter-ant-design'
 
 import './App.css'
 import Home from './Home'
