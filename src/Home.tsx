@@ -24,6 +24,8 @@ import { MintButton } from './MintButton'
 import MyCollection from './MyCollection'
 import { AlertState, getAtaForMint, toDate } from './utils'
 
+const CountdownJSX = Countdown as any
+
 const cluster = process.env.REACT_APP_SOLANA_NETWORK!.toString()
 const decimals = process.env.REACT_APP_SPL_TOKEN_TO_MINT_DECIMALS
   ? +process.env.REACT_APP_SPL_TOKEN_TO_MINT_DECIMALS!.toString()
@@ -647,9 +649,9 @@ const Home = (props: HomeProps) => {
                         !isBurnToken && <h3>You are whitelisted and allowed to mint.</h3>}
 
                       {wallet && isActive && endDate && Date.now() < endDate.getTime() && (
-                        <Countdown
+                        <CountdownJSX
                           date={toDate(candyMachine?.state?.endSettings?.number)}
-                          onMount={({ completed }) => completed && setIsEnded(true)}
+                          onMount={({ completed }: { completed: any}) => completed && setIsEnded(true)}
                           onComplete={() => {
                             setIsEnded(true)
                           }}
@@ -673,9 +675,9 @@ const Home = (props: HomeProps) => {
                         !isEnded &&
                         candyMachine?.state.goLiveDate &&
                         (!isWLOnly || whitelistTokenBalance > 0) ? (
-                          <Countdown
+                          <CountdownJSX
                             date={toDate(candyMachine?.state.goLiveDate)}
-                            onMount={({ completed }) => completed && setIsActive(!isEnded)}
+                            onMount={({ completed }: { completed: any}) => completed && setIsActive(!isEnded)}
                             onComplete={() => {
                               setIsActive(!isEnded)
                             }}
