@@ -25,11 +25,22 @@ h3 {
   font-weight: normal;
 }
 
-.candy-stat p {
-  text-align: left;
+/* Candy Shop styling overrides */
+.css-0,
+.cds-rc-notification {
+  color: black;
 }
 
-.ant-statistic-content-value,
-.ant-statistic-content-suffix {
-  color: #fff;
+.css-18lr773 {
+  background-color: #fff;
+}
+
+.buy-modal-title,
+.buy-modal-description,
+.buy-modal-control,
+.sell-modal-content,
+.cds-cancel-modal-description,
+.cds-cancel-modal-title,
+.cds-cancel-modal-control {
+  text-align: left;
 }
