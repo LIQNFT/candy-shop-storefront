@@ -2580,16 +2580,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*":
-  version "18.0.2"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.2.tgz#bc6a0572d434642ebe8b4ac0f121d18e2f2d8f7f"
-  integrity sha512-2poV9ReTwwV5ZNxkKyk7t6Vp/odeTfYI3vRjtDYWfUdEstx9mp26jzELfMBwV6gXg1irhHUnmZJH/dJW7xafcA==
-  dependencies:
-    "@types/prop-types" "*"
-    "@types/scheduler" "*"
-    csstype "^3.0.2"
-
-"@types/react@^17", "@types/react@^17.0.0":
+"@types/react@*", "@types/react@^17", "@types/react@^17.0.0":
   version "17.0.44"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.44.tgz#c3714bd34dd551ab20b8015d9d0dbec812a51ec7"
   integrity sha512-Ye0nlw09GeMp2Suh8qoOv0odfgCoowfM/9MG6WeRD60Gq9wS90bdkdRtYbRkNhXOpG4H+YXGvj4wOWhAC0LJ1g==
@@ -10426,9 +10417,9 @@ rc-notification@^4.5.7:
     rc-util "^5.0.1"
 
 rc-util@^5.0.1, rc-util@^5.19.2:
-  version "5.20.0"
-  resolved "https://registry.yarnpkg.com/rc-util/-/rc-util-5.20.0.tgz#05915902313292cb3f0e8da9401a403be00c3f58"
-  integrity sha512-sHm129TjpUiJZuHCgX5moead5yag4ukIIZuwkK1SSlFMUceEx64sZNgJZJN7YQ9NJyDpabfJ8310fkcCXeyTog==
+  version "5.20.1"
+  resolved "https://registry.yarnpkg.com/rc-util/-/rc-util-5.20.1.tgz#323590df56175f60b1a67d2ba76f04c3c2cb84cd"
+  integrity sha512-2IEyErPAYl0Up5gBu71e8IkOs+/SL9XRUvnGhtsr7IHlXLx2OsbQKTDpWacJbzLCmNcgJylDGj1kiklx+zagRA==
   dependencies:
     "@babel/runtime" "^7.12.5"
     react-is "^16.12.0"
