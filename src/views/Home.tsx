@@ -1,5 +1,4 @@
 import { GatewayProvider } from '@civic/solana-gateway-react'
-import { CandyShop } from '@liqnft/candy-shop'
 import { Chip, LinearProgress, Paper, Snackbar } from '@material-ui/core'
 import Alert from '@material-ui/lab/Alert'
 import * as anchor from '@project-serum/anchor'
@@ -8,9 +7,8 @@ import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 
 import { LAMPORTS_PER_SOL, PublicKey } from '@solana/web3.js'
 import confetti from 'canvas-confetti'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import Countdown from 'react-countdown'
-import { Link, Route, Routes } from 'react-router-dom'
 import styled from 'styled-components'
 import {
   awaitTransactionSignatureConfirmation,
@@ -18,11 +16,9 @@ import {
   CANDY_MACHINE_PROGRAM,
   getCandyMachineState,
   mintOneToken,
-} from './candy-machine'
-import Marketplace from './Marketplace'
-import { MintButton } from './MintButton'
-import MyCollection from './MyCollection'
-import { AlertState, getAtaForMint, toDate } from './utils'
+} from '../utils/candy-machine'
+import { MintButton } from '../components/MintButton'
+import { AlertState, getAtaForMint, toDate } from '../utils/utils'
 
 const cluster = process.env.REACT_APP_SOLANA_NETWORK!.toString()
 const decimals = process.env.REACT_APP_SPL_TOKEN_TO_MINT_DECIMALS
@@ -31,48 +27,6 @@ const decimals = process.env.REACT_APP_SPL_TOKEN_TO_MINT_DECIMALS
 const splTokenName = process.env.REACT_APP_SPL_TOKEN_TO_MINT_NAME
   ? process.env.REACT_APP_SPL_TOKEN_TO_MINT_NAME.toString()
   : 'TOKEN'
-
-const WalletContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-`
-
-const WalletAmount = styled.div`
-  color: black;
-  width: auto;
-  padding: 5px 5px 5px 16px;
-  min-width: 48px;
-  min-height: auto;
-  border-radius: 22px;
-  background-color: var(--main-text-color);
-  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%),
-    0px 1px 18px 0px rgb(0 0 0 / 12%);
-  box-sizing: border-box;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  font-weight: 500;
-  line-height: 1.75;
-  text-transform: uppercase;
-  border: 0;
-  margin: 0;
-  display: inline-flex;
-  outline: 0;
-  position: relative;
-  align-items: center;
-  user-select: none;
-  vertical-align: middle;
-  justify-content: flex-start;
-  gap: 10px;
-`
-
-const Wallet = styled.ul`
-  flex: 0 0 auto;
-  margin: 0;
-  padding: 0;
-`
 
 const ConnectButton = styled(WalletMultiButton)`
   border-radius: 18px !important;
@@ -91,7 +45,7 @@ const NFT = styled(Paper)`
 
 const Des = styled(NFT)`
   text-align: left;
-  padding-top: 0px;
+  padding-top: 20px;
 `
 
 const Card = styled(Paper)`
@@ -130,47 +84,6 @@ const MintButtonContainer = styled.div`
   }
 `
 
-const Logo = styled.div`
-  flex: 0 0 auto;
-
-  img {
-    height: 60px;
-  }
-`
-const Menu = styled.ul`
-  list-style: none;
-  display: inline-flex;
-  flex: 1 0 auto;
-  margin-bottom: 0;
-
-  li {
-    margin: 0 12px;
-
-    a {
-      color: var(--main-text-color);
-      list-style-image: none;
-      list-style-position: outside;
-      list-style-type: none;
-      outline: none;
-      text-decoration: none;
-      text-size-adjust: 100%;
-      touch-action: manipulation;
-      transition: color 0.3s;
-      padding-bottom: 15px;
-
-      img {
-        max-height: 26px;
-      }
-    }
-
-    a:hover,
-    a:active {
-      color: rgb(131, 146, 161);
-      border-bottom: 4px solid var(--title-text-color);
-    }
-  }
-`
-
 const SolExplorerLink = styled.a`
   color: var(--title-text-color);
   border-bottom: 1px solid var(--title-text-color);
@@ -185,18 +98,6 @@ const SolExplorerLink = styled.a`
   :hover {
     border-bottom: 2px solid var(--title-text-color);
   }
-`
-
-const MainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  margin-right: 4%;
-  margin-left: 4%;
-  text-align: center;
-  justify-content: center;
 `
 
 const MintContainer = styled.div`
@@ -564,256 +465,180 @@ const Home = (props: HomeProps) => {
     isPresale,
   ])
 
-  const candyShopRef = useRef<CandyShop>(
-    new CandyShop(
-      new PublicKey('Fo2cXie4UwreZi7LHMpnsyVPvzuo4FMwAVbSUYQsmbsh'),
-      new PublicKey('So11111111111111111111111111111111111111112'),
-      new PublicKey('csa8JpYfKSZajP7JzxnJipUL3qagub1z29hLvp578iN'),
-      'devnet'
-    )
-  )
-
   return (
-    <main>
-      <MainContainer>
-        <WalletContainer>
-          <Logo>
-            <Link to='/'>
-              <img alt='' src='logo.png' />
-            </Link>
-          </Logo>
-          <Menu>
-            <li>
-              <Link to='/'>Home</Link>
-            </li>
-            <li>
-              <Link to='/marketplace'>Marketplace</Link>
-            </li>
-            <li>
-              <Link to='/sell'>Sell</Link>
-            </li>
-          </Menu>
-          <Wallet>
-            {wallet ? (
-              <WalletAmount>
-                {(balance || 0).toLocaleString()} SOL
-                <ConnectButton />
-              </WalletAmount>
-            ) : (
-              <ConnectButton>Connect Wallet</ConnectButton>
+    <MintContainer>
+      <DesContainer>
+        <NFT elevation={3}>
+          <ShimmerTitle>MINT IS LIVE!</ShimmerTitle>
+          <h2>My NFT</h2>
+          <br />
+          <div>
+            <Price
+              label={
+                isActive && whitelistEnabled && whitelistTokenBalance > 0
+                  ? whitelistPrice + ' ' + priceLabel
+                  : price + ' ' + priceLabel
+              }
+            />
+            <Image src='cool-cats.gif' alt='NFT To Mint' />
+          </div>
+          <br />
+          {wallet &&
+            isActive &&
+            whitelistEnabled &&
+            whitelistTokenBalance > 0 &&
+            isBurnToken && (
+              <h3>
+                You own {whitelistTokenBalance} WL mint{' '}
+                {whitelistTokenBalance > 1 ? 'tokens' : 'token'}.
+              </h3>
             )}
-          </Wallet>
-        </WalletContainer>
-        <br />
-        <MintContainer>
-          <Routes>
-            <Route
-              path='/'
-              element={
-                <>
-                  <DesContainer>
-                    <NFT elevation={3}>
-                      <ShimmerTitle>MINT IS LIVE!</ShimmerTitle>
-                      <h2>My NFT</h2>
-                      <br />
-                      <div>
-                        <Price
-                          label={
-                            isActive && whitelistEnabled && whitelistTokenBalance > 0
-                              ? whitelistPrice + ' ' + priceLabel
-                              : price + ' ' + priceLabel
-                          }
-                        />
-                        <Image src='cool-cats.gif' alt='NFT To Mint' />
-                      </div>
-                      <br />
-                      {wallet &&
-                        isActive &&
-                        whitelistEnabled &&
-                        whitelistTokenBalance > 0 &&
-                        isBurnToken && (
-                          <h3>
-                            You own {whitelistTokenBalance} WL mint{' '}
-                            {whitelistTokenBalance > 1 ? 'tokens' : 'token'}.
-                          </h3>
-                        )}
-                      {wallet &&
-                        isActive &&
-                        whitelistEnabled &&
-                        whitelistTokenBalance > 0 &&
-                        !isBurnToken && <h3>You are whitelisted and allowed to mint.</h3>}
+          {wallet &&
+            isActive &&
+            whitelistEnabled &&
+            whitelistTokenBalance > 0 &&
+            !isBurnToken && <h3>You are whitelisted and allowed to mint.</h3>}
 
-                      {wallet && isActive && endDate && Date.now() < endDate.getTime() && (
-                        <Countdown
-                          date={toDate(candyMachine?.state?.endSettings?.number)}
-                          onMount={({ completed }: { completed: any}) => completed && setIsEnded(true)}
-                          onComplete={() => {
-                            setIsEnded(true)
-                          }}
-                          renderer={renderEndDateCounter}
-                        />
-                      )}
-                      {wallet && isActive && (
-                        <h3>
-                          TOTAL MINTED : {itemsRedeemed} / {itemsAvailable}
-                        </h3>
-                      )}
-                      {wallet && isActive && (
-                        <BorderLinearProgress
-                          variant='determinate'
-                          value={100 - (itemsRemaining * 100) / itemsAvailable}
-                        />
-                      )}
-                      <br />
-                      <MintButtonContainer>
-                        {!isActive &&
-                        !isEnded &&
-                        candyMachine?.state.goLiveDate &&
-                        (!isWLOnly || whitelistTokenBalance > 0) ? (
-                          <Countdown
-                            date={toDate(candyMachine?.state.goLiveDate)}
-                            onMount={({ completed }: { completed: any}) => completed && setIsActive(!isEnded)}
-                            onComplete={() => {
-                              setIsActive(!isEnded)
-                            }}
-                            renderer={renderGoLiveDateCounter}
-                          />
-                        ) : !wallet ? (
-                          <ConnectButton>Connect Wallet</ConnectButton>
-                        ) : !isWLOnly || whitelistTokenBalance > 0 ? (
-                          candyMachine?.state.gatekeeper &&
-                          wallet.publicKey &&
-                          wallet.signTransaction ? (
-                            <GatewayProvider
-                              wallet={{
-                                publicKey: wallet.publicKey || new PublicKey(CANDY_MACHINE_PROGRAM),
-                                //@ts-ignore
-                                signTransaction: wallet.signTransaction,
-                              }}
-                              // // Replace with following when added
-                              // gatekeeperNetwork={candyMachine.state.gatekeeper_network}
-                              gatekeeperNetwork={candyMachine?.state?.gatekeeper?.gatekeeperNetwork} // This is the ignite (captcha) network
-                              /// Don't need this for mainnet
-                              clusterUrl={rpcUrl}
-                              options={{ autoShowModal: false }}>
-                              <MintButton
-                                candyMachine={candyMachine}
-                                isMinting={isMinting}
-                                isActive={isActive}
-                                isEnded={isEnded}
-                                isSoldOut={isSoldOut}
-                                onMint={onMint}
-                              />
-                            </GatewayProvider>
-                          ) : (
-                            <MintButton
-                              candyMachine={candyMachine}
-                              isMinting={isMinting}
-                              isActive={isActive}
-                              isEnded={isEnded}
-                              isSoldOut={isSoldOut}
-                              onMint={onMint}
-                            />
-                          )
-                        ) : (
-                          <h1>Mint is private.</h1>
-                        )}
-                      </MintButtonContainer>
-                      <br />
-                      {wallet && isActive && solanaExplorerLink && (
-                        <SolExplorerLink href={solanaExplorerLink} target='_blank'>
-                          View on Solscan
-                        </SolExplorerLink>
-                      )}
-                    </NFT>
-                  </DesContainer>
-                  <DesContainer>
-                    <Des elevation={2}>
-                      <LogoAligner>
-                        <img src='logo.png' alt=''></img>
-                        <GoldTitle>TITLE 1</GoldTitle>
-                      </LogoAligner>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt.
-                      </p>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt.
-                      </p>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt.
-                      </p>
-                    </Des>
-                    <Des elevation={2}>
-                      <LogoAligner>
-                        <img src='logo.png' alt=''></img>
-                        <GoldTitle>TITLE 2</GoldTitle>
-                      </LogoAligner>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt.
-                      </p>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt.
-                      </p>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt.
-                      </p>
-                    </Des>
-                    <Des elevation={2}>
-                      <LogoAligner>
-                        <img src='logo.png' alt=''></img>
-                        <GoldTitle>TITLE 3</GoldTitle>
-                      </LogoAligner>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt.
-                      </p>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt.
-                      </p>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt.
-                      </p>
-                    </Des>
-                  </DesContainer>
-                </>
-              }
+          {wallet && isActive && endDate && Date.now() < endDate.getTime() && (
+            <Countdown
+              date={toDate(candyMachine?.state?.endSettings?.number)}
+              onMount={({ completed }: { completed: any}) => completed && setIsEnded(true)}
+              onComplete={() => {
+                setIsEnded(true)
+              }}
+              renderer={renderEndDateCounter}
             />
-          </Routes>
-          <Routes>
-            <Route
-              path='/marketplace'
-              element={
-                <Marketplace
-                  wallet={wallet}
-                  candyShop={candyShopRef.current}
-                  walletConnectComponent={<WalletMultiButton />}
+          )}
+          {wallet && isActive && (
+            <h3>
+              TOTAL MINTED : {itemsRedeemed} / {itemsAvailable}
+            </h3>
+          )}
+          {wallet && isActive && (
+            <BorderLinearProgress
+              variant='determinate'
+              value={100 - (itemsRemaining * 100) / itemsAvailable}
+            />
+          )}
+          <br />
+          <MintButtonContainer>
+            {!isActive &&
+            !isEnded &&
+            candyMachine?.state.goLiveDate &&
+            (!isWLOnly || whitelistTokenBalance > 0) ? (
+              <Countdown
+                date={toDate(candyMachine?.state.goLiveDate)}
+                onMount={({ completed }: { completed: any}) => completed && setIsActive(!isEnded)}
+                onComplete={() => {
+                  setIsActive(!isEnded)
+                }}
+                renderer={renderGoLiveDateCounter}
+              />
+            ) : !wallet ? (
+              <ConnectButton>Connect Wallet</ConnectButton>
+            ) : !isWLOnly || whitelistTokenBalance > 0 ? (
+              candyMachine?.state.gatekeeper &&
+              wallet.publicKey &&
+              wallet.signTransaction ? (
+                <GatewayProvider
+                  wallet={{
+                    publicKey: wallet.publicKey || new PublicKey(CANDY_MACHINE_PROGRAM),
+                    //@ts-ignore
+                    signTransaction: wallet.signTransaction,
+                  }}
+                  // // Replace with following when added
+                  // gatekeeperNetwork={candyMachine.state.gatekeeper_network}
+                  gatekeeperNetwork={candyMachine?.state?.gatekeeper?.gatekeeperNetwork} // This is the ignite (captcha) network
+                  /// Don't need this for mainnet
+                  clusterUrl={rpcUrl}
+                  options={{ autoShowModal: false }}>
+                  <MintButton
+                    candyMachine={candyMachine}
+                    isMinting={isMinting}
+                    isActive={isActive}
+                    isEnded={isEnded}
+                    isSoldOut={isSoldOut}
+                    onMint={onMint}
+                  />
+                </GatewayProvider>
+              ) : (
+                <MintButton
+                  candyMachine={candyMachine}
+                  isMinting={isMinting}
+                  isActive={isActive}
+                  isEnded={isEnded}
+                  isSoldOut={isSoldOut}
+                  onMint={onMint}
                 />
-              }
-            />
-          </Routes>
-          <Routes>
-            <Route
-              path='/sell'
-              element={
-                <MyCollection
-                  connection={props.connection}
-                  wallet={wallet}
-                  candyShop={candyShopRef.current}
-                  walletConnectComponent={<WalletMultiButton />}
-                />
-              }
-            />
-          </Routes>
-        </MintContainer>
-      </MainContainer>
+              )
+            ) : (
+              <h1>Mint is private.</h1>
+            )}
+          </MintButtonContainer>
+          <br />
+          {wallet && isActive && solanaExplorerLink && (
+            <SolExplorerLink href={solanaExplorerLink} target='_blank'>
+              View on Solscan
+            </SolExplorerLink>
+          )}
+        </NFT>
+      </DesContainer>
+      <DesContainer>
+        <Des elevation={2}>
+          <LogoAligner>
+            <img src='logo.png' alt=''></img>
+            <GoldTitle>TITLE 1</GoldTitle>
+          </LogoAligner>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt.
+          </p>
+        </Des>
+        <Des elevation={2}>
+          <LogoAligner>
+            <img src='logo.png' alt=''></img>
+            <GoldTitle>TITLE 2</GoldTitle>
+          </LogoAligner>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt.
+          </p>
+        </Des>
+        <Des elevation={2}>
+          <LogoAligner>
+            <img src='logo.png' alt=''></img>
+            <GoldTitle>TITLE 3</GoldTitle>
+          </LogoAligner>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt.
+          </p>
+        </Des>
+      </DesContainer>
       <Snackbar
         open={alertState.open}
         autoHideDuration={6000}
@@ -824,7 +649,7 @@ const Home = (props: HomeProps) => {
           {alertState.message}
         </Alert>
       </Snackbar>
-    </main>
+    </MintContainer>
   )
 }
 

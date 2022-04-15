@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 import Button from '@material-ui/core/Button';
 import {CircularProgress} from '@material-ui/core';
 import {GatewayStatus, useGateway} from '@civic/solana-gateway-react';
-import {CandyMachine} from './candy-machine';
+import {CandyMachine} from '../utils/candy-machine';
 
 
 export const CTAButton = styled(Button)`

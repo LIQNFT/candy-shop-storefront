@@ -2,8 +2,8 @@ import { createTheme, ThemeProvider } from '@material-ui/core'
 import { useMemo } from 'react'
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react'
 import * as anchor from '@project-serum/anchor'
-import { clusterApiUrl } from '@solana/web3.js'
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
+import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
 import {
   getPhantomWallet,
   getSlopeWallet,
@@ -15,18 +15,22 @@ import {
   getLedgerWallet,
   getSafePalWallet,
 } from '@solana/wallet-adapter-wallets'
+import { Route, Routes } from 'react-router-dom'
+import styled from 'styled-components'
 
-import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
-
-import './App.css'
-import Home from './Home'
+import TopNav from './components/TopNav'
+import Home from './views/Home'
+import Marketplace from './views/Marketplace'
+import CustomTokenMarketplace from './views/CustomTokenMarketplace'
+import MarketplaceWithFilter from './views/MarketplaceWithFilter'
+import MarketplaceWithUrl from './views/MarketplaceWithUrl'
+import MyCollection from './views/MyCollection'
+import SingleOrder from './views/SingleOrder'
 
 require('@solana/wallet-adapter-react-ui/styles.css')
 
 const candyMachineId = new anchor.web3.PublicKey(process.env.REACT_APP_CANDY_MACHINE_ID!)
-
 const network = process.env.REACT_APP_SOLANA_NETWORK as WalletAdapterNetwork
-
 const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST!
 const connection = new anchor.web3.Connection(rpcHost)
 
@@ -58,9 +62,6 @@ const theme = createTheme({
 })
 
 const App = () => {
-  // Custom RPC endpoint.
-  const endpoint = useMemo(() => clusterApiUrl(network), [])
-
   // @solana/wallet-adapter-wallets includes all the adapters but supports tree shaking and lazy loading --
   // Only the wallets you configure here will be compiled into your application, and only the dependencies
   // of wallets that your users connect to will be loaded.
@@ -81,20 +82,50 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <ConnectionProvider endpoint={endpoint}>
+      <ConnectionProvider endpoint={rpcHost}>
         <WalletProvider wallets={wallets} autoConnect={true}>
           <WalletModalProvider>
-            <Home
-              candyMachineId={candyMachineId}
-              connection={connection}
-              txTimeout={txTimeout}
-              rpcHost={rpcHost}
-            />
+            <main>
+              <MainContainer>
+                <TopNav />
+                <Routes>
+                  <Route
+                    path='/'
+                    element={
+                      <Home
+                        candyMachineId={candyMachineId}
+                        connection={connection}
+                        txTimeout={txTimeout}
+                        rpcHost={rpcHost}
+                      />
+                    }
+                  />
+                  <Route path='/marketplace/:tokenMint' element={<SingleOrder />} />
+                  <Route path='/marketplace' element={<Marketplace />} />
+                  <Route path='/sell' element={<MyCollection />} />
+                  <Route path='/custom-token-marketplace' element={<CustomTokenMarketplace />} />
+                  <Route path='/multi-collection-marketplace' element={<MarketplaceWithFilter />} />
+                  <Route path='/marketplace-with-url' element={<MarketplaceWithUrl />} />
+                </Routes>
+              </MainContainer>
+            </main>
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>
     </ThemeProvider>
   )
 }
+
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  margin-right: 4%;
+  margin-left: 4%;
+  text-align: center;
+  justify-content: center;
+`
 
 export default App
