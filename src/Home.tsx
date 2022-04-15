@@ -8,7 +8,7 @@ import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 
 import { LAMPORTS_PER_SOL, PublicKey } from '@solana/web3.js'
 import confetti from 'canvas-confetti'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Countdown from 'react-countdown'
 import { Link, Route, Routes } from 'react-router-dom'
 import styled from 'styled-components'
@@ -564,16 +564,13 @@ const Home = (props: HomeProps) => {
     isPresale,
   ])
 
-  const candyShop = useMemo(
-    () =>
-      new CandyShop(
-        new PublicKey('Fo2cXie4UwreZi7LHMpnsyVPvzuo4FMwAVbSUYQsmbsh'),
-        new PublicKey('So11111111111111111111111111111111111111112'),
-        new PublicKey('csa8JpYfKSZajP7JzxnJipUL3qagub1z29hLvp578iN'),
-        'devnet',
-        wallet!
-      ),
-    [wallet]
+  const candyShopRef = useRef<CandyShop>(
+    new CandyShop(
+      new PublicKey('Fo2cXie4UwreZi7LHMpnsyVPvzuo4FMwAVbSUYQsmbsh'),
+      new PublicKey('So11111111111111111111111111111111111111112'),
+      new PublicKey('csa8JpYfKSZajP7JzxnJipUL3qagub1z29hLvp578iN'),
+      'devnet'
+    )
   )
 
   return (
@@ -795,8 +792,8 @@ const Home = (props: HomeProps) => {
               path='/marketplace'
               element={
                 <Marketplace
-                  walletPublicKey={wallet?.publicKey}
-                  candyShop={candyShop}
+                  wallet={wallet}
+                  candyShop={candyShopRef.current}
                   walletConnectComponent={<WalletMultiButton />}
                 />
               }
@@ -808,8 +805,8 @@ const Home = (props: HomeProps) => {
               element={
                 <MyCollection
                   connection={props.connection}
-                  walletPublicKey={wallet?.publicKey}
-                  candyShop={candyShop}
+                  wallet={wallet}
+                  candyShop={candyShopRef.current}
                   walletConnectComponent={<WalletMultiButton />}
                 />
               }

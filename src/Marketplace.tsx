@@ -1,5 +1,5 @@
 import { CandyShop, Orders, Stat } from '@liqnft/candy-shop'
-import { PublicKey } from '@solana/web3.js'
+import { AnchorWallet } from '@solana/wallet-adapter-react';
 import styled from 'styled-components'
 
 const DesContainer = styled.div`
@@ -7,13 +7,13 @@ const DesContainer = styled.div`
 `
 
 interface OrdersProps {
-  walletPublicKey?: PublicKey
+  wallet: AnchorWallet | undefined
   candyShop: CandyShop
   walletConnectComponent: React.ReactElement
 }
 
 const Marketplace: React.FC<OrdersProps> = ({
-  walletPublicKey,
+  wallet,
   candyShop,
   walletConnectComponent,
 }) => {
@@ -26,7 +26,7 @@ const Marketplace: React.FC<OrdersProps> = ({
         style={{ paddingBottom: 50 }}
       />
       <Orders
-        walletPublicKey={walletPublicKey}
+        wallet={wallet}
         candyShop={candyShop}
         walletConnectComponent={walletConnectComponent}
       />

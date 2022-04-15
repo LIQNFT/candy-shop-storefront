@@ -1615,10 +1615,10 @@
   resolved "https://registry.yarnpkg.com/@ledgerhq/logs/-/logs-6.10.0.tgz#c012c1ecc1a0e53d50e6af381618dca5268461c1"
   integrity sha512-lLseUPEhSFUXYTKj6q7s2O3s2vW2ebgA11vMAlKodXGf5AFw4zUoEbTz9CoFOC9jS6xY4Qr8BmRnxP/odT4Uuw==
 
-"@liqnft/candy-shop@^0.4.20":
-  version "0.4.20"
-  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.4.20.tgz#8373dc593c5d4b9aa8862cb1f321247d4ec67062"
-  integrity sha512-WJSq4hHiTmlSipiDD/wZr+KetNQtaXuy11NwVPxzhqnwvADCMvNwMBokEW0O7UQl7okqbvxOWkwGmVNjmf5bcA==
+"@liqnft/candy-shop@^0.4.23":
+  version "0.4.23"
+  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.4.23.tgz#7a09f701d862c407e086662084d91e5fee920ecf"
+  integrity sha512-lncUcKBwiDctviPXm6bwlP4wpE8w0Y4wX9Eq6SiyA2syowAxtcdmg3cOI032aD5E/F6ij1tEMVnDu1ZrQdshww==
   dependencies:
     "@emotion/react" "^11.0.0-rc.0"
     "@emotion/styled" "^11.8.1"

@@ -14,6 +14,11 @@ body {
 
   font-family: 'Patrick Hand', cursive;
   font-size: 1.1em;
+  line-height: 1.57;
+}
+
+a {
+  text-decoration: none;
 }
 
 h2,
@@ -26,21 +31,10 @@ h3 {
 }
 
 /* Candy Shop styling overrides */
-.css-0,
-.cds-rc-notification {
+.css-1wewypr {
   color: black;
 }
 
-.css-18lr773 {
-  background-color: #fff;
-}
-
-.buy-modal-title,
-.buy-modal-description,
-.buy-modal-control,
-.sell-modal-content,
-.cds-cancel-modal-description,
-.cds-cancel-modal-title,
-.cds-cancel-modal-control {
-  text-align: left;
+.css-1ago99h {
+  color: black;
 }
