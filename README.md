@@ -2,18 +2,16 @@
 
 This repo allows you to sell NFTs through Candy Machine V2 and host your own secondary marketplace with [Candy Shop](https://github.com/LIQNFT/candy-shop).
 
-Candy Shop is a marketplace protocol & toolset with a full suite of data endpoints and command APIs to help users deliver a simplistic, seamless and efficient NFT marketplace experience.
-
-Key features:
-* **Simple Integration.** Integrate marketplace features into your website easily with Candy Shop SDK - your marketplace could be fully operational within a few minutes.
-* **Seamless User Experience.** The commands and data endpoints have been designed in a way to simplify user journey and provide a seamless experience for browsing, buying and selling NFTs on your in-house marketplace.
-* **Give More, Earn More.** Users save on transaction fees when they transact on your Candy Shop marketplace, and you will also earn 20% of the 1% transaction fee.
-* **Candy Shop Network.** Standardized implementation allows you to import other Candy Shop NFT listings directly onto your marketplace or vice versa - creating a network effect of listings for maximum traffic flow
-* **Transparency.** Candy Shop is an open source and on-chain protocol, providing your community with full transparency on what is happening behind the scene for your marketplace.
+Supports the following marketplace configurations:
+* Basic SOL marketplace
+* Basic custom SPL token marketplace
+* Marketplace with single NFT view
+* Multi collection marketplace
+* Multi currency marketplace
 
 Forked and modified from Candy Machine V2 repo: https://github.com/Fulgurus/candy-machine-v2-responsive-ui
 
-<img width="1379" alt="Candy Shop Marketplace" src="https://user-images.githubusercontent.com/89616076/159664783-edba253b-7e1e-4e3b-8b77-acf3c2db12c6.png">
+<img width="1363" alt="Screen Shot 2022-04-16 at 3 23 54 PM" src="https://user-images.githubusercontent.com/89616076/163665962-f8f9fa00-2143-4234-bb35-13955b55220e.png">
 
 **Prod-ready Responsive UI** which can be easily customized in 5mn.
 
