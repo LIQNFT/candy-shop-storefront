@@ -1,8 +1,8 @@
-import { useRef } from 'react'
 import { CandyShop, Sell } from '@liqnft/candy-shop'
 import { useConnection, useAnchorWallet } from '@solana/wallet-adapter-react'
 import { PublicKey, Cluster } from '@solana/web3.js'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
+import { useCurrency } from '../components/Currency'
 import styled from 'styled-components'
 
 const CANDY_SHOP_CREATOR_ADDRESS = new PublicKey(process.env.REACT_APP_CANDY_SHOP_CREATOR_ADDRESS!)
@@ -23,13 +23,16 @@ const MyCollection: React.FC = () => {
 
   const wallet = useAnchorWallet()
 
-  const candyShopRef = useRef<CandyShop>(
-    new CandyShop(
-      CANDY_SHOP_CREATOR_ADDRESS,
-      CANDY_SHOP_TREASURY_MINT,
-      CANDY_SHOP_PROGRAM_ID,
-      NETWORK
-    )
+  const { currency, getCurrencySettings } = useCurrency()
+
+  console.log('Currency', currency);
+
+  const candyShop = new CandyShop(
+    CANDY_SHOP_CREATOR_ADDRESS,
+    CANDY_SHOP_TREASURY_MINT,
+    CANDY_SHOP_PROGRAM_ID,
+    NETWORK,
+    getCurrencySettings()
   )
 
   return (
@@ -38,7 +41,7 @@ const MyCollection: React.FC = () => {
       <Sell
         connection={connection}
         wallet={wallet}
-        candyShop={candyShopRef.current}
+        candyShop={candyShop}
         walletConnectComponent={<WalletMultiButton />}
       />
     </DesContainer>

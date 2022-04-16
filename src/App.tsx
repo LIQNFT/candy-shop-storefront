@@ -19,11 +19,14 @@ import { Route, Routes } from 'react-router-dom'
 import styled from 'styled-components'
 
 import TopNav from './components/TopNav'
+import { CurrencyProvider } from './components/Currency'
 import Home from './views/Home'
 import Marketplace from './views/Marketplace'
 import CustomTokenMarketplace from './views/CustomTokenMarketplace'
 import MarketplaceWithFilter from './views/MarketplaceWithFilter'
 import MarketplaceWithUrl from './views/MarketplaceWithUrl'
+import MultiCurrencyMarketplace from './views/MultiCurrencyMarketplace'
+import MultiCurrencySell from './views/MultiCurrencySell'
 import MyCollection from './views/MyCollection'
 import SingleOrder from './views/SingleOrder'
 
@@ -61,6 +64,12 @@ const theme = createTheme({
   },
 })
 
+// Used for a multi-currency shop
+const currencyOptions = [
+  {currencySymbol: 'SOL', currencyDecimals: 9, priceDecimals: 3, volumeDecimals: 1},
+  {currencySymbol: 'USDC', currencyDecimals: 9, priceDecimals: 2, volumeDecimals: 1}
+];
+
 const App = () => {
   // @solana/wallet-adapter-wallets includes all the adapters but supports tree shaking and lazy loading --
   // Only the wallets you configure here will be compiled into your application, and only the dependencies
@@ -84,32 +93,102 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <ConnectionProvider endpoint={rpcHost}>
         <WalletProvider wallets={wallets} autoConnect={true}>
-          <WalletModalProvider>
-            <main>
-              <MainContainer>
-                <TopNav />
-                <Routes>
-                  <Route
-                    path='/'
-                    element={
-                      <Home
-                        candyMachineId={candyMachineId}
-                        connection={connection}
-                        txTimeout={txTimeout}
-                        rpcHost={rpcHost}
-                      />
-                    }
-                  />
-                  <Route path='/marketplace/:tokenMint' element={<SingleOrder />} />
-                  <Route path='/marketplace' element={<Marketplace />} />
-                  <Route path='/sell' element={<MyCollection />} />
-                  <Route path='/custom-token-marketplace' element={<CustomTokenMarketplace />} />
-                  <Route path='/multi-collection-marketplace' element={<MarketplaceWithFilter />} />
-                  <Route path='/marketplace-with-url' element={<MarketplaceWithUrl />} />
-                </Routes>
-              </MainContainer>
-            </main>
-          </WalletModalProvider>
+          <CurrencyProvider currencyOptions={currencyOptions}>
+            <WalletModalProvider>
+              <main>
+                <MainContainer>
+                  <Routes>
+                    <Route
+                      path='/'
+                      element={(
+                        <>
+                          <TopNav />
+                          <Home
+                            candyMachineId={candyMachineId}
+                            connection={connection}
+                            txTimeout={txTimeout}
+                            rpcHost={rpcHost}
+                          />
+                        </>
+                      )}
+                    />
+                    <Route
+                      path='/marketplace/:tokenMint'
+                      element={(
+                        <>
+                          <TopNav />
+                          <SingleOrder />
+                        </>
+                      )}
+                    />
+                    <Route
+                      path='/marketplace'
+                      element={(
+                        <>
+                          <TopNav />
+                          <Marketplace />
+                        </>
+                      )}
+                    />
+                    <Route
+                      path='/sell'
+                      element={
+                        <>
+                          <TopNav />
+                          <MyCollection />
+                        </>
+                      }
+                    />
+                    <Route
+                      path='/custom-token-marketplace'
+                      element={
+                        <>
+                          <TopNav />
+                          <CustomTokenMarketplace />
+                        </>
+                      }
+                    />
+                    <Route
+                      path='/multi-collection-marketplace'
+                      element={
+                        <>
+                          <TopNav />
+                          <MarketplaceWithFilter />
+                        </>
+                      }
+                    />
+                    <Route
+                      path='/marketplace-with-url'
+                      element={
+                        <>
+                          <TopNav />
+                          <MarketplaceWithUrl />
+                        </>
+                      }
+                    />
+                    <Route
+                      path='/multi-currency-marketplace'
+                      element={
+                        <>
+                          <TopNav showCurrencyToggle={true} />
+                          <MultiCurrencyMarketplace />
+                        </>
+                      }
+                    />
+                    <Route
+                      path='/multi-currency-sell'
+                      element={
+                        <>
+                          <TopNav showCurrencyToggle={true} />
+                          <MultiCurrencySell />
+                        </>
+                      }
+                    />
+                  </Routes>
+                </MainContainer>
+              </main>
+            </WalletModalProvider>
+          </CurrencyProvider>
         </WalletProvider>
       </ConnectionProvider>
     </ThemeProvider>
