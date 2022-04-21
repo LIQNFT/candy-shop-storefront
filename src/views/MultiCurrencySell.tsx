@@ -1,4 +1,5 @@
-import { CandyShop, Sell } from '@liqnft/candy-shop'
+import { CandyShop } from '@liqnft/candy-shop-sdk'
+import { Sell } from '@liqnft/candy-shop'
 import { useConnection, useAnchorWallet } from '@solana/wallet-adapter-react'
 import { PublicKey, Cluster } from '@solana/web3.js'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
