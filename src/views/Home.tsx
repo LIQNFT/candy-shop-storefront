@@ -587,7 +587,7 @@ const Home = (props: HomeProps) => {
         <Des elevation={2}>
           <LogoAligner>
             <img src='logo.png' alt=''></img>
-            <GoldTitle>TITLE 1</GoldTitle>
+            <GoldTitle>This is just for testing only on mainnet</GoldTitle>
           </LogoAligner>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

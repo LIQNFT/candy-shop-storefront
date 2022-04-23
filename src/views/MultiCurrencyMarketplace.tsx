@@ -35,7 +35,7 @@ const MultiCurrencyMarketplace: React.FC = () => {
       <Stat
         candyShop={candyShop}
         title={'Marketplace'}
-        description={'Candy Shop is an open source on-chain protocol that empowers DAOs, NFT projects and anyone interested in creating an NFT marketplace to do so within minutes!'}
+        description={'MonstaDAO NFT Marketplace!'}
         style={{ paddingBottom: 50 }}
       />
       <Orders
