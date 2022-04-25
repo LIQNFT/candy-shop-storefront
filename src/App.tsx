@@ -20,9 +20,9 @@ import styled from 'styled-components'
 
 import TopNav from './components/TopNav'
 import { CurrencyProvider } from './components/Currency'
-import Home from './views/Home'
+import Home from './views/mintHome'
 import Marketplace from './views/Marketplace'
-import CustomTokenMarketplace from './views/CustomTokenMarketplace'
+import CustomTokenMarketplace from './views/Home'
 import MarketplaceWithFilter from './views/MarketplaceWithFilter'
 import MarketplaceWithUrl from './views/MarketplaceWithUrl'
 import MultiCurrencyMarketplace from './views/MultiCurrencyMarketplace'
@@ -99,7 +99,7 @@ const App = () => {
               <main>
                 <MainContainer>
                   <Routes>
-                    <Route
+{/*                     <Route
                       path='/'
                       element={(
                         <>
@@ -112,8 +112,8 @@ const App = () => {
                           />
                         </>
                       )}
-                    />
-                    <Route
+                    /> */}
+{/*                     <Route
                       path='/marketplace/:tokenMint'
                       element={(
                         <>
@@ -121,8 +121,8 @@ const App = () => {
                           <SingleOrder />
                         </>
                       )}
-                    />
-                    <Route
+                    /> */}
+{/*                     <Route
                       path='/marketplace'
                       element={(
                         <>
@@ -130,7 +130,7 @@ const App = () => {
                           <Marketplace />
                         </>
                       )}
-                    />
+                    /> */}
                     <Route
                       path='/sell'
                       element={
@@ -141,7 +141,7 @@ const App = () => {
                       }
                     />
                     <Route
-                      path='/custom-token-marketplace'
+                      path='/'
                       element={
                         <>
                           <TopNav />
@@ -149,7 +149,7 @@ const App = () => {
                         </>
                       }
                     />
-                    <Route
+{/*                     <Route
                       path='/multi-collection-marketplace'
                       element={
                         <>
@@ -157,8 +157,8 @@ const App = () => {
                           <MarketplaceWithFilter />
                         </>
                       }
-                    />
-                    <Route
+                    /> */}
+{/*                     <Route
                       path='/marketplace-with-url'
                       element={
                         <>
@@ -166,8 +166,8 @@ const App = () => {
                           <MarketplaceWithUrl />
                         </>
                       }
-                    />
-                    <Route
+                    /> */}
+{/*                     <Route
                       path='/multi-currency-marketplace'
                       element={
                         <>
@@ -175,8 +175,8 @@ const App = () => {
                           <MultiCurrencyMarketplace />
                         </>
                       }
-                    />
-                    <Route
+                    /> */}
+{/*                     <Route
                       path='/multi-currency-sell'
                       element={
                         <>
@@ -184,7 +184,7 @@ const App = () => {
                           <MultiCurrencySell />
                         </>
                       }
-                    />
+                    /> */}
                   </Routes>
                 </MainContainer>
               </main>
