@@ -54,20 +54,20 @@ const TopNav: React.FC<TopNavProps> = ({
     <HeaderBar>
       <Logo>
         <Link to='/'>
-          <img alt='' src='/logo.png' />
+          <img alt='' src='/logo1.svg' />
         </Link>
       </Logo>
       <Menu>
         <li>
-          <Link to='/'>Home</Link>
+          <Link to='https://woofsolana.io'>Website</Link>
         </li>
         <li>
-          <Link to='/marketplace'>Marketplace</Link>
+          <Link to='/custom-token-marketplace'>Marketplace</Link>
         </li>
         <li>
           <Link to='/sell'>Sell</Link>
         </li>
-        <DropdownAnchor ref={anchorRef} onClick={handleToggle}>
+{/*         <DropdownAnchor ref={anchorRef} onClick={handleToggle}>
           Other Layouts
           <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
             {({ TransitionProps, placement }) => (
@@ -84,7 +84,7 @@ const TopNav: React.FC<TopNavProps> = ({
               </Paper>
             )}
           </Popper>
-        </DropdownAnchor>
+        </DropdownAnchor> */}
       </Menu>
       { showCurrencyToggle && <CurrencyToggle />}
       <Wallet>
@@ -170,7 +170,8 @@ const Wallet = styled.ul`
 const ConnectButton = styled(WalletMultiButton)`
   border-radius: 18px !important;
   padding: 6px 16px;
-  background-color: #4e44ce;
+  background-color: black;
+  border: 1px solid white;
   margin: 0 auto;
 `
 

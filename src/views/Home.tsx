@@ -586,7 +586,7 @@ const Home = (props: HomeProps) => {
       <DesContainer>
         <Des elevation={2}>
           <LogoAligner>
-            <img src='logo.png' alt=''></img>
+            <img src='logo1.svg' alt=''></img>
             <GoldTitle>TITLE 1</GoldTitle>
           </LogoAligner>
           <p>
@@ -604,7 +604,7 @@ const Home = (props: HomeProps) => {
         </Des>
         <Des elevation={2}>
           <LogoAligner>
-            <img src='logo.png' alt=''></img>
+            <img src='logo1.svg' alt=''></img>
             <GoldTitle>TITLE 2</GoldTitle>
           </LogoAligner>
           <p>
@@ -622,7 +622,7 @@ const Home = (props: HomeProps) => {
         </Des>
         <Des elevation={2}>
           <LogoAligner>
-            <img src='logo.png' alt=''></img>
+            <img src='logo1.svg' alt=''></img>
             <GoldTitle>TITLE 3</GoldTitle>
           </LogoAligner>
           <p>

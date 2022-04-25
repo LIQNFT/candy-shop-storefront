@@ -26,10 +26,10 @@ const CustomTokenMarketplace: React.FC = () => {
       NETWORK,
       // pass additional settings param to configure shop display
       {
-        currencySymbol: 'LQN',
-        currencyDecimals: 9,
-        priceDecimals: 3,
-        volumeDecimals: 1
+        currencySymbol: 'WOOF',
+        currencyDecimals: 6,
+        priceDecimals: 0,
+        volumeDecimals: 0
       }
     )
   )
@@ -39,7 +39,7 @@ const CustomTokenMarketplace: React.FC = () => {
       <Stat
         candyShop={candyShopRef.current}
         title={'Marketplace'}
-        description={'Candy Shop supports custom SPL tokens as currency. Just specify your token symbol and decimals.'}
+        description={'A collection of 5,555 WOOFers woofing on the Solana Blockchain. Each WOOFer NFT gives access to the WOOF DAO which will be used to govern the future of the project.'}
         style={{ paddingBottom: 50 }}
       />
       <Orders
