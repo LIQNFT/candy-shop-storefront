@@ -38,9 +38,9 @@ const CustomTokenMarketplace: React.FC = () => {
     <DesContainer>
       <Stat
         candyShop={candyShopRef.current}
-        title={'Marketplace'}
+        title={'WOOFers Marketplace'}
         description={'A collection of 5,555 WOOFers woofing on the Solana Blockchain. Each WOOFer NFT gives access to the WOOF DAO which will be used to govern the future of the project.'}
-        style={{ paddingBottom: 50 }}
+        style={{ paddingBottom: 50, paddingTop: 50 }}
       />
       <Orders
         wallet={wallet}

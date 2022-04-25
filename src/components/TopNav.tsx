@@ -62,7 +62,10 @@ const TopNav: React.FC<TopNavProps> = ({
           <Link to='https://woofsolana.io'>Website</Link>
         </li>
         <li>
-          <Link to='/custom-token-marketplace'>Marketplace</Link>
+          <Link to='/'>Marketplace</Link>
+        </li>
+        <li>
+          <Link to='https://stake.woofsolana.io'>Staking</Link>
         </li>
         <li>
           <Link to='/sell'>Sell</Link>
@@ -186,7 +189,9 @@ const Logo = styled.div`
 
 const Menu = styled.ul`
   list-style: none;
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 1 0 auto;
   margin-bottom: 0;
 
@@ -213,6 +218,10 @@ const Menu = styled.ul`
     a:hover,
     a:active {
       color: rgb(131, 146, 161);
+      border-bottom: 4px solid var(--title-text-color);
+    }
+
+    a:active {
       border-bottom: 4px solid var(--title-text-color);
     }
   }
