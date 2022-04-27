@@ -48,3 +48,47 @@ h3 {
 .css-1ago99h {
   color: black;
 }
+
+/* FILTER */
+.candy-dropdown {
+  background-color: #16171A;
+  color: white;
+}
+.menu-middle-item {
+  background-color: #16171A;
+  color: white;
+}
+.candy-dropdown-label--purple {
+  color: white;
+}
+.candy-dropdown-label--black {
+  color: white;
+}
+.candy-dropdown-icon svg {
+  color: white;
+}
+
+.candy-dropdown-menu .menu-last-item {
+  background-color: #16171A;
+  color: white;
+}
+
+
+/* TITLE */
+.candy-stat-component-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.candy-stat-component-container > * {
+  margin: auto;
+}
+.candy-stat-component-title {
+  text-align: center;
+}
+.candy-stat-component-description {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 2rem;
+}

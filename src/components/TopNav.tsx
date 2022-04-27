@@ -65,7 +65,7 @@ const TopNav: React.FC<TopNavProps> = ({
           <Link to='/'>Marketplace</Link>
         </li>
         <li>
-          <a href='https://stake.woofsolana.io'>Staking</a>
+          <ExtLink href='https://stake.woofsolana.io'>Staking</ExtLink>
         </li>
         <li>
           <Link to='/sell'>Sell</Link>
@@ -100,6 +100,10 @@ const TopNav: React.FC<TopNavProps> = ({
     </HeaderBar>
   )
 }
+
+const ExtLink = styled.a`
+  color: green;
+`
 
 const HeaderBar = styled.div`
   display: flex;
