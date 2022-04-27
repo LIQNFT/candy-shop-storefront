@@ -59,13 +59,13 @@ const TopNav: React.FC<TopNavProps> = ({
       </Logo>
       <Menu>
         <li>
-          <Link to='https://woofsolana.io'>Website</Link>
+          <a href='https://woofsolana.io'>Website</a>
         </li>
         <li>
           <Link to='/'>Marketplace</Link>
         </li>
         <li>
-          <Link to='https://stake.woofsolana.io'>Staking</Link>
+          <a href='https://stake.woofsolana.io'>Staking</a>
         </li>
         <li>
           <Link to='/sell'>Sell</Link>
@@ -176,6 +176,11 @@ const ConnectButton = styled(WalletMultiButton)`
   background-color: black;
   border: 1px solid white;
   margin: 0 auto;
+  margin-top: 16px;
+  
+  @media only screen and (min-width: 420px) {
+    margin-top: 0px;
+  }
 `
 
 const Logo = styled.div`
@@ -222,9 +227,12 @@ const Menu = styled.ul`
     }
 
     a:active {
+      text-transform: uppercase;
       border-bottom: 4px solid var(--title-text-color);
     }
   }
 `
+
+
 
 export default TopNav

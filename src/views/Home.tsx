@@ -5,6 +5,7 @@ import { useAnchorWallet } from '@solana/wallet-adapter-react'
 import { PublicKey, Cluster } from '@solana/web3.js'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import styled from 'styled-components'
+import woofcoins from '../assets/images/woofcoins.png'
 
 const CANDY_SHOP_CREATOR_ADDRESS = new PublicKey(process.env.REACT_APP_CANDY_SHOP_CREATOR_ADDRESS!)
 const CANDY_SHOP_TREASURY_MINT = new PublicKey(process.env.REACT_APP_CANDY_SHOP_TREASURY_MINT!)
@@ -36,6 +37,7 @@ const CustomTokenMarketplace: React.FC = () => {
 
   return (
     <DesContainer>
+      <WoofCoinsImage src={woofcoins} alt="wooofcoins"/>
       <Stat
         candyShop={candyShopRef.current}
         title={'WOOFers Marketplace'}
@@ -50,5 +52,20 @@ const CustomTokenMarketplace: React.FC = () => {
     </DesContainer>
   )
 }
+
+const WoofCoinsImage = styled.img `
+  width: 300px;
+  margin: auto;
+
+  @media only screen and (min-width: 420px) {
+    width: 600px;
+  }
+
+  @media only screen and (min-width: 851px) {
+    width: 850px;
+  }
+`
+
+
 
 export default CustomTokenMarketplace
