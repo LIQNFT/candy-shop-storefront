@@ -16,6 +16,8 @@ const DesContainer = styled.div`
 
   .wallet-adapter-button {
     margin: 0 auto;
+    background-color: #ad11f5ac ;
+    border-radius:12px ;
   }
 `
 

@@ -1,6 +1,6 @@
 /* Customize your main colors in :root variables */
 :root {
-  --main-background-color: #343a50;
+  --main-background-color: #28636b;
   --card-background-color: #51576d;
   --card-background-lighter-color: #7a7f92;
   --main-text-color: #f7f6f4;
@@ -8,18 +8,21 @@
 }
 
 body {
-  background-color: var(--main-background-color);
-  /*background: url('img/background.png');
-  background-size: cover; */
+background: url('img/background.jpg');
+background-position: center center;
+background-attachment: fixed;
+background-size: cover;
+background-repeat: no-repeat;
 
   margin: 0;
-  font-family: 'Helvetica', Arial, sans-serif;
+  font-family: 'Skranji', cursive;
   font-size:  16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #303030;
+  background-color: #75949d;
   color: #FFFFFF;
+
 }
 
 code {

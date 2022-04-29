@@ -54,7 +54,7 @@ const TopNav: React.FC<TopNavProps> = ({
     <HeaderBar>
       <Logo>
         <Link to='/'>
-          <img alt='' src='/logo.png' />
+          <img alt='' src='/Monsta-Logo.png' />
         </Link>
       </Logo>
       <Menu>
@@ -71,7 +71,7 @@ const TopNav: React.FC<TopNavProps> = ({
           Other Layouts
           <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
             {({ TransitionProps, placement }) => (
-              <Paper>
+              <Paper >
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
                     <MenuItem><Link to='/custom-token-marketplace'>Custom Token Marketplace</Link></MenuItem>
@@ -111,7 +111,7 @@ const DropdownAnchor = styled.li`
   cursor: pointer;
 
   &:hover {
-    color: rgb(131,146,161);
+    color: #8400ff;
   }
 
   > div {
@@ -120,14 +120,16 @@ const DropdownAnchor = styled.li`
 
   .MuiList-root {
     margin-top: 15px;
+    background-color: #fff;
 
     a {
       padding-top: 4px;
       padding-bottom: 4px;
+      color: #000;
 
       &:hover {
         border-bottom: 0px;
-        color: #fff;
+        color: #8400ff;
       }
     }
   }
@@ -168,10 +170,22 @@ const Wallet = styled.ul`
 `
 
 const ConnectButton = styled(WalletMultiButton)`
-  border-radius: 18px !important;
+  border-radius: 12px !important;
   padding: 6px 16px;
-  background-color: #4e44ce;
   margin: 0 auto;
+  background: #ad11f5ac;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.2s ease-out;
+    outline: none;
+    text-decoration: none;
+    
+    &:hover{
+        background: #20000071;
+        transition: 0.2s ease-out;
+        cursor: pointer;
+        color: #ad11f5ac;
+    }
 `
 
 const Logo = styled.div`
@@ -179,7 +193,7 @@ const Logo = styled.div`
   margin-right: 10px;
 
   img {
-    height: 60px;
+    height: 100px;
   }
 `
 
@@ -191,6 +205,8 @@ const Menu = styled.ul`
 
   li {
     margin: 0 12px;
+    font-size: 15px ;
+    font-weight: bold;
 
     a {
       color: var(--main-text-color);
@@ -211,9 +227,13 @@ const Menu = styled.ul`
 
     a:hover,
     a:active {
-      color: rgb(131, 146, 161);
-      border-bottom: 4px solid var(--title-text-color);
+      color:#8400ff;
     }
+    @media (max-width: 700px) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+  }
   }
 `
 
