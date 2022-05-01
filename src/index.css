@@ -173,7 +173,9 @@ h3 {
   .candy-title,
   .candy-label,
   .candy-value {
-    text-align: left !important;
+    text-align: center !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
   .candy-value {
     margin-top: 20px !important;
