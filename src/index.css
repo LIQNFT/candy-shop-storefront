@@ -73,6 +73,41 @@ h3 {
   color: white;
 }
 
+ /*CANDY MODAL */
+
+.candy-modal-content,
+.candy-order-info {
+  color: white;
+  background-color: #16171A;
+}
+.candy-modal-close-btn .close:before, .candy-modal-close-btn .close:after,
+.candy-modal-close-btn .close:before, .candy-modal-close-btn .close:before {
+  background-color: white;
+}
+.candy-modal-close-btn .close {
+  opacity: 1;
+}
+.candy-order-info {
+  border-radius:  0 0 10px 10px;
+}
+.candy-value a,
+.candy-order-name-container .name {
+  color: #17EF97;
+}
+.wallet-adapter-button-trigger {
+  background-color: #17EF97;
+  color: black;
+}
+.candy-attribute-container .candy-nft-attribute {
+  color: white;
+  background-color: #7a7f92;
+}
+.candy-order-price-container .price {
+  color: #deece7;
+  font-weight: 900;
+  font-size: 14px;
+  color: #17EF97;
+}
 
 /* TITLE */
 .candy-stat-component-container {
@@ -91,4 +126,63 @@ h3 {
   width: 80%;
   margin: auto;
   margin-bottom: 2rem;
+}
+
+
+
+/* MOBILE BUY */
+
+.candy-buy-modal {
+  flex-direction: column;
+}
+.candy-buy-modal .candy-buy-modal-thumbnail {
+  width: 100%;
+  height: auto;
+}
+.candy-buy-modal .candy-buy-modal-container .candy-buy-modal-control {
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.candy-title,
+.candy-label,
+.candy-value {
+  text-align: center;
+}
+.candy-buy-modal .candy-buy-modal-container {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.candy-order-price-container {}
+
+@media screen and (min-width: 800px) {
+  .candy-buy-modal {
+    flex-direction: row;
+    
+  }
+  .candy-buy-modal .candy-buy-modal-thumbnail {
+    width: 350px;
+    height: 340px;
+  }
+  .candy-buy-modal .candy-buy-modal-container .candy-buy-modal-control {
+    flex-direction: row;
+    text-align: left;
+    margin-bottom: 0;
+  }
+  .candy-title,
+  .candy-label,
+  .candy-value {
+    text-align: left;
+  }
+  .candy-value {
+    margin-top: 20px;
+  }
+  .candy-buy-modal .candy-buy-modal-container {
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+
 }
