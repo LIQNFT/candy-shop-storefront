@@ -97,6 +97,7 @@ h3 {
 .wallet-adapter-button-trigger {
   background-color: #17EF97;
   color: black;
+  margin-top: 1rem;
 }
 .candy-attribute-container .candy-nft-attribute {
   color: white;
