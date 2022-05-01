@@ -42,91 +42,91 @@ h3 {
 
 /* Candy Shop styling overrides */
 .css-1wewypr {
-  color: black;
+  color: black !important;
 }
 
 .css-1ago99h {
-  color: black;
+  color: black !important;
 }
 
 /* FILTER */
 .candy-dropdown {
-  background-color: #16171A;
-  color: white;
+  background-color: #16171A !important;
+  color: white !important;
 }
 .menu-middle-item {
-  background-color: #16171A;
-  color: white;
+  background-color: #16171A !important;
+  color: white !important;
 }
 .candy-dropdown-label--purple {
-  color: white;
+  color: white !important;
 }
 .candy-dropdown-label--black {
-  color: white;
+  color: white !important;
 }
 .candy-dropdown-icon svg {
-  color: white;
+  color: white !important;
 }
 
 .candy-dropdown-menu .menu-last-item {
-  background-color: #16171A;
-  color: white;
+  background-color: #16171A !important;
+  color: white !important;
 }
 
  /*CANDY MODAL */
 
 .candy-modal-content,
 .candy-order-info {
-  color: white;
-  background-color: #16171A;
+  color: white !important;
+  background-color: #16171A !important;
 }
 .candy-modal-close-btn .close:before, .candy-modal-close-btn .close:after,
 .candy-modal-close-btn .close:before, .candy-modal-close-btn .close:before {
-  background-color: white;
+  background-color: white !important;
 }
 .candy-modal-close-btn .close {
-  opacity: 1;
+  opacity: 1 !important;
 }
 .candy-order-info {
-  border-radius:  0 0 10px 10px;
+  border-radius:  0 0 10px 10px !important;
 }
 .candy-value a,
 .candy-order-name-container .name {
-  color: #17EF97;
+  color: #17EF97 !important;
 }
 .wallet-adapter-button-trigger {
-  background-color: #17EF97;
-  color: black;
-  margin-top: 1rem;
+  background-color: #17EF97 !important;
+  color: black !important;
+  margin-top: 1rem !important;
 }
 .candy-attribute-container .candy-nft-attribute {
-  color: white;
-  background-color: #7a7f92;
+  color: white !important;
+  background-color: #7a7f92 !important;
 }
 .candy-order-price-container .price {
-  color: #deece7;
-  font-weight: 900;
-  font-size: 14px;
-  color: #17EF97;
+  color: #deece7 !important;
+  font-weight: 900 !important;
+  font-size: 14px !important;
+  color: #17EF97 !important;
 }
 
 /* TITLE */
 .candy-stat-component-container {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 .candy-stat-component-container > * {
-  margin: auto;
+  margin: auto !important;
 }
 .candy-stat-component-title {
-  text-align: center;
+  text-align: center !important;
 }
 .candy-stat-component-description {
-  text-align: center;
-  width: 80%;
-  margin: auto;
-  margin-bottom: 2rem;
+  text-align: center !important;
+  width: 80% !important;
+  margin: auto !important;
+  margin-bottom: 2rem !important;
 }
 
 
@@ -134,53 +134,53 @@ h3 {
 /* MOBILE BUY */
 
 .candy-buy-modal {
-  flex-direction: column;
+  flex-direction: column !important;
 }
 .candy-buy-modal .candy-buy-modal-thumbnail {
-  width: 100%;
-  height: auto;
+  width: 100% !important;
+  height: auto !important;
 }
 .candy-buy-modal .candy-buy-modal-container .candy-buy-modal-control {
-  flex-direction: column;
-  text-align: center;
-  margin-bottom: 1rem;
+  flex-direction: column !important;
+  text-align: center !important;
+  margin-bottom: 1rem !important;
 }
 .candy-title,
 .candy-label,
 .candy-value {
-  text-align: center;
+  text-align: center !important;
 }
 .candy-buy-modal .candy-buy-modal-container {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 .candy-order-price-container {}
 
 @media screen and (min-width: 800px) {
   .candy-buy-modal {
-    flex-direction: row;
+    flex-direction: row !important;
     
   }
   .candy-buy-modal .candy-buy-modal-thumbnail {
-    width: 350px;
-    height: 340px;
+    width: 350px !important;
+    height: 340px !important;
   }
   .candy-buy-modal .candy-buy-modal-container .candy-buy-modal-control {
-    flex-direction: row;
-    text-align: left;
-    margin-bottom: 0;
+    flex-direction: row !important;
+    text-align: left !important;
+    margin-bottom: 0 !important;
   }
   .candy-title,
   .candy-label,
   .candy-value {
-    text-align: left;
+    text-align: left !important;
   }
   .candy-value {
-    margin-top: 20px;
+    margin-top: 20px !important;
   }
   .candy-buy-modal .candy-buy-modal-container {
     margin-top: -20px;
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
   }
 }
 
