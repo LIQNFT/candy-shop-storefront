@@ -1548,10 +1548,10 @@
     qs "^6.10.3"
     solana-candy-shop-schema "git+https://github.com/LIQNFT/solana-candy-shop-schema.git#1e020e95ba24e0f1a70b3c593b6a112eb9cb7687"
 
-"@liqnft/candy-shop@^0.4.35":
-  version "0.4.35"
-  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.4.35.tgz#24a34c9fbf57ad8fd734f26ed45901e76d6228c1"
-  integrity sha512-VxJYUYX8Z1zmF+DkU8RcJJhxwaP0WVXyUEahFoIBWLZwd9ZKSZqjBJ2LptgA9Zo4tlhCFAvyUg5YjOHwtE7KmQ==
+"@liqnft/candy-shop@^0.4.36":
+  version "0.4.36"
+  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.4.36.tgz#152eecdfa6211fa3bfb385d3daafd2de1cc7a17e"
+  integrity sha512-hChtESI0mxokIGS2CWWPyzFQ3WGOgirdyTXacYaXQJCIgmqr7yWtAB9ZNPfu8EkFOMBDhLTURaBIeSG4V5Y01A==
   dependencies:
     "@liqnft/candy-shop-sdk" "0.4.24"
     "@project-serum/anchor" "^0.23.0"
