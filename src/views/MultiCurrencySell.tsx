@@ -1,6 +1,6 @@
 import { CandyShop } from '@liqnft/candy-shop-sdk'
 import { Sell } from '@liqnft/candy-shop'
-import { useConnection, useAnchorWallet } from '@solana/wallet-adapter-react'
+import { useAnchorWallet } from '@solana/wallet-adapter-react'
 import { PublicKey, Cluster } from '@solana/web3.js'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import { useCurrency } from '../components/Currency'
@@ -20,7 +20,6 @@ const DesContainer = styled.div`
 `
 
 const MyCollection: React.FC = () => {
-  const { connection } = useConnection()
   const wallet = useAnchorWallet()
   const { getCurrencySettings } = useCurrency()
   const settings = getCurrencySettings()
@@ -49,7 +48,6 @@ const MyCollection: React.FC = () => {
     <DesContainer>
       <h1 style={{ marginBottom: 30 }}>My Collection</h1>
       <Sell
-        connection={connection}
         wallet={wallet}
         candyShop={candyShop}
         walletConnectComponent={<WalletMultiButton />}
