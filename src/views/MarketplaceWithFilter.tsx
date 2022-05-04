@@ -45,8 +45,8 @@ const MarketplaceWithFilter: React.FC = () => {
         walletConnectComponent={<WalletMultiButton />}
         // configure filter by collection
         filters={[
-          {name: 'Sword', identifier: -280213123 },
-          {name: 'Happy', identifier: -38328789 },
+          {name: 'Puppies', identifier: 2036309415 },
+          {name: 'Smilies', identifier: -38328789 },
         ]}
       />
     </DesContainer>
