@@ -1536,10 +1536,17 @@
   resolved "https://registry.yarnpkg.com/@ledgerhq/logs/-/logs-6.10.0.tgz#c012c1ecc1a0e53d50e6af381618dca5268461c1"
   integrity sha512-lLseUPEhSFUXYTKj6q7s2O3s2vW2ebgA11vMAlKodXGf5AFw4zUoEbTz9CoFOC9jS6xY4Qr8BmRnxP/odT4Uuw==
 
+<<<<<<< HEAD
 "@liqnft/candy-shop-sdk@0.4.13":
   version "0.4.13"
   resolved "https://registry.yarnpkg.com/@liqnft/candy-shop-sdk/-/candy-shop-sdk-0.4.13.tgz#b776996af304067d92d22b5d76a3001915ae9cce"
   integrity sha512-/j1yRhENwViExIFRFongO/XyqIqkTDx8MdPtM4EL01Ol7Yu5m7iZQOOR/AyFSpHv6SNLMsQ2mxWVYGX7/mhbJA==
+=======
+"@liqnft/candy-shop-sdk@0.4.24":
+  version "0.4.24"
+  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop-sdk/-/candy-shop-sdk-0.4.24.tgz#46196c0c330e4b1484fdb1c93b7458f3d939a3de"
+  integrity sha512-5JutDDD+ke5+3SbYvGRWbMAPM13dMH4EspO18UzLB8HtwdqWv2GNr2uPsD0p8BjU65HkhzIq57nJ2WeoibC9TQ==
+>>>>>>> a32e664b4b604e93842e838c381df2f2203640ea
   dependencies:
     "@project-serum/anchor" "^0.23.0"
     "@solana/spl-token" "^0.2.0"
@@ -1548,12 +1555,21 @@
     qs "^6.10.3"
     solana-candy-shop-schema "git+https://github.com/LIQNFT/solana-candy-shop-schema.git#73ba87363932ab8e3571f2266a2fd4e8e630b085"
 
+<<<<<<< HEAD
 "@liqnft/candy-shop@^0.4.28":
   version "0.4.28"
   resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.4.28.tgz#655c05ff28108959f1669baf8d78375204a6a3c6"
   integrity sha512-Ue35tpmZGUL/pl9v4x0pJ0YVlaMC9e4sgfqo7F2FbLm6Uue9qMbgZKgXJsXzD3m8gtB2m5TBPRsJMCBtv9SryA==
   dependencies:
     "@liqnft/candy-shop-sdk" "0.4.13"
+=======
+"@liqnft/candy-shop@^0.4.36":
+  version "0.4.36"
+  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.4.36.tgz#152eecdfa6211fa3bfb385d3daafd2de1cc7a17e"
+  integrity sha512-hChtESI0mxokIGS2CWWPyzFQ3WGOgirdyTXacYaXQJCIgmqr7yWtAB9ZNPfu8EkFOMBDhLTURaBIeSG4V5Y01A==
+  dependencies:
+    "@liqnft/candy-shop-sdk" "0.4.24"
+>>>>>>> a32e664b4b604e93842e838c381df2f2203640ea
     "@project-serum/anchor" "^0.23.0"
     "@solana/spl-token" "^0.2.0"
     "@solana/wallet-adapter-react" "^0.15.0"
