@@ -106,7 +106,8 @@ h3 {
 .candy-order-price-container .price {
   color: #deece7 !important;
   font-weight: 900 !important;
-  font-size: 14px !important;
+  font-size: 12px !important;
+  text-align: left;
   color: #17EF97 !important;
 }
 
