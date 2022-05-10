@@ -41,7 +41,7 @@ const CustomTokenMarketplace: React.FC = () => {
       <Stat
         candyShop={candyShopRef.current}
         title={'WOOFers Marketplace'}
-        description={'A collection of 5,555 WOOFers woofing on the Solana Blockchain. Each WOOFer NFT gives access to the WOOF DAO which will be used to govern the future of the project.'}
+        description={'A collection WOOFers, Gen1 Art and other befriended NFT collections on Solana. The only true currency of this marketplace is WOOF.'}
         style={{ paddingBottom: 50, paddingTop: 50 }}
       />
       <Orders
