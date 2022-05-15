@@ -32,7 +32,7 @@ const Marketplace: React.FC = () => {
       <Stat
         candyShop={candyShopRef.current}
         title={'Marketplace'}
-        description={'Candy Shop is an open source on-chain protocol that empowers DAOs, NFT projects and anyone interested in creating an NFT marketplace to do so within minutes!'}
+        description={''}
         style={{ paddingBottom: 50 }}
       />
       <Orders
