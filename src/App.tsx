@@ -28,7 +28,10 @@ import MarketplaceWithUrl from './views/MarketplaceWithUrl'
 import MultiCurrencyMarketplace from './views/MultiCurrencyMarketplace'
 import MultiCurrencySell from './views/MultiCurrencySell'
 import MyCollection from './views/MyCollection'
+import NFTDisplay from './views/Fetch'
 import SingleOrder from './views/SingleOrder'
+import Footer from './components/Footer'
+import ClaimQubes from './views/ClaimQubes'
 
 require('@solana/wallet-adapter-react-ui/styles.css')
 
@@ -110,7 +113,17 @@ const App = () => {
               <main>
                 <MainContainer>
                   <Routes>
-                    <Route
+                  <Route
+                      path='/'
+                      element={(
+                        <>
+                          <TopNav />
+                          <Marketplace />
+                          
+                        </>
+                      )}
+                    />
+                    {/* <Route
                       path='/'
                       element={(
                         <>
@@ -123,7 +136,7 @@ const App = () => {
                           />
                         </>
                       )}
-                    />
+                    /> */}
                     <Route
                       path='/marketplace/:tokenMint'
                       element={(
@@ -143,7 +156,7 @@ const App = () => {
                       )}
                     />
                     <Route
-                      path='/sell'
+                      path='/poZxCBHNsdSwErewqHQSELLlkGfsfGhJZCcxsDDxcdaswevJCiGopcxasedWarDfiGderUrghh'
                       element={
                         <>
                           <TopNav />
@@ -151,6 +164,28 @@ const App = () => {
                         </>
                       }
                     />
+                    
+                  {/* For Claim qubes here */}
+                    <Route
+                      path='/claimqubes'
+                      element={
+                        <>
+                          <TopNav />
+                          <ClaimQubes />
+                        </>
+                      }
+                    />
+
+<Route
+                      path='/fetch'
+                      element={
+                        <>
+                          <TopNav />
+                          <NFTDisplay />
+                        </>
+                      }
+                    />
+
                     <Route
                       path='/custom-token-marketplace'
                       element={
@@ -199,6 +234,7 @@ const App = () => {
                   </Routes>
                 </MainContainer>
               </main>
+              <Footer />
             </WalletModalProvider>
           </CurrencyProvider>
         </WalletProvider>

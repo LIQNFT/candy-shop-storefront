@@ -52,22 +52,54 @@ const TopNav: React.FC<TopNavProps> = ({
 
   return (
     <HeaderBar>
+      <div className='container' style={{
+        display: 'flex',
+      }}>
       <Logo>
-        <Link to='/'>
-          <img alt='' src='/logo.png' />
+        <Link to='/marketplace'>
+          <img alt='' src='/Homeqube-logo-black_small 1.svg' />
         </Link>
       </Logo>
       <Menu>
-        <li>
-          <Link to='/'>Home</Link>
+        <li className='mx-5 mt-4'>
+          <a href="https://www.homeqube.ai/" key={'homeqube'} target="_blank" rel="noreferrer">
+          BETA
+          </a>
         </li>
-        <li>
+       
+        <li className='mx-5 mt-4'>
+          <Link to='/claimqubes'>CLAIM <br /> QUBES</Link>
+        </li>
+        <li className='mx-5 mt-4'>
+          <Link to='/fetch'>MY <br /> COLLECTION</Link>
+        </li>
+
+        <li className='mx-5 mt-4'>
+          <a href="https://www.qube.homeqube.com/" key={'qube'} target="_blank" rel="noreferrer">
+          ICO <br /> WEBISTE
+          </a>
+        </li>
+        {/* <li className='mx-3'>
           <Link to='/marketplace'>Marketplace</Link>
+        </li> */}
+        {/* <li className='mx-5 mt-4'>
+          <Link to='/sell'>SELL</Link>
+        </li> */}
+        <li className='mx-3 mt-4'>
+        <a href="https://t.me/homeqube" key={'telegram'} target="_blank" rel="noreferrer">
+          <button className="exchange-button-more btn rounded-pill" type="button">
+            JOIN TELEGRAM
+          </button>
+        </a>
         </li>
-        <li>
-          <Link to='/sell'>Sell</Link>
+        <li className='mx-3 mt-4'>
+        <a href="https://discord.gg/JhQXmjm59e" key={'telegram'} target="_blank" rel="noreferrer">
+          <button className="exchange-button-more2 btn rounded-pill" type="button">
+            JOIN DISCORD
+          </button>
+        </a>
         </li>
-        <DropdownAnchor ref={anchorRef} onClick={handleToggle}>
+        {/* <DropdownAnchor ref={anchorRef} onClick={handleToggle}>
           Other Layouts
           <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
             {({ TransitionProps, placement }) => (
@@ -84,7 +116,7 @@ const TopNav: React.FC<TopNavProps> = ({
               </Paper>
             )}
           </Popper>
-        </DropdownAnchor>
+        </DropdownAnchor> */}
       </Menu>
       { showCurrencyToggle && <CurrencyToggle />}
       <Wallet>
@@ -94,6 +126,7 @@ const TopNav: React.FC<TopNavProps> = ({
           <ConnectButton>Connect Wallet</ConnectButton>
         )}
       </Wallet>
+      </div>
     </HeaderBar>
   )
 }
@@ -172,6 +205,7 @@ const ConnectButton = styled(WalletMultiButton)`
   padding: 6px 16px;
   background-color: #4e44ce;
   margin: 0 auto;
+  margin-top: 1.5rem !important;
 `
 
 const Logo = styled.div`
@@ -179,7 +213,7 @@ const Logo = styled.div`
   margin-right: 10px;
 
   img {
-    height: 60px;
+    height: 7rem;
   }
 `
 
