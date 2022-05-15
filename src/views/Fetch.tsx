@@ -10,6 +10,7 @@ import {
 import "@solana/wallet-adapter-react-ui/styles.css";
 import React from "react";
 import { FunctionsOutlined } from "@material-ui/icons";
+import { getConstantValue } from "typescript";
 
 const Container = styled("div")`
   width: 100%;
@@ -108,11 +109,22 @@ const NFTDisplay = () => {
       }
     }
   }, [anchorWallet, isFetching]);
+
+// const [modalIsOpen, setModalOpen] = useState(false);
+// function modalhandler()
+// {
+  
+//   setModalOpen(true);
+// }
   const [modal, setModal] = useState(false);
+  const [nftname, setNftname] = useState('');
+  // var nftImage = document.getElementById('nftImage');
 
   const toggleModal = () => {
+    setNftname(nftname);
     setModal(!modal);
-  };
+    
+  }
 
   if(modal) {
     document.body.classList.add('active-modal')
@@ -132,8 +144,8 @@ const NFTDisplay = () => {
         {metaData?.length > 0 &&
           metaData.map((data: any, index: number) => (
             <>
-            
-            <div className="card m-2">
+
+      <div className="card  m-2">
             <button onClick={toggleModal}  className="card-borders ">
                 <div className="imgcon">
                 <NFTImage className="imgNFT"
@@ -147,42 +159,38 @@ const NFTDisplay = () => {
                     {`${data.name}`}
                     </p>
                 </div>
-               </button>
-              </div>
-
+              </button>
+        </div>
+            {modal && (
+          <div className="modal">
+            <div onClick={toggleModal} className="overlay"></div>
+            <div className="modal-content">
+            <div className="modal-header">
+                <div className="modal-title">
+                <h4>{`${data.name}`}</h4>
+                </div>
+                <button className="btn-close" onClick={toggleModal}>
+              </button>
+            </div>
+            <div className="modal-body">
+            <img src={`${data.image}`} />
+            </div>
+            <div className="modal-footer">
+            <a href={`${data.animation_url}`} download rel="noopener noreferrer" target="_blank" className="ahref">
+            <button className="exchange-button-more2 btn rounded-pill" type="button">
+                  Download GLB
+            </button>
+            </a>
+            </div>
               
-
-             
-              {/*  */}
+            </div>
+          </div>  
+          )}
             </>
           ))}
       </ImageContainer>
-      {modal && (
-        <div className="modal">
-          <div onClick={toggleModal} className="overlay"></div>
-          <div className="modal-content">
-           <div className="modal-header">
-              <div className="modal-title">
-                <h4>Title</h4>
-              </div>
-              <button className="btn-close" onClick={toggleModal}>
-            </button>
-           </div>
-           <div className="modal-body">
-           <img  src="https://hqnftstorage.blob.core.windows.net/gif/square_0001.gif" />
-           </div>
-           <div className="modal-footer">
-           <button className="exchange-button-more2 btn rounded-pill" type="button">
-            DOWNLOAD GLB
-          </button>
-          <button className="exchange-button-more2 btn rounded-pill" type="button">
-            DOWNLOAD STL
-          </button>
-           </div>
-            
-          </div>
-        </div>
-      )}
+      
+
     </Container>
   );
 };
