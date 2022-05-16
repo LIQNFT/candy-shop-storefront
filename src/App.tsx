@@ -31,6 +31,7 @@ import MyCollection from './views/MyCollection'
 import SingleOrder from './views/SingleOrder'
 import Footer from './components/Footer'
 import ClaimQubes from './views/ClaimQubes'
+import Fetch from './views/Fetch'
 
 require('@solana/wallet-adapter-react-ui/styles.css')
 
@@ -174,17 +175,16 @@ const App = () => {
                         </>
                       }
                     />
-
-<Route
+                    <Route
                       path='/fetch'
                       element={
                         <>
                           <TopNav />
-                         
+                          <Fetch />
                         </>
                       }
                     />
-
+                  
                     <Route
                       path='/custom-token-marketplace'
                       element={
