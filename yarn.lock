@@ -1536,34 +1536,41 @@
   resolved "https://registry.yarnpkg.com/@ledgerhq/logs/-/logs-6.10.0.tgz#c012c1ecc1a0e53d50e6af381618dca5268461c1"
   integrity sha512-lLseUPEhSFUXYTKj6q7s2O3s2vW2ebgA11vMAlKodXGf5AFw4zUoEbTz9CoFOC9jS6xY4Qr8BmRnxP/odT4Uuw==
 
-"@liqnft/candy-shop-sdk@0.4.24":
-  version "0.4.24"
-  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop-sdk/-/candy-shop-sdk-0.4.24.tgz#46196c0c330e4b1484fdb1c93b7458f3d939a3de"
-  integrity sha512-5JutDDD+ke5+3SbYvGRWbMAPM13dMH4EspO18UzLB8HtwdqWv2GNr2uPsD0p8BjU65HkhzIq57nJ2WeoibC9TQ==
+"@liqnft/candy-shop-sdk@0.4.31":
+  version "0.4.31"
+  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop-sdk/-/candy-shop-sdk-0.4.31.tgz#c0da38ca395bed8439c496f25d5363e51d8a8fed"
+  integrity sha512-7nX+al5Tjj/Nr2YKBOiP3PO9zVPx+qVcP5+FqHNUOKvil7NKfFNZdCWiGm7fZgkEm/cEi+qTyK1r3bNvmZEvTg==
   dependencies:
+    "@liqnft/candy-shop-types" "^0.1.4"
     "@project-serum/anchor" "^0.23.0"
     "@solana/spl-token" "^0.2.0"
+    "@solana/wallet-adapter-react" "^0.15.4"
     axios "^0.26.1"
     crc-32 "^1.2.2"
     qs "^6.10.3"
-    solana-candy-shop-schema "git+https://github.com/LIQNFT/solana-candy-shop-schema.git#1e020e95ba24e0f1a70b3c593b6a112eb9cb7687"
 
-"@liqnft/candy-shop@^0.4.36":
-  version "0.4.36"
-  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.4.36.tgz#152eecdfa6211fa3bfb385d3daafd2de1cc7a17e"
-  integrity sha512-hChtESI0mxokIGS2CWWPyzFQ3WGOgirdyTXacYaXQJCIgmqr7yWtAB9ZNPfu8EkFOMBDhLTURaBIeSG4V5Y01A==
+"@liqnft/candy-shop-types@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop-types/-/candy-shop-types-0.1.4.tgz#aaf240b1c4898442cf1878a11c2586b193a0deb4"
+  integrity sha512-43ri71gEI+hVISaK3z9AVUIbtDnSBnhqReDiMS+DB5eWNRiI594RBPhDU3muypRc/Nlpc+kZDmEAUfB/axu8Pw==
+
+"@liqnft/candy-shop@^0.4.43":
+  version "0.4.43"
+  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.4.43.tgz#c47e465dd4e02d1cf363f448d7f8745ce04665d0"
+  integrity sha512-L9khUQQgPRkfGLrMd6m5BAzHTo1lnA/AF+AHzzTBvkUtVO3ynl76o4e9mdMX3hj1MSAzGXQP/9LNrtUswLt24Q==
   dependencies:
-    "@liqnft/candy-shop-sdk" "0.4.24"
+    "@liqnft/candy-shop-sdk" "0.4.31"
+    "@liqnft/candy-shop-types" "^0.1.4"
     "@project-serum/anchor" "^0.23.0"
     "@solana/spl-token" "^0.2.0"
     "@solana/wallet-adapter-react" "^0.15.0"
     "@solana/wallet-adapter-wallets" "^0.11.0"
     axios "^0.26.1"
     crc-32 "^1.2.2"
+    dayjs "^1.11.1"
     qs "^6.10.3"
     rc-notification "^4.5.7"
     react-infinite-scroll-component "^6.1.0"
-    solana-candy-shop-schema "git+https://github.com/LIQNFT/solana-candy-shop-schema.git#1e020e95ba24e0f1a70b3c593b6a112eb9cb7687"
 
 "@material-ui/core@^4.12.3":
   version "4.12.4"
@@ -1935,7 +1942,7 @@
   resolved "https://registry.yarnpkg.com/@solana/wallet-adapter-react/-/wallet-adapter-react-0.13.1.tgz#7014f85b4d60a1c2b0e8c72c12baa0b1b5172854"
   integrity sha512-Sk45AuOF8EgmR28zcib5NquvOwTpBlyDA8Iku1MVdXUQ9giA/tBwfJw21HIf1r+TVepg+V0xAP5FhP+MX0p6QQ==
 
-"@solana/wallet-adapter-react@^0.15.0":
+"@solana/wallet-adapter-react@^0.15.0", "@solana/wallet-adapter-react@^0.15.4":
   version "0.15.4"
   resolved "https://registry.yarnpkg.com/@solana/wallet-adapter-react/-/wallet-adapter-react-0.15.4.tgz#413c3fa6893e9d809e5a6dd4730695fba942967b"
   integrity sha512-QB8tE1IqYxvHrdDZP3DGICuCq6xydvjUYhW+usIahORmHniFF62Mp/LPfdAGZRDFF7U2/rZPktGFiOxWUJA7Qw==
@@ -4840,6 +4847,11 @@ data-urls@^2.0.0:
     abab "^2.0.3"
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
+
+dayjs@^1.11.1:
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.2.tgz#fa0f5223ef0d6724b3d8327134890cfe3d72fbe5"
+  integrity sha512-F4LXf1OeU9hrSYRPTTj/6FbO4HTjPKXvEIC1P2kcnFurViINCVk3ZV0xAS3XVx9MkMsXbbqlK6hjseaYbgKEHw==
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.9:
   version "2.6.9"
@@ -11344,10 +11356,6 @@ sockjs@^0.3.21:
     faye-websocket "^0.11.3"
     uuid "^8.3.2"
     websocket-driver "^0.7.4"
-
-"solana-candy-shop-schema@git+https://github.com/LIQNFT/solana-candy-shop-schema.git#1e020e95ba24e0f1a70b3c593b6a112eb9cb7687":
-  version "1.0.0"
-  resolved "git+https://github.com/LIQNFT/solana-candy-shop-schema.git#1e020e95ba24e0f1a70b3c593b6a112eb9cb7687"
 
 sort-keys@^1.0.0:
   version "1.1.2"

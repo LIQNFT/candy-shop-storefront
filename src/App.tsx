@@ -28,7 +28,7 @@ import MarketplaceWithUrl from './views/MarketplaceWithUrl'
 import MultiCurrencyMarketplace from './views/MultiCurrencyMarketplace'
 import MultiCurrencySell from './views/MultiCurrencySell'
 import MyCollection from './views/MyCollection'
-import NFTDisplay from './views/Fetch'
+
 import SingleOrder from './views/SingleOrder'
 import Footer from './components/Footer'
 import ClaimQubes from './views/ClaimQubes'
@@ -181,7 +181,7 @@ const App = () => {
                       element={
                         <>
                           <TopNav />
-                          <NFTDisplay />
+                         
                         </>
                       }
                     />
