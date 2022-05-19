@@ -378,3 +378,13 @@ body.active-modal {
   border-bottom-right-radius: calc(.3rem - 1px);
   border-bottom-left-radius: calc(.3rem - 1px);
 }
+.solLogo{
+  float: left;
+  height: 30px;
+  margin-right: .5rem;
+}
+.solLogoPrice{
+  float: left;
+  height: 20px;
+  margin-right: .5rem;
+}

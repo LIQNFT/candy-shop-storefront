@@ -20,7 +20,6 @@ import styled from 'styled-components'
 
 import TopNav from './components/TopNav'
 import { CurrencyProvider } from './components/Currency'
-import Home from './views/Home'
 import Marketplace from './views/Marketplace'
 import CustomTokenMarketplace from './views/CustomTokenMarketplace'
 import MarketplaceWithFilter from './views/MarketplaceWithFilter'

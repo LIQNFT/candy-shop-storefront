@@ -72,7 +72,9 @@ export const Stat: React.FC<StatProps> = ({ title, description, style, candyShop
             <div className="candy-stat-component-title">{title}</div>
             <div className="candy-stat-component-description">{description}</div>
           </div>
-          <div className="candy-stat-component-table">
+          <div className="candy-stat-component-table" style={{
+            justifyContent: 'flex-end'
+          }}>
             <div className="candy-stat-component-item">
               <div className="candy-label">FLOOR PRICE</div>
               <div className="candy-value-lg">
@@ -83,12 +85,12 @@ export const Stat: React.FC<StatProps> = ({ title, description, style, candyShop
               <div className="candy-label">TOTAL LISTED</div>
               <div className="candy-value-lg">{totalListed}</div>
             </div>
-            <div className="candy-stat-component-item">
+            {/* <div className="candy-stat-component-item">
               <div className="candy-label">VOLUME</div>
               <div className="candy-value-lg">
                 {totalVolume} {candyShop.currencySymbol}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

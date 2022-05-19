@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { CandyShop } from '@liqnft/candy-shop-sdk'
-import { Orders, Stat } from '@liqnft/candy-shop'
+import { Orders } from '../public/Orders'
+import { Stat } from '../public/Stat'
 import { useAnchorWallet } from '@solana/wallet-adapter-react'
 import { PublicKey, Cluster } from '@solana/web3.js'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
@@ -31,7 +32,7 @@ const Marketplace: React.FC = () => {
     <DesContainer>
       <Stat
         candyShop={candyShopRef.current}
-        title={'Marketplace'}
+        title={''}
         description={''}
         style={{ paddingBottom: 50 }}
       />

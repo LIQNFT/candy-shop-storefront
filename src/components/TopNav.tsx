@@ -52,9 +52,6 @@ const TopNav: React.FC<TopNavProps> = ({
 
   return (
     <HeaderBar>
-      <div className='container' style={{
-        display: 'flex',
-      }}>
       <Logo>
         <Link to='/marketplace'>
           <img alt='' src='/Homeqube-logo-black_small 1.svg' />
@@ -62,28 +59,37 @@ const TopNav: React.FC<TopNavProps> = ({
       </Logo>
       <Menu>
         <li className='mx-5 mt-4'>
-          <a href="https://www.homeqube.ai/" key={'homeqube'} target="_blank" rel="noreferrer">
-          BETA
+          <a href="#" key={'homeqube'} target="_blank" rel="noreferrer">
+          NFT <br/> COLLECTIONS
           </a>
         </li>
-       
         <li className='mx-5 mt-4'>
           <Link to='/claimqubes'>CLAIM <br /> QUBES</Link>
         </li>
         <li className='mx-5 mt-4'>
           <Link to='/fetch'>MY <br /> COLLECTION</Link>
         </li>
-
         <li className='mx-5 mt-4'>
-          <a href="https://www.qube.homeqube.com/" key={'qube'} target="_blank" rel="noreferrer">
-          ICO <br /> WEBISTE
+          <a href="#" key={'homeqube'} target="_blank" rel="noreferrer">
+            FAQS
           </a>
         </li>
+       
         {/* <li className='mx-3'>
           <Link to='/marketplace'>Marketplace</Link>
         </li> */}
         {/* <li className='mx-5 mt-4'>
           <Link to='/sell'>SELL</Link>
+        </li> */}
+        <li className='mx-5 mt-4'>
+          <a href="https://www.homeqube.ai/" key={'homeqube'} target="_blank" rel="noreferrer">
+          BETA
+          </a>
+        </li>
+         {/* <li className='mx-5 mt-4'>
+          <a href="https://www.qube.homeqube.com/" key={'qube'} target="_blank" rel="noreferrer">
+          ICO <br /> WEBISTE
+          </a>
         </li> */}
         <li className='mx-3 mt-4'>
         <a href="https://t.me/homeqube" key={'telegram'} target="_blank" rel="noreferrer">
@@ -126,7 +132,6 @@ const TopNav: React.FC<TopNavProps> = ({
           <ConnectButton>Connect Wallet</ConnectButton>
         )}
       </Wallet>
-      </div>
     </HeaderBar>
   )
 }

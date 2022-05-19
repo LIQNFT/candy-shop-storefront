@@ -10,7 +10,12 @@ export interface NftStatProps {
 
 export const NftStat: React.FC<NftStatProps> = ({ tokenMint, edition, owner, animation_url}) => {
   return (
-    <div className="candy-stat-horizontal">
+    <div className="candy-stat-horizontal" style={{
+      justifyContent: 'space-between'
+    }}>
+      <div style={{
+        display: 'flex'
+      }}>
       <div>
         <div className="candy-label">MINT ADDRESS</div>
         <div className="candy-value">
@@ -19,7 +24,7 @@ export const NftStat: React.FC<NftStatProps> = ({ tokenMint, edition, owner, ani
       </div>
       {edition && edition !== '0' ? (
         <>
-          <div className="candy-stat-horizontal-line" />
+          <div className="candy-stat-horizontal-line mx-2" />
           <div>
             <div className="candy-label">EDITION</div>
             <div className="candy-value">{edition}</div>
@@ -28,7 +33,7 @@ export const NftStat: React.FC<NftStatProps> = ({ tokenMint, edition, owner, ani
       ) : null}
       {owner ? (
         <>
-          <div className="candy-stat-horizontal-line" />
+          <div className="candy-stat-horizontal-line mx-2" />
           <div>
             <div className="candy-label">OWNER</div>
             <div className="candy-value">
@@ -39,7 +44,7 @@ export const NftStat: React.FC<NftStatProps> = ({ tokenMint, edition, owner, ani
       ) : null}
        {animation_url ? (
         <>
-          <div className="candy-stat-horizontal-line" />
+          <div className="candy-stat-horizontal-line mx-2" />
           <div>
             <div className="candy-label">Animation URL</div>
             <div className="candy-value">
@@ -48,6 +53,29 @@ export const NftStat: React.FC<NftStatProps> = ({ tokenMint, edition, owner, ani
           </div>
         </>
       ) : null}
+      </div>
+      <div>
+          <a
+            href="https://www.instagram.com/homeqube.ai/"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="flink-icon"
+          >
+            <img
+              className="footer-icon me-2 mr-1"
+              src="./instagram.svg"
+              alt=""
+            />
+          </a>
+          <a
+            href="https://twitter.com/homeqube_ai"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="flink-icon"
+          >
+            <img className="footer-icon me-2 mx-1" src="./twitter.svg" alt="" />
+          </a>
+        </div>
     </div>
   );
 };
