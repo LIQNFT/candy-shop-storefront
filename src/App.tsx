@@ -31,6 +31,10 @@ import SingleOrder from './views/SingleOrder'
 import Footer from './components/Footer'
 import ClaimQubes from './views/ClaimQubes'
 import Fetch from './views/Fetch'
+import NFTCollections from './views/NFTCollections'
+import Terms from './views/Terms'
+import Policy from './views/Policy'
+
 
 require('@solana/wallet-adapter-react-ui/styles.css')
 
@@ -137,6 +141,15 @@ const App = () => {
                       )}
                     /> */}
                     <Route
+                      path='/nftcollection'
+                      element={(
+                        <>
+                          <TopNav />
+                          <NFTCollections />
+                        </>
+                      )}
+                    />
+                    <Route
                       path='/marketplace/:tokenMint'
                       element={(
                         <>
@@ -175,11 +188,29 @@ const App = () => {
                       }
                     />
                     <Route
-                      path='/fetch'
+                      path='/mycollection'
                       element={
                         <>
                           <TopNav />
                           <Fetch />
+                        </>
+                      }
+                    />
+                    <Route
+                      path='/terms'
+                      element={
+                        <>
+                          <TopNav />
+                          <Terms />
+                        </>
+                      }
+                    />
+                    <Route
+                      path='/policy'
+                      element={
+                        <>
+                          <TopNav />
+                          <Policy />
                         </>
                       }
                     />
@@ -229,6 +260,7 @@ const App = () => {
                         </>
                       }
                     />
+                    
                   </Routes>
                 </MainContainer>
               </main>

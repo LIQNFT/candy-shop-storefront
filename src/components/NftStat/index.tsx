@@ -54,8 +54,18 @@ export const NftStat: React.FC<NftStatProps> = ({ tokenMint, edition, owner, ani
         </>
       ) : null}
       </div>
-      <div>
-          <a
+      <div className='shareButton'>
+      <button className="exchange-button-more2 btn rounded-pill mb-2" type="button">
+            SHARE ON FACEBOOK
+      </button>
+      
+      <a href="https://twitter.com/share?url=https://hqnftrialv2.xyz" target="_blank" rel="noreferrer noopener pt-3" className='flink-icon'>
+      <button className="exchange-button-more2 btn rounded-pill" type="button">
+            SHARE ON TWITTER
+      </button>
+      </a>
+      
+          {/* <a
             href="https://www.instagram.com/homeqube.ai/"
             target="_blank"
             rel="noreferrer noopener"
@@ -74,7 +84,7 @@ export const NftStat: React.FC<NftStatProps> = ({ tokenMint, edition, owner, ani
             className="flink-icon"
           >
             <img className="footer-icon me-2 mx-1" src="./twitter.svg" alt="" />
-          </a>
+          </a> */}
         </div>
     </div>
   );

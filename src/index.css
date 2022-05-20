@@ -140,7 +140,6 @@ footer {
   letter-spacing: 0.15px;
   text-transform: uppercase;
   color: #d7d7d8 !important;
-  margin-left: 35px
 }
 
 .exchange-button-more:hover {
@@ -244,8 +243,8 @@ footer {
 }
 .imgNFT
 {
-  height: 230px;
-  width: 230px;
+  height: auto;
+  width: 160px;
 }
 .cubeName
 {
@@ -253,18 +252,18 @@ footer {
     height: 20px;
     background-color: #FFFFFF;
     align-items: center;
-    padding-left: 20px;
     padding-bottom: 2rem
 }
 .name
 {
     font-weight: 600;
-    font-size: 17px;
-    line-height: 26px;
+    font-size: 14px;
+    line-height: 15px;
     color: #28282D;
 
     background-color: #FFFFFF;
     font-style: normal;
+    text-align: left;
 }
 .desname
 {
@@ -273,7 +272,7 @@ footer {
     background-color: #FFFFFF ;
     width: 100%;
     font-weight: 600;
-    text-align: center;
+    text-align: left;
 }
 .modal-body{
   margin: auto;
@@ -387,4 +386,171 @@ body.active-modal {
   float: left;
   height: 20px;
   margin-right: .5rem;
+}
+.solLogoFloorPrice{
+  height: 30px;
+  margin-right: .5rem;
+}
+.border-none{
+  border: none;
+}
+.system-title{
+  font-family: 'Rajdhani';
+  font-style: normal;;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 5rem;
+  
+  
+  background: linear-gradient(180deg, #CBCBCB 0%, rgba(154, 154, 154, 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.bgTitle{
+  background-image: url("../src/blockchain-technology-background-gradient-blue\ 1.svg");
+  height: 120px !important;
+}
+.bgTitle2{
+  background-image: url("../src/Mask\ group.svg");
+  height: 120px !important;
+}
+.bgTitle3{
+  background-image: url("../src/Mask\ group\ 2.svg");
+  height: 120px !important;
+}
+.bgTitle4{
+  background-image: url("../src/Mask\ group\ 3.svg");
+  height: 120px !important;
+}
+.bgTitle5{
+  background-image: url("../src/Mask\ group\ 4.svg");
+  height: 120px !important;
+}
+.concepts-title{
+  font-family: 'Rajdhani';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 4rem;
+  line-height: 5rem;
+  z-index: 10;
+  /* identical to box height */
+  
+  
+  background: linear-gradient(180deg, #CBCBCB 0%, rgba(154, 154, 154, 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  position: absolute;
+  top: 21%;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.concepts-title2{
+  font-family: 'Rajdhani';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 5rem;
+  z-index: 10;
+  /* identical to box height */
+  
+  
+  background: linear-gradient(180deg, #CBCBCB 0%, rgba(154, 154, 154, 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  position: absolute;
+  top: 21%;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: row !important;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  justify-content: space-around;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  margin-left: .5rem;
+}
+.cards{
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  justify-content: space-around;
+  height: 21rem;
+}
+.on{
+  font-weight: bolder
+}
+.carbon-content-header {
+  text-align: left;
+  margin-top: 20px;
+  font-family: "Rajdhani", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000000;
+}
+.carbon-content-message {
+  text-align: left;
+  font-family: "Rajdhani", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  color: #5a5a5a;
+}
+.carbon-content-frame {
+  top: 15px;
+  position: relative;
+}
+.carbon-benefits-container {
+  background-color: #e0e0e0;
+}
+.carbon-benefits-content {
+  color: #5a5a5a;
+  font-weight: bold;
+  padding-top: 20px;
+  text-align: left;
+}
+.carbon-benefits-content-head{
+  color: #5a5a5a;
+  font-weight: bold;
+  text-align: left;
+  font-size: 1.25em;
+}
+
+
+.carbon-text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  color: #5a5a5a;
+  text-align: left;
+}
+
+
+
+
+.carbon-text-blog {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  color: #5a5a5a;
+  text-align: left;
+}
+.shareButton{
+  display: flex;
+  flex-direction: column;
 }

@@ -78,7 +78,8 @@ export const Stat: React.FC<StatProps> = ({ title, description, style, candyShop
             <div className="candy-stat-component-item">
               <div className="candy-label">FLOOR PRICE</div>
               <div className="candy-value-lg">
-                {floorPrice === null ? 'N/A' : `${floorPrice} ${candyShop.currencySymbol}`}
+              <img src="./solLogo.svg" className="solLogoFloorPrice" alt="" />
+                {floorPrice === null ? 'N/A' : `${floorPrice}`}
               </div>
             </div>
             <div className="candy-stat-component-item">

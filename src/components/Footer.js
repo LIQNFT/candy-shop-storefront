@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 // function Footer()
 // {
@@ -115,9 +116,11 @@ function Footer()
                             <p className="footer-text-2 mt-2">
                                 about@homeqube.com
                                 <br/>
-                                Terms of Use
+                                <Link to='/terms' className='ahref'>Terms of Use</Link>
+                                {/* <a href='' className='ahref'>Terms of Use</a> */}
                                 <br/>
-                                Privacy Policy
+                                <Link to='/policy' className='ahref'>Privacy Policy</Link>
+                                {/* <a href='https://www.qube.homeqube.com/terms.html' className='ahref'>Privacy Policy</a> */}
                                 <br/>
                                 Homeqube Pte. Ltd.™
                             </p>

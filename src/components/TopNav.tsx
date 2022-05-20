@@ -59,15 +59,13 @@ const TopNav: React.FC<TopNavProps> = ({
       </Logo>
       <Menu>
         <li className='mx-5 mt-4'>
-          <a href="#" key={'homeqube'} target="_blank" rel="noreferrer">
-          NFT <br/> COLLECTIONS
-          </a>
+        <Link to='/nftcollection'>NFT <br/> COLLECTIONS</Link>
         </li>
         <li className='mx-5 mt-4'>
           <Link to='/claimqubes'>CLAIM <br /> QUBES</Link>
         </li>
         <li className='mx-5 mt-4'>
-          <Link to='/fetch'>MY <br /> COLLECTION</Link>
+          <Link to='/mycollection'>MY <br /> COLLECTION</Link>
         </li>
         <li className='mx-5 mt-4'>
           <a href="#" key={'homeqube'} target="_blank" rel="noreferrer">
