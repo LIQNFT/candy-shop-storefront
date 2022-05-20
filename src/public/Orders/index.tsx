@@ -151,7 +151,9 @@ export const Orders: React.FC<OrdersProps> = ({
     return (
       <div className="candy-orders-container" style={style}>
         <div className="candy-container">
-          <div className="candy-orders-sort candy-orders-sort-right">
+          <div className="candy-orders-sort candy-orders-sort-right" style={{
+           justifyContent: 'flex-end'
+          }}>
             <Dropdown
               items={SORT_OPTIONS}
               selectedItem={sortedByOption}
@@ -203,7 +205,9 @@ export const Orders: React.FC<OrdersProps> = ({
     <>
       <div className="candy-orders-container" style={style}>
         <div className="candy-container">
-          <div className="candy-orders-sort">
+          <div className="candy-orders-sort" style={{
+           justifyContent: 'flex-end'
+          }}>
             <Dropdown
               items={SORT_OPTIONS}
               selectedItem={sortedByOption}
