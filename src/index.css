@@ -554,3 +554,14 @@ body.active-modal {
   display: flex;
   flex-direction: column;
 }
+
+.if-container, iframe{
+  width: "640px";
+  height: "613px";
+  margin: 0 auto;
+}
+
+iframe {
+  display: block;
+  border-style:none;
+}

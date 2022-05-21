@@ -28,17 +28,23 @@ class ClaimQubes extends Component {
     return (
       <>
         <section className="showcase1 text-dark p-2 text-center text-sm-start">
-          <div className="container">
-            <section className="mt-5 text-center">
+          <div className="if-container">
+            {/* <section className="mt-5 text-center">
               <p className="people-title">CLAIM YOUR QUBES HERE</p>
+            <img src="./QR-Claimqubes.png"
+            className="qr-qubes"
+            style={{
+              height: "200px"
+            }}></img>
               <p className="q-tokenomics-showcase-intro-lead">
                 Upon purchase of NFT, you will be able to claim your <br />
                 QUBES within 24 hours.
               </p>
-            </section>
+            </section> */}
+            <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=DkLuQR_jeEC790tUrUu03ZWkblj4qK1EhjVnKc5qoVxUODFPVURGQ1A5WDhLTjZQM05JRkxVTk83RS4u&embedded=true" width="640" height="613" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
           </div>
         </section>
-        <section className="p-5">
+        {/* <section className="p-5">
           <div className="container contacts">
             <form id="form-contact">
               <div
@@ -97,7 +103,7 @@ class ClaimQubes extends Component {
                     >
                       Invalid SOLSCAN URL  
                     </div>
-                    }
+                    } */}
                   {/* {!this.state.isTrueVal && ( )} */}
                   {/* {!this.state.isTrueVal && (
                     <div
@@ -109,11 +115,11 @@ class ClaimQubes extends Component {
                     Invalid SOLSCAN URL
                   </div>
                   )} */}
-                </div>
+                {/* </div>
               </div>
             </form>
           </div>
-        </section>
+        </section> */}
       </>
     );
   }

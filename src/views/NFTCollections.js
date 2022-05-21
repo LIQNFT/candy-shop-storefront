@@ -13,6 +13,7 @@ function NFTCollections() {
       <div className="container d-flex">
         <div className="container-sm w-25">
           <div className="">
+         
             <ul
               className="list-group"
               style={{
