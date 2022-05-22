@@ -1536,10 +1536,10 @@
   resolved "https://registry.yarnpkg.com/@ledgerhq/logs/-/logs-6.10.0.tgz"
   integrity sha512-lLseUPEhSFUXYTKj6q7s2O3s2vW2ebgA11vMAlKodXGf5AFw4zUoEbTz9CoFOC9jS6xY4Qr8BmRnxP/odT4Uuw==
 
-"@liqnft/candy-shop-sdk@0.4.34":
-  version "0.4.34"
-  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop-sdk/-/candy-shop-sdk-0.4.34.tgz#313b835f9f36397fcd8069bea4702f4a2e78b7a4"
-  integrity sha512-jBrhAqSxrwsKprrRswXmAKoVDjd1elVzS3A2ps5IRGZek52xxXCamLrGz9dlFfIG+pDyZ5wsjeysdSNX4TwJpQ==
+"@liqnft/candy-shop-sdk@0.4.35":
+  version "0.4.35"
+  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop-sdk/-/candy-shop-sdk-0.4.35.tgz#d41827ff91a90790d24fcba27c020671ecb12bb0"
+  integrity sha512-IYMZmnrTqz1T31tTWkvhY2BCbOsP0vn7ATkG//0jqy059vU/oPyASqONps1IlXYb4+Bgo4eVApkIfj1/i0fuoQ==
   dependencies:
     "@liqnft/candy-shop-types" "^0.1.4"
     "@project-serum/anchor" "^0.23.0"
@@ -1547,6 +1547,7 @@
     "@solana/wallet-adapter-react" "^0.15.4"
     axios "^0.26.1"
     crc-32 "^1.2.2"
+    idb "^7.0.1"
     qs "^6.10.3"
 
 "@liqnft/candy-shop-types@^0.1.4":
@@ -1554,12 +1555,12 @@
   resolved "https://registry.yarnpkg.com/@liqnft/candy-shop-types/-/candy-shop-types-0.1.4.tgz#aaf240b1c4898442cf1878a11c2586b193a0deb4"
   integrity sha512-43ri71gEI+hVISaK3z9AVUIbtDnSBnhqReDiMS+DB5eWNRiI594RBPhDU3muypRc/Nlpc+kZDmEAUfB/axu8Pw==
 
-"@liqnft/candy-shop@^0.4.46":
-  version "0.4.46"
-  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.4.46.tgz#6c4474ddf7fef1080fe5f5a67dd2c86825816956"
-  integrity sha512-g+vsLHwdOpbP6ZSZF/uRo1bgbo0Vwl+1OGrqbkDudVYoM7s8bjVHgetaft87HAQ1i7pSU+/Ta18CD4Yz2MW6/Q==
+"@liqnft/candy-shop@^0.4.47":
+  version "0.4.47"
+  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.4.47.tgz#7fe0101422f3c51f013a681bcf27ec4c8c5cfae9"
+  integrity sha512-Qtgh4cTXvuG/Tn0qS9RyTVTq/0MBzA3zHyt2poB0poRHC0sOqizGDKhQZzVxuKdnCRuLdfm5ZiZNo2nGecnX+A==
   dependencies:
-    "@liqnft/candy-shop-sdk" "0.4.34"
+    "@liqnft/candy-shop-sdk" "0.4.35"
     "@liqnft/candy-shop-types" "^0.1.4"
     "@project-serum/anchor" "^0.23.0"
     "@solana/spl-token" "^0.2.0"
@@ -6751,6 +6752,11 @@ icss-utils@^4.0.0, icss-utils@^4.1.1:
   integrity sha512-4aFq7wvWyMHKgxsH8QQtGpvbASCf+eM3wPRLI6R+MgAnTCZ6STYsRvttLvRWK0Nfif5piF394St3HeJDaljGPA==
   dependencies:
     postcss "^7.0.14"
+
+idb@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/idb/-/idb-7.0.1.tgz#d2875b3a2f205d854ee307f6d196f246fea590a7"
+  integrity sha512-UUxlE7vGWK5RfB/fDwEGgRf84DY/ieqNha6msMV99UsEMQhJ1RwbCd8AYBj3QMgnE3VZnfQvm4oKVCJTYlqIgg==
 
 identity-obj-proxy@3.0.0:
   version "3.0.0"
