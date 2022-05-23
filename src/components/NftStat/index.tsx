@@ -10,7 +10,7 @@ export interface NftStatProps {
 
 export const NftStat: React.FC<NftStatProps> = ({ tokenMint, edition, owner, animation_url}) => {
   return (
-    <div className="candy-stat-horizontal" style={{
+  <div className="candy-stat-horizontal" style={{
       justifyContent: 'space-between'
     }}>
       <div style={{
@@ -54,38 +54,6 @@ export const NftStat: React.FC<NftStatProps> = ({ tokenMint, edition, owner, ani
         </>
       ) : null}
       </div>
-      <div className='shareButton'>
-      <button className="exchange-button-more2 btn rounded-pill mb-2" type="button">
-            SHARE ON FACEBOOK
-      </button>
-      
-      <a href="https://twitter.com/share?url=https://hqnftrialv2.xyz" target="_blank" rel="noreferrer noopener pt-3" className='flink-icon'>
-      <button className="exchange-button-more2 btn rounded-pill" type="button">
-            SHARE ON TWITTER
-      </button>
-      </a>
-      
-          {/* <a
-            href="https://www.instagram.com/homeqube.ai/"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="flink-icon"
-          >
-            <img
-              className="footer-icon me-2 mr-1"
-              src="./instagram.svg"
-              alt=""
-            />
-          </a>
-          <a
-            href="https://twitter.com/homeqube_ai"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="flink-icon"
-          >
-            <img className="footer-icon me-2 mx-1" src="./twitter.svg" alt="" />
-          </a> */}
-        </div>
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import NavLinks from "./NavLinks";
 import React from 'react'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import { Link } from 'react-router-dom'
@@ -5,72 +6,21 @@ import { useAnchorWallet } from '@solana/wallet-adapter-react'
 import MenuItem from '@material-ui/core/MenuItem'
 import MenuList from '@material-ui/core/MenuList'
 import ClickAwayListener from '@material-ui/core/ClickAwayListener'
-import CurrencyToggle from './CurrencyToggle'
+import CurrencyToggle from '../CurrencyToggle'
 import Paper from '@material-ui/core/Paper'
 import Popper from '@material-ui/core/Popper'
 import styled from 'styled-components'
-import MobileNavigation from './NavBar/MobileNavigation'
-import Navigation from './NavBar/Navigation'
 
-interface TopNavProps {
-  showCurrencyToggle?: boolean,
+const Navigation = () =>{
+    return(
+        <nav className="Menu">
+            <NavLinks />
+        </nav>
+    
+    );
 }
+export default Navigation;
 
-const TopNav: React.FC<TopNavProps> = ({
-  showCurrencyToggle = false,
-}) => {
-  const wallet = useAnchorWallet()
-
-  const [open, setOpen] = React.useState(false)
-  const anchorRef = React.useRef<HTMLLIElement>(null)
-
-  const handleToggle = () => {
-    setOpen((prevOpen) => !prevOpen);
-  };
-
-  const handleClose = (event: any) => {
-    if (anchorRef?.current && (anchorRef.current as any).contains(event.target)) {
-      return;
-    }
-    setOpen(false);
-  };
-
-  function handleListKeyDown(event: any) {
-    if (event.key === 'Tab') {
-      event.preventDefault();
-      setOpen(false);
-    }
-  }
-
-  // return focus to the button when we transitioned from !open -> open
-  const prevOpen = React.useRef(open);
-  React.useEffect(() => {
-    if (prevOpen.current === true && open === false) {
-      if (anchorRef.current !== null) anchorRef.current.focus();
-    }
-
-    prevOpen.current = open;
-  }, [open]);
-
-  return (
-    <HeaderBar className="navbar navbar-expand-lg navbar-light HeaderBar">
-      <Logo>
-        <Link to='/marketplace'>
-          <img alt='' src='/Homeqube-logo-black_small 1.svg' />
-        </Link>
-      </Logo>
-      <MobileNavigation/>
-      <Navigation/>
-      <Wallet>
-        {wallet ? (
-          <ConnectButton />
-        ) : (
-          <ConnectButton>Connect Wallet</ConnectButton>
-        )}
-      </Wallet>
-    </HeaderBar>
-  )
-}
 
 const HeaderBar = styled.div`
   display: flex;
@@ -158,38 +108,36 @@ const Logo = styled.div`
   }
 `
 
-const Menu = styled.ul`
-  list-style: none;
-  display: inline-flex;
-  flex: 1 0 auto;
-  margin-bottom: 0;
+// const Menu = styled.ul`
+//   list-style: none;
+//   display: inline-flex;
+//   flex: 1 0 auto;
+//   margin-bottom: 0;
 
-  li {
-    margin: 0 12px;
+//   li {
+//     margin: 0 12px;
 
-    a {
-      color: var(--main-text-color);
-      list-style-image: none;
-      list-style-position: outside;
-      list-style-type: none;
-      outline: none;
-      text-decoration: none;
-      text-size-adjust: 100%;
-      touch-action: manipulation;
-      transition: color 0.3s;
-      padding-bottom: 15px;
+//     a {
+//       color: var(--main-text-color);
+//       list-style-image: none;
+//       list-style-position: outside;
+//       list-style-type: none;
+//       outline: none;
+//       text-decoration: none;
+//       text-size-adjust: 100%;
+//       touch-action: manipulation;
+//       transition: color 0.3s;
+//       padding-bottom: 15px;
 
-      img {
-        max-height: 26px;
-      }
-    }
+//       img {
+//         max-height: 26px;
+//       }
+//     }
 
-    a:hover,
-    a:active {
-      color: rgb(131, 146, 161);
-      border-bottom: 4px solid var(--title-text-color);
-    }
-  }
-`
-
-export default TopNav
+//     a:hover,
+//     a:active {
+//       color: rgb(131, 146, 161);
+//       border-bottom: 4px solid var(--title-text-color);
+//     }
+//   }
+// `

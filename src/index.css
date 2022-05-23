@@ -277,6 +277,12 @@ footer {
 .modal-body{
   margin: auto;
 }
+.href{
+  color: #000000;
+}
+.href:hover{
+  color: #000000;
+}
 .ahref{
   color: #d7d7d8;
 }
@@ -552,7 +558,7 @@ body.active-modal {
 }
 .shareButton{
   display: flex;
-  flex-direction: column;
+justify-content: flex-end;
 }
 
 .if-container, iframe{
@@ -564,4 +570,108 @@ body.active-modal {
 iframe {
   display: block;
   border-style:none;
+  height: 100vh;
+}
+ 
+html {
+  scroll-behavior: smooth;
+}
+
+.mobileNav{
+  display: none;
+  list-style: none;
+  flex: 1 0 auto;
+  margin-bottom: 0;
+}
+.mobileNav  li {
+  margin: 0 12px;
+}
+.mobileNav a {
+    color: #fff;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    outline: none;
+    text-decoration: none;
+    text-size-adjust: 100%;
+    touch-action: manipulation;
+    transition: color 0.3s;
+    padding-bottom: 15px;     
+ }
+.mobileNav  img {
+   max-height: 26px;
+ }
+.mobileNav a:hover,
+  a:active {
+    color: rgb(131, 146, 161);
+   border-bottom: 4px solid var(--title-text-color);
+  }
+
+.Menu{
+  list-style: none;
+  display: inline-flex;
+  flex: 1 0 auto;
+  margin-bottom: 0;
+}
+.Menu  li {
+     margin: 0 12px;
+}
+.Menu a {
+       color: var(--main-text-color);
+       list-style-image: none;
+       list-style-position: outside;
+       list-style-type: none;
+       outline: none;
+       text-decoration: none;
+       text-size-adjust: 100%;
+       touch-action: manipulation;
+       transition: color 0.3s;
+       padding-bottom: 15px;     
+    }
+.Menu  img {
+      max-height: 26px;
+    }
+.Menu a:hover,
+     a:active {
+       color: rgb(131, 146, 161);
+      border-bottom: 4px solid var(--title-text-color);
+     }
+.hamburger{
+  display: none;
+}
+
+@media (max-width: 990px){
+  .Menu {
+    display: none;
+    opacity: 1;
+  }
+  .mobileNav{
+    display: flex;
+    position: absolute;
+    top: 106px;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: #686868;
+    color: #fff;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-radius: 8px;
+    opacity: .9;
+  }
+  .expandable:mobileNav {
+    height: auto;
+  }
+  .mobileNav  li {
+    padding: .5rem;
+  }
+  .HeaderBar{
+    opacity: 1;
+  }
+  .hamburger{
+    display: block;
+    position: absolute;
+    right: 0%;
+    cursor: pointer;
+  }
 }

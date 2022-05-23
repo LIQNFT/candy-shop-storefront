@@ -31,9 +31,14 @@ import SingleOrder from './views/SingleOrder'
 import Footer from './components/Footer'
 import ClaimQubes from './views/ClaimQubes'
 import Fetch from './views/Fetch'
-import NFTCollections from './views/NFTCollections'
+import NFTCollections from './views/NFTCollectionsSO'
 import Terms from './views/Terms'
 import Policy from './views/Policy'
+import NFTCollectionsSO from './views/NFTCollectionsSO'
+import NFTCollectionsHD from './views/NFTCollectionsHD'
+import NFTCollectionsOS from './views/NFTCollectionsOS'
+import NFTCollectionsH from './views/NFTCollectionsH'
+import NFTCollectionsCN from './views/NFTCollectionsCN'
 
 
 require('@solana/wallet-adapter-react-ui/styles.css')
@@ -140,12 +145,57 @@ const App = () => {
                         </>
                       )}
                     /> */}
-                    <Route
+                    {/* <Route
                       path='/nftcollection'
                       element={(
                         <>
                           <TopNav />
                           <NFTCollections />
+                        </>
+                      )}
+                    /> */}
+                    <Route
+                      path='/nftcollection/system-concept'
+                      element={(
+                        <>
+                          <TopNav />
+                          <NFTCollectionsSO />
+                        </>
+                      )}
+                    />
+                    <Route
+                      path='/nftcollection/home-design'
+                      element={(
+                        <>
+                          <TopNav />
+                          <NFTCollectionsHD />
+                        </>
+                      )}
+                    />
+                    <Route
+                      path='/nftcollection/OSAP'
+                      element={(
+                        <>
+                          <TopNav />
+                          <NFTCollectionsOS />
+                        </>
+                      )}
+                    />
+                    <Route
+                      path='/nftcollection/homes'
+                      element={(
+                        <>
+                          <TopNav />
+                          <NFTCollectionsH />
+                        </>
+                      )}
+                    />
+                       <Route
+                      path='/nftcollection/community-nft'
+                      element={(
+                        <>
+                          <TopNav />
+                          <NFTCollectionsCN />
                         </>
                       )}
                     />

@@ -1,12 +1,15 @@
 function NFTCollection1() {
   return (
     <>
-      <div class="jumbotron jumbotron-fluid bgTitle">
-        <div class="container">
+      <div class="jumbotron jumbotron-fluid ">
+      <img src="../systemconcept.png"  alt=""  style={{
+        width: '100%'
+      }}/>
+        {/* <div class="container">
           <h1 class="system-title text-start">
             SYSTEM <p class="concepts-title text-start">CONCEPTS</p>
           </h1>
-        </div>
+        </div> */}
       </div>
       <div className="container-grid d-flex container mb-3 cards">
         <div className="card">
@@ -20,7 +23,7 @@ function NFTCollection1() {
               </p>
               <hr></hr>
               <p className="desname">
-                <img className="solLogoPrice" src="./solLogo.svg" /> 27.27SOL
+                <img className="solLogoPrice" src="../solLogo.svg" /> 27.27SOL
                 <p>BUY NOW</p>
               </p>
             </div>
@@ -39,7 +42,7 @@ function NFTCollection1() {
               </p>
               <hr></hr>
               <p className="desname">
-                <img className="solLogoPrice" src="./solLogo.svg" /> 27.27SOL
+                <img className="solLogoPrice" src="../solLogo.svg" /> 27.27SOL
                 <p>BUY NOW</p>
               </p>
             </div>
