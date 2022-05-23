@@ -30,6 +30,7 @@ interface SellProps {
   walletConnectComponent: React.ReactElement;
   style?: { [key: string]: string | number } | undefined;
   candyShop: CandyShop;
+  enableCacheNFT?: boolean;
 }
 
 /**
