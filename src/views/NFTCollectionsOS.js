@@ -14,8 +14,8 @@ function NFTCollectionsOS() {
 
   return (
     <>
-      <div className="container d-flex">
-        <div className="container-sm w-25">
+      <div className="container content">
+        <div className="container-sm conwid-25">
           <div className="">
          
             <ul
@@ -49,7 +49,7 @@ function NFTCollectionsOS() {
             </ul>
           </div>
         </div>
-        <div className="container-sm w-50">
+        <div className="container-sm conwid-50">
           <NFTCollection3 />
               {/* {active === "CONTENT1" &&  <NFTCollection1 />}
               {active === "CONTENT2" &&  <NFTCollection2 />}

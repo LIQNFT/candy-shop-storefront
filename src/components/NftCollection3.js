@@ -12,10 +12,10 @@ function NFTCollection3() {
           </h1>
         </div> */}
       </div>
-      <div className="container-grid d-flex container mb-3 cards">
+      <div className="container-grid cards-content container mb-3 cards">
         <div className="card">
           <div className="imgcon">
-            <img className="imgNFT" src="../img1.svg" />
+            <img className="imgNFT img-fluid" src="../img1.svg" />
             <div className="cubeName">
               <p className="name text-uppercase">
                 yachts,
@@ -34,7 +34,7 @@ function NFTCollection3() {
         </div>
         <div className="card">
           <div className="imgcon">
-            <img className="imgNFT" src="../img1.svg" />
+            <img className="imgNFT img-fluid" src="../img1.svg" />
             <div className="cubeName">
               <p className="name text-uppercase">
                 sphere bathroom <br />

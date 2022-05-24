@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { CandyShop } from '@liqnft/candy-shop-sdk'
-import { Orders, Stat } from '@liqnft/candy-shop'
+import { Orders } from '../public/Orders'
+import { Stat } from '../public/Stat'
 import { useAnchorWallet } from '@solana/wallet-adapter-react'
 import { PublicKey, Cluster } from '@solana/web3.js'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
@@ -15,7 +16,7 @@ const DesContainer = styled.div`
   width: 100%;
 
   .candy-filter {
-    color: #fff;
+    color: #000;
   }
 `
 
@@ -35,8 +36,8 @@ const MarketplaceWithFilter: React.FC = () => {
     <DesContainer>
       <Stat
         candyShop={candyShopRef.current}
-        title={'Marketplace'}
-        description={'Allow users to filter by NFT collection. Configure which NFTs collections to enable in My Shop.'}
+        title={''}
+        description={''}
         style={{ paddingBottom: 50 }}
       />
       <Orders
@@ -45,10 +46,12 @@ const MarketplaceWithFilter: React.FC = () => {
         walletConnectComponent={<WalletMultiButton />}
         // configure filter by collection
         filters={[
-          { name: 'Puppies', collectionId: '1', identifier: 2036309415 },
-          { name: 'Shibas', collectionId: '2', identifier: 1235887132 },
-          { name: 'Puppies + Shibas', collectionId: '3', identifier: [1235887132, 2036309415] },
-          { name: 'Purple Puppies', collectionId: '4', identifier: 2036309415, attribute: { backgrounds: 'gradient_purple' } }
+          { name: 'Homeqube', collectionId: '1', identifier: -354695101 },
+          { name: 'Home-design', collectionId: '2', identifier: 1462698944 },
+          { name: 'Just-for-fun', collectionId: '3', identifier: 393799738 },
+          { name: 'Other-System-Architecture-Product', collectionId: '4', identifier: -1434943395 }
+          // { name: 'Puppies + Shibas', collectionId: '4', identifier: [1235887132, 2036309415] },
+          // { name: 'Purple Puppies', collectionId: '4', identifier: 2036309415, attribute: { backgrounds: 'gradient_purple' } }
         ]}
       />
     </DesContainer>

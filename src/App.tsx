@@ -126,8 +126,7 @@ const App = () => {
                       element={(
                         <>
                           <TopNav />
-                          <Marketplace />
-                          
+                          <MarketplaceWithFilter />
                         </>
                       )}
                     />

@@ -55,7 +55,7 @@ const TopNav: React.FC<TopNavProps> = ({
   return (
     <HeaderBar className="navbar navbar-expand-lg navbar-light HeaderBar">
       <Logo>
-        <Link to='/marketplace'>
+        <Link to='/'>
           <img alt='' src='/Homeqube-logo-black_small 1.svg' />
         </Link>
       </Logo>

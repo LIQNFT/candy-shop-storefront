@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { CandyShop } from '@liqnft/candy-shop-sdk'
-import { Sell } from '@liqnft/candy-shop'
+// import { Sell } from '@liqnft/candy-shop'
+import { Sell2 } from '../public/Sell2'
 import { useAnchorWallet } from '@solana/wallet-adapter-react'
 import { PublicKey, Cluster } from '@solana/web3.js'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
@@ -34,7 +35,7 @@ const MyCollection: React.FC = () => {
   return (
     <DesContainer>
       <h1 style={{ marginBottom: 30 }}>My Collection</h1>
-      <Sell
+      <Sell2
         wallet={wallet}
         candyShop={candyShopRef.current}
         walletConnectComponent={<WalletMultiButton />}

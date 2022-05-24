@@ -563,8 +563,32 @@ justify-content: flex-end;
 
 .if-container, iframe{
   width: "640px";
-  height: "613px";
   margin: 0 auto;
+}
+@media (min-width: 310px) {
+  .if-container, iframe{
+    width: "300px";
+  }
+}
+@media (min-width: 360px) {
+  .if-container, iframe{
+    width: "320px";
+  }
+}
+@media (min-width: 420px) {
+  .if-container, iframe{
+    width: "400px";
+  }
+}
+@media (min-width: 576px) {
+  .if-container, iframe{
+    width: "550px";
+  }
+}
+@media (min-width: 768px) {
+  .if-container, iframe{
+    width: "640px";
+  }
 }
 
 iframe {
@@ -673,5 +697,74 @@ html {
     position: absolute;
     right: 0%;
     cursor: pointer;
+  }
+}
+
+.conwid-50{
+  width: 50%;
+}
+.conwid-25{
+  width: 25%;
+}
+.content{
+  display: flex;
+}
+.cards-content{
+  display: flex;
+}
+@media (min-width: 250px) {
+  .conwid-50{
+    width: auto;
+  }
+  .conwid-25{
+    width: auto;
+  }
+  .content{
+    display: flex;
+    flex-direction: column;
+  }
+  .cards-content{
+    display: flex;
+    flex-direction: column;
+  }
+  .cards{
+    height: 55rem;
+  }
+  .card{
+    height: 22rem;
+  }
+}
+
+@media (min-width: 576px) {
+  /* .conwid-50{
+    width: 50%;
+  }
+  .conwid-25{
+    width: 25%;
+  }
+  .content{
+    display: flex;
+  } */
+}
+@media (min-width: 768px) {
+  .conwid-50{
+    width: 50%;
+  }
+  .conwid-25{
+    width: 25%;
+  }
+  .content{
+    display: flex;
+    flex-direction: row;
+  }
+  .cards-content{
+    display: flex;
+    flex-direction: row;
+  }
+  .cards{
+    height: 22rem;
+  }
+  .card{
+    height: auto;
   }
 }

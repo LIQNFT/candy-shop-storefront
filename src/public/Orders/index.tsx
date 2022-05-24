@@ -161,7 +161,9 @@ export const Orders: React.FC<OrdersProps> = ({
             <div className="candy-filter">
               {filters ? (
                 <>
-                  <div className="candy-filter-title">Filter by Collection</div>
+                  <div className="candy-filter-title" style={{
+                    color: '#000 !important'
+                  }}>Filter by Collection</div>
                   <ul>
                     <li
                       onClick={() => setCollectionFilter(undefined)}
