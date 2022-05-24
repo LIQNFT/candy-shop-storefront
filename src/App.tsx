@@ -207,7 +207,7 @@ const App = () => {
                         </>
                       )}
                     />
-                    <Route
+                    {/* <Route
                       path='/marketplace'
                       element={(
                         <>
@@ -215,7 +215,7 @@ const App = () => {
                           <Marketplace />
                         </>
                       )}
-                    />
+                    /> */}
                     <Route
                       path='/poZxCBHNsdSwErewqHQSELLlkGfsfGhJZCcxsDDxcdaswevJCiGopcxasedWarDfiGderUrghh'
                       element={
