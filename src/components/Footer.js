@@ -88,7 +88,7 @@ import { Link } from 'react-router-dom';
 function Footer()
 {
     return(
-        <footer className="p-3 bg-dark text-white text-center position-relative pt-5 pb-5 text-uppercase">
+        <footer className="p-3 bg-dark text-white text-center position-relative pt-5 pb-5 text-uppercase fixed-bottom">
             <div className="container px-4">
                 <div className="row gx-3">
                     <div className="col-md-6 container-fluid">

@@ -16,7 +16,8 @@ function NFTCollection2() {
           <div className="imgcon">
             <img className="imgNFT img-fluid" src="../img1.svg" />
             <div className="cubeName">
-              <p className="name text-uppercase">
+            <div className="mt-2 name-container">
+            <p className="name text-uppercase">
                 Cagbalete sand
                 <br />
                 cluster, winner of <br />
@@ -24,11 +25,16 @@ function NFTCollection2() {
                 <br />
                 properties
               </p>
+            </div>
+              
               <hr></hr>
+              <div className="">
               <p className="desname">
-                <img className="solLogoPrice" src="../solLogo.svg" /> 27.27SOL
-                <p>BUY NOW</p>
+                  5 SOL
+                  <p>BUY NOW</p>
               </p>
+              </div>
+              
             </div>
           </div>
         </div>

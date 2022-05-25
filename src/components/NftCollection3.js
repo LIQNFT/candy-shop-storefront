@@ -2,9 +2,13 @@ function NFTCollection3() {
   return (
     <>
       <div class="jumbotron jumbotron-fluid">
-      <img src='../Other System.png'  alt=""  style={{
-        width: '100%'
-      }}/>
+        <img
+          src="../Other System.png"
+          alt=""
+          style={{
+            width: "100%",
+          }}
+        />
         {/* <div class="container">
           <h1 class="system-title text-start">
             OTHER SYSTEM
@@ -17,18 +21,23 @@ function NFTCollection3() {
           <div className="imgcon">
             <img className="imgNFT img-fluid" src="../img1.svg" />
             <div className="cubeName">
-              <p className="name text-uppercase">
-                yachts,
-                <br />
-                architectyourlife14,
-                <br />
-                by cideation pte ltd.
-              </p>
+              <div className="mt-2 name-container">
+                <p className="name text-uppercase">
+                  yachts,
+                  <br />
+                  architectyourlife14,
+                  <br />
+                  by cideation pte ltd.
+                </p>
+              </div>
+
               <hr></hr>
-              <p className="desname">
-                <img className="solLogoPrice" src="../solLogo.svg" /> 27.27SOL
-                <p>BUY NOW</p>
-              </p>
+              <div className="">
+                <p className="desname">
+                  5 SOL
+                  <p>BUY NOW</p>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -36,15 +45,21 @@ function NFTCollection3() {
           <div className="imgcon">
             <img className="imgNFT img-fluid" src="../img1.svg" />
             <div className="cubeName">
-              <p className="name text-uppercase">
+            <div className="mt-2 name-container">
+            <p className="name text-uppercase">
                 sphere bathroom <br />
                 by homeqube
               </p>
+            </div>
+              
               <hr></hr>
+              <div className="">
               <p className="desname">
-                <img className="solLogoPrice" src="../solLogo.svg" /> 27.27SOL
+                5 SOL
                 <p>BUY NOW</p>
               </p>
+              </div>
+             
             </div>
           </div>
         </div>

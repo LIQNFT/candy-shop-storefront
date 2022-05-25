@@ -2,9 +2,13 @@ function NFTCollection1() {
   return (
     <>
       <div class="jumbotron jumbotron-fluid ">
-      <img src="../systemconcept.png"  alt=""  style={{
-        width: '100%'
-      }}/>
+        <img
+          src="../systemconcept.png"
+          alt=""
+          style={{
+            width: "100%",
+          }}
+        />
         {/* <div class="container">
           <h1 class="system-title text-start">
             SYSTEM <p class="concepts-title text-start">CONCEPTS</p>
@@ -16,16 +20,22 @@ function NFTCollection1() {
           <div className="imgcon">
             <img className="imgNFT img-fluid" src="../img1.svg" />
             <div className="cubeName">
-              <p className="name">
-                STRUCTURAL SYSTEM <br />
-                WITH cantilever FOR <br />
-                3D PRINTING{" "}
-              </p>
+              <div className="mt-2 name-container">
+                <p className="name">
+                  STRUCTURAL SYSTEM <br />
+                  WITH cantilever FOR <br />
+                  3D PRINTING{" "}
+                </p>
+              </div>
+
               <hr></hr>
-              <p className="desname">
-                <img className="solLogoPrice" src="../solLogo.svg" /> 27.27SOL
-                <p>BUY NOW</p>
-              </p>
+              <div className="">
+                <p className="desname">
+                  {/* <img className="solLogoPrice" src="../solLogo.svg" /> */}
+                  5 SOL
+                  <p>BUY NOW</p>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -33,18 +43,25 @@ function NFTCollection1() {
           <div className="imgcon">
             <img className="imgNFT img-fluid" src="../img2.svg" />
             <div className="cubeName">
-              <p className="name">
-                STRUCTURAL SYSTEM
-                <br />
-                FOR 3D PRINTING,
-                <br />
-                PURCHASE WITH QUBE CLAIMS
-              </p>
+              <div className="mt-2 name-container">
+                <p className="name">
+                  STRUCTURAL SYSTEM
+                  <br />
+                  FOR 3D PRINTING,
+                  <br />
+                  PURCHASE WITH QUBE CLAIMS
+                </p>
+              </div>
+
               <hr></hr>
-              <p className="desname">
-                <img className="solLogoPrice" src="../solLogo.svg" /> 27.27SOL
-                <p>BUY NOW</p>
-              </p>
+
+              <div className="">
+                <p className="desname">
+                  {/* <img className="solLogoPrice" src="../solLogo.svg" /> */}
+                  5 SOL
+                  <p>BUY NOW</p>
+                </p>
+              </div>
             </div>
           </div>
         </div>

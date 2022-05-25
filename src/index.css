@@ -248,21 +248,21 @@ footer {
 .imgNFT
 {
   height: auto;
-  width: 160px;
+  width: 170px;
 }
 .cubeName
 {
     width: 93%;
-    height: 20px;
+    /* height: 20px; */
     background-color: #FFFFFF;
     align-items: center;
-    padding-bottom: 2rem
+    /* padding-bottom: 2rem */
 }
 .name
 {
     font-weight: 600;
     font-size: 14px;
-    line-height: 15px;
+    line-height: 1.10rem;
     color: #28282D;
 
     background-color: #FFFFFF;
@@ -271,6 +271,8 @@ footer {
 }
 .desname
 {
+    display: flex;
+    justify-content: space-between;
     font-size: 16px;
     color: #5E5E63;
     background-color: #FFFFFF ;
@@ -493,8 +495,14 @@ body.active-modal {
   margin-left: .5rem;
 }
 .cards{
-  border: 1px solid rgba(0,0,0,.125);
-  border-radius: .25rem;
+  /* border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem; */
+  justify-content: space-around;
+  height: 21rem;
+}
+.cards2{
+  /* border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem; */
   justify-content: space-around;
   height: 21rem;
 }
@@ -716,6 +724,7 @@ html {
 .cards-content{
   display: flex;
 }
+
 @media (min-width: 250px) {
   .conwid-50{
     width: auto;
@@ -733,6 +742,9 @@ html {
   }
   .cards{
     height: 55rem;
+  }
+  .cards2{
+    height: 66rem;
   }
   .card{
     height: 22rem;
@@ -752,7 +764,7 @@ html {
 }
 @media (min-width: 768px) {
   .conwid-50{
-    width: 50%;
+    width: 70%;
   }
   .conwid-25{
     width: 25%;
@@ -764,8 +776,12 @@ html {
   .cards-content{
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
   }
   .cards{
+    height: 22rem;
+  }
+  .cards2{
     height: 22rem;
   }
   .card{
@@ -779,4 +795,11 @@ html {
   margin: 0;
   margin-right: 1rem;
   text-align: left;
+}
+
+main{
+  min-height: calc(100vh - 211px - 58px);
+}
+.name-container{
+  height: 62px;
 }
