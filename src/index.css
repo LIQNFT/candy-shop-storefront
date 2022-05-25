@@ -54,6 +54,10 @@ footer {
   width: 1rem;
   height: 1rem;
 }
+.share-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
 .flink-icon {
   color: dark;
   text-decoration: none;
@@ -767,4 +771,12 @@ html {
   .card{
     height: auto;
   }
+}
+.shareText{
+  font-weight: 600;
+  font-size: 1rem;
+  color: #757575;
+  margin: 0;
+  margin-right: 1rem;
+  text-align: left;
 }

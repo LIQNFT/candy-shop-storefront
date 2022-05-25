@@ -23,7 +23,7 @@ export const NftAttributes: React.FunctionComponent<NftAttributesProps> = ({ att
         )}
       </div>
       <div className='shareButton'>
-      <a href="https://www.facebook.com/sharer?u=https%3A%2F%2Fhqnftrialv2.xyz%2F" target="_blank" rel="noreferrer noopener pt-3" className='flink-icon'>
+      {/* <a href="https://www.facebook.com/sharer?u=https%3A%2F%2Fhqnftrialv2.xyz%2F" target="_blank" rel="noreferrer noopener pt-3" className='flink-icon'>
       <button className="exchange-button-more2 btn rounded-pill m-1" type="button">
            SHARE ON FACEBOOK
      </button>
@@ -34,28 +34,28 @@ export const NftAttributes: React.FunctionComponent<NftAttributesProps> = ({ att
      <button className="exchange-button-more2 btn rounded-pill m-1" type="button">
            SHARE ON TWITTER
      </button>
-     </a>
-     
-         {/* <a
-           href="https://www.instagram.com/homeqube.ai/"
+     </a> */}
+     <p className='shareText'>SHARE: </p>
+         <a
+           href="https://www.facebook.com/sharer?u=https%3A%2F%2Fhqnftrialv2.xyz%2F"
            target="_blank"
            rel="noreferrer noopener"
            className="flink-icon"
          >
            <img
-             className="footer-icon me-2 mr-1"
-             src="./instagram.svg"
+             className="share-icon me-2 mr-1"
+             src="./icons8-facebook-50.svg"
              alt=""
            />
          </a>
          <a
-           href="https://twitter.com/homeqube_ai"
+           href="https://twitter.com/share?url=https://hqnftrialv2.xyz"
            target="_blank"
            rel="noreferrer noopener"
            className="flink-icon"
          >
-           <img className="footer-icon me-2 mx-1" src="./twitter.svg" alt="" />
-         </a> */}
+           <img className="share-icon me-2 mx-1" src="./icons8-twitter-50.svg" alt="" />
+         </a>
        </div>
     </div>
   );
