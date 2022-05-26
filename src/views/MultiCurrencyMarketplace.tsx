@@ -50,7 +50,7 @@ const MultiCurrencyMarketplace: React.FC = () => {
         candyShop={candyShop}
         title={"Marketplace"}
         description={
-          "Candy Shop is an open source on-chain protocol that empowers DAOs, NFT projects and anyone interested in creating an NFT marketplace to do so within minutes!"
+          "Purchase items from the store with your $HOC token."
         }
         style={{ paddingBottom: 50 }}
       />

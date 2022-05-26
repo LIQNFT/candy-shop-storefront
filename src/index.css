@@ -21,7 +21,10 @@ body {
   background-color: #303030;
   color: #FFFFFF;
 }
-
+span.tick {
+  color: #14a301;
+  padding-right: 10px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

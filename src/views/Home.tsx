@@ -470,7 +470,7 @@ const Home = (props: HomeProps) => {
       <DesContainer>
         <NFT elevation={3}>
           <ShimmerTitle>MINT IS LIVE!</ShimmerTitle>
-          <h2>My NFT</h2>
+          <h2>House Of Cards</h2>
           <br />
           <div>
             <Price
@@ -480,7 +480,7 @@ const Home = (props: HomeProps) => {
                   : price + ' ' + priceLabel
               }
             />
-            <Image src='cool-cats.gif' alt='NFT To Mint' />
+            <Image src='Webp.net-gifmaker.gif' alt='NFT To Mint' />
           </div>
           <br />
           {wallet &&
@@ -587,57 +587,48 @@ const Home = (props: HomeProps) => {
         <Des elevation={2}>
           <LogoAligner>
             <img src='logo.png' alt=''></img>
-            <GoldTitle>TITLE 1</GoldTitle>
+            <GoldTitle>Roadmap</GoldTitle>
           </LogoAligner>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
+          <span className="tick">&#10003;</span>
+          Create Discord, Website, Twitter and other socials.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
+          <span className="tick">&#10003;</span>
+          Create Artwork
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
+          <span className="tick">&#10003;</span>
+          Launch HOC casino.
           </p>
+          <p>
+          <span className="tick">&#10003;</span>
+          Launch Staking site.
+          </p>
+          <p>
+          <span className="tick">&#10003;</span>
+          Launch $HOC Store.
+          </p>
+          <li>
+          24 hour presale for WL.
+          </li>
+          <li>
+          Open Public mint for 1 SOL.
+          </li>
+          <li>
+          Launch casino. 100% of casino profits will be sent to staking site.  
+          </li>
+          <li>
+          Run marketing campaigns.
+          </li>
+          <li>
+          Launch Poker site
+          </li>
+          <li>
+          Launch Poker site
+          </li>
         </Des>
-        <Des elevation={2}>
-          <LogoAligner>
-            <img src='logo.png' alt=''></img>
-            <GoldTitle>TITLE 2</GoldTitle>
-          </LogoAligner>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
-          </p>
-        </Des>
-        <Des elevation={2}>
-          <LogoAligner>
-            <img src='logo.png' alt=''></img>
-            <GoldTitle>TITLE 3</GoldTitle>
-          </LogoAligner>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt.
-          </p>
-        </Des>
+        
       </DesContainer>
       <Snackbar
         open={alertState.open}

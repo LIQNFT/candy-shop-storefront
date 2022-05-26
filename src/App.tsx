@@ -74,9 +74,9 @@ const currencyOptions = [
     volumeDecimals: 1
   },
   {
-    currencySymbol: '56p',
-    treasuryMint: '56pdaHboK66cxRLkzkYVvFSAjfoNEETJUsrdmAYaTXMJ',
-    currencyDecimals: 9,
+    currencySymbol: 'HOC',
+    treasuryMint: 'DsTJzQaef6hX7STtZy6ThQhej3XNPMcLKHpPVUENYa35',
+    currencyDecimals: 6,
     priceDecimals: 2,
     volumeDecimals: 1
   }
