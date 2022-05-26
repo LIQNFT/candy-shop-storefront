@@ -599,7 +599,7 @@ const Home = (props: HomeProps) => {
           </p>
           <p>
           <span className="tick">&#10003;</span>
-          Launch HOC casino.
+          Launch HOC casino
           </p>
           <p>
           <span className="tick">&#10003;</span>
