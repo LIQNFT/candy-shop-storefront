@@ -1,6 +1,6 @@
 /* Customize your main colors in :root variables */
 :root {
-  --main-background-color: #ffffff;
+  --main-background-color: #cecece;
   --card-background-color: #51576d;
   --card-background-lighter-color: #7a7f92;
   --main-text-color: #000000;
@@ -144,6 +144,7 @@ footer {
   letter-spacing: 0.15px;
   text-transform: uppercase;
   color: #d7d7d8 !important;
+  margin-left: 1.5rem;
 }
 
 .exchange-button-more:hover {
@@ -802,4 +803,7 @@ main{
 }
 .name-container{
   height: 62px;
+}
+.list-group-item{
+  background-color: var(--main-background-color);
 }

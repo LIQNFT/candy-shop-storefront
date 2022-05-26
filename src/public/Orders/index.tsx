@@ -163,8 +163,10 @@ export const Orders: React.FC<OrdersProps> = ({
                 <>
                   <div className="candy-filter-title" style={{
                     color: '#000 !important'
-                  }}>Filter by Collection</div>
-                  <ul>
+                  }}>Collections</div>
+                  <ul style={{
+          paddingLeft: '0'
+                  }}>
                     <li
                       onClick={() => setCollectionFilter(undefined)}
                       key="All"
@@ -189,8 +191,10 @@ export const Orders: React.FC<OrdersProps> = ({
 
               {shopFilters ? (
                 <>
-                  <div className="candy-filter-title">Filter by Shop</div>
-                  <ul>
+                  <div className="candy-filter-title">Shop</div>
+                  <ul style={{
+          paddingLeft: '0'
+                  }}>
                     <li onClick={() => setShopFilter(undefined)} key="All" className={shopFilter ? '' : 'selected'}>
                       All
                     </li>
