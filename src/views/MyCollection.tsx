@@ -15,7 +15,7 @@ const NETWORK = process.env.REACT_APP_SOLANA_NETWORK! as Cluster
 const DesContainer = styled.div`
   width: 100%;
 
-  .wallet-adapter-button {
+  .{
     margin: 0 auto;
   }
 `

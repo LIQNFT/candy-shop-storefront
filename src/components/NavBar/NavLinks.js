@@ -1,6 +1,6 @@
 import React from 'react'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useAnchorWallet } from '@solana/wallet-adapter-react'
 import MenuItem from '@material-ui/core/MenuItem'
 import MenuList from '@material-ui/core/MenuList'
@@ -9,18 +9,21 @@ import CurrencyToggle from '../CurrencyToggle'
 import Paper from '@material-ui/core/Paper'
 import Popper from '@material-ui/core/Popper'
 import styled from 'styled-components'
+import { useState } from 'react'
 
 const NavLinks = (props) =>{
+
+    const [active, setActive] = useState("navItem1");
     return(
     <>
-        <li className='mx-5 mt-4' onClick={() => props.isMobile && props.closeMobileMenu()}>
-        <Link to='/nftcollection/system-concept'>NFT <br/> COLLECTIONS</Link>
+        <li className='mx-5 mt-4' onClick={() => setActive("navItem1") && props.isMobile && props.closeMobileMenu()}>
+        <NavLink activeClassName="active" to='/nftcollection/system-concept'>NFT <br/> COLLECTIONS</NavLink>
         </li>
         <li className='mx-5 mt-4' onClick={() => props.isMobile && props.closeMobileMenu()}>
-          <Link to='/claimqubes'>CLAIM <br /> QUBES</Link>
+          <NavLink activeClassName="active" to='/claimqubes'>CLAIM <br /> QUBES</NavLink>
         </li>
         <li className='mx-5 mt-4' onClick={() => props.isMobile && props.closeMobileMenu()}>
-          <Link to='/mycollection'>MY <br /> COLLECTION</Link>
+          <NavLink activeClassName="active" to='/mycollection'>MY <br /> COLLECTION</NavLink>
         </li>
         <li className='mx-5 mt-4' onClick={() => props.isMobile && props.closeMobileMenu()}>
           <a href="#" key={'homeqube'} target="_blank" rel="noreferrer">

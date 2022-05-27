@@ -61,11 +61,11 @@ const TopNav: React.FC<TopNavProps> = ({
       </Logo>
       <MobileNavigation/>
       <Navigation/>
-      <Wallet>
+      <Wallet >
         {wallet ? (
-          <ConnectButton />
+          <ConnectButton className='wallet-width' />
         ) : (
-          <ConnectButton>Connect Wallet</ConnectButton>
+          <ConnectButton className='wallet-width' >Connect Wallet</ConnectButton>
         )}
       </Wallet>
     </HeaderBar>
@@ -144,11 +144,12 @@ const Wallet = styled.ul`
 const ConnectButton = styled(WalletMultiButton)`
   border-radius: 18px !important;
   padding: 6px 16px;
-  border-radius: 40px;
-  width: 185px;
+  border-radius: 50rem!important;
   background-color: #4e44ce;
   margin: 0 auto;
   margin-top: 1.5rem !important;
+  font-family: 'Rajdhani', sans-serif !important;
+  
 `
 
 const Logo = styled.div`

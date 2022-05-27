@@ -507,6 +507,9 @@ body.active-modal {
   justify-content: space-around;
   height: 21rem;
 }
+.active{
+  font-weight: bolder
+}
 .on{
   font-weight: bolder
 }
@@ -725,6 +728,10 @@ html {
 .cards-content{
   display: flex;
 }
+.wallet-width{
+  width: 185px;
+  justify-content: space-evenly !important;
+}
 
 @media (min-width: 250px) {
   .conwid-50{
@@ -749,6 +756,9 @@ html {
   }
   .card{
     height: 22rem;
+  }
+  .wallet-width{
+    width: 155px;
   }
 }
 
@@ -787,6 +797,9 @@ html {
   }
   .card{
     height: auto;
+  }
+  .wallet-width{
+    width: 185px;
   }
 }
 .shareText{
