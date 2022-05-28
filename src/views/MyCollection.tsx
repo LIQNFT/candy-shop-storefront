@@ -34,7 +34,7 @@ const MyCollection: React.FC = () => {
 
   return (
     <DesContainer>
-      <h1 style={{ marginBottom: 30 }}>My Collection</h1>
+      <h1 style={{ marginBottom: 30 }} className="people-title" >My Collection</h1>
       <Sell2
         wallet={wallet}
         candyShop={candyShopRef.current}
