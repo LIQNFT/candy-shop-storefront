@@ -17,7 +17,7 @@ import {
 } from '@solana/wallet-adapter-wallets'
 import { Route, Routes } from 'react-router-dom'
 import styled from 'styled-components'
-
+import Login from './views/Login'
 import TopNav from './components/TopNav'
 import { CurrencyProvider } from './components/Currency'
 import Marketplace from './views/Marketplace'
@@ -39,6 +39,7 @@ import NFTCollectionsHD from './views/NFTCollectionsHD'
 import NFTCollectionsOS from './views/NFTCollectionsOS'
 import NFTCollectionsH from './views/NFTCollectionsH'
 import NFTCollectionsCN from './views/NFTCollectionsCN'
+
 
 
 require('@solana/wallet-adapter-react-ui/styles.css')
@@ -125,8 +126,7 @@ const App = () => {
                       path='/'
                       element={(
                         <>
-                          <TopNav />
-                          <MarketplaceWithFilter />
+                          <Login />
                         </>
                       )}
                     />
@@ -153,6 +153,18 @@ const App = () => {
                         </>
                       )}
                     /> */}
+
+                          
+
+                          <Route
+                      path='/marketplace'
+                      element={(
+                        <>
+                         <TopNav />
+                          <MarketplaceWithFilter />
+                        </>
+                      )}
+                    />
                     <Route
                       path='/nftcollection/system-concept'
                       element={(
