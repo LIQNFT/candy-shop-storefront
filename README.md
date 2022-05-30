@@ -90,6 +90,8 @@ This identifies the RPC server your web app will access the Solana network throu
 
 ##### For Candy Machine V2
 
+**Note: Candy Shop does not need Candy Machine V2 to work. If you are not using Candy Machine V2, you may simply comment out the code.**
+
 ```
 REACT_APP_CANDY_MACHINE_ID=__PLACEHOLDER__
 ```
