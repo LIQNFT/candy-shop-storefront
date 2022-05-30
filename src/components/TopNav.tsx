@@ -1,42 +1,43 @@
-import React from 'react'
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
-import { Link } from 'react-router-dom'
-import { useAnchorWallet } from '@solana/wallet-adapter-react'
-import MenuItem from '@material-ui/core/MenuItem'
-import MenuList from '@material-ui/core/MenuList'
-import ClickAwayListener from '@material-ui/core/ClickAwayListener'
-import CurrencyToggle from './CurrencyToggle'
-import Paper from '@material-ui/core/Paper'
-import Popper from '@material-ui/core/Popper'
-import styled from 'styled-components'
-import MobileNavigation from './NavBar/MobileNavigation'
-import Navigation from './NavBar/Navigation'
+import React from "react";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { Link } from "react-router-dom";
+import { useAnchorWallet } from "@solana/wallet-adapter-react";
+import MenuItem from "@material-ui/core/MenuItem";
+import MenuList from "@material-ui/core/MenuList";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import CurrencyToggle from "./CurrencyToggle";
+import Paper from "@material-ui/core/Paper";
+import Popper from "@material-ui/core/Popper";
+import styled from "styled-components";
+import MobileNavigation from "./NavBar/MobileNavigation";
+import Navigation from "./NavBar/Navigation";
 
 interface TopNavProps {
-  showCurrencyToggle?: boolean,
+  showCurrencyToggle?: boolean;
 }
 
-const TopNav: React.FC<TopNavProps> = ({
-  showCurrencyToggle = false,
-}) => {
-  const wallet = useAnchorWallet()
+const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
+  const wallet = useAnchorWallet();
 
-  const [open, setOpen] = React.useState(false)
-  const anchorRef = React.useRef<HTMLLIElement>(null)
+  const [open, setOpen] = React.useState(false);
+  const anchorRef = React.useRef<HTMLLIElement>(null);
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
 
   const handleClose = (event: any) => {
-    if (anchorRef?.current && (anchorRef.current as any).contains(event.target)) {
+    if (
+      anchorRef?.current &&
+      (anchorRef.current as any).contains(event.target)
+    ) {
       return;
     }
     setOpen(false);
   };
 
   function handleListKeyDown(event: any) {
-    if (event.key === 'Tab') {
+    if (event.key === "Tab") {
       event.preventDefault();
       setOpen(false);
     }
@@ -53,24 +54,30 @@ const TopNav: React.FC<TopNavProps> = ({
   }, [open]);
 
   return (
-    <HeaderBar className="navbar navbar-expand-lg navbar-light HeaderBar">
-      <Logo>
-        <Link to='/'>
-          <img alt='' src='/Homeqube-logo-black_small 1.svg' />
-        </Link>
-      </Logo>
-      <MobileNavigation/>
-      <Navigation/>
-      <Wallet >
-        {wallet ? (
-          <ConnectButton className='wallet-width' />
-        ) : (
-          <ConnectButton className='wallet-width' >Connect Wallet</ConnectButton>
-        )}
-      </Wallet>
-    </HeaderBar>
-  )
-}
+    
+      <HeaderBar className="navbar navbar-expand-lg navbar-light HeaderBar">
+        <div className="container-fluid nav-spacing">
+        <Logo>
+          <Link to="/multi-collection-marketplace">
+            <img alt="" src="/Homeqube-logo-black_small 1.svg" />
+          </Link>
+        </Logo>
+        <MobileNavigation />
+        <Navigation />
+        <Wallet>
+          {wallet ? (
+            <ConnectButton className="wallet-width" />
+          ) : (
+            <ConnectButton className="wallet-width">
+              Connect Wallet
+            </ConnectButton>
+          )}
+        </Wallet>
+        </div>
+      </HeaderBar>
+      
+  );
+};
 
 const HeaderBar = styled.div`
   display: flex;
@@ -79,13 +86,13 @@ const HeaderBar = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
-`
+`;
 
 const DropdownAnchor = styled.li`
   cursor: pointer;
 
   &:hover {
-    color: rgb(131,146,161);
+    color: rgb(131, 146, 161);
   }
 
   > div {
@@ -105,7 +112,7 @@ const DropdownAnchor = styled.li`
       }
     }
   }
-`
+`;
 
 // const WalletAmount = styled.div`
 //   color: black;
@@ -139,18 +146,17 @@ const Wallet = styled.ul`
   flex: 0 0 auto;
   margin: 0;
   padding: 0;
-`
+`;
 
 const ConnectButton = styled(WalletMultiButton)`
   border-radius: 18px !important;
   padding: 6px 16px;
-  border-radius: 50rem!important;
+  border-radius: 50rem !important;
   background-color: #4e44ce;
   margin: 0 auto;
   margin-top: 1.5rem !important;
-  font-family: 'Rajdhani', sans-serif !important;
-  
-`
+  font-family: "Rajdhani", sans-serif !important;
+`;
 
 const Logo = styled.div`
   flex: 0 0 auto;
@@ -159,7 +165,7 @@ const Logo = styled.div`
   img {
     height: 7rem;
   }
-`
+`;
 
 const Menu = styled.ul`
   list-style: none;
@@ -193,6 +199,6 @@ const Menu = styled.ul`
       border-bottom: 4px solid var(--title-text-color);
     }
   }
-`
+`;
 
-export default TopNav
+export default TopNav;

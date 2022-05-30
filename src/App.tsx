@@ -1,9 +1,12 @@
-import { createTheme, ThemeProvider } from '@material-ui/core'
-import { useMemo } from 'react'
-import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react'
-import * as anchor from '@project-serum/anchor'
-import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
-import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
+import { createTheme, ThemeProvider } from "@material-ui/core";
+import { useMemo } from "react";
+import {
+  ConnectionProvider,
+  WalletProvider,
+} from "@solana/wallet-adapter-react";
+import * as anchor from "@project-serum/anchor";
+import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import {
   getPhantomWallet,
   getSlopeWallet,
@@ -14,57 +17,58 @@ import {
   getSolongWallet,
   getLedgerWallet,
   getSafePalWallet,
-} from '@solana/wallet-adapter-wallets'
-import { Route, Routes } from 'react-router-dom'
-import styled from 'styled-components'
-import Login from './views/Login'
-import TopNav from './components/TopNav'
-import { CurrencyProvider } from './components/Currency'
-import Marketplace from './views/Marketplace'
-import CustomTokenMarketplace from './views/CustomTokenMarketplace'
-import MarketplaceWithFilter from './views/MarketplaceWithFilter'
-import MarketplaceWithUrl from './views/MarketplaceWithUrl'
-import MultiCurrencyMarketplace from './views/MultiCurrencyMarketplace'
-import MultiCurrencySell from './views/MultiCurrencySell'
-import MyCollection from './views/MyCollection'
-import SingleOrder from './views/SingleOrder'
-import Footer from './components/Footer'
-import ClaimQubes from './views/ClaimQubes'
-import Fetch from './views/Fetch'
-import NFTCollections from './views/NFTCollectionsSO'
-import Terms from './views/Terms'
-import Policy from './views/Policy'
-import NFTCollectionsSO from './views/NFTCollectionsSO'
-import NFTCollectionsHD from './views/NFTCollectionsHD'
-import NFTCollectionsOS from './views/NFTCollectionsOS'
-import NFTCollectionsH from './views/NFTCollectionsH'
-import NFTCollectionsCN from './views/NFTCollectionsCN'
+} from "@solana/wallet-adapter-wallets";
+import { Route, Routes } from "react-router-dom";
+import styled from "styled-components";
+import Login from "./views/Login";
+import TopNav from "./components/TopNav";
+import { CurrencyProvider } from "./components/Currency";
+import Marketplace from "./views/Marketplace";
+import CustomTokenMarketplace from "./views/CustomTokenMarketplace";
+import MarketplaceWithFilter from "./views/MarketplaceWithFilter";
+import MarketplaceWithUrl from "./views/MarketplaceWithUrl";
+import MultiCurrencyMarketplace from "./views/MultiCurrencyMarketplace";
+import MultiCurrencySell from "./views/MultiCurrencySell";
+import MyCollection from "./views/MyCollection";
+import SingleOrder from "./views/SingleOrder";
+import Footer from "./components/Footer";
+import ClaimQubes from "./views/ClaimQubes";
+import Fetch from "./views/Fetch";
+import NFTCollections from "./views/NFTCollectionsSO";
+import Terms from "./views/Terms";
+import Policy from "./views/Policy";
+import NFTCollectionsSO from "./views/NFTCollectionsSO";
+import NFTCollectionsHD from "./views/NFTCollectionsHD";
+import NFTCollectionsOS from "./views/NFTCollectionsOS";
+import NFTCollectionsH from "./views/NFTCollectionsH";
+import NFTCollectionsCN from "./views/NFTCollectionsCN";
+import LoginAuth from "./views/LoginAuth";
 
+require("@solana/wallet-adapter-react-ui/styles.css");
 
+const candyMachineId = new anchor.web3.PublicKey(
+  process.env.REACT_APP_CANDY_MACHINE_ID!
+);
+const network = process.env.REACT_APP_SOLANA_NETWORK as WalletAdapterNetwork;
+const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST!;
+const connection = new anchor.web3.Connection(rpcHost);
 
-require('@solana/wallet-adapter-react-ui/styles.css')
-
-const candyMachineId = new anchor.web3.PublicKey(process.env.REACT_APP_CANDY_MACHINE_ID!)
-const network = process.env.REACT_APP_SOLANA_NETWORK as WalletAdapterNetwork
-const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST!
-const connection = new anchor.web3.Connection(rpcHost)
-
-const txTimeout = 30000 // milliseconds (confirm this works for your project)
+const txTimeout = 30000; // milliseconds (confirm this works for your project)
 
 const theme = createTheme({
   palette: {
-    type: 'dark',
+    type: "dark",
   },
   overrides: {
     MuiButtonBase: {
       root: {
-        justifyContent: 'flex-start',
+        justifyContent: "flex-start",
       },
     },
     MuiButton: {
       root: {
         textTransform: undefined,
-        padding: '12px 16px',
+        padding: "12px 16px",
       },
       startIcon: {
         marginRight: 8,
@@ -74,24 +78,24 @@ const theme = createTheme({
       },
     },
   },
-})
+});
 
 // Used for a multi-currency shop
 const currencyOptions = [
   {
-    currencySymbol: 'SOL',
-    treasuryMint: 'So11111111111111111111111111111111111111112',
+    currencySymbol: "SOL",
+    treasuryMint: "So11111111111111111111111111111111111111112",
     currencyDecimals: 9,
     priceDecimals: 3,
-    volumeDecimals: 1
+    volumeDecimals: 1,
   },
   {
-    currencySymbol: '56p',
-    treasuryMint: '56pdaHboK66cxRLkzkYVvFSAjfoNEETJUsrdmAYaTXMJ',
+    currencySymbol: "56p",
+    treasuryMint: "56pdaHboK66cxRLkzkYVvFSAjfoNEETJUsrdmAYaTXMJ",
     currencyDecimals: 9,
     priceDecimals: 2,
-    volumeDecimals: 1
-  }
+    volumeDecimals: 1,
+  },
 ];
 
 const App = () => {
@@ -111,7 +115,7 @@ const App = () => {
       getSafePalWallet(),
     ],
     []
-  )
+  );
 
   return (
     <ThemeProvider theme={theme}>
@@ -122,13 +126,13 @@ const App = () => {
               <main>
                 <MainContainer>
                   <Routes>
-                  <Route
-                      path='/'
-                      element={(
+                    <Route
+                      path="/"
+                      element={
                         <>
-                          <Login />
+                          <LoginAuth />
                         </>
-                      )}
+                      }
                     />
                     {/* <Route
                       path='/'
@@ -153,71 +157,83 @@ const App = () => {
                         </>
                       )}
                     /> */}
-
-                          
-
-                          <Route
-                      path='/marketplace'
-                      element={(
+                    <Route
+                      path="/marketplace"
+                      element={
                         <>
-                         <TopNav />
+                          <TopNav />
                           <MarketplaceWithFilter />
+                          <Footer />
                         </>
-                      )}
+                      }
                     />
                     <Route
-                      path='/nftcollection/system-concept'
-                      element={(
+                      path="/loginAuth"
+                      element={
+                        <>
+                          <LoginAuth />
+                        </>
+                      }
+                    />
+                    <Route
+                      path="/nftcollection/system-concept"
+                      element={
                         <>
                           <TopNav />
                           <NFTCollectionsSO />
+                          <Footer />
                         </>
-                      )}
+                      }
                     />
                     <Route
-                      path='/nftcollection/home-design'
-                      element={(
+                      path="/nftcollection/home-design"
+                      element={
                         <>
                           <TopNav />
                           <NFTCollectionsHD />
+                          <Footer />
                         </>
-                      )}
+                      }
                     />
                     <Route
-                      path='/nftcollection/OSAP'
-                      element={(
+                      path="/nftcollection/OSAP"
+                      element={
                         <>
                           <TopNav />
                           <NFTCollectionsOS />
+                          <Footer />
                         </>
-                      )}
+                      }
                     />
                     <Route
-                      path='/nftcollection/homes'
-                      element={(
+                      path="/nftcollection/homes"
+                      element={
                         <>
                           <TopNav />
                           <NFTCollectionsH />
+                          <Footer />
                         </>
-                      )}
+                      }
                     />
-                       <Route
-                      path='/nftcollection/community-nft'
-                      element={(
+                    <Route
+                      path="/nftcollection/community-nft"
+                      element={
                         <>
                           <TopNav />
                           <NFTCollectionsCN />
+                          <Footer />
                         </>
-                      )}
+                      }
                     />
                     <Route
-                      path='/marketplace/:tokenMint'
-                      element={(
+                      path="/marketplace/:tokenMint"
+                      element={
                         <>
                           <TopNav />
                           <SingleOrder />
+                          <Footer />
                         </>
-                      )}
+                      }
                     />
                     {/* <Route
                       path='/marketplace'
@@ -229,121 +245,129 @@ const App = () => {
                       )}
                     /> */}
                     <Route
-                      path='/poZxCBHNsdSwErewqHQSELLlkGfsfGhJZCcxsDDxcdaswevJCiGopcxasedWarDfiGderUrghh'
+                      path="/poZxCBHNsdSwErewqHQSELLlkGfsfGhJZCcxsDDxcdaswevJCiGopcxasedWarDfiGderUrghh"
                       element={
                         <>
                           <TopNav />
                           <MyCollection />
+                          <Footer />
                         </>
                       }
                     />
-                    
-                  {/* For Claim qubes here */}
+
+                    {/* For Claim qubes here */}
                     <Route
-                      path='/claimqubes'
+                      path="/claimqubes"
                       element={
                         <>
                           <TopNav />
                           <ClaimQubes />
+                          <Footer />
                         </>
                       }
                     />
                     <Route
-                      path='/mycollection'
+                      path="/mycollection"
                       element={
                         <>
                           <TopNav />
                           <Fetch />
+                          <Footer />
                         </>
                       }
                     />
                     <Route
-                      path='/terms'
+                      path="/terms"
                       element={
                         <>
                           <TopNav />
                           <Terms />
+                          <Footer />
                         </>
                       }
                     />
                     <Route
-                      path='/policy'
+                      path="/policy"
                       element={
                         <>
                           <TopNav />
                           <Policy />
+                          <Footer />
                         </>
                       }
                     />
-                  
+
                     <Route
-                      path='/custom-token-marketplace'
+                      path="/custom-token-marketplace"
                       element={
                         <>
                           <TopNav />
                           <CustomTokenMarketplace />
+                          <Footer />
                         </>
                       }
                     />
                     <Route
-                      path='/multi-collection-marketplace'
+                      path="/multi-collection-marketplace"
                       element={
                         <>
                           <TopNav />
                           <MarketplaceWithFilter />
+                          <Footer />
                         </>
                       }
                     />
                     <Route
-                      path='/marketplace-with-url'
+                      path="/marketplace-with-url"
                       element={
                         <>
                           <TopNav />
                           <MarketplaceWithUrl />
+                          <Footer />
                         </>
                       }
                     />
                     <Route
-                      path='/multi-currency-marketplace'
+                      path="/multi-currency-marketplace"
                       element={
                         <>
                           <TopNav showCurrencyToggle={true} />
                           <MultiCurrencyMarketplace />
+                          <Footer />
                         </>
                       }
                     />
                     <Route
-                      path='/multi-currency-sell'
+                      path="/multi-currency-sell"
                       element={
                         <>
                           <TopNav showCurrencyToggle={true} />
                           <MultiCurrencySell />
+                          <Footer />
                         </>
                       }
                     />
-                    
                   </Routes>
                 </MainContainer>
               </main>
-              <Footer />
             </WalletModalProvider>
           </CurrencyProvider>
         </WalletProvider>
       </ConnectionProvider>
     </ThemeProvider>
-  )
-}
+  );
+};
 
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  margin-right: 4%;
-  margin-left: 4%;
+
   text-align: center;
   justify-content: center;
-`
-
-export default App
+`;
+// margin-top: 20px;
+// margin-bottom: 20px;
+// padding-bottom: 20px;
+// margin-right: 4%;
+// margin-left: 4%;
+export default App;
