@@ -162,7 +162,10 @@ export const Sell2: React.FC<SellProps> = ({ wallet, walletConnectComponent, sty
 
   if (!wallet) {
     return (
-      <div className="candy-container" style={{ textAlign: 'center' }}>
+      <div className="candy-container" style={{ 
+        display: 'flex',
+        justifyContent: 'space-around',
+        textAlign: 'center' }}>
         {walletConnectComponent}
       </div>
     );

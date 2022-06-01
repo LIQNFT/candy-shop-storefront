@@ -43,6 +43,11 @@ import NFTCollectionsOS from "./views/NFTCollectionsOS";
 import NFTCollectionsH from "./views/NFTCollectionsH";
 import NFTCollectionsCN from "./views/NFTCollectionsCN";
 import LoginAuth from "./views/LoginAuth";
+import Cards from "./views/Cards"
+import HomequbeItems from "./views/Homeqube-items";
+import HomequbeDesignItems from "./views/HomeDesign-items";
+import Just4FunItems from "./views/Just4Fun-items";
+import OSAPItems from "./views/OSAP-Items";
 
 require("@solana/wallet-adapter-react-ui/styles.css");
 
@@ -126,14 +131,65 @@ const App = () => {
               <main>
                 <MainContainer>
                   <Routes>
+                    {/* <Route
+                      path="/"
+                      element={
+                        <>
+                          <Login />
+                        </>
+                      }
+                    /> */}
                     <Route
                       path="/"
                       element={
                         <>
-                          <LoginAuth />
+                         <TopNav />
+                          <Cards />
+                          {/* <Footer /> */}
                         </>
                       }
                     />
+                    <Route
+                      path="/homeqube-items"
+                      element={
+                        <>
+                         <TopNav />
+                          <HomequbeItems />
+                          {/* <Footer /> */}
+                        </>
+                      }
+                    />
+                    <Route
+                      path="/home-design-items"
+                      element={
+                        <>
+                         <TopNav />
+                          <HomequbeDesignItems />
+                          {/* <Footer /> */}
+                        </>
+                      }
+                    />
+                    <Route
+                      path="/just-for-fun-items"
+                      element={
+                        <>
+                         <TopNav />
+                          <Just4FunItems />
+                          {/* <Footer /> */}
+                        </>
+                      }
+                    />
+                    <Route
+                      path="/OSAP-item"
+                      element={
+                        <>
+                         <TopNav />
+                          <OSAPItems />
+                          {/* <Footer /> */}
+                        </>
+                      }
+                    />
+
                     {/* <Route
                       path='/'
                       element={(
@@ -157,16 +213,15 @@ const App = () => {
                         </>
                       )}
                     /> */}
-                    <Route
+                    {/* <Route
                       path="/marketplace"
                       element={
                         <>
                           <TopNav />
                           <MarketplaceWithFilter />
-                          <Footer />
                         </>
                       }
-                    />
+                    /> */}
                     <Route
                       path="/loginAuth"
                       element={
@@ -175,13 +230,14 @@ const App = () => {
                         </>
                       }
                     />
+                     
                     <Route
                       path="/nftcollection/system-concept"
                       element={
                         <>
                           <TopNav />
                           <NFTCollectionsSO />
-                          <Footer />
+                          {/* <Footer /> */}
                         </>
                       }
                     />
@@ -191,7 +247,7 @@ const App = () => {
                         <>
                           <TopNav />
                           <NFTCollectionsHD />
-                          <Footer />
+                          {/* <Footer /> */}
                         </>
                       }
                     />
@@ -201,7 +257,7 @@ const App = () => {
                         <>
                           <TopNav />
                           <NFTCollectionsOS />
-                          <Footer />
+                          {/* <Footer /> */}
                         </>
                       }
                     />
@@ -211,7 +267,7 @@ const App = () => {
                         <>
                           <TopNav />
                           <NFTCollectionsH />
-                          <Footer />
+                          {/* <Footer /> */}
                         </>
                       }
                     />
@@ -221,7 +277,7 @@ const App = () => {
                         <>
                           <TopNav />
                           <NFTCollectionsCN />
-                          <Footer />
+                          {/* <Footer /> */}
                         </>
                       }
                     />
@@ -231,7 +287,7 @@ const App = () => {
                         <>
                           <TopNav />
                           <SingleOrder />
-                          <Footer />
+                          {/* <Footer /> */}
                         </>
                       }
                     />
@@ -250,7 +306,7 @@ const App = () => {
                         <>
                           <TopNav />
                           <MyCollection />
-                          <Footer />
+                          {/* <Footer /> */}
                         </>
                       }
                     />
@@ -262,7 +318,7 @@ const App = () => {
                         <>
                           <TopNav />
                           <ClaimQubes />
-                          <Footer />
+                          {/* <Footer /> */}
                         </>
                       }
                     />
@@ -272,7 +328,7 @@ const App = () => {
                         <>
                           <TopNav />
                           <Fetch />
-                          <Footer />
+                          {/* <Footer /> */}
                         </>
                       }
                     />
@@ -282,7 +338,7 @@ const App = () => {
                         <>
                           <TopNav />
                           <Terms />
-                          <Footer />
+                          {/* <Footer /> */}
                         </>
                       }
                     />
@@ -292,7 +348,7 @@ const App = () => {
                         <>
                           <TopNav />
                           <Policy />
-                          <Footer />
+                          {/* <Footer /> */}
                         </>
                       }
                     />
@@ -303,7 +359,7 @@ const App = () => {
                         <>
                           <TopNav />
                           <CustomTokenMarketplace />
-                          <Footer />
+                          {/* <Footer /> */}
                         </>
                       }
                     />
@@ -313,7 +369,7 @@ const App = () => {
                         <>
                           <TopNav />
                           <MarketplaceWithFilter />
-                          <Footer />
+                          {/* <Footer /> */}
                         </>
                       }
                     />
@@ -323,7 +379,7 @@ const App = () => {
                         <>
                           <TopNav />
                           <MarketplaceWithUrl />
-                          <Footer />
+                          {/* <Footer /> */}
                         </>
                       }
                     />
@@ -333,7 +389,7 @@ const App = () => {
                         <>
                           <TopNav showCurrencyToggle={true} />
                           <MultiCurrencyMarketplace />
-                          <Footer />
+                          {/* <Footer /> */}
                         </>
                       }
                     />
@@ -343,13 +399,14 @@ const App = () => {
                         <>
                           <TopNav showCurrencyToggle={true} />
                           <MultiCurrencySell />
-                          <Footer />
+                          {/* <Footer /> */}
                         </>
                       }
                     />
                   </Routes>
                 </MainContainer>
               </main>
+              <Footer />
             </WalletModalProvider>
           </CurrencyProvider>
         </WalletProvider>
@@ -361,13 +418,13 @@ const App = () => {
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  margin-right: 4%;
+  margin-left: 4%;
   text-align: center;
   justify-content: center;
 `;
-// margin-top: 20px;
-// margin-bottom: 20px;
-// padding-bottom: 20px;
-// margin-right: 4%;
-// margin-left: 4%;
+
 export default App;

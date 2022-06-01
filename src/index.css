@@ -1,6 +1,6 @@
 /* Customize your main colors in :root variables */
 :root {
-  --main-background-color: #cecece;
+  --main-background-color: hsl(0, 0%, 81%);
   --card-background-color: #51576d;
   --card-background-lighter-color: #7a7f92;
   --main-text-color: #000000;
@@ -146,7 +146,6 @@ footer {
   letter-spacing: 0.15px;
   text-transform: uppercase;
   color: #d7d7d8 !important;
-  margin-left: 1.5rem;
 }
 
 .exchange-button-more:hover {
@@ -880,8 +879,169 @@ input:not(:disabled) {
 #text-error {
   color: rgb(245, 72, 72);
 }
+
 .nav-spacing {
   margin-top: 20px;
   margin-right: 2%;
   margin-left: 2%;
+}
+
+.card-container {
+  width: 430px;
+  height: 400px;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  display: inline-block;
+  padding-left: 0;
+  padding-right: 0;
+}
+.upper-container {
+  height: 150px;
+  background: #545459;
+}
+.image-container {
+  background: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  padding: 5px;
+  transform: translate(170px, 100px);
+}
+.image-container img {
+  width: 71px;
+  height: 70px;
+  border-radius: 50%;
+}
+.lower-container {
+  height: 280px;
+  background: #fff;
+  padding: 20px;
+  padding-top: 40px;
+  text-align: center;
+}
+.lower-container h3,
+h4 {
+  box-sizing: border-box;
+  line-height: 1;
+  font-weight: lighter;
+}
+.lower-container h4 {
+  color: #545459;
+  opacity: 0.6;
+  font-weight: bold;
+}
+.lower-container p {
+  font-size: 16px;
+  color: gray;
+  margin-bottom: 30px;
+}
+.lower-container .btn {
+  padding: 12px 20px;
+  background: #7f00ff;
+  border: none;
+  color: white;
+  border-radius: 30px;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease-in;
+}
+.lower-container .btn:hover {
+  background: transparent;
+  color: #7f00ff;
+  border: 2px solid #7f00ff;
+}
+
+.display {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.display2 {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (min-width: 250px) {
+  .display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-container {
+    width: 310px;
+  }
+  .image-container {
+    transform: translate(120px, 100px);
+  }
+  .display2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+
+
+@media (min-width: 768px) {
+  .display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-container {
+    width: 310px;
+  }
+  .image-container {
+    transform: translate(120px, 100px);
+  }
+  .display2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+
+@media (min-width: 1230px) {
+  .display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.75rem;
+  }
+  .card-container {
+    width: 350px;
+  }
+  .image-container {
+    transform: translate(135px, 100px);
+  }
+  .display2{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 1430px) {
+  .display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.75rem;
+  }
+  .card-container {
+    width: 430px;
+  }
+  .image-container {
+    transform: translate(170px, 100px);
+  }
+  .display2{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 0.75rem;
+  }
 }

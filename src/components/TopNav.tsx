@@ -56,9 +56,8 @@ const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
   return (
     
       <HeaderBar className="navbar navbar-expand-lg navbar-light HeaderBar">
-        <div className="container-fluid nav-spacing">
         <Logo>
-          <Link to="/multi-collection-marketplace">
+          <Link to="/">
             <img alt="" src="/Homeqube-logo-black_small 1.svg" />
           </Link>
         </Logo>
@@ -73,7 +72,6 @@ const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
             </ConnectButton>
           )}
         </Wallet>
-        </div>
       </HeaderBar>
       
   );
