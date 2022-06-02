@@ -161,19 +161,19 @@ export const Orders: React.FC<OrdersProps> = ({
             <div className="candy-filter">
               {filters ? (
                 <>
-                  <div className="candy-filter-title" style={{
+                  {/* <div className="candy-filter-title" style={{
                     color: '#000 !important'
-                  }}>Collections</div>
+                  }}>Collections</div> */}
                   <ul style={{
           paddingLeft: '0'
                   }}>
-                    <li
+                    {/* <li
                       onClick={() => setCollectionFilter(undefined)}
                       key="All"
                       className={collectionFilter ? '' : 'selected'}
                     >
                       All
-                    </li>
+                    </li> */}
                     {filters?.map((filter) => {
                       return (
                         <li
@@ -195,9 +195,9 @@ export const Orders: React.FC<OrdersProps> = ({
                   <ul style={{
           paddingLeft: '0'
                   }}>
-                    <li onClick={() => setShopFilter(undefined)} key="All" className={shopFilter ? '' : 'selected'}>
+                    {/* <li onClick={() => setShopFilter(undefined)} key="All" className={shopFilter ? '' : 'selected'}>
                       All
-                    </li>
+                    </li> */}
                     {shopFilters.map((item) => {
                       return (
                         <li

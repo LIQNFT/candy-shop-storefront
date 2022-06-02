@@ -20,7 +20,7 @@ const DesContainer = styled.div`
   }
 `
 
-const MarketplaceWithFilter: React.FC = () => {
+const Just4FunItems: React.FC = () => {
   const wallet = useAnchorWallet();
 
   const candyShopRef = useRef<CandyShop>(
@@ -46,17 +46,17 @@ const MarketplaceWithFilter: React.FC = () => {
         walletConnectComponent={<WalletMultiButton />}
         // configure filter by collection
         filters={[
-          { name: 'Homeqube', collectionId: '1', identifier: -354695101 },
-          { name: 'Home-design', collectionId: '2', identifier: 1462698944 },
-          { name: 'Just-for-fun', collectionId: '3', identifier: 393799738 },
-          { name: 'Other-System-Architecture-Product', collectionId: '4', identifier: -1434943395 }
+         //  { name: 'Homeqube', collectionId: '1', identifier: -354695101 },
+          // { name: 'Home-design', collectionId: '2', identifier: 1462698944 },
+          { name: '', collectionId: '3', identifier: 393799738 },
+          // { name: 'Other-System-Architecture-Product', collectionId: '4', identifier: -1434943395 }
           // { name: 'Puppies + Shibas', collectionId: '4', identifier: [1235887132, 2036309415] },
           // { name: 'Purple Puppies', collectionId: '4', identifier: 2036309415, attribute: { backgrounds: 'gradient_purple' } }
         ]}
-        // defaultFilter={{ collection: '1', shop: ''}}
+        defaultFilter={{ collection: '3', shop: ''}}
       />
     </DesContainer>
   )
 }
 
-export default MarketplaceWithFilter
+export default Just4FunItems
