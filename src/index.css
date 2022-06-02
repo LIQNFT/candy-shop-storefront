@@ -982,8 +982,6 @@ h4 {
   }
 }
 
-
-
 @media (min-width: 768px) {
   .display {
     display: flex;
@@ -1003,7 +1001,6 @@ h4 {
   }
 }
 
-
 @media (min-width: 1230px) {
   .display {
     display: flex;
@@ -1017,7 +1014,7 @@ h4 {
   .image-container {
     transform: translate(135px, 100px);
   }
-  .display2{
+  .display2 {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -1038,10 +1035,111 @@ h4 {
   .image-container {
     transform: translate(170px, 100px);
   }
-  .display2{
+  .display2 {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     padding: 0.75rem;
+  }
+}
+
+.header-site-design {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.cover-image-div {
+  position: relative;
+  width: 100%;
+  height: 370px;
+  box-sizing: border-box;
+  background-color: #3337;
+}
+.cover-image-div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover-in-site {
+  position: absolute;
+  content: "";
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+.profile-image-site {
+  position: relative;
+  margin-bottom: -20px;
+  width: 160px;
+  height: 170px;
+  background-color: #333;
+  border: 4px solid #fff;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px #3335;
+  margin-left: 10rem;
+}
+.profile-image-site img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-image-site h1 {
+  position: absolute;
+  content: "";
+  left: 40%;
+  top: 70%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 35px;
+  width: 300%;
+}
+.profile-image-site h1 > span {
+  font-weight: 400;
+}
+.homepage {
+  margin-right: 4%;
+  margin-left: 4%;
+}
+
+
+@media (min-width: 250px) {
+    .cover-image-div{
+      height: 250px;
+    }
+    .profile-image-site h1{
+      font-size: 1.5rem;
+      left: 106%;
+      width: 0%;
+      top: 70%;
+    }
+    .profile-image-site{
+      margin-left: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+  .cover-image-div{
+    height: 370px;
+  }
+  .profile-image-site h1{
+    font-size: 35px;
+    width: 100%;
+  }
+  .profile-image-site{
+    margin-left: 10rem;
+  }
+}
+
+@media (min-width: 1230px) {
+  .cover-image-div{
+    height: 370px;
+  }
+  .profile-image-site h1{
+    font-size: 35px;  
+  }
+  .profile-image-site{
+    margin-left: 10rem;
   }
 }

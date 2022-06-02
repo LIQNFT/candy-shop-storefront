@@ -421,10 +421,11 @@ const MainContainer = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  margin-right: 4%;
-  margin-left: 4%;
+ 
   text-align: center;
   justify-content: center;
 `;
+// margin-right: 4%;
+// margin-left: 4%;
 
 export default App;

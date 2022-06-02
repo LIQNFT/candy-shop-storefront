@@ -54,26 +54,22 @@ const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
   }, [open]);
 
   return (
-    
-      <HeaderBar className="navbar navbar-expand-lg navbar-light HeaderBar">
-        <Logo>
-          <Link to="/">
-            <img alt="" src="/Homeqube-logo-black_small 1.svg" />
-          </Link>
-        </Logo>
-        <MobileNavigation />
-        <Navigation />
-        <Wallet>
-          {wallet ? (
-            <ConnectButton className="wallet-width" />
-          ) : (
-            <ConnectButton className="wallet-width">
-              Connect Wallet
-            </ConnectButton>
-          )}
-        </Wallet>
-      </HeaderBar>
-      
+    <HeaderBar className="navbar navbar-expand-lg navbar-light HeaderBar">
+      <Logo>
+        <Link to="/">
+          <img alt="" src="/Homeqube-logo-black_small 1.svg" />
+        </Link>
+      </Logo>
+      <MobileNavigation />
+      <Navigation />
+      <Wallet>
+        {wallet ? (
+          <ConnectButton className="wallet-width" />
+        ) : (
+          <ConnectButton className="wallet-width">Connect Wallet</ConnectButton>
+        )}
+      </Wallet>
+    </HeaderBar>
   );
 };
 
@@ -83,9 +79,11 @@ const HeaderBar = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-bottom: 30px;
+ 
+  margin-right: 4%;
+  margin-left: 4%;
 `;
-
+// margin-bottom: 30px;
 const DropdownAnchor = styled.li`
   cursor: pointer;
 

@@ -33,6 +33,21 @@ const HomequbeItems: React.FC = () => {
   )
 
   return (
+    <>
+     <header className="header-site-design">
+				
+				<section className="cover-image-div mb-4">
+					<img src="../Alt-Homeqube-logo-standard@2x.png" />
+					<section className="cover-in-site">
+						<div className="profile-image-site">
+							<img src="../0.png" className='img-fluid' />
+							<h1 className="profile-name">HOMEQUBE
+								<span id="nikName">(HQ)</span></h1>
+						</div>
+					</section>
+
+				</section>
+			</header>
     <DesContainer>
       <Stat
         candyShop={candyShopRef.current}
@@ -56,6 +71,7 @@ const HomequbeItems: React.FC = () => {
         defaultFilter={{ collection: '1', shop: ''}}
       />
     </DesContainer>
+    </>
   )
 }
 
