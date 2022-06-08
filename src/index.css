@@ -1143,3 +1143,12 @@ h4 {
     margin-left: 10rem;
   }
 }
+
+.plus-sign{
+  display: none;
+}
+.accordion-item{
+  background-color: hsl(0, 0%, 81%);
+  border: none;
+ 
+}

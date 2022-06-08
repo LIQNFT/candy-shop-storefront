@@ -27,7 +27,8 @@ const NavLinks = (props) =>{
         </li>
         <li className='mx-5 mt-4' onClick={() => props.isMobile && props.closeMobileMenu()}>
           <a href="#" key={'homeqube'} target="_blank" rel="noreferrer">
-            FAQS
+          <NavLink activeClassName="active" to='/faqs'> FAQS </NavLink>
+           
           </a>
         </li>
        
