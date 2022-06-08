@@ -48,6 +48,7 @@ import HomequbeItems from "./views/Homeqube-items";
 import HomequbeDesignItems from "./views/HomeDesign-items";
 import Just4FunItems from "./views/Just4Fun-items";
 import OSAPItems from "./views/OSAP-Items";
+import ClaimQ from "./views/ClaimQ"
 
 require("@solana/wallet-adapter-react-ui/styles.css");
 
@@ -317,7 +318,7 @@ const App = () => {
                       element={
                         <>
                           <TopNav />
-                          <ClaimQubes />
+                          <ClaimQ />
                           {/* <Footer /> */}
                         </>
                       }
