@@ -16,21 +16,21 @@ const NavLinks = (props) =>{
     const [active, setActive] = useState("navItem1");
     return(
     <>
-        <li className='mx-5 mt-4' onClick={() => setActive("navItem1") && props.isMobile && props.closeMobileMenu()}>
+        {/* <li className='mx-5 mt-4' onClick={() => setActive("navItem1") && props.isMobile && props.closeMobileMenu()}>
         <NavLink activeClassName="active" to='/nftcollection/system-concept'>NFT <br/> COLLECTIONS</NavLink>
-        </li>
+        </li> */}
         <li className='mx-5 mt-4' onClick={() => props.isMobile && props.closeMobileMenu()}>
           <NavLink activeClassName="active" to='/claimqubes'>CLAIM <br /> QUBES</NavLink>
         </li>
         <li className='mx-5 mt-4' onClick={() => props.isMobile && props.closeMobileMenu()}>
           <NavLink activeClassName="active" to='/mycollection'>MY <br /> COLLECTION</NavLink>
         </li>
-        <li className='mx-5 mt-4' onClick={() => props.isMobile && props.closeMobileMenu()}>
+        {/* <li className='mx-5 mt-4' onClick={() => props.isMobile && props.closeMobileMenu()}>
           <a href="#" key={'homeqube'} target="_blank" rel="noreferrer">
           <NavLink activeClassName="active" to='/faqs'> FAQS </NavLink>
            
           </a>
-        </li>
+        </li> */}
        
         {/* <li className='mx-3'>
           <Link to='/marketplace'>Marketplace</Link>

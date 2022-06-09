@@ -70,7 +70,7 @@ const OSAPItems: React.FC = () => {
             //  { name: 'Homeqube', collectionId: '1', identifier: -354695101 },
             // { name: 'Home-design', collectionId: '2', identifier: 1462698944 },
             // { name: 'Just-for-fun', collectionId: '3', identifier: 393799738 },
-            { name: "", collectionId: "4", identifier: -1434943395 },
+            { name: "", collectionId: "4", identifier: [-1434943395,393799738] },
             // { name: 'Puppies + Shibas', collectionId: '4', identifier: [1235887132, 2036309415] },
             // { name: 'Purple Puppies', collectionId: '4', identifier: 2036309415, attribute: { backgrounds: 'gradient_purple' } }
           ]}

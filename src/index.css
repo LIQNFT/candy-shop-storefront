@@ -898,7 +898,7 @@ input:not(:disabled) {
 }
 .upper-container {
   height: 150px;
-  background: #545459;
+  background:#51576d;
 }
 .image-container {
   background: white;
@@ -951,6 +951,14 @@ h4 {
   background: transparent;
   color: #7f00ff;
   border: 2px solid #7f00ff;
+}
+
+.SL-Des{
+  text-align: justify;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .display {
@@ -1070,6 +1078,7 @@ h4 {
 }
 .profile-image-site {
   position: relative;
+  background-color: #ffffff;
   margin-bottom: -20px;
   width: 160px;
   height: 170px;

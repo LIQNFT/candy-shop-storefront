@@ -7,18 +7,17 @@ function Cards() {
           <div class="card-container container-fluid">
             <div class="upper-container">
               <div class="image-container">
-                <img src="../0.png" />
+                <img src="/Homeqube-logo-black_small 1.svg" />
               </div>
             </div>
             <div class="lower-container">
               <div>
-                <h3>Homeqube</h3>
-                <h4>2ND TITLE</h4>
+                <h3>Structural Legacies</h3>
+                {/* <h4>2ND TITLE</h4> */}
               </div>
               <div>
-                <p>
-                  sodales accumsan ligula. Aenean sed diam tristique, fermentum
-                  mi nec, ornare arch.
+                <p className="SL-Des">
+                Introducing Homeqube’s Structural Legacy System. Each Structural Configuration is unique. We generated 2500 unique combinations (without Cantilever) from our Systems Architecture Platform (SAP). This Legacy System can be used to build limitless design configurations for flat topographies and up to 3 story housing, allowing open architecture. Our composite mix is more sustainable, weather resilient, and emits much less carbon than reinforced concrete/steel, and can be ergonomically assembled at site.
                 </p>
               </div>
             </div>
@@ -29,18 +28,17 @@ function Cards() {
           <div class="card-container container-fluid">
             <div class="upper-container">
               <div class="image-container">
-                <img src="../0.png" />
+              <img src="/Homeqube-logo-black_small 1.svg" />
               </div>
             </div>
             <div class="lower-container">
               <div>
-                <h3>Home-design</h3>
-                <h4>2ND TITLE</h4>
+                <h3>Home Design</h3>
+                {/* <h4>2ND TITLE</h4> */}
               </div>
               <div>
                 <p>
-                  sodales accumsan ligula. Aenean sed diam tristique, fermentum
-                  mi nec, ornare arch.
+                Showcase here in our collection is the award winning Cagbalete Sand Clusters for our Home Designs.
                 </p>
               </div>
             </div>
@@ -51,18 +49,17 @@ function Cards() {
           <div class="card-container container-fluid">
             <div class="upper-container">
               <div class="image-container">
-                <img src="../0.png" />
+              <img src="/Homeqube-logo-black_small 1.svg" />
               </div>
             </div>
             <div class="lower-container">
               <div>
-                <h3>Just-for-fun</h3>
-                <h4>2ND TITLE</h4>
+                <h3>Structural Legacies with Cantilever</h3>
+                {/* <h4>2ND TITLE</h4> */}
               </div>
               <div>
-                <p>
-                  sodales accumsan ligula. Aenean sed diam tristique, fermentum
-                  mi nec, ornare arch.
+              <p className="SL-Des">
+              Introducing Homeqube’s Structural Legacy System. Each Structural Configuration is unique. We generated 50 unique combinations (with Cantilevers) from our Systems Architecture Platform (SAP). This Legacy System can be used to build limitless design configurations for flat topographies and up to 3 story housing, allowing open architecture. Our composite mix is more sustainable, weather resilient, and emits much less carbon than reinforced concrete/steel, and can be ergonomically assembled at site.
                 </p>
               </div>
             </div>
@@ -74,18 +71,17 @@ function Cards() {
           <div class="card-container">
             <div class="upper-container">
               <div class="image-container">
-                <img src="../0.png" />
+              <img src="/Homeqube-logo-black_small 1.svg" />
               </div>
             </div>
             <div class="lower-container">
               <div>
                 <h3>Other-System-Architecture-Product</h3>
-                <h4>2ND TITLE</h4>
+                {/* <h4>2ND TITLE</h4> */}
               </div>
               <div>
                 <p>
-                  sodales accumsan ligula. Aenean sed diam tristique, fermentum
-                  mi nec, ornare arch.
+                Showcase here in this collection are the sports cruiser and spherical bathrooms made by Architectyourlife14 (AYL).
                 </p>
               </div>
             </div>

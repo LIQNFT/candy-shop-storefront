@@ -37,12 +37,12 @@ const HomequbeItems: React.FC = () => {
      <header className="header-site-design">
 				
 				<section className="cover-image-div mb-4">
-					<img src="../Alt-Homeqube-logo-standard@2x.png" />
+					<img src="/Structural-Legacies.png" />
 					<section className="cover-in-site">
 						<div className="profile-image-site">
-							<img src="../0.png" className='img-fluid' />
-							<h1 className="profile-name">HOMEQUBE
-								<span id="nikName">(HQ)</span></h1>
+            <img src="/Homeqube-logo-black_small 1.svg" />
+							<h1 className="profile-name">Structural&nbsp;Legacies</h1>
+								{/* <span id="nikName">(HQ)</span> */}
 						</div>
 					</section>
 
