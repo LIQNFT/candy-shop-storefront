@@ -5,7 +5,7 @@ const Accordion = ({ title, step1, step2, step3, step4, step5, step6, step7, ste
 
   return (
     <div className="accordion-item">
-      <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
+      <div className="accordion-title" onClick={() => setIsActive(!isActive)} style={{cursor:"pointer"}}>
         <div><h3 className='carbon-benefits-content d-flex justify-content-between'><div>{title}</div><div>{isActive ? '-': '+' }</div></h3></div>
         
       </div>
