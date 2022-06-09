@@ -329,7 +329,7 @@ const App = () => {
                       element={
                         <>
                           <TopNav />
-                          <ClaimQ />
+                          <ClaimQubes />
                           {/* <Footer /> */}
                         </>
                       }

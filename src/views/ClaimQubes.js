@@ -1,14 +1,16 @@
 import React, { Component } from "react";
+import * as emailjs from "emailjs-com";
+
 class ClaimQubes extends Component {
   state = {
     URL: "",
     isTrueVal: false,
+    email: "",
+    subject: "",
   };
   urlPatternValidation = (URL) => {
-    const SOLSCAN = "solscan.io/"
-    const regex = new RegExp(
-      "(https?://)?"+ SOLSCAN +"[/\\w .-]*/?"
-    );
+    const SOLSCAN = "solscan.io/";
+    const regex = new RegExp("(https?://)?" + SOLSCAN + "[/\\w .-]*/?");
     return regex.test(URL);
   };
   changeUrl = (event) => {
@@ -20,9 +22,58 @@ class ClaimQubes extends Component {
     });
   };
   onSubmit = () => {
-    const { URL } = this.state;
+    const { URL, email, subject } = this.state;
     console.log("Here is the site url: ", URL);
+    let templateParams = {
+      from_name: email,
+      to_name: "",
+      subject: subject,
+      message_html: URL,
+    };
+    emailjs.send(
+      "service_7lhctnf",
+      "template_hb7zy83",
+      templateParams,
+      "GAyktw5BJ0aDCY2Wb"
+    );
+    this.resetForm();
   };
+  resetForm() {
+    this.setState({
+      URL: "",
+    });
+    alert("Solscan send")
+  }
+  
+
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   const { URL, email, subject } = this.state;
+  //   let templateParams = {
+  //     from_name: email,
+  //     to_name: "GAyktw5BJ0aDCY2Wb",
+  //     subject: subject,
+  //     message_html: URL,
+  //   };
+  //   emailjs.send(
+  //     "service_7lhctnf",
+  //     "template_hb7zy83",
+  //     templateParams,
+  //     "GAyktw5BJ0aDCY2Wb"
+  //   );
+  //   this.resetForm();
+  // }
+  // resetForm() {
+  //   this.setState({
+  //     name: "",
+  //     email: "",
+  //     subject: "",
+  //     message: "",
+  //   });
+  // }
+  // handleChange = (param, e) => {
+  //   this.setState({ [param]: e.target.value });
+  // };
   render() {
     const { isTrueVal, URL } = this.state;
     return (
@@ -31,7 +82,7 @@ class ClaimQubes extends Component {
           <div className="if-container container-fluid">
             <section className="mt-5 text-center">
               <p className="people-title">CLAIM YOUR QUBES HERE</p>
-            {/* <img src="./QR-Claimqubes.png"
+              {/* <img src="./QR-Claimqubes.png"
             className="qr-qubes"
             style={{
               height: "200px"
@@ -41,10 +92,10 @@ class ClaimQubes extends Component {
                 QUBES within 24 hours.
               </p>
             </section>
-            <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=DkLuQR_jeEC790tUrUu03ZWkblj4qK1EhjVnKc5qoVxUODFPVURGQ1A5WDhLTjZQM05JRkxVTk83RS4u&embedded=true" width="640" height="613" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            {/* <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=DkLuQR_jeEC790tUrUu03ZWkblj4qK1EhjVnKc5qoVxUODFPVURGQ1A5WDhLTjZQM05JRkxVTk83RS4u&embedded=true" width="640" height="613" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> */}
           </div>
         </section>
-        {/* <section className="p-5">
+        <section className="p-5">
           <div className="container contacts">
             <form id="form-contact">
               <div
@@ -77,33 +128,40 @@ class ClaimQubes extends Component {
                 </div>
               </div>
               <div className="col link d-flex align-items justify-content-center">
-                <div className="" style={{
-                  width: '100px'
-                }}>
+                <div
+                  className=""
+                  style={{
+                    width: "100px",
+                  }}
+                >
                   <button
                     className="contact-send-button btn btn-lg rounded-pill"
                     id="sendbtn"
                     type="button"
-                    onClick={this.onSubmit} disabled={!isTrueVal}
+                    onClick={this.onSubmit}
+                    disabled={!isTrueVal}
                   >
                     submit
                   </button>
-                  {!this.state.isTrueVal?<div
-                    id="errorMsg"
-                     style={{
-                      color: "red"
-                     }}
-                   >                 
-                    Enter Valid SOLSCAN URL  
-                    </div>:<div           
-                    id="errorMsg"
+                  {!this.state.isTrueVal ? (
+                    <div
+                      id="errorMsg"
                       style={{
-                     display: "none"
+                        color: "red",
                       }}
                     >
-                      Invalid SOLSCAN URL  
+                      Enter Valid SOLSCAN URL
                     </div>
-                    } */}
+                  ) : (
+                    <div
+                      id="errorMsg"
+                      style={{
+                        display: "none",
+                      }}
+                    >
+                      Invalid SOLSCAN URL
+                    </div>
+                  )}
                   {/* {!this.state.isTrueVal && ( )} */}
                   {/* {!this.state.isTrueVal && (
                     <div
@@ -115,11 +173,11 @@ class ClaimQubes extends Component {
                     Invalid SOLSCAN URL
                   </div>
                   )} */}
-                {/* </div>
+                </div>
               </div>
             </form>
           </div>
-        </section> */}
+        </section>
       </>
     );
   }
