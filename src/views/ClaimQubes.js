@@ -22,13 +22,13 @@ class ClaimQubes extends Component {
     });
   };
   onSubmit = () => {
-    const { URL, email, subject } = this.state;
+    const { URL, user_email, user_name } = this.state;
     console.log("Here is the site url: ", URL);
     let templateParams = {
-      from_name: email,
-      to_name: "",
-      subject: subject,
-      message_html: URL,
+      from_name: user_email,
+      to_name: user_email,
+      // subject: user_name,
+      message: URL,
     };
     emailjs.send(
       "service_7lhctnf",
