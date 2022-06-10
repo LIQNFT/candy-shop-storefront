@@ -40,20 +40,27 @@ const OSAPItems: React.FC = () => {
 
   return (
     <>
-    <header className="header-site-design">
-				
-				<section className="cover-image-div mb-4">
-					<img src="../Alt-Homeqube-logo-standard@2x.png" />
-					<section className="cover-in-site">
-						<div className="profile-image-site">
-							<img src="../0.png" />
-							<h1 className="profile-name">HOMEQUBE
-								<span id="nikName">(HQ)</span></h1>
-						</div>
-					</section>
-
-				</section>
-			</header>
+      <header className="header-site-design">
+        <section className="cover-image-div mb-4">
+          <img src="/Other System.png" />
+          <section className="cover-in-site">
+            <div className="profile-image-site">
+              <img src="/Homeqube-logo-black_small 1.svg" />
+              <h1 className="profile-name-2">
+                Other-System-Architecture-Product
+              </h1>
+              {/* <span id="nikName">(HQ)</span> */}
+            </div>
+          </section>
+        </section>
+      </header>
+      <div className="item-description">
+        <p className="SL-Des">
+          <h3 className="des">DESCRIPTION</h3>
+          Showcase here in this collection are the sports cruiser and spherical
+          bathrooms made by Architectyourlife14 (AYL).
+        </p>
+      </div>
       <DesContainer>
         <Stat
           candyShop={candyShopRef.current}
@@ -70,7 +77,11 @@ const OSAPItems: React.FC = () => {
             //  { name: 'Homeqube', collectionId: '1', identifier: -354695101 },
             // { name: 'Home-design', collectionId: '2', identifier: 1462698944 },
             // { name: 'Just-for-fun', collectionId: '3', identifier: 393799738 },
-            { name: "", collectionId: "4", identifier: [-1434943395,393799738] },
+            {
+              name: "",
+              collectionId: "4",
+              identifier: [-1434943395, 393799738],
+            },
             // { name: 'Puppies + Shibas', collectionId: '4', identifier: [1235887132, 2036309415] },
             // { name: 'Purple Puppies', collectionId: '4', identifier: 2036309415, attribute: { backgrounds: 'gradient_purple' } }
           ]}

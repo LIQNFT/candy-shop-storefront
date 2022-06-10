@@ -152,7 +152,7 @@ const App = () => {
                       }
                     />
                     <Route
-                      path="/homeqube-items"
+                      path="/homeqube"
                       element={
                         <>
                          <TopNav />
@@ -162,7 +162,7 @@ const App = () => {
                       }
                     />
                     <Route
-                      path="/home-design-items"
+                      path="/home-design"
                       element={
                         <>
                          <TopNav />
@@ -172,7 +172,7 @@ const App = () => {
                       }
                     />
                     <Route
-                      path="/just-for-fun-items"
+                      path="/SLC"
                       element={
                         <>
                          <TopNav />
@@ -182,7 +182,7 @@ const App = () => {
                       }
                     />
                     <Route
-                      path="/OSAP-item"
+                      path="/OSAP"
                       element={
                         <>
                          <TopNav />

@@ -40,20 +40,25 @@ const HomequbeDesignItems: React.FC = () => {
 
   return (
     <>
-     <header className="header-site-design">
-				
-				<section className="cover-image-div mb-4">
-					<img src="../Alt-Homeqube-logo-standard@2x.png" />
-					<section className="cover-in-site">
-						<div className="profile-image-site">
-							<img src="../0.png" />
-							<h1 className="profile-name">HOMEQUBE
-								<span id="nikName">(HQ)</span></h1>
-						</div>
-					</section>
-
-				</section>
-			</header>
+      <header className="header-site-design">
+        <section className="cover-image-div mb-4">
+          <img src="/Home-Design.png" />
+          <section className="cover-in-site">
+            <div className="profile-image-site">
+              <img src="/Homeqube-logo-black_small 1.svg" />
+              <h1 className="profile-name">Home&nbsp;Design</h1>
+              {/* <span id="nikName">(HQ)</span> */}
+            </div>
+          </section>
+        </section>
+      </header>
+      <div className="item-description">
+        <p className="SL-Des">
+          <h3 className="des">DESCRIPTION</h3>
+          Showcase here in our collection is the award winning Cagbalete Sand
+          Clusters for our Home Designs.
+        </p>
+      </div>
       <DesContainer>
         <Stat
           candyShop={candyShopRef.current}

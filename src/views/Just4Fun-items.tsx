@@ -40,20 +40,31 @@ const Just4FunItems: React.FC = () => {
 
   return (
     <>
-    <header className="header-site-design">
-				
-				<section className="cover-image-div mb-4">
-					<img src="../Alt-Homeqube-logo-standard@2x.png" />
-					<section className="cover-in-site">
-						<div className="profile-image-site">
-							<img src="../0.png" />
-							<h1 className="profile-name">HOMEQUBE
-								<span id="nikName">(HQ)</span></h1>
-						</div>
-					</section>
-
-				</section>
-			</header>
+      <header className="header-site-design">
+        <section className="cover-image-div mb-4">
+          <img src="/Structural-Legacies.png" />
+          <section className="cover-in-site">
+            <div className="profile-image-site">
+              <img src="/Homeqube-logo-black_small 1.svg" />
+              <h1 className="profile-name-2">Structural Legacies with Cantilever</h1>
+              {/* <span id="nikName">(HQ)</span> */}
+            </div>
+          </section>
+        </section>
+      </header>
+      <div className="item-description">
+        <p className="SL-Des">
+          <h3 className="des">DESCRIPTION</h3>
+          Introducing Homeqube’s Structural Legacy System. Each Structural
+          Configuration is unique. We generated 2500 unique combinations
+          (without Cantilever) from our Systems Architecture Platform (SAP).
+          This Legacy System can be used to build limitless design
+          configurations for flat topographies and up to 3 story housing,
+          allowing open architecture. Our composite mix is more sustainable,
+          weather resilient, and emits much less carbon than reinforced
+          concrete/steel, and can be ergonomically assembled at site.
+        </p>
+      </div>
       <DesContainer>
         <Stat
           candyShop={candyShopRef.current}

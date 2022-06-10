@@ -3,9 +3,10 @@ function Cards() {
   return (
     <div className="homepage">
       <div class="display">
-        <Link to="/homeqube-items" className="href">
+        <Link to="/homeqube" className="href">
           <div class="card-container container-fluid">
             <div class="upper-container">
+            <img src="/Structural-Legacies.png" className="cards-banner"/>
               <div class="image-container">
                 <img src="/Homeqube-logo-black_small 1.svg" />
               </div>
@@ -24,9 +25,10 @@ function Cards() {
           </div>
         </Link>
 
-        <Link to="/home-design-items" className="href">
+        <Link to="/home-design" className="href">
           <div class="card-container container-fluid">
             <div class="upper-container">
+            <img src="/Home-Design.png" className="cards-banner"/>
               <div class="image-container">
               <img src="/Homeqube-logo-black_small 1.svg" />
               </div>
@@ -45,9 +47,10 @@ function Cards() {
           </div>
         </Link>
 
-        <Link to="/just-for-fun-items" className="href">
+        <Link to="/SLC" className="href">
           <div class="card-container container-fluid">
             <div class="upper-container">
+            <img src="/Structural-Legacies.png" className="cards-banner"/>
               <div class="image-container">
               <img src="/Homeqube-logo-black_small 1.svg" />
               </div>
@@ -67,9 +70,10 @@ function Cards() {
         </Link>
       </div>
       <div class="display2">
-        <Link to="/OSAP-item" className="href">
+        <Link to="/OSAP" className="href">
           <div class="card-container">
             <div class="upper-container">
+            <img src="/Other System.png" className="cards-banner"/>
               <div class="image-container">
               <img src="/Homeqube-logo-black_small 1.svg" />
               </div>
