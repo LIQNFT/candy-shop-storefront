@@ -2,8 +2,80 @@ import { NavLink } from "react-router-dom";
 import Player from 'react-video-js-player';
 import Homeqube from "../video/Homeqube-ICO.mp4"
 import HomequbeOGG from "../video/Homeqube-ICO.ogg"
+import Accordion from "./Accordion";
+
 
 function HomePage() {
+  const accordionData = [
+    {
+      title: `How to set up your wallet?`,
+      step1: ` We currently supporting Phantom wallet for transactions in our
+      website. Visit this`,
+      state2: `d-none`,
+      state3: `d-none`,
+      state4: `d-none`,
+      state5: `d-none`,
+      state6: `d-none`,
+      state7: `d-none`,
+      state8: `d-none`,
+      statelink1: `d-none`,
+     
+
+    },
+    {
+      title: 'How to buy NFT from this website?',
+      step1: `Step 1: By clicking the 'Connect Wallet', connect your prefered crypto wallet to our marketplace.`,
+      step2: `Step 2: On the our website you will see different categories to choose from. Click and you will see the list of the NFTs based on that categories.`,
+      step3: `Step 3: Find your prefered NFT. You can also view all of the information of that NFT with their attributes and price. `,
+      step4: `Step 4: Then, click the 'Buy Now' button to buy NFT.`,
+      step5: `Step 5: Click Approve for the transaction on your wallet.`,
+      state6: `d-none`,
+      state7: `d-none`,
+      state8: `d-none`,
+      statelink: `d-none`,
+      statelink1: `d-none`,
+    },
+    {
+      title: 'How to download your 3d model files?',
+      step1: `Step 1: Open your crypto wallet.`,
+      step2: `Step 2: On your wallet you will find your collectibles where your NFT is stored.`,
+      step3: `Step 3: Click your latest NFT purchased.`,
+      step4: `Step 4: Click the '...' on the top right corner of your NFT then click 'View on Solscan'`,
+      step5: `Step 5: Once you're on Solscan Website, you will see all of the details and overview on your NFTs. Click the Metadata Tab`,
+      step6: `Step 6: Click the View URI Metadata, then you will see all of the metadatas that are stored on  your NFT.`,
+      step7: `Step 7: Find the "properties" section then "files", you will now see two different uri's with their types, image/gif and glb, copy the uri of the glb type with no quotations ("") on both sides then paste it to your browser.`,
+      step8: `Step 8: The file will automatically download to your computer, then once it's finished you will now renamed it to .glb file. Then you can now view it to your 3d Viewer.`,
+      statelink: `d-none`,
+      statelink1: `d-none`,
+     
+    },
+    {
+      title: 'How to claim your QUBE?',
+      step1: `Step 1: On our website, click the Claim Qube on the Navigation Bar`,
+      step2: `Step 2: Paste the Solscan Link and your personal Email Address.`, 
+      step3: `You can find the Solscan Link on your crypto wallet, where your latest purchased NFT stored. Click 'View On Solscan', then copy the URL on the top of your browser.`,
+      step4: `Step 3: Click the 'Submit' button then wait for our email.`,
+      state5: `d-none`,
+      state6: `d-none`,
+      state7: `d-none`,
+      state8: `d-none`,
+      statelink: `d-none`,
+      statelink1: `d-none`,
+      
+    },
+    {
+      title: `How to add your own home design NFT collection to our website?`,
+      step1: `You may answer this`,
+      statelink: `d-none`,
+      state2: `d-none`,
+      state3: `d-none`,
+      state4: `d-none`,
+      state5: `d-none`,
+      state6: `d-none`,
+      state7: `d-none`,
+      state8: `d-none`,
+    }
+  ];
   return (
     <>
       <section className="showcase text-light p-5 text-center text-sm-start">
@@ -260,227 +332,14 @@ function HomePage() {
       </section>
 
       <section className="p-4 text-dark text-start bg-white">
-        <div className="accordion accordion-flush " id="accordionFlush">
-          <div className="accordion-item ">
-            <h2 className="accordion-header " id="flush-headingOne">
-              <button
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseOne"
-                aria-expanded="false"
-                aria-controls="flush-collapseOne"
-              >
-                <b className="text-uppercase">How to set up your wallet?</b>
-              </button>
-            </h2>
-            <div
-              id="flush-collapseOne"
-              className="accordion-collapse collapse"
-              aria-labelledby="flush-headingOne"
-              data-bs-parent="#accordionFlush"
-            >
-              <div className="accordion-body">
-                <p className="accordion-text text-uppercase">
-                  We currently supporting Phantom wallet for transactions in our
-                  website. Visit this
-                  <a
-                    href="https://help.phantom.app/hc/en-us/articles/4406388623251-How-to-create-a-new-wallet"
-                    target="_blank"
-                    className="blog-link"
-                  >
-                    guide
-                  </a>
-                </p>
-              </div>
-            </div>
+ 
+           <div className="accordion">
+                            {accordionData.map(({ title, step1, step2, step3, step4, step5, step6, step7, step8, state1, state2, state3, state4, state5, state6, state7, state8, statelink,statelink1 }) => (
+                            <Accordion title={title} step1={step1} state1={state1} step2={step2} state2 = {state2} step3={step3} state3 = {state3} step4={step4} state4 = {state4} step5={step5} state5 = {state5} step6={step6} state6 = {state6} step7={step7} state7 = {state7} step8={step8} state8 = {state8} statelink = {statelink} statelink1 = {statelink1} />
+                                ))}
           </div>
 
-          <div className="accordion-item">
-            <h2 className="accordion-header" id="flush-headingTwo">
-              <button
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseTwo"
-                aria-expanded="false"
-                aria-controls="flush-collapseTwo"
-              >
-                <b className="text-uppercase">
-                  How to buy NFT from this website?
-                </b>
-              </button>
-            </h2>
-            <div
-              id="flush-collapseTwo"
-              className="accordion-collapse collapse"
-              aria-labelledby="flush-headingTwo"
-              data-bs-parent="#accordionFlush"
-            >
-              <div className="accordion-body text-uppercase">
-                <p className="accordion-text">
-                  Homeqube solves many of the recurring problems in
-                  homebuilding, including the following:
-                </p>
-                <ul className="accordion-text">
-                  <li>
-                    STEP 1: BY CLICKING THE 'CONNECT WALLET', CONNECT YOUR
-                    PREFERED CRYPTO WALLET TO OUR MARKETPLACE
-                  </li>
-                  <li>
-                    STEP 2: ON THE OUR WEBSITE YOU WILL SEE DIFFERENT CATEGORIES
-                    TO CHOOSE FROM. CLICK AND YOU WILL SEE THE LIST OF THE NFTS
-                    BASED ON THAT CATEGORIES.
-                  </li>
-                  <li>
-                    STEP 3: FIND YOUR PREFERED NFT. YOU CAN ALSO VIEW ALL OF THE
-                    INFORMATION OF THAT NFT WITH THEIR ATTRIBUTES AND PRICE.
-                  </li>
-                  <li>STEP 4: THEN, CLICK THE 'BUY NOW' BUTTON TO BUY NFT.</li>
-                  <li>
-                    STEP 5: CLICK APPROVE FOR THE TRANSACTION ON YOUR WALLET.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="accordion-item">
-            <h2 className="accordion-header" id="flush-headingThree">
-              <button
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseThree"
-                aria-expanded="false"
-                aria-controls="flush-collapseThree"
-              >
-                <b className="text-uppercase">
-                  How to download your 3d model files?
-                </b>
-              </button>
-            </h2>
-            <div
-              id="flush-collapseThree"
-              className="accordion-collapse collapse"
-              aria-labelledby="flush-headingThree"
-              data-bs-parent="#accordionFlush"
-            >
-              <div className="accordion-body text-uppercase">
-                <p className="accordion-text">
-                  We will guide you through the entire process, including in the
-                  following areas:
-                </p>
-                <ul className="accordion-text">
-                  <li>STEP 1: OPEN YOUR CRYPTO WALLET.</li>
-                  <li>
-                    STEP 2: ON YOUR WALLET YOU WILL FIND YOUR COLLECTIBLES WHERE
-                    YOUR NFT IS STORED.
-                  </li>
-                  <li>STEP 3: CLICK YOUR LATEST NFT PURCHASED.</li>
-                  <li>
-                    STEP 4: CLICK THE '...' ON THE TOP RIGHT CORNER OF YOUR NFT
-                    THEN CLICK 'VIEW ON SOLSCAN'
-                  </li>
-                  <li>
-                    STEP 5: ONCE YOU'RE ON SOLSCAN WEBSITE, YOU WILL SEE ALL OF
-                    THE DETAILS AND OVERVIEW ON YOUR NFTS. CLICK THE METADATA
-                    TAB
-                  </li>
-                  <li>
-                    STEP 6: CLICK THE VIEW URI METADATA, THEN YOU WILL SEE ALL
-                    OF THE METADATAS THAT ARE STORED ON YOUR NFT.
-                  </li>
-                  <li>
-                    STEP 7: FIND THE "PROPERTIES" SECTION THEN "FILES", YOU WILL
-                    NOW SEE TWO DIFFERENT URI'S WITH THEIR TYPES, IMAGE/GIF AND
-                    GLB, COPY THE URI OF THE GLB TYPE WITH NO QUOTATIONS ("") ON
-                    BOTH SIDES THEN PASTE IT TO YOUR BROWSER.
-                  </li>
-                  <li>
-                    STEP 8: THE FILE WILL AUTOMATICALLY DOWNLOAD TO YOUR
-                    COMPUTER, THEN ONCE IT'S FINISHED YOU WILL NOW RENAMED IT TO
-                    .GLB FILE. THEN YOU CAN NOW VIEW IT TO YOUR 3D VIEWER.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="accordion-item">
-            <h2 className="accordion-header" id="flush-headingFour">
-              <button
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseFour"
-                aria-expanded="false"
-                aria-controls="flush-collapseFour"
-              >
-                <b className="text-uppercase">How to claim your qube?</b>
-              </button>
-            </h2>
-            <div
-              id="flush-collapseFour"
-              className="accordion-collapse collapse"
-              aria-labelledby="flush-headingFour"
-              data-bs-parent="#accordionFlush"
-            >
-              <div className="accordion-body text-uppercase">
-                <ul className="accordion-text">
-                  <li>
-                    STEP 1: ON OUR WEBSITE, CLICK THE CLAIM QUBE ON THE
-                    NAVIGATION BAR
-                  </li>
-                  <li>
-                    STEP 2: PASTE THE SOLSCAN LINK AND YOUR PERSONAL EMAIL
-                    ADDRESS.
-                  </li>
-                  <li>
-                    YOU CAN FIND THE SOLSCAN LINK ON YOUR CRYPTO WALLET, WHERE
-                    YOUR LATEST PURCHASED NFT STORED. CLICK 'VIEW ON SOLSCAN',
-                    THEN COPY THE URL ON THE TOP OF YOUR BROWSER.
-                  </li>
-                  <li>
-                    STEP 3: CLICK THE 'SUBMIT' BUTTON THEN WAIT FOR OUR EMAIL.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div className="accordion-item">
-            <h2 className="accordion-header" id="flush-headingFive">
-              <button
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseFive"
-                aria-expanded="false"
-                aria-controls="flush-collapseFive"
-              >
-                <b className="text-uppercase">
-                  How to add your own home design NFT collection to our website?{" "}
-                </b>
-              </button>
-            </h2>
-            <div
-              id="flush-collapseFive"
-              className="accordion-collapse collapse"
-              aria-labelledby="flush-headingFive"
-              data-bs-parent="#accordionFlush"
-            >
-              <div className="accordion-body text-uppercase">
-                <p className="accordion-text">
-                  You may answer this
-                  <a href="" className="blog-link">
-                    form
-                  </a>
-                  or email us at about@homeqube.com for your interested in
-                  posting your collection
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+      
       </section>
       <section className="p-5 text-center content-eco1-bg">
         <img

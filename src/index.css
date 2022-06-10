@@ -540,6 +540,7 @@ body.active-modal {
   padding-top: 20px;
   text-align: left;
 }
+
 .carbon-benefits-content-head {
   color: #5a5a5a;
   font-weight: bold;
@@ -1179,7 +1180,7 @@ h4 {
   display: none;
 }
 .accordion-item {
-  background-color: hsl(0, 0%, 81%);
+
   border: none;
 }
 .item-description {
@@ -2063,4 +2064,11 @@ h4 {
 }
 .list-group-item {
   text-align: start;
+}
+
+.faq-head {
+  padding-top: 20px;
+  text-align: left;
+  font-size: 1.2em;
+  font-weight: bold;
 }
