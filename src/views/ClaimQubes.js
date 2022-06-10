@@ -42,7 +42,7 @@ class ClaimQubes extends Component {
     this.setState({
       URL: "",
     });
-    alert("Solscan send")
+    alert("Solscan has been send")
   }
   
 

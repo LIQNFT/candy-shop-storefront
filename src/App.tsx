@@ -43,13 +43,14 @@ import NFTCollectionsOS from "./views/NFTCollectionsOS";
 import NFTCollectionsH from "./views/NFTCollectionsH";
 import NFTCollectionsCN from "./views/NFTCollectionsCN";
 import LoginAuth from "./views/LoginAuth";
-import Cards from "./views/Cards"
+import Cards from "./views/Cards";
 import HomequbeItems from "./views/Homeqube-items";
 import HomequbeDesignItems from "./views/HomeDesign-items";
 import Just4FunItems from "./views/Just4Fun-items";
 import OSAPItems from "./views/OSAP-Items";
 import ClaimQ from "./views/ClaimQ";
 import Faqs from "./views/Faqs";
+import HomePage from "./views/HomePage";
 
 require("@solana/wallet-adapter-react-ui/styles.css");
 
@@ -133,19 +134,20 @@ const App = () => {
               <main>
                 <MainContainer>
                   <Routes>
-                    {/* <Route
-                      path="/"
-                      element={
-                        <>
-                          <Login />
-                        </>
-                      }
-                    /> */}
                     <Route
                       path="/"
                       element={
                         <>
-                         <TopNav />
+                          <TopNav />
+                          <HomePage />
+                        </>
+                      }
+                    />
+                    <Route
+                      path="/nftcollection"
+                      element={
+                        <>
+                          <TopNav />
                           <Cards />
                           {/* <Footer /> */}
                         </>
@@ -155,7 +157,7 @@ const App = () => {
                       path="/homeqube"
                       element={
                         <>
-                         <TopNav />
+                          <TopNav />
                           <HomequbeItems />
                           {/* <Footer /> */}
                         </>
@@ -165,7 +167,7 @@ const App = () => {
                       path="/home-design"
                       element={
                         <>
-                         <TopNav />
+                          <TopNav />
                           <HomequbeDesignItems />
                           {/* <Footer /> */}
                         </>
@@ -175,7 +177,7 @@ const App = () => {
                       path="/SLC"
                       element={
                         <>
-                         <TopNav />
+                          <TopNav />
                           <Just4FunItems />
                           {/* <Footer /> */}
                         </>
@@ -185,17 +187,17 @@ const App = () => {
                       path="/OSAP"
                       element={
                         <>
-                         <TopNav />
+                          <TopNav />
                           <OSAPItems />
                           {/* <Footer /> */}
                         </>
                       }
                     />
-                     <Route
+                    <Route
                       path="/faqs"
                       element={
                         <>
-                         <TopNav />
+                          <TopNav />
                           <Faqs />
                           {/* <Footer /> */}
                         </>
@@ -242,7 +244,7 @@ const App = () => {
                         </>
                       }
                     />
-                     
+
                     <Route
                       path="/nftcollection/system-concept"
                       element={
@@ -431,12 +433,13 @@ const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
- 
+
+
   text-align: center;
   justify-content: center;
 `;
+// margin-bottom: 20px;
+// padding-bottom: 20px;
 // margin-right: 4%;
 // margin-left: 4%;
 

@@ -16,9 +16,9 @@ const NavLinks = (props) =>{
     const [active, setActive] = useState("navItem1");
     return(
     <>
-        {/* <li className='mx-5 mt-4' onClick={() => setActive("navItem1") && props.isMobile && props.closeMobileMenu()}>
-        <NavLink activeClassName="active" to='/nftcollection/system-concept'>NFT <br/> COLLECTIONS</NavLink>
-        </li> */}
+        <li className='mx-5 mt-4' onClick={() => setActive("navItem1") && props.isMobile && props.closeMobileMenu()}>
+        <NavLink activeClassName="active" to='/nftcollection'>NFT <br/> COLLECTIONS</NavLink>
+        </li>
         <li className='mx-5 mt-4' onClick={() => props.isMobile && props.closeMobileMenu()}>
           <NavLink activeClassName="active" to='/claimqubes'>CLAIM <br /> QUBES</NavLink>
         </li>
