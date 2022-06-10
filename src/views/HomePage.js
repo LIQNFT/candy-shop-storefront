@@ -1,4 +1,8 @@
 import { NavLink } from "react-router-dom";
+import Player from 'react-video-js-player';
+import Homeqube from "../video/Homeqube-ICO.mp4"
+import HomequbeOGG from "../video/Homeqube-ICO.ogg"
+
 function HomePage() {
   return (
     <>
@@ -47,10 +51,20 @@ function HomePage() {
               </div>
             </div>
             <div className="yt-vid">
-              <video width="100%" height="100%" autoplay muted loop>
-                <source src="/Homeqube-ICO.mp4" type="video/mp4" />
-                <source src="/Homeqube-ICO.ogg" type="video/ogg" />
+              <video width="100%" height="100%" autoPlay loop muted>
+                <source src = {Homeqube} type="video/mp4" />
+                <source src= {HomequbeOGG} type="video/ogg" />
               </video>
+               {/* <Player 
+             src={videoSrc}
+             width="560"
+             height="290"
+             muted = {true}
+             autoPlay = {true}
+             />   */}
+              
+            
+
             </div>
           </div>
         </div>
