@@ -3,6 +3,7 @@ import Player from 'react-video-js-player';
 import Homeqube from "../video/Homeqube-ICO.mp4"
 import HomequbeOGG from "../video/Homeqube-ICO.ogg"
 import Accordion from "./Accordion";
+import Cards from "./Cards";
 
 
 function HomePage() {
@@ -354,6 +355,15 @@ function HomePage() {
           src="/Right-Box-3(Bottom).svg"
           className="img-fluid right-box-2nd-animation-3"
         />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Cards />
+        
         <div className="ai-header row-icons">
           <p className="ai-title">Event Roadmap</p>
           <p>
@@ -370,6 +380,7 @@ function HomePage() {
         <br />
         <br />
         <br />
+        
         <div
           className="timeline-steps aos-init aos-animate text-uppercase"
           data-aos="fade-up"
