@@ -342,6 +342,7 @@ function HomePage() {
 
       
       </section> 
+      
       <section className="text-center content-eco1-bg">
       <Cards />
       </section>
