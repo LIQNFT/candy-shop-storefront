@@ -229,33 +229,17 @@ function HomePage() {
               </div>
               <div className="row">
                 <div className="col justify-content-center p-5">
-                  <img
-                    src="/wallet2.png"
-                    style={{
-                      width: "50px",
-                      height: "51px",
-                    }}
-                  />
-                  <br />
-                  <br />
-                  <p>
-                    <b> Set up wallet </b>
-                  </p>
+                <img src="/walletImg2.png" class="card-img-top" alt="..."/>
+                  {/* <img src="img/Icons/wallet2.png" style=" width: 50px; height: 51px;" alt="" srcset="">  */}
+                    <br/>
+                    <br/>
+                    <p> <b> Set up wallet </b></p>
 
-                  <p>
-                    Connect to Homeqube.io after you set up your wallet. We
-                    currently support only Phantom wallets
-                  </p>
+                    <p>Connect to Homeqube.io after you set up your wallet. We currently support only Phantom wallets</p>
                 </div>
 
                 <div className="col justify-content-center p-5">
-                  <img
-                    src="/collection2.png"
-                    style={{
-                      width: "50px",
-                      height: "51px",
-                    }}
-                  />
+                <img src="/To-Design-and-Earn.jpg" class="card-img-top" alt="..."/>
                   <br />
                   <br />
                   <p>
@@ -276,13 +260,7 @@ function HomePage() {
                 </div>
 
                 <div className="col justify-content-center p-5">
-                  <img
-                    src="/nft2.png"
-                    style={{
-                      width: "50px",
-                      height: "51px",
-                    }}
-                  />
+                <img src="/exploreIMG.jpg" class="card-img-top" alt="..."/>
                   <br />
                   <br />
                   <p>
@@ -293,13 +271,7 @@ function HomePage() {
                 </div>
 
                 <div className="col justify-content-center p-5">
-                  <img
-                    src="/sale2.png"
-                    style={{
-                      width: "50px",
-                      height: "51px",
-                    }}
-                  />
+                <img src="/saleIMG.jpg" class="card-img-top" alt="..."/>
                   <br />
                   <br />
                   <p>
