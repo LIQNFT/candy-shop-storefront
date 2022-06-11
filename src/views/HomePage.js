@@ -341,7 +341,11 @@ function HomePage() {
           </div>
 
       
+      </section> 
+      <section className="text-center content-eco1-bg">
+      <Cards />
       </section>
+      
       <section className="p-5 text-center content-eco1-bg">
         <img
           src="/Right-Box-1(Faded).svg"
@@ -362,7 +366,7 @@ function HomePage() {
         <br />
         <br />
         <br />
-        <Cards />
+       
         
         <div className="ai-header row-icons">
           <p className="ai-title">Event Roadmap</p>
