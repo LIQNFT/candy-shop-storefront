@@ -1,10 +1,9 @@
 import { NavLink } from "react-router-dom";
-import Player from 'react-video-js-player';
-import Homeqube from "../video/Homeqube-ICO.mp4"
-import HomequbeOGG from "../video/Homeqube-ICO.ogg"
+import Player from "react-video-js-player";
+import Homeqube from "../video/Homeqube-ICO.mp4";
+import HomequbeOGG from "../video/Homeqube-ICO.ogg";
 import Accordion from "./Accordion";
 import Cards from "./Cards";
-
 
 function HomePage() {
   const accordionData = [
@@ -20,11 +19,9 @@ function HomePage() {
       state7: `d-none`,
       state8: `d-none`,
       statelink1: `d-none`,
-     
-
     },
     {
-      title: 'How to buy NFT from this website?',
+      title: "How to buy NFT from this website?",
       step1: `Step 1: By clicking the 'Connect Wallet', connect your prefered crypto wallet to our marketplace.`,
       step2: `Step 2: On the our website you will see different categories to choose from. Click and you will see the list of the NFTs based on that categories.`,
       step3: `Step 3: Find your prefered NFT. You can also view all of the information of that NFT with their attributes and price. `,
@@ -37,7 +34,7 @@ function HomePage() {
       statelink1: `d-none`,
     },
     {
-      title: 'How to download your 3d model files?',
+      title: "How to download your 3d model files?",
       step1: `Step 1: Open your crypto wallet.`,
       step2: `Step 2: On your wallet you will find your collectibles where your NFT is stored.`,
       step3: `Step 3: Click your latest NFT purchased.`,
@@ -48,12 +45,11 @@ function HomePage() {
       step8: `Step 8: The file will automatically download to your computer, then once it's finished you will now renamed it to .glb file. Then you can now view it to your 3d Viewer.`,
       statelink: `d-none`,
       statelink1: `d-none`,
-     
     },
     {
-      title: 'How to claim your QUBE?',
+      title: "How to claim your QUBE?",
       step1: `Step 1: On our website, click the Claim Qube on the Navigation Bar`,
-      step2: `Step 2: Paste the Solscan Link and your personal Email Address.`, 
+      step2: `Step 2: Paste the Solscan Link and your personal Email Address.`,
       step3: `You can find the Solscan Link on your crypto wallet, where your latest purchased NFT stored. Click 'View On Solscan', then copy the URL on the top of your browser.`,
       step4: `Step 3: Click the 'Submit' button then wait for our email.`,
       state5: `d-none`,
@@ -62,7 +58,6 @@ function HomePage() {
       state8: `d-none`,
       statelink: `d-none`,
       statelink1: `d-none`,
-      
     },
     {
       title: `How to add your own home design NFT collection to our website?`,
@@ -75,7 +70,7 @@ function HomePage() {
       state6: `d-none`,
       state7: `d-none`,
       state8: `d-none`,
-    }
+    },
   ];
   return (
     <>
@@ -109,30 +104,27 @@ function HomePage() {
                   </a>
                 </button>
                 <NavLink to="/nftcollection" className="a-link">
-                <button
-                  className="button1 btn btn-lg rounded-pill"
-                  type="button"
-                >    
+                  <button
+                    className="button1 btn btn-lg rounded-pill"
+                    type="button"
+                  >
                     Explore
-                </button>
+                  </button>
                 </NavLink>
               </div>
             </div>
             <div className="yt-vid">
               <video width="100%" height="100%" autoPlay loop muted>
-                <source src = {Homeqube} type="video/mp4" />
-                <source src= {HomequbeOGG} type="video/ogg" />
+                <source src={Homeqube} type="video/mp4" />
+                <source src={HomequbeOGG} type="video/ogg" />
               </video>
-               {/* <Player 
+              {/* <Player 
              src={videoSrc}
              width="560"
              height="290"
              muted = {true}
              autoPlay = {true}
              />   */}
-              
-            
-
             </div>
           </div>
         </div>
@@ -217,24 +209,42 @@ function HomePage() {
         <div className="col link d-flex align-items justify-content-center p-5">
           <div className="container">
             <div className="row">
-              <div className="col-md eco-1-title row-icons">
+              <div className="col-md eco-1-title">
                 <h3 className="text-uppercase ai-title">
                   Create, Explore, and Collect HomeQube Designs
                 </h3>
+                <div>
+                  <img src="/Rectangle 22.svg" />
+                </div>
               </div>
+              {/* <div className="col-md eco-1-title row-icons">
+                <h3 className="text-uppercase ai-title">
+                  Create, Explore, and Collect HomeQube Designs
+                </h3>
+              </div> */}
               <div className="row">
                 <div className="col justify-content-center p-5">
-                <img src="/walletImg2.png" class="card-img-top" alt="..."/>
+                  <img src="/walletImg2.png" class="card-img-top" alt="..." />
                   {/* <img src="img/Icons/wallet2.png" style=" width: 50px; height: 51px;" alt="" srcset="">  */}
-                    <br/>
-                    <br/>
-                    <p> <b> Set up wallet </b></p>
+                  <br />
+                  <br />
+                  <p>
+                    {" "}
+                    <b> Set up wallet </b>
+                  </p>
 
-                    <p>Connect to Homeqube.io after you set up your wallet. We currently support only Phantom wallets</p>
+                  <p>
+                    Connect to Homeqube.io after you set up your wallet. We
+                    currently support only Phantom wallets
+                  </p>
                 </div>
 
                 <div className="col justify-content-center p-5">
-                <img src="/To-Design-and-Earn.jpg" class="card-img-top" alt="..."/>
+                  <img
+                    src="/To-Design-and-Earn.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
                   <br />
                   <br />
                   <p>
@@ -255,7 +265,7 @@ function HomePage() {
                 </div>
 
                 <div className="col justify-content-center p-5">
-                <img src="/exploreIMG.jpg" class="card-img-top" alt="..."/>
+                  <img src="/exploreIMG.jpg" class="card-img-top" alt="..." />
                   <br />
                   <br />
                   <p>
@@ -266,7 +276,7 @@ function HomePage() {
                 </div>
 
                 <div className="col justify-content-center p-5">
-                <img src="/saleIMG.jpg" class="card-img-top" alt="..."/>
+                  <img src="/saleIMG.jpg" class="card-img-top" alt="..." />
                   <br />
                   <br />
                   <p>
@@ -289,7 +299,9 @@ function HomePage() {
         <br />
         <br />
         <div className="col-md eco-1-title">
-          <h3 className="text-uppercase ai-title">Resource for getting started</h3>
+          <h3 className="text-uppercase ai-title">
+            Resource for getting started
+          </h3>
         </div>
         <p className="q-tokenomics-showcase-intro-lead p-3 text-uppercase"></p>
         <center>
@@ -300,35 +312,85 @@ function HomePage() {
       </section>
 
       <section className="p-4 text-dark text-start bg-white">
- 
-           <div className="accordion">
-                            {accordionData.map(({ title, step1, step2, step3, step4, step5, step6, step7, step8, state1, state2, state3, state4, state5, state6, state7, state8, statelink,statelink1 }) => (
-                            <Accordion title={title} step1={step1} state1={state1} step2={step2} state2 = {state2} step3={step3} state3 = {state3} step4={step4} state4 = {state4} step5={step5} state5 = {state5} step6={step6} state6 = {state6} step7={step7} state7 = {state7} step8={step8} state8 = {state8} statelink = {statelink} statelink1 = {statelink1} />
-                                ))}
-          </div>
-
-      
-      </section> 
-      
-      <section className="text-center content-eco1-bg">
-      <section className="pt-5 text-center text-center content-eco1-bg text-sm-start">
-        <br />
-        <br />
-        <br />
-        <div className="col-md eco-1-title">
-          <h3 className="text-uppercase ai-title">NFT COLLECTIONS</h3>
+        <div className="accordion">
+          {accordionData.map(
+            ({
+              title,
+              step1,
+              step2,
+              step3,
+              step4,
+              step5,
+              step6,
+              step7,
+              step8,
+              state1,
+              state2,
+              state3,
+              state4,
+              state5,
+              state6,
+              state7,
+              state8,
+              statelink,
+              statelink1,
+            }) => (
+              <Accordion
+                title={title}
+                step1={step1}
+                state1={state1}
+                step2={step2}
+                state2={state2}
+                step3={step3}
+                state3={state3}
+                step4={step4}
+                state4={state4}
+                step5={step5}
+                state5={state5}
+                step6={step6}
+                state6={state6}
+                step7={step7}
+                state7={state7}
+                step8={step8}
+                state8={state8}
+                statelink={statelink}
+                statelink1={statelink1}
+              />
+            )
+          )}
         </div>
-        <p className="q-tokenomics-showcase-intro-lead p-3 text-uppercase"></p>
-        <center>
-          <div className="faq-rectangle"></div>
+      </section>
+
+      <section className="text-center content-eco1-bg pt-5">
+        <section className="pt-5 text-center text-center content-eco1-bg text-sm-start">
           <br />
           <br />
-        </center>
+          <br />
+          <div className="col-md eco-1-title">
+            <h3 className="text-uppercase ai-title">NFT COLLECTIONS</h3>
+          </div>
+          <p className="q-tokenomics-showcase-intro-lead p-3 text-uppercase"></p>
+          <center>
+            <div className="faq-rectangle"></div>
+            <br />
+            <br />
+          </center>
+        </section>
+        <Cards />
       </section>
-      <Cards />
+
+      <section className="text-center content-eco1-bg p-5">
+        <div className="col-md eco-1-title">
+          <h3 className="text-uppercase ai-title">Design Contest</h3>
+        </div>
+        <div class="display">
+          <div class="img-container">
+            <img src="/Contest.png" className="img-fluid" alt="..." />
+          </div>
+        </div>
       </section>
-      
-      <section className="px-5 pb-5 text-center content-eco1-bg">
+
+      <section className="px-5 pb-5 pt-5 text-center content-eco1-bg">
         <img
           src="/Right-Box-1(Faded).svg"
           className="img-fluid right-box-2nd-animation-1"
@@ -349,15 +411,12 @@ function HomePage() {
             proceed on other developments of our work
           </p>
           <br />
-          <center>
-            <div className="home-rectangle"></div>
-          </center>
         </div>
         <br />
         <br />
         <br />
         <br />
-        
+
         <div
           className="timeline-steps aos-init aos-animate text-uppercase"
           data-aos="fade-up"
