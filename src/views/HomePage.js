@@ -206,7 +206,7 @@ function HomePage() {
           src="/Left-Box-3(BottomSide).svg"
           className="box-animation-3 d-sm-none d-md-block"
         />
-        <div className="col link d-flex align-items justify-content-center p-5">
+        <div className="col link d-flex align-items justify-content-center p-5 row-icons">
           <div className="container">
             <div className="row">
               <div className="col-md eco-1-title">
