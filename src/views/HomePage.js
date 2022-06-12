@@ -289,7 +289,7 @@ function HomePage() {
         <br />
         <br />
         <div className="col-md eco-1-title">
-          <h3 className="text-uppercase ai-title">Resouce for getting started</h3>
+          <h3 className="text-uppercase ai-title">Resource for getting started</h3>
         </div>
         <p className="q-tokenomics-showcase-intro-lead p-3 text-uppercase"></p>
         <center>
