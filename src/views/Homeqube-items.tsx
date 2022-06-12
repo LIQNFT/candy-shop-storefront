@@ -78,7 +78,7 @@ const HomequbeItems: React.FC = () => {
           walletConnectComponent={<WalletMultiButton />}
           // configure filter by collection
           filters={[
-            { name: "", collectionId: "1", identifier: -354695101 },
+            { name: "", collectionId: "1", identifier: [-354695101, -1775657236] },
             // { name: 'Home-design', collectionId: '2', identifier: 1462698944 },
             // { name: 'Just-for-fun', collectionId: '3', identifier: 393799738 },
             // { name: 'Other-System-Architecture-Product', collectionId: '4', identifier: -1434943395 }
