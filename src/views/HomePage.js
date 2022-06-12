@@ -108,19 +108,14 @@ function HomePage() {
                     Create
                   </a>
                 </button>
-
+                <NavLink to="/nftcollection" className="a-link">
                 <button
                   className="button1 btn btn-lg rounded-pill"
-                  onclick="window.open('https://hqnftrialv2.xyz/')"
                   type="button"
-                >
-                  <NavLink to="/nftcollection" className="a-link">
+                >    
                     Explore
-                  </NavLink>
-                  {/* <a href="#" className="a-link">
-                    Explore
-                  </a> */}
                 </button>
+                </NavLink>
               </div>
             </div>
             <div className="yt-vid">
@@ -148,7 +143,7 @@ function HomePage() {
           <div className="container">
             <div className="row">
               <div className="col-md eco-1-title">
-                <h3 className="text-uppercase">
+                <h3 className="text-uppercase ai-title">
                   WE ARE NOT JUST AN NFT MARKETPLACE
                 </h3>
                 <div>
@@ -223,7 +218,7 @@ function HomePage() {
           <div className="container">
             <div className="row">
               <div className="col-md eco-1-title row-icons">
-                <h3 className="text-uppercase">
+                <h3 className="text-uppercase ai-title">
                   Create, Explore, and Collect HomeQube Designs
                 </h3>
               </div>
@@ -294,7 +289,7 @@ function HomePage() {
         <br />
         <br />
         <div className="col-md eco-1-title">
-          <h3 className="text-uppercase">Resouce for getting started</h3>
+          <h3 className="text-uppercase ai-title">Resouce for getting started</h3>
         </div>
         <p className="q-tokenomics-showcase-intro-lead p-3 text-uppercase"></p>
         <center>
@@ -316,10 +311,24 @@ function HomePage() {
       </section> 
       
       <section className="text-center content-eco1-bg">
+      <section className="pt-5 text-center text-center content-eco1-bg text-sm-start">
+        <br />
+        <br />
+        <br />
+        <div className="col-md eco-1-title">
+          <h3 className="text-uppercase ai-title">NFT COLLECTIONS</h3>
+        </div>
+        <p className="q-tokenomics-showcase-intro-lead p-3 text-uppercase"></p>
+        <center>
+          <div className="faq-rectangle"></div>
+          <br />
+          <br />
+        </center>
+      </section>
       <Cards />
       </section>
       
-      <section className="p-5 text-center content-eco1-bg">
+      <section className="px-5 pb-5 text-center content-eco1-bg">
         <img
           src="/Right-Box-1(Faded).svg"
           className="img-fluid right-box-2nd-animation-1"
@@ -332,16 +341,7 @@ function HomePage() {
           src="/Right-Box-3(Bottom).svg"
           className="img-fluid right-box-2nd-animation-3"
         />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-       
-        
-        <div className="ai-header row-icons">
+        <div className="ai-header">
           <p className="ai-title">Event Roadmap</p>
           <p>
             We listed 2,450 regular and 50 special NFTs on first ever Homeqube
@@ -374,6 +374,7 @@ function HomePage() {
               <div className="roadmap-list1"></div>
             </div>
           </div>
+
           <div className="timeline-step">
             <div
               className="timeline-content"
@@ -388,6 +389,7 @@ function HomePage() {
               <div className="roadmap-list1"></div>
             </div>
           </div>
+
           <div className="timeline-step">
             <div
               className="timeline-content"

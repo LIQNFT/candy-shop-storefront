@@ -27,7 +27,7 @@ import { useUpdateCandyShopContext } from '../Context';
 
 interface SellProps {
   wallet: AnchorWallet | undefined;
-  walletConnectComponent: React.ReactElement;
+  // walletConnectComponent: React.ReactElement;
   style?: { [key: string]: string | number } | undefined;
   candyShop: CandyShop;
   enableCacheNFT?: boolean;
@@ -37,7 +37,7 @@ interface SellProps {
  * React component that allows user to put an NFT for sale
  */
 
-export const Sell: React.FC<SellProps> = ({ wallet, walletConnectComponent, style, candyShop }) => {
+export const Sell: React.FC<SellProps> = ({ wallet, style, candyShop }) => {
   const [nfts, setNfts] = useState<SingleTokenInfo[]>([]);
   const [sellOrders, setSellOrders] = useState<OrderSchema[]>();
   const [walletPublicKey, setWalletPublicKey] = useState<web3.PublicKey>();
@@ -167,7 +167,7 @@ export const Sell: React.FC<SellProps> = ({ wallet, walletConnectComponent, styl
         justifyContent: 'space-around',
         textAlign: 'center'
       }}>
-        {walletConnectComponent}
+        {/* {walletConnectComponent} */}
       </div>
     );
   }

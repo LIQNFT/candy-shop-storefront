@@ -1030,7 +1030,7 @@ h4 {
   }
   .display2 {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row;
     padding: 0.75rem;
   }
@@ -1040,7 +1040,7 @@ h4 {
   .display {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0.75rem;
   }
   .card-container {
@@ -1051,7 +1051,7 @@ h4 {
   }
   .display2 {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row;
     padding: 0.75rem;
   }
@@ -1816,6 +1816,10 @@ h4 {
     transform: rotate(360deg);
   }
 }
+.spacing{
+  margin-left: 10rem;
+}
+
 @media (min-width: 310px) {
   .left-box-2nd {
     width: 159.14px;
@@ -1833,6 +1837,9 @@ h4 {
   .right-box-2nd-animation-3 {
     width: 69.9px;
     height: 65.69px;
+  }
+  .spacing{
+    margin-left: 8.5rem;
   }
 }
 @media (min-width: 576px) {
@@ -1870,6 +1877,9 @@ h4 {
     width: 94.9px;
     height: 90.69px;
   }
+  .spacing{
+    margin-left: 10rem;
+  }  
 }
 @media (min-width: 992px) {
   .left-box-2nd {
@@ -1909,6 +1919,9 @@ h4 {
 }
 .row-icons{
   margin-top: 8rem!important;
+}
+.margin-bot{
+  margin-bottom: 5rem!important;
 }
 .blog-link
 {
@@ -1982,19 +1995,19 @@ h4 {
   .timeline-steps .timeline-step:nth-child(2):not(:first-child):before {
     content: "";
     display: block;
-    border-top: 0.25rem solid #2f2f2f;
-    width: 3.46rem;
+    border-top: 0.25rem solid #e0e0e0;
+    width: 3.8125rem;
     position: absolute;
-    left: 7.5rem;
+    right: 7.5rem;
     top: 0.3125rem;
   }
   .timeline-steps .timeline-step:nth-child(1):not(:last-child):after {
     content: "";
     display: block;
-    border-top: 0.25rem solid #2f2f2f;
-    width: 3.46rem;
+    border-top: 0.25rem solid #e0e0e0;
+    width: 3.8125rem;
     position: absolute;
-    left: 7.5rem;
+    right: 7.5rem;
     top: 0.3125rem;
   }
   .timeline-steps .timeline-step:nth-child(1):not(:last-child):before {
@@ -2030,6 +2043,7 @@ h4 {
   border-radius: 2rem;
   opacity: 1;
 }
+.timeline-steps .timeline-step:nth-child(2) .timeline-content .inner-circle,
 .timeline-steps .timeline-step:nth-child(3) .timeline-content .inner-circle,
 .timeline-steps .timeline-step:nth-child(4) .timeline-content .inner-circle,
 .timeline-steps .timeline-step:nth-child(5) .timeline-content .inner-circle {
@@ -2041,6 +2055,10 @@ h4 {
   justify-content: center;
   background-color: #e0e0e0;
 }
+.timeline-steps
+  .timeline-step:nth-child(2)
+  .timeline-content
+  .inner-circle::before,
 .timeline-steps
   .timeline-step:nth-child(3)
   .timeline-content

@@ -107,7 +107,7 @@ class ClaimQubes extends Component {
               >
                 <div className="col-md-3">
                   <span className="details">
-                    SOLSCAN LINK&nbsp;
+                    SOLSCAN Address&nbsp;
                     <span
                       style={{
                         color: "red",
@@ -143,14 +143,16 @@ class ClaimQubes extends Component {
                   >
                     submit
                   </button>
-                  {!this.state.isTrueVal ? (
+                </div>
+              </div>
+              {!this.state.isTrueVal ? (
                     <div
                       id="errorMsg"
                       style={{
                         color: "red",
                       }}
                     >
-                      Enter Valid SOLSCAN URL
+                      Enter Valid SOLSCAN Address
                     </div>
                   ) : (
                     <div
@@ -159,22 +161,9 @@ class ClaimQubes extends Component {
                         display: "none",
                       }}
                     >
-                      Invalid SOLSCAN URL
+                      Invalid SOLSCAN Address
                     </div>
                   )}
-                  {/* {!this.state.isTrueVal && ( )} */}
-                  {/* {!this.state.isTrueVal && (
-                    <div
-                    id="errorMsg"
-                    style={{
-                      color: "red",
-                    }}
-                  >
-                    Invalid SOLSCAN URL
-                  </div>
-                  )} */}
-                </div>
-              </div>
             </form>
           </div>
         </section>

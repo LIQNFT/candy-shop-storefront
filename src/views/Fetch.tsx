@@ -50,7 +50,7 @@ const Fecth: React.FC = () => {
       <Sell
         wallet={wallet}
         candyShop={candyShop}
-        walletConnectComponent={<WalletMultiButton />}
+        // walletConnectComponent={<WalletMultiButton />}
         enableCacheNFT={true}
       />
     </DesContainer>
