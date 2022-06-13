@@ -46,7 +46,7 @@ const HomequbeDesignItems: React.FC = () => {
           <section className="cover-in-site">
             <div className="profile-image-site">
               <img src="/Homeqube-logo-black_small 1.svg" />
-              <h1 className="profile-name">Home&nbsp;Design</h1>
+              <h1 className="profile-name text-uppercase">Home&nbsp;Design</h1>
               {/* <span id="nikName">(HQ)</span> */}
             </div>
           </section>

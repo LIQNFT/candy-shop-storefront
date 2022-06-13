@@ -46,7 +46,7 @@ const OSAPItems: React.FC = () => {
           <section className="cover-in-site">
             <div className="profile-image-site">
               <img src="/Homeqube-logo-black_small 1.svg" />
-              <h1 className="profile-name-2">
+              <h1 className="profile-name-2 text-uppercase">
                 Other-System-Architecture-Product
               </h1>
               {/* <span id="nikName">(HQ)</span> */}

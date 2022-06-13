@@ -46,7 +46,7 @@ const Just4FunItems: React.FC = () => {
           <section className="cover-in-site">
             <div className="profile-image-site">
               <img src="/Homeqube-logo-black_small 1.svg" />
-              <h1 className="profile-name-2">Structural Legacies with Cantilever</h1>
+              <h1 className="profile-name-2 text-uppercase">Structural Legacies with Cantilever</h1>
               {/* <span id="nikName">(HQ)</span> */}
             </div>
           </section>
