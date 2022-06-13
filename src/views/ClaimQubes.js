@@ -42,7 +42,7 @@ class ClaimQubes extends Component {
     this.setState({
       URL: "",
     });
-    alert("Token address has been send.")
+    alert("  explorer solana com address has been send.")
   }
   
 
