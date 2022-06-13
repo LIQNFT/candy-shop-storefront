@@ -56,7 +56,7 @@ const Just4FunItems: React.FC = () => {
         <p className="SL-Des">
           <h3 className="des">DESCRIPTION</h3>
           Introducing Homeqube’s Structural Legacy System. Each Structural
-          Configuration is unique. We generated 2500 unique combinations
+          Configuration is unique. We generated 50 unique combinations
           (without Cantilever) from our Systems Architecture Platform (SAP).
           This Legacy System can be used to build limitless design
           configurations for flat topographies and up to 3 story housing,

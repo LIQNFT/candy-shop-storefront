@@ -8,9 +8,8 @@ import Cards from "./Cards";
 function HomePage() {
   const accordionData = [
     {
-      title: `How to set up your wallet?`,
-      step1: ` We currently supporting Phantom wallet for transactions in our
-      website. Visit this`,
+      title: `HOW TO SET UP YOUR WALLET?`,
+      step1: ` WE CURRENTLY SUPPORTING PHANTOM WALLET FOR TRANSACTIONS IN OUR WEBSITE. VISIT THIS`,
       state2: `d-none`,
       state3: `d-none`,
       state4: `d-none`,
@@ -228,12 +227,12 @@ function HomePage() {
                   {/* <img src="img/Icons/wallet2.png" style=" width: 50px; height: 51px;" alt="" srcset="">  */}
                   <br />
                   <br />
-                  <p>
+                  <p className="text-uppercase">
                     {" "}
                     <b> Set up wallet </b>
                   </p>
 
-                  <p>
+                  <p className="text-uppercase">
                     Connect to Homeqube.io after you set up your wallet. We
                     currently support only Phantom wallets
                   </p>
@@ -247,11 +246,11 @@ function HomePage() {
                   />
                   <br />
                   <br />
-                  <p>
+                  <p className="text-uppercase">
                     <b> Create Designs </b>
                   </p>
 
-                  <p>
+                  <p className="text-uppercase">
                     We will releasing our beta release of our homeqube app
                     within the Q3 of 2022. Visit this{" "}
                     <a
@@ -268,22 +267,22 @@ function HomePage() {
                   <img src="/exploreIMG.jpg" class="card-img-top" alt="..." />
                   <br />
                   <br />
-                  <p>
+                  <p className="text-uppercase">
                     <b> Explore Designs </b>
                   </p>
 
-                  <p>Explore thousands of homeqube NFTs design in sale.</p>
+                  <p className="text-uppercase">Explore thousands of homeqube NFTs design in sale.</p>
                 </div>
 
                 <div className="col justify-content-center p-5">
                   <img src="/saleIMG.jpg" class="card-img-top" alt="..." />
                   <br />
                   <br />
-                  <p>
+                  <p className="text-uppercase">
                     <b> Collect Design </b>
                   </p>
 
-                  <p>
+                  <p className="text-uppercase">
                     Qube shall be given to the primary buyers of our NFTs. Qube
                     can be used to access the features of fourthcoming app.{" "}
                   </p>
@@ -300,7 +299,7 @@ function HomePage() {
         <br />
         <div className="col-md eco-1-title">
           <h3 className="text-uppercase ai-title">
-            Resource for getting started
+            Getting started
           </h3>
         </div>
         <p className="q-tokenomics-showcase-intro-lead p-3 text-uppercase"></p>
@@ -312,7 +311,7 @@ function HomePage() {
       </section>
 
       <section className="p-4 text-dark text-start bg-white">
-        <div className="accordion">
+        <div className="accordion text-uppercase">
           {accordionData.map(
             ({
               title,
@@ -405,7 +404,7 @@ function HomePage() {
         />
         <div className="ai-header">
           <p className="ai-title">Event Roadmap</p>
-          <p>
+          <p className="text-uppercase">
             We listed 2,450 regular and 50 special NFTs on first ever Homeqube
             Design NFT collection. After we hit a sell percentage, we can
             proceed on other developments of our work

@@ -13,13 +13,13 @@ function Cards() {
             </div>
             <div class="lower-container">
               <div>
-                <h3>Structural Legacies</h3>
+                <h3 >Structural Legacies</h3>
                 {/* <h4>2ND TITLE</h4> */}
               </div>
               <div>
-                <p className="SL-Des">
+                <p className="SL-Des text-uppercase">
                   Introducing Homeqube’s Structural Legacy System. Each
-                  Structural Configuration is unique. We generated 2500 unique
+                  Structural Configuration is unique. We generated 2450 unique
                   combinations (without Cantilever) from our Systems
                   Architecture Platform (SAP). This Legacy System can be used to
                   build limitless design configurations for flat topographies
@@ -47,7 +47,7 @@ function Cards() {
                 {/* <h4>2ND TITLE</h4> */}
               </div>
               <div>
-                <p className="SL-Des">
+                <p className="SL-Des text-uppercase">
                   Introducing Homeqube’s Structural Legacy System. Each
                   Structural Configuration is unique. We generated 50 unique
                   combinations (with Cantilevers) from our Systems Architecture
@@ -77,7 +77,7 @@ function Cards() {
                 {/* <h4>2ND TITLE</h4> */}
               </div>
               <div>
-                <p>
+                <p className="SL-Des text-uppercase">
                   Showcase here in our collection is the award winning Cagbalete
                   Sand Clusters for our Home Designs.
                 </p>
@@ -122,7 +122,7 @@ function Cards() {
               {/* <h4>2ND TITLE</h4> */}
             </div>
             <div>
-              <p>
+            <p className="text-uppercase">
               Home Design Contest
                 {/* Showcase here in this collection are the sports cruiser and spherical bathrooms made by Architectyourlife14 (AYL). */}
               </p>
@@ -142,7 +142,7 @@ function Cards() {
               {/* <h4>2ND TITLE</h4> */}
             </div>
             <div>
-              <p>
+            <p className="text-uppercase">
               Community NFT
                 {/* Showcase here in this collection are the sports cruiser and spherical bathrooms made by Architectyourlife14 (AYL). */}
               </p>
