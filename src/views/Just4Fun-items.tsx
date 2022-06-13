@@ -52,7 +52,7 @@ const Just4FunItems: React.FC = () => {
           </section>
         </section>
       </header>
-      <div className="item-description">
+      <div className="item-description text-uppercase">
         <p className="SL-Des">
           <h3 className="des">DESCRIPTION</h3>
           Introducing Homeqube’s Structural Legacy System. Each Structural

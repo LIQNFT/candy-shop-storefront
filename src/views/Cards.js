@@ -7,13 +7,13 @@ function Cards() {
           <div class="card-container container-fluid">
             <div class="upper-container">
               <img src="/Structural-Legacies.png" className="cards-banner" />
-              <div class="image-container">
+              <div class="image-container text-uppercase">
                 <img src="/Homeqube-logo-black_small 1.svg" />
               </div>
             </div>
             <div class="lower-container">
               <div>
-                <h3 >Structural Legacies</h3>
+                <h3>Structural Legacies</h3>
                 {/* <h4>2ND TITLE</h4> */}
               </div>
               <div>
@@ -37,7 +37,7 @@ function Cards() {
           <div class="card-container container-fluid">
             <div class="upper-container">
               <img src="/Structural-Legacies.png" className="cards-banner" />
-              <div class="image-container">
+              <div class="image-container text-uppercase">
                 <img src="/Homeqube-logo-black_small 1.svg" />
               </div>
             </div>
@@ -67,7 +67,7 @@ function Cards() {
           <div class="card-container container-fluid">
             <div class="upper-container">
               <img src="/Home-Design.png" className="cards-banner" />
-              <div class="image-container">
+              <div class="image-container text-uppercase">
                 <img src="/Homeqube-logo-black_small 1.svg" />
               </div>
             </div>
@@ -86,6 +86,7 @@ function Cards() {
           </div>
         </Link>
       </div>
+
       <div class="display">
         <Link to="/OSAP" className="href">
           <div class="card-container">
@@ -95,7 +96,7 @@ function Cards() {
                 <img src="/Homeqube-logo-black_small 1.svg" />
               </div>
             </div>
-            <div class="lower-container">
+            <div class="lower-container text-uppercase">
               <div>
                 <h3>Other-System-Architecture-Product</h3>
                 {/* <h4>2ND TITLE</h4> */}
@@ -109,46 +110,51 @@ function Cards() {
             </div>
           </div>
         </Link>
-        <div class="card-container">
-          <div class="upper-container-2">
-            {/* <img src="/Other System.png" className="cards-banner" /> */}
-            <div class="image-container-2">
-              <img src="/Homeqube-logo-black_small 1.svg" />
+
+        <Link to="#" className="href">
+          <div class="card-container">
+            <div class="upper-container-2">
+              {/* <img src="/Other System.png" className="cards-banner" /> */}
+              <div class="image-container-2">
+                <img src="/Homeqube-logo-black_small 1.svg" />
+              </div>
+            </div>
+            <div class="lower-container text-uppercase">
+              <div>
+                <h3>Reserve</h3>
+                {/* <h4>2ND TITLE</h4> */}
+              </div>
+              <div>
+                <p className="text-uppercase">
+                  Home Design Contest
+                  {/* Showcase here in this collection are the sports cruiser and spherical bathrooms made by Architectyourlife14 (AYL). */}
+                </p>
+              </div>
             </div>
           </div>
-          <div class="lower-container">
-            <div>
-              <h3>Reserve</h3>
-              {/* <h4>2ND TITLE</h4> */}
+        </Link>
+        <Link to="#" className="href">
+          <div class="card-container">
+            <div class="upper-container-2">
+              {/* <img src="/Other System.png" className="cards-banner" /> */}
+              <div class="image-container-2">
+                <img src="/Homeqube-logo-black_small 1.svg" />
+              </div>
             </div>
-            <div>
-            <p className="text-uppercase">
-              Home Design Contest
-                {/* Showcase here in this collection are the sports cruiser and spherical bathrooms made by Architectyourlife14 (AYL). */}
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="card-container">
-          <div class="upper-container-2">
-            {/* <img src="/Other System.png" className="cards-banner" /> */}
-            <div class="image-container-2">
-              <img src="/Homeqube-logo-black_small 1.svg" />
-            </div>
-          </div>
-          <div class="lower-container">
-            <div>
-              <h3>Reserve</h3>
-              {/* <h4>2ND TITLE</h4> */}
-            </div>
-            <div>
-            <p className="text-uppercase">
-              Community NFT
-                {/* Showcase here in this collection are the sports cruiser and spherical bathrooms made by Architectyourlife14 (AYL). */}
-              </p>
+            <div class="lower-container text-uppercase">
+              <div>
+                <h3>Reserve</h3>
+                {/* <h4>2ND TITLE</h4> */}
+              </div>
+              <div>
+                <p className="text-uppercase">
+                  Community NFT
+                  {/* Showcase here in this collection are the sports cruiser and spherical bathrooms made by Architectyourlife14 (AYL). */}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );

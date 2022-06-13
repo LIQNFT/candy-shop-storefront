@@ -9,7 +9,7 @@ class ClaimQubes extends Component {
     subject: "",
   };
   urlPatternValidation = (URL) => {
-    const SOLSCAN = "solscan.io/";
+    const SOLSCAN = "explorer.solana.com/address/";
     const regex = new RegExp("(https?://)?" + SOLSCAN + "[/\\w .-]*/?");
     return regex.test(URL);
   };
@@ -42,7 +42,7 @@ class ClaimQubes extends Component {
     this.setState({
       URL: "",
     });
-    alert("Solscan has been send")
+    alert("Token address has been send.")
   }
   
 
@@ -76,6 +76,7 @@ class ClaimQubes extends Component {
   // };
   render() {
     const { isTrueVal, URL } = this.state;
+    
     return (
       <>
         <section className="showcase1 text-dark p-2 text-center text-sm-start">
@@ -87,7 +88,7 @@ class ClaimQubes extends Component {
             style={{
               height: "200px"
             }}></img> */}
-              <p className="q-tokenomics-showcase-intro-lead">
+              <p className="q-tokenomics-showcase-intro-lead text-uppercase">
                 Upon purchase of NFT, you will be able to claim your <br />
                 QUBES within 24 hours.
               </p>
@@ -106,8 +107,8 @@ class ClaimQubes extends Component {
                 }}
               >
                 <div className="col-md-3">
-                  <span className="details">
-                    SOLSCAN Address&nbsp;
+                  <span className="details text-uppercase">
+                  explorer solana com address&nbsp;
                     <span
                       style={{
                         color: "red",
@@ -152,7 +153,7 @@ class ClaimQubes extends Component {
                         color: "red",
                       }}
                     >
-                      Enter Valid SOLSCAN Address
+                      Enter Valid explorer.solana.com address
                     </div>
                   ) : (
                     <div
@@ -161,7 +162,7 @@ class ClaimQubes extends Component {
                         display: "none",
                       }}
                     >
-                      Invalid SOLSCAN Address
+                      {/* Invalid SOLSCAN Address */}
                     </div>
                   )}
             </form>

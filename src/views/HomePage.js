@@ -323,7 +323,7 @@ function HomePage() {
                 </div>
 
                 <div className="col justify-content-center p-5">
-                  <img src="/saleIMG.jpg" class="card-img-top" alt="..." />
+                  <img src="/saletunay.jpg" class="card-img-top" alt="..." />
                   <br />
                   <br />
                   <p className="text-uppercase">
