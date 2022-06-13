@@ -9,7 +9,7 @@ function HomePage() {
   const accordionData = [
     {
       title: `HOW TO SET UP YOUR WALLET?`,
-      step1: ` WE CURRENTLY SUPPORTING PHANTOM WALLET FOR TRANSACTIONS IN OUR WEBSITE. VISIT THIS`,
+      step1: ` WE CURRENTLY SUPPORTING PHANTOM WALLET FOR TRANSACTIONS ON OUR WEBSITE. VISIT THIS`,
       state2: `d-none`,
       state3: `d-none`,
       state4: `d-none`,
@@ -18,49 +18,91 @@ function HomePage() {
       state7: `d-none`,
       state8: `d-none`,
       statelink1: `d-none`,
+      statelink2: `d-none`,
+      statelink3: `d-none`,
+      statelink4: `d-none`,
+      statelink5: `d-none`,
+      statelink6: `d-none`,
+      statelink7: `d-none`,
+   
     },
     {
       title: "How to buy NFT from this website?",
-      step1: `Step 1: By clicking the 'Connect Wallet', connect your prefered crypto wallet to our marketplace.`,
-      step2: `Step 2: On the our website you will see different categories to choose from. Click and you will see the list of the NFTs based on that categories.`,
-      step3: `Step 3: Find your prefered NFT. You can also view all of the information of that NFT with their attributes and price. `,
-      step4: `Step 4: Then, click the 'Buy Now' button to buy NFT.`,
-      step5: `Step 5: Click Approve for the transaction on your wallet.`,
+      step1: `STEP 1: CONNECT YOUR WALLET TO OUR MARKETPLACE BY CLICKING ‘CONNECT WALLET’`,
+      step2: `STEP 2: ON OUR WEBSITE, YOU WILL SEE DIFFERENT CATEGORIES TO CHOOSE FROM. CLICK AND SEE THE LIST OF THE NFTS BASED ON THAT CATEGORY.`,
+      step3: `STEP 3: FIND YOUR PREFERRED NFT. YOU CAN ALSO VIEW ALL THE INFORMATION ABOUT THAT NFT WITH THEIR ATTRIBUTES AND PRICE. `,
+      step4: `STEP 4: CLICK THE “BUY NOW” BUTTON TO BUY AN NFT.`,
+      step5: `STEP 5: CLICK APPROVE FOR THE TRANSACTION ON YOUR WALLET.`,
       state6: `d-none`,
       state7: `d-none`,
       state8: `d-none`,
       statelink: `d-none`,
       statelink1: `d-none`,
+      statelink3: `d-none`,
+      statelink4: `d-none`,
+      statelink5: `d-none`,
+      statelink6: `d-none`,
+      statelink7: `d-none`,
+      statelink2: `d-none`,
+     
     },
     {
-      title: "How to download your 3d model files?",
-      step1: `Step 1: Open your crypto wallet.`,
-      step2: `Step 2: On your wallet you will find your collectibles where your NFT is stored.`,
-      step3: `Step 3: Click your latest NFT purchased.`,
-      step4: `Step 4: Click the '...' on the top right corner of your NFT then click 'View on Solscan'`,
-      step5: `Step 5: Once you're on Solscan Website, you will see all of the details and overview on your NFTs. Click the Metadata Tab`,
-      step6: `Step 6: Click the View URI Metadata, then you will see all of the metadatas that are stored on  your NFT.`,
-      step7: `Step 7: Find the "properties" section then "files", you will now see two different uri's with their types, image/gif and glb, copy the uri of the glb type with no quotations ("") on both sides then paste it to your browser.`,
-      step8: `Step 8: The file will automatically download to your computer, then once it's finished you will now renamed it to .glb file. Then you can now view it to your 3d Viewer.`,
+      title: "HOW TO DOWNLOAD AND OPEN YOUR 3D MODEL FILES?",
+      step1: `STEP 1: CONNECT YOUR WALLET TO OUR MARKETPLACE BY CLICKING ‘CONNECT WALLET’`,
+      step2: `STEP 2: GO TO `,
+      step3: `STEP 3: CLICK ON THE NFT.`,
+      step4: `STEP 4: CLICK “DOWNLOAD GLB”. YOUR 3D FILE WILL BE DOWNLOADED.`,
+      step5: `STEP 5: TO OPEN YOUR 3D FILE, ADD A “.GLB” WHEN YOU RENAME IT.`,
+      state6: `d-none`,
+      state7: `d-none`,
+      state8: `d-none`,
       statelink: `d-none`,
       statelink1: `d-none`,
+      statelink2: `d-none`,
+      statelink3: `d-none`,
+      statelink5: `d-none`,
+      statelink6: `d-none`,
+      statelink7: `d-none`,
     },
     {
-      title: "How to claim your QUBE?",
-      step1: `Step 1: On our website, click the Claim Qube on the Navigation Bar`,
-      step2: `Step 2: Paste the Solscan Link and your personal Email Address.`,
-      step3: `You can find the Solscan Link on your crypto wallet, where your latest purchased NFT stored. Click 'View On Solscan', then copy the URL on the top of your browser.`,
-      step4: `Step 3: Click the 'Submit' button then wait for our email.`,
+      title: "HOW TO CLAIM YOUR QUBE?",
+      step1: `YOU ARE ELIGIBLE TO CLAIM QUBE TOKEN WHEN YOU BUY OUR STRUCTURAL LEGACY NFTS. MAKE SURE THAT THE NFT YOU BOUGHT HAS A SYMBOL “HOMEQUBE” AND MINTED FROM THIS`,
+      step2: `STEP 1: GO TO `,
+      step3: `STEP 2: FIND THE TOKEN ADDRESS OF THE NFT YOU BOUGHT. YOU MAY FIND THE TOKEN ADDRESS BY CLICKING ON THE MINT ADDRESS OF THE NFT YOU BOUGHT.`,
+      step4: `STEP 3: PASTE THE TOKEN ADDRESS TO THE TEXTBOX.`,
+      step5: `STEP 4: CLICK THE 'SUBMIT' BUTTON THEN WAIT FOR THE AIRDROP OF THE QUBE TOKEN WITHIN 24 HOURS.`,
+      step7: `NOTE: IN CASE YOU DIDN’T RECEIVE THE QUBE TOKEN WITHIN 24 HOURS, YOU MAY EMAIL US AT`,
+      
+      statelink4: `d-none`,
+      state8: `d-none`,
+      statelink: `d-none`,
+      statelink1: `d-none`,
+      statelink5: `d-none`,
+      statelink7: `d-none`,
+    },
+    {
+      title: `HOW MUCH QUBE WILL I RECEIVE AFTER BUYING A HOMEQUBE NFT?`,
+      step1: `THE AMOUNT OF QUBE THAT YOU WILL BE RECEIVED WILL BE DEPENDENT ON THE EXCHANGE RATE OF SOLANA TO USD DURING YOUR PURCHASE. WE PEGGED OUR QUBE TOKEN AT $3 PER QUBE.`,
+      step2: `FOR EXAMPLE, IF YOU BOUGHT OUR NFT AT 9 SOL AT USD 45 PER SOL, YOU WILL RECEIVE 135 QUBES.`,
+      step3: `NOTE: YOU WILL NOT ABLE TO RECEIVE QUBE TOKEN AUTOMATICALLY WHEN YOU BUY A HOMEQUBE NFT. CLAIM YOUR QUBE AT THE `,
+      state4: `d-none`,
       state5: `d-none`,
       state6: `d-none`,
       state7: `d-none`,
       state8: `d-none`,
-      statelink: `d-none`,
       statelink1: `d-none`,
+      statelink2: `d-none`,
+      statelink1: `d-none`,
+      statelink3: `d-none`,
+      statelink4: `d-none`,
+      statelink6: `d-none`,
+      statelink7: `d-none`,
+      statelink: `d-none`,
     },
+
     {
-      title: `How to add your own home design NFT collection to our website?`,
-      step1: `You may answer this`,
+      title: `HOW TO ADD YOUR HOME DESIGN NFT COLLECTION TO OUR WEBSITE?`,
+      step1: `YOU MAY EMAIL US AT`,
       statelink: `d-none`,
       state2: `d-none`,
       state3: `d-none`,
@@ -69,6 +111,12 @@ function HomePage() {
       state6: `d-none`,
       state7: `d-none`,
       state8: `d-none`,
+      statelink2: `d-none`,
+      statelink1: `d-none`,
+      statelink3: `d-none`,
+      statelink5: `d-none`,
+      statelink6: `d-none`,
+
     },
   ];
   return (
@@ -333,6 +381,12 @@ function HomePage() {
               state8,
               statelink,
               statelink1,
+              statelink2,
+              statelink3,
+              statelink4,
+              statelink5,
+              statelink6,
+              statelink7
             }) => (
               <Accordion
                 title={title}
@@ -354,6 +408,12 @@ function HomePage() {
                 state8={state8}
                 statelink={statelink}
                 statelink1={statelink1}
+                statelink2={statelink2}
+                statelink3={statelink3}
+                statelink4={statelink4}
+                statelink5={statelink5}
+                statelink6={statelink6}
+                statelink7={statelink7}
               />
             )
           )}
