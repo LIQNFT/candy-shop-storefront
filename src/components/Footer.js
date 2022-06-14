@@ -100,7 +100,7 @@ function Footer() {
               home building process accessible to all through
               <br /> AI and blockchain technology
               <br/>
-              <p className="text-uppercase footer-text pt-4 mt-5 "><b> POWERED BY LIQ.NFT.COM</b></p>
+              <p className="text-uppercase footer-text pt-4 mt-5 "><b> POWERED BY CANDY.LIQNFT.COM</b></p>
               
             </p>
             

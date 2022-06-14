@@ -89,8 +89,7 @@ class ClaimQubes extends Component {
               height: "200px"
             }}></img> */}
               <p className="q-tokenomics-showcase-intro-lead text-uppercase">
-                Upon purchase of NFT, you will be able to claim your <br />
-                QUBES within 24 hours.
+              UPON SENDING THE TOKEN ADDRESS, YOU WILL BE ABLE TO CLAIM YOUR QUBE WITHIN 2 DAYS.
               </p>
             </section>
             {/* <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=DkLuQR_jeEC790tUrUu03ZWkblj4qK1EhjVnKc5qoVxUODFPVURGQ1A5WDhLTjZQM05JRkxVTk83RS4u&embedded=true" width="640" height="613" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> */}

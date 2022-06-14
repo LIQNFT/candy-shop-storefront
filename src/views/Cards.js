@@ -4,7 +4,7 @@ function Cards() {
     <div className="homepage">
       <div class="display">
         <Link to="/homeqube" className="href">
-          <div class="card-container container-fluid text-uppercase">
+          <div class="card-container border border-1 border-secondary border-top-0 container-fluid text-uppercase">
             <div class="upper-container">
               <img src="/Structural-Legacies.png" className="cards-banner" />
               <div class="image-container ">
@@ -34,7 +34,7 @@ function Cards() {
         </Link>
 
         <Link to="/SLC" className="href">
-          <div class="card-container container-fluid text-uppercase">
+          <div class="card-container border border-1 border-secondary border-top-0 container-fluid text-uppercase">
             <div class="upper-container">
               <img src="/Structural-Legacies.png" className="cards-banner" />
               <div class="image-container text-uppercase">
@@ -64,7 +64,7 @@ function Cards() {
         </Link>
 
         <Link to="/home-design" className="href">
-          <div class="card-container container-fluid text-uppercase">
+          <div class="card-container border border-1 border-secondary border-top-0 container-fluid text-uppercase">
             <div class="upper-container">
               <img src="/Home-Design.png" className="cards-banner" />
               <div class="image-container text-uppercase">
@@ -89,7 +89,7 @@ function Cards() {
 
       <div class="display">
         <Link to="/OSAP" className="href">
-          <div class="card-container text-uppercase">
+          <div class="card-container border border-1 border-secondary border-top-0 text-uppercase">
             <div class="upper-container">
               <img src="/Other System.png" className="cards-banner" />
               <div class="image-container">
@@ -112,7 +112,7 @@ function Cards() {
         </Link>
 
         <Link to="#" className="href">
-          <div class="card-container text-uppercase ">
+          <div class="card-container border border-1 border-secondary border-top-0 text-uppercase ">
             <div class="upper-container-2">
               {/* <img src="/Other System.png" className="cards-banner" /> */}
               <div class="image-container-2">
@@ -134,7 +134,7 @@ function Cards() {
           </div>
         </Link>
         <Link to="#" className="href">
-          <div class="card-container text-uppercase">
+          <div class="card-container border border-1 border-secondary border-top-0 text-uppercase">
             <div class="upper-container-2">
               {/* <img src="/Other System.png" className="cards-banner" /> */}
               <div class="image-container-2">

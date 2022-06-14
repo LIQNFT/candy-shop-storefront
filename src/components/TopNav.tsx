@@ -80,8 +80,8 @@ const HeaderBar = styled.div`
   align-items: center;
   justify-content: center;
  
-  margin-right: 4%;
-  margin-left: 4%;
+  padding-right: 4%;
+  padding-left: 4%;
 `;
 // margin-bottom: 30px;
 const DropdownAnchor = styled.li`

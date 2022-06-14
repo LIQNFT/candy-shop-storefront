@@ -1,9 +1,10 @@
 /* Customize your main colors in :root variables */
 :root {
-  --main-background-color: hsl(0, 0%, 81%);
+  --main-background-color: #fafafa;
   --card-background-color: #51576d;
   --card-background-lighter-color: #7a7f92;
   --main-text-color: #000000;
+  --nav-bar-color: #cfcfcf;
   /* --title-text-color: #3cba8b; */
 }
 
@@ -38,7 +39,9 @@ p {
 h3 {
   font-weight: normal;
 }
-
+.navbar{
+  background-color: var(--nav-bar-color);
+}
 /* Candy Shop styling overrides */
 .css-1wewypr {
   color: black;

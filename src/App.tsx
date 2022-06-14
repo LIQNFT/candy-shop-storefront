@@ -432,12 +432,13 @@ const App = () => {
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+
 
 
   text-align: center;
   justify-content: center;
 `;
+// margin-top: 20px;
 // margin-bottom: 20px;
 // padding-bottom: 20px;
 // margin-right: 4%;
