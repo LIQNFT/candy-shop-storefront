@@ -920,7 +920,7 @@ input:not(:disabled) {
 }
 .cards-banner {
   transform: translateY(-6px);
-  width: 100%;
+  width: 101%;
   height: 150px;
 }
 .image-container {
