@@ -5,6 +5,7 @@ import HomequbeOGG from "../video/Homeqube-ICO.ogg";
 import Accordion from "./Accordion";
 import Cards from "./Cards";
 import NftNavLinks from "../components/NavBar/NftNavLinks";
+import MarketplaceWithFilter from "./MarketplaceWithFilter";
 
 function HomePage() {
   const accordionData = [
@@ -443,7 +444,8 @@ function HomePage() {
         <nav className="Menu">
             <NftNavLinks />
         </nav>
-        <Cards />
+        {/* <Cards /> */}
+        <MarketplaceWithFilter />
       </section>
 
       {/* <section className="text-center content-eco1-bg p-5">

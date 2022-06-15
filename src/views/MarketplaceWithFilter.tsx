@@ -46,14 +46,18 @@ const MarketplaceWithFilter: React.FC = () => {
         walletConnectComponent={<WalletMultiButton />}
         // configure filter by collection
         filters={[
-          { name: 'Homeqube', collectionId: '1', identifier: -354695101 },
-          { name: 'Home-design', collectionId: '2', identifier: 1462698944 },
-          { name: 'Just-for-fun', collectionId: '3', identifier: 393799738 },
-          { name: 'Other-System-Architecture-Product', collectionId: '4', identifier: -1434943395 }
+          { name: "Structural Legacies", collectionId: "1", identifier: [-354695101, -1775657236] },
+          { name: "Structural Legacies with Cantilever", collectionId: "2", identifier: -1775657236 },
+          { name: "Home Design", collectionId: "3", identifier: 1462698944 },
+          {
+            name: "Other-System-Architecture-Product",
+            collectionId: "4",
+            identifier: [-1434943395, 393799738],
+          },
           // { name: 'Puppies + Shibas', collectionId: '4', identifier: [1235887132, 2036309415] },
           // { name: 'Purple Puppies', collectionId: '4', identifier: 2036309415, attribute: { backgrounds: 'gradient_purple' } }
         ]}
-        // defaultFilter={{ collection: '1', shop: ''}}
+        defaultFilter={{ collection: '1', shop: ''}}
       />
     </DesContainer>
   )
