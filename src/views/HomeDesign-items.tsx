@@ -73,7 +73,7 @@ const HomequbeDesignItems: React.FC = () => {
           // configure filter by collection
           filters={[
             // { name: 'Homeqube', collectionId: '1', identifier: -354695101 },
-            { name: "", collectionId: "2", identifier: 1462698944 },
+            // { name: "", collectionId: "2", identifier: 1462698944 },
             // { name: 'Just-for-fun', collectionId: '3', identifier: 393799738 },
             // { name: 'Other-System-Architecture-Product', collectionId: '4', identifier: -1434943395 }
             // { name: 'Puppies + Shibas', collectionId: '4', identifier: [1235887132, 2036309415] },

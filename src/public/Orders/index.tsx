@@ -1,17 +1,21 @@
-import React, { useCallback, useEffect, useState, useRef } from 'react';
-import { Dropdown } from '../../components/Dropdown';
-import { Empty } from '../../components/Empty';
-import { Skeleton } from '../../components/Skeleton';
-import { InfiniteOrderList } from '../../components/InfiniteOrderList';
-import { AnchorWallet } from '@solana/wallet-adapter-react';
-import { ORDER_FETCH_LIMIT, LOADING_SKELETON_COUNT, SORT_OPTIONS } from '../../constant/Orders';
-import { OrdersActionsStatus } from '../../constant';
-import { CandyShop } from '@liqnft/candy-shop-sdk';
-import { useValidateStatus } from '../../hooks/useValidateStatus';
-import { useUpdateCandyShopContext } from '../../public/Context';
-import { CollectionFilter, ShopFilter, OrderDefaultFilter } from '../../model';
+import React, { useCallback, useEffect, useState, useRef } from "react";
+import { Dropdown } from "../../components/Dropdown";
+import { Empty } from "../../components/Empty";
+import { Skeleton } from "../../components/Skeleton";
+import { InfiniteOrderList } from "../../components/InfiniteOrderList";
+import { AnchorWallet } from "@solana/wallet-adapter-react";
+import {
+  ORDER_FETCH_LIMIT,
+  LOADING_SKELETON_COUNT,
+  SORT_OPTIONS,
+} from "../../constant/Orders";
+import { OrdersActionsStatus } from "../../constant";
+import { CandyShop } from "@liqnft/candy-shop-sdk";
+import { useValidateStatus } from "../../hooks/useValidateStatus";
+import { useUpdateCandyShopContext } from "../../public/Context";
+import { CollectionFilter, ShopFilter, OrderDefaultFilter } from "../../model";
 
-import './index.less';
+import "./index.less";
 
 interface OrdersProps {
   walletConnectComponent: React.ReactElement;
@@ -39,16 +43,20 @@ export const Orders: React.FC<OrdersProps> = ({
   candyShop,
   sellerAddress,
   shopFilters,
-  defaultFilter
+  defaultFilter,
 }) => {
   const [sortedByOption, setSortedByOption] = useState(SORT_OPTIONS[0]);
   const [orders, setOrders] = useState<any[]>([]);
   const [hasNextPage, setHasNextPage] = useState(true);
   const [loading, setLoading] = useState(false);
   const [startIndex, setStartIndex] = useState(0);
-  const [collectionFilter, setCollectionFilter] = useState<CollectionFilter | undefined>(() => {
+  const [collectionFilter, setCollectionFilter] = useState<
+    CollectionFilter | undefined
+  >(() => {
     if (defaultFilter?.[OrderDefaultFilter.COLLECTION]) {
-      return filters?.find((item) => item.collectionId === defaultFilter.collection);
+      return filters?.find(
+        (item) => item.collectionId === defaultFilter.collection
+      );
     }
   });
   const [shopFilter, setShopFilter] = useState<ShopFilter | undefined>(() => {
@@ -68,10 +76,13 @@ export const Orders: React.FC<OrdersProps> = ({
         sortBy: sortedByOption.value,
         offset: startIndex,
         limit,
-        identifiers: getUniqueIdentifiers(identifiers, collectionFilter?.identifier),
+        identifiers: getUniqueIdentifiers(
+          identifiers,
+          collectionFilter?.identifier
+        ),
         sellerAddress,
         attribute: collectionFilter?.attribute,
-        candyShopAddress: shopFilter?.shopId
+        candyShopAddress: shopFilter?.shopId,
       })
       .then((data: any) => {
         if (!data.result) return;
@@ -84,7 +95,7 @@ export const Orders: React.FC<OrdersProps> = ({
         setOrders((existingOrders) => [...existingOrders, ...data.result]);
       })
       .catch((err) => {
-        console.info('fetchOrdersByStoreId failed: ', err);
+        console.info("fetchOrdersByStoreId failed: ", err);
       });
   };
 
@@ -99,10 +110,13 @@ export const Orders: React.FC<OrdersProps> = ({
         sortBy: sortedByOption.value,
         offset: 0,
         limit: ORDER_FETCH_LIMIT,
-        identifiers: getUniqueIdentifiers(identifiers, collectionFilter?.identifier),
+        identifiers: getUniqueIdentifiers(
+          identifiers,
+          collectionFilter?.identifier
+        ),
         sellerAddress,
         attribute: collectionFilter?.attribute,
-        candyShopAddress: shopFilter?.shopId
+        candyShopAddress: shopFilter?.shopId,
       })
       .then((data: any) => {
         if (!data.result) return;
@@ -112,12 +126,20 @@ export const Orders: React.FC<OrdersProps> = ({
         setOrders(data.result);
       })
       .catch((err) => {
-        console.log('fetchOrdersByStoreId failed: ', err);
+        console.log("fetchOrdersByStoreId failed: ", err);
       })
       .finally(() => {
         setLoading(false);
       });
-  }, [candyShop, sortedByOption.value, updateOrderStatus, sellerAddress, identifiers, collectionFilter, shopFilter]);
+  }, [
+    candyShop,
+    sortedByOption.value,
+    updateOrderStatus,
+    sellerAddress,
+    identifiers,
+    collectionFilter,
+    shopFilter,
+  ]);
 
   const loadingView = (
     <div className="candy-container-list">
@@ -147,89 +169,46 @@ export const Orders: React.FC<OrdersProps> = ({
 
   if (filters || shopFilters) {
     return (
-      <div className="candy-orders-container" style={style}>
-        <div className="candy-container">
-          <div className="candy-orders-sort candy-orders-sort-right">
-            <Dropdown
-              items={SORT_OPTIONS}
-              selectedItem={sortedByOption}
-              onSelectItem={(item) => setSortedByOption(item)}
-              defaultValue={SORT_OPTIONS[0]}
-            />
-          </div>
-          <div className="candy-orders-filter">
-            <div className="candy-filter">
-              {filters ? (
+      <>
+        {filters ? (
+          <>
+            {filters?.map((filter) => {
+              return (
                 <>
-                  {/* <div className="candy-filter-title" style={{
-                    color: '#000 !important'
-                  }}>Collections</div> */}
-                  <ul style={{
-          paddingLeft: '0'
-                  }}>
-                    {/* <li
-                      onClick={() => setCollectionFilter(undefined)}
-                      key="All"
-                      className={collectionFilter ? '' : 'selected'}
-                    >
-                      All
-                    </li> */}
-                    {filters?.map((filter) => {
-                      return (
-                        <li
-                          key={filter.name}
-                          className={collectionFilter?.collectionId === filter.collectionId ? 'selected' : ''}
-                          onClick={() => setCollectionFilter(filter)}
-                        >
-                          {filter.name}
-                        </li>
-                      );
-                    })}
-                  </ul>
+                  <nav className="candy-orders-filter Menu text-uppercase pb-3 pt-3">
+                    <>
+                      {" "}
+                      <li
+                        key={filter.name}
+                        className={
+                          collectionFilter?.collectionId === filter.collectionId
+                            ? "selected"
+                            : ""
+                        }
+                        onClick={() => setCollectionFilter(filter)}
+                      >
+                        {filter.name}
+                      </li>
+                      <p>|</p>
+                    </>
+                  </nav>
                 </>
-              ) : null}
-
-              {shopFilters ? (
-                <>
-                  <div className="candy-filter-title">Shop</div>
-                  <ul style={{
-          paddingLeft: '0'
-                  }}>
-                    {/* <li onClick={() => setShopFilter(undefined)} key="All" className={shopFilter ? '' : 'selected'}>
-                      All
-                    </li> */}
-                    {shopFilters.map((item) => {
-                      return (
-                        <li
-                          key={item.name}
-                          className={shopFilter?.shopId === item.shopId ? 'selected' : ''}
-                          onClick={() => setShopFilter(item)}
-                        >
-                          {item.name}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </>
-              ) : null}
-
-              {/* <div className="candy-filter-title">Attributes</div>
-              {FILTER_ATTRIBUTES_MOCK: constant/Orders}
-               {FILTER_ATTRIBUTES_MOCK.map((attr) => {
-                return (
-                  <div className="candy-filter-attribute">
-                    <span>{attr.name}</span>
-                    <Dropdown items={attr.options} onSelectItem={onFilterAttribute} placeholder={attr.placeholder} />
-                  </div>
-                );
-              })} */}
-            </div>
+              );
+            })}
+          </>
+        ) : null}
+        <div className="candy-orders-container" style={style}>
+          <div className="candy-container">
             <div className="candy-orders-content">
-              {loading ? loadingView : orders.length ? infiniteOrderListView : emptyView}
+              {loading
+                ? loadingView
+                : orders.length
+                ? infiniteOrderListView
+                : emptyView}
             </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 
@@ -245,15 +224,27 @@ export const Orders: React.FC<OrdersProps> = ({
               defaultValue={SORT_OPTIONS[0]}
             />
           </div>
-          {loading ? loadingView : orders.length ? infiniteOrderListView : emptyView}
+          {loading
+            ? loadingView
+            : orders.length
+            ? infiniteOrderListView
+            : emptyView}
         </div>
       </div>
     </>
   );
 };
 
-function getUniqueIdentifiers(identifiers: number[] = [], filterIdentifiers: number | number[] = []) {
+function getUniqueIdentifiers(
+  identifiers: number[] = [],
+  filterIdentifiers: number | number[] = []
+) {
   return [
-    ...new Set([...identifiers, ...(typeof filterIdentifiers === 'number' ? [filterIdentifiers] : filterIdentifiers)])
+    ...new Set([
+      ...identifiers,
+      ...(typeof filterIdentifiers === "number"
+        ? [filterIdentifiers]
+        : filterIdentifiers),
+    ]),
   ];
 }

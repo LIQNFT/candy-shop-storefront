@@ -437,15 +437,13 @@ function HomePage() {
           <p className="q-tokenomics-showcase-intro-lead p-3 text-uppercase"></p>
           <center>
             <div className="faq-rectangle"></div>
-            <br />
-            <br />
           </center>
         </section>
-        <nav className="Menu">
+        {/* <nav className="Menu">
             <NftNavLinks />
-        </nav>
+        </nav> */}
         {/* <Cards /> */}
-        <MarketplaceWithFilter />
+        <MarketplaceWithFilter/>
       </section>
 
       {/* <section className="text-center content-eco1-bg p-5">

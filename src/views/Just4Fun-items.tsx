@@ -80,7 +80,7 @@ const Just4FunItems: React.FC = () => {
           filters={[
             //  { name: 'Homeqube', collectionId: '1', identifier: -354695101 },
             // { name: 'Home-design', collectionId: '2', identifier: 1462698944 },
-            { name: "", collectionId: "3", identifier: -1775657236 },
+            // { name: "", collectionId: "3", identifier: -1775657236 },
             // { name: 'Other-System-Architecture-Product', collectionId: '4', identifier: -1434943395 }
             // { name: 'Puppies + Shibas', collectionId: '4', identifier: [1235887132, 2036309415] },
             // { name: 'Purple Puppies', collectionId: '4', identifier: 2036309415, attribute: { backgrounds: 'gradient_purple' } }

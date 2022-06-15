@@ -148,7 +148,7 @@ const App = () => {
                       element={
                         <>
                           <TopNav />
-                          <Cards />
+                          <MarketplaceWithFilter/>
                           {/* <Footer /> */}
                         </>
                       }

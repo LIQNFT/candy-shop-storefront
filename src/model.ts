@@ -11,6 +11,7 @@ export interface ShopExchangeInfo {
 
 export interface CollectionFilter {
   name: string;
+  description : string;
   collectionId: string;
   identifier: number | Array<number>;
   attribute?: { [key: string]: string };

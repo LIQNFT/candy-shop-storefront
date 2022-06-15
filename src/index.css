@@ -658,6 +658,7 @@ a:active {
 }
 .Menu li {
   margin: 0 12px;
+  cursor: pointer;
 }
 .Menu a {
   color: var(--main-text-color);
@@ -681,6 +682,9 @@ a:active {
 }
 .hamburger {
   display: none;
+}
+.selected{
+  font-weight: bold;
 }
 
 @media (max-width: 990px) {
