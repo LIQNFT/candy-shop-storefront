@@ -51,21 +51,27 @@ const MarketplaceWithFilter: React.FC = () => {
             name: "Structural Legacies ",
             collectionId: "1",
             identifier: [-354695101, -1775657236],
-            description : "1"
+            description:
+              "Introducing Homeqube’s Structural Legacy System. Each Structural is unique. We generated 2450 unique combinations (without Cantilever) from our Systems Architecture Platform (SAP). This Legacy System can be used to build limitless design configurations for flat topographies and up to 3 story housing, allowing open architecture. Our composite mix is more sustainable,0 weather resilient, and emits much less carbon than reinforced concrete/steel, and can be ergonomically assembled at site.",
           },
-          { name: "Home Design", collectionId: "2", identifier: 1462698944, description : "4"},
+          {
+            name: "Home Design",
+            collectionId: "2",
+            identifier: 1462698944,
+            description: " Showcase here in our collection is the award winning Cagbalete Sand Clusters for our Home Designs.",
+          },
           {
             name: "HOME SYSTEM ARCHITECTURE",
             collectionId: "3",
             identifier: -1775657236,
-            description : "3"
+            description: "Introducing Homeqube’s Structural Legacy System. Each Structural Configuration is unique. We generated 50 unique combinations (without Cantilever) from our Systems Architecture Platform (SAP). This Legacy System can be used to build limitless design configurations for flat topographies and up to 3 story housing, allowing open architecture. Our composite mix is more sustainable, weather resilient, and emits much less carbon than reinforced concrete/steel, and can be ergonomically assembled at site.",
           },
 
           {
             name: "PRODUCTS",
             collectionId: "4",
             identifier: [-1434943395, 393799738],
-            description : "4"
+            description: " Showcase here in this collection are the sports cruiser and spherical bathrooms made by Architectyourlife14 (AYL).",
           },
           // { name: 'Puppies + Shibas', collectionId: '4', identifier: [1235887132, 2036309415] },
           // { name: 'Purple Puppies', collectionId: '4', identifier: 2036309415, attribute: { backgrounds: 'gradient_purple' } }

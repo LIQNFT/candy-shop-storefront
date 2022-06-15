@@ -172,10 +172,10 @@ export const Orders: React.FC<OrdersProps> = ({
       <>
         {filters ? (
           <>
-            {filters?.map((filter) => {
-              return (
-                <>
-                  <nav className="candy-orders-filter Menu text-uppercase pb-3 pt-3">
+            <nav className="candy-orders-filter menu text-uppercase pb-3 pt-3">
+              {filters?.map((filter) => {
+                return (
+                  <>
                     <>
                       {" "}
                       <li
@@ -189,9 +189,25 @@ export const Orders: React.FC<OrdersProps> = ({
                       >
                         {filter.name}
                       </li>
-                      <p>|</p>
+                      <p className="navbar-lining">|</p>
                     </>
-                  </nav>
+                  </>
+                );
+              })}
+            </nav>
+            {filters?.map((filter) => {
+              return (
+                <>
+                  {collectionFilter?.collectionId === filter.collectionId ? (
+                    <div className="item-description text-uppercase">
+                      <p className="SL-Des">
+                        <h3 className="des">DESCRIPTION</h3>
+                        {filter.description}
+                      </p>
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </>
               );
             })}
