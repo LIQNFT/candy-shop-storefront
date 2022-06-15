@@ -4,6 +4,7 @@ import Homeqube from "../video/Homeqube-ICO.mp4";
 import HomequbeOGG from "../video/Homeqube-ICO.ogg";
 import Accordion from "./Accordion";
 import Cards from "./Cards";
+import NftNavLinks from "../components/NavBar/NftNavLinks";
 
 function HomePage() {
   const accordionData = [
@@ -24,7 +25,6 @@ function HomePage() {
       statelink5: `d-none`,
       statelink6: `d-none`,
       statelink7: `d-none`,
-   
     },
     {
       title: "How to buy NFT from this website?",
@@ -44,7 +44,6 @@ function HomePage() {
       statelink6: `d-none`,
       statelink7: `d-none`,
       statelink2: `d-none`,
-     
     },
     {
       title: "HOW TO DOWNLOAD AND OPEN YOUR 3D MODEL FILES?",
@@ -72,7 +71,7 @@ function HomePage() {
       step4: `STEP 3: PASTE THE TOKEN ADDRESS TO THE TEXTBOX.`,
       step5: `STEP 4: CLICK THE 'SUBMIT' BUTTON THEN WAIT FOR THE AIRDROP OF THE QUBE TOKEN WITHIN 24 HOURS.`,
       step7: `NOTE: IN CASE YOU DIDN’T RECEIVE THE QUBE TOKEN WITHIN 24 HOURS, YOU MAY EMAIL US AT`,
-      
+
       statelink4: `d-none`,
       state8: `d-none`,
       statelink: `d-none`,
@@ -116,7 +115,6 @@ function HomePage() {
       statelink3: `d-none`,
       statelink5: `d-none`,
       statelink6: `d-none`,
-
     },
   ];
   return (
@@ -125,15 +123,15 @@ function HomePage() {
         <div className="container-bg container">
           <div className="d-sm align-content-center justify-content-between container-content">
             <div>
-              <h1 className="intro">
+              {/* <h1 className="intro">
                 Design explore
                 <br />
                 And Collect Homeqube
                 <br />
                 Designs as NFT
-              </h1>
+              </h1> */}
 
-              <p className="intro-sentence text-uppercase">
+              <p className="intro-sentence text-uppercase mt-5">
                 We are solana based NFT “Launchpad-Marketplace” For home <br />{" "}
                 manufacturing, from 3d printed parts, home designs, home system{" "}
                 <br /> algorithms, decors, fixtures Furnitures, Prototypes, and{" "}
@@ -142,14 +140,14 @@ function HomePage() {
               </p>
 
               <div className="intro-btn2">
-                <button
-                  onclick="window.open('https://www.homeqube.ai/')"
-                  className="button2 btn btn-lg rounded-pill"
-                >
-                  <a href="https://www.homeqube.ai/" className="a-link">
+                <a href="https://hqnftrial.xyz/" className="a-link">
+                  <button
+                    onclick="window.open('https://hqnftrial.xyz/')"
+                    className="button2 btn btn-lg rounded-pill"
+                  >
                     Create
-                  </a>
-                </button>
+                  </button>
+                </a>
                 <NavLink to="/nftcollection" className="a-link">
                   <button
                     className="button1 btn btn-lg rounded-pill"
@@ -177,7 +175,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="text-center content-eco1-bg text-sm-start">
+      {/* <section className="text-center content-eco1-bg text-sm-start">
         <div className="col link d-flex align-items justify-content-center p-5">
           <div className="container">
             <div className="row">
@@ -238,21 +236,10 @@ function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="text-center content-eco1-bg text-sm-start">
-        <img
-          src="/Left-Box-1.svg"
-          className="box-animation-1 img-fluid d-sm-none d-md-block"
-        />
-        <img
-          src="/Left-Box-2(UpperSide).svg"
-          className="box-animation-2 d-sm-none d-md-block"
-        />
-        <img
-          src="/Left-Box-3(BottomSide).svg"
-          className="box-animation-3 d-sm-none d-md-block"
-        />
+      {/* <section className="text-center content-eco1-bg text-sm-start">
+       
         <div className="col link d-flex align-items justify-content-center p-5 row-icons">
           <div className="container">
             <div className="row">
@@ -264,15 +251,11 @@ function HomePage() {
                   <img src="/Rectangle 22.svg" />
                 </div>
               </div>
-              {/* <div className="col-md eco-1-title row-icons">
-                <h3 className="text-uppercase ai-title">
-                  Create, Explore, and Collect HomeQube Designs
-                </h3>
-              </div> */}
+          
               <div className="row">
                 <div className="col justify-content-center p-5">
                   <img src="/walletImg2.png" class="card-img-top" alt="..." />
-                  {/* <img src="img/Icons/wallet2.png" style=" width: 50px; height: 51px;" alt="" srcset="">  */}
+                 
                   <br />
                   <br />
                   <p className="text-uppercase">
@@ -339,16 +322,26 @@ function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="pt-5 text-center text-center content-eco1-bg text-sm-start">
+        <img
+          src="/Left-Box-1.svg"
+          className="box-animation-1 img-fluid d-sm-none d-md-block"
+        />
+        <img
+          src="/Left-Box-2(UpperSide).svg"
+          className="box-animation-2 d-sm-none d-md-block"
+        />
+        <img
+          src="/Left-Box-3(BottomSide).svg"
+          className="box-animation-3 d-sm-none d-md-block"
+        />
         <br />
         <br />
         <br />
         <div className="col-md eco-1-title">
-          <h3 className="text-uppercase ai-title">
-            Getting started
-          </h3>
+          <h3 className="text-uppercase ai-title">Getting started</h3>
         </div>
         <p className="q-tokenomics-showcase-intro-lead p-3 text-uppercase"></p>
         <center>
@@ -386,7 +379,7 @@ function HomePage() {
               statelink4,
               statelink5,
               statelink6,
-              statelink7
+              statelink7,
             }) => (
               <Accordion
                 title={title}
@@ -421,6 +414,18 @@ function HomePage() {
       </section>
 
       <section className="text-center content-eco1-bg pt-5">
+        <img
+          src="/Right-Box-1(Faded).svg"
+          className="img-fluid right-box-2nd-animation-1"
+        />
+        <img
+          src="/Right-Box-2(Upper).svg"
+          className="img-fluid right-box-2nd-animation-2"
+        />
+        <img
+          src="/Right-Box-3(Bottom).svg"
+          className="img-fluid right-box-2nd-animation-3"
+        />
         <section className="pt-5 text-center text-center content-eco1-bg text-sm-start">
           <br />
           <br />
@@ -435,10 +440,13 @@ function HomePage() {
             <br />
           </center>
         </section>
+        <nav className="Menu">
+            <NftNavLinks />
+        </nav>
         <Cards />
       </section>
 
-      <section className="text-center content-eco1-bg p-5">
+      {/* <section className="text-center content-eco1-bg p-5">
         <div className="col-md eco-1-title">
           <h3 className="text-uppercase ai-title">Design Contest</h3>
         </div>
@@ -447,21 +455,10 @@ function HomePage() {
             <img src="/Contest.png" className="img-fluid" alt="..." />
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="px-5 pb-5 pt-5 text-center content-eco1-bg">
-        <img
-          src="/Right-Box-1(Faded).svg"
-          className="img-fluid right-box-2nd-animation-1"
-        />
-        <img
-          src="/Right-Box-2(Upper).svg"
-          className="img-fluid right-box-2nd-animation-2"
-        />
-        <img
-          src="/Right-Box-3(Bottom).svg"
-          className="img-fluid right-box-2nd-animation-3"
-        />
+      {/* <section className="px-5 pb-5 pt-5 text-center content-eco1-bg">
+       
         <div className="ai-header">
           <p className="ai-title">Event Roadmap</p>
           <p className="text-uppercase">
@@ -552,7 +549,7 @@ function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

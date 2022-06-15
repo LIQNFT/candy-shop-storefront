@@ -1231,7 +1231,7 @@ h4 {
 }
 .showcase-intro {
   font-style: normal;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 32px;
   line-height: 41px;
   text-transform: uppercase;
@@ -1325,7 +1325,7 @@ h4 {
   background: linear-gradient(44.73deg, #7c7c7c 11.32%, #4e4e4e 92.96%);
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 40px;
-  width: 165px;
+  width: 130px;
   height: 50px;
   font-style: normal;
   font-weight: bold;
@@ -1667,7 +1667,7 @@ h4 {
 @media (min-width: 1200px) {
   .box-animation-1 {
     width: 249.14px;
-    height: 263.72px;
+    height: 245.72px;
   }
   .box-animation-2 {
     width: 59.8px;
