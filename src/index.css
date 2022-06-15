@@ -2205,3 +2205,6 @@ h4 {
 .blog-link-underline{
   text-decoration: underline;
 }
+.candy-orders-filter{
+  align-content: center !important;
+}
