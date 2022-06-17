@@ -290,7 +290,7 @@ footer {
   color: #000000;
 }
 .ahref {
-  color: #d7d7d8;
+  color: #d7d7d8 !important;
 }
 .ahref:hover {
   color: #fff;
@@ -2207,4 +2207,21 @@ h4 {
 }
 .candy-orders-filter{
   align-content: center !important;
+}
+.dropdown-list{
+  position: absolute !important;
+  left: 46%;
+  cursor: pointer;
+}
+@media (min-width: 310px) {
+  .dropdown-list{
+    position: relative !important;
+    left: 0 !important;
+  }
+}
+@media (min-width: 992px) {
+  .dropdown-list{
+    position: absolute !important;
+    left: 46% !important;
+  }
 }
