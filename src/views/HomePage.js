@@ -6,6 +6,7 @@ import Accordion from "./Accordion";
 import Cards from "./Cards";
 import NftNavLinks from "../components/NavBar/NftNavLinks";
 import MarketplaceWithFilter from "./MarketplaceWithFilter";
+import LandingPage from "./landingpage";
 
 function HomePage() {
   const accordionData = [
@@ -26,6 +27,7 @@ function HomePage() {
       statelink5: `d-none`,
       statelink6: `d-none`,
       statelink7: `d-none`,
+      statelink8: `d-none`,
     },
     {
       title: "How to buy NFT from this website?",
@@ -34,9 +36,10 @@ function HomePage() {
       step3: `STEP 3: FIND YOUR PREFERRED NFT. YOU CAN ALSO VIEW ALL THE INFORMATION ABOUT THAT NFT WITH THEIR ATTRIBUTES AND PRICE. `,
       step4: `STEP 4: CLICK THE “BUY NOW” BUTTON TO BUY AN NFT.`,
       step5: `STEP 5: CLICK APPROVE FOR THE TRANSACTION ON YOUR WALLET.`,
+      step8:  `NOTE: UPON BUYING OUR “STRUCTURAL LEGACIES” COLLECTION, YOU ARE ELIGIBLE TO CLAIM “QUBES”, THE TOKEN OF HOMEQUBE.`,
       state6: `d-none`,
       state7: `d-none`,
-      state8: `d-none`,
+      
       statelink: `d-none`,
       statelink1: `d-none`,
       statelink3: `d-none`,
@@ -45,6 +48,7 @@ function HomePage() {
       statelink6: `d-none`,
       statelink7: `d-none`,
       statelink2: `d-none`,
+      statelink8: `d-none`,
     },
     {
       title: "HOW TO DOWNLOAD AND OPEN YOUR 3D MODEL FILES?",
@@ -63,15 +67,16 @@ function HomePage() {
       statelink5: `d-none`,
       statelink6: `d-none`,
       statelink7: `d-none`,
+      statelink8: `d-none`,
     },
     {
       title: "HOW TO CLAIM YOUR QUBE?",
-      step1: `YOU ARE ELIGIBLE TO CLAIM QUBE TOKEN WHEN YOU BUY OUR STRUCTURAL LEGACY NFTS. MAKE SURE THAT THE NFT YOU BOUGHT HAS A SYMBOL “HOMEQUBE” AND MINTED FROM THIS`,
-      step2: `STEP 1: GO TO `,
-      step3: `STEP 2: FIND THE TOKEN ADDRESS OF THE NFT YOU BOUGHT. YOU MAY FIND THE TOKEN ADDRESS BY CLICKING ON THE MINT ADDRESS OF THE NFT YOU BOUGHT.`,
-      step4: `STEP 3: PASTE THE TOKEN ADDRESS TO THE TEXTBOX.`,
-      step5: `STEP 4: CLICK THE 'SUBMIT' BUTTON THEN WAIT FOR THE AIRDROP OF THE QUBE TOKEN WITHIN 24 HOURS.`,
-      step7: `NOTE: IN CASE YOU DIDN’T RECEIVE THE QUBE TOKEN WITHIN 24 HOURS, YOU MAY EMAIL US AT`,
+      step1: `YOU ARE ELIGIBLE TO CLAIM QUBE TOKEN WHEN YOU BUY OUR STRUCTURAL LEGACY NFTS. MAKE SURE THAT THE NFT YOU BOUGHT HAS THE SYMBOL “HOMEQUBE” AND IS MINTED FROM THIS`,
+      step2: `STEP 1: FIND THE URL CONTAINING YOUR NFT AT SOLANA EXPLORER `,
+      step3: `STEP 2: GO TO`,
+      step4: `STEP 3: PASTE THE URL IN THE TEXT BOX.`,
+      step5: `STEP 4: CLICK THE 'SUBMIT' BUTTON THEN WAIT FOR THE AIRDROP OF THE QUBE TOKEN WITHIN 2 DAYS.`,
+      step7: `NOTE: IN CASE YOU DIDN’T RECEIVE THE QUBE TOKEN WITHIN 2 DAYS, YOU MAY EMAIL US AT `,
 
       statelink4: `d-none`,
       state8: `d-none`,
@@ -79,12 +84,13 @@ function HomePage() {
       statelink1: `d-none`,
       statelink5: `d-none`,
       statelink7: `d-none`,
+      statelink8: `d-none`,
     },
     {
       title: `HOW MUCH QUBE WILL I RECEIVE AFTER BUYING A HOMEQUBE NFT?`,
       step1: `THE AMOUNT OF QUBE THAT YOU WILL BE RECEIVED WILL BE DEPENDENT ON THE EXCHANGE RATE OF SOLANA TO USD DURING YOUR PURCHASE. WE PEGGED OUR QUBE TOKEN AT $3 PER QUBE.`,
       step2: `FOR EXAMPLE, IF YOU BOUGHT OUR NFT AT 9 SOL AT USD 45 PER SOL, YOU WILL RECEIVE 135 QUBES.`,
-      step3: `NOTE: YOU WILL NOT ABLE TO RECEIVE QUBE TOKEN AUTOMATICALLY WHEN YOU BUY A HOMEQUBE NFT. CLAIM YOUR QUBE AT THE `,
+      step3: `NOTE: YOU WILL NOT ABLE TO RECEIVE QUBE TOKEN AUTOMATICALLY WHEN YOU BUY A HOMEQUBE NFT.`,
       state4: `d-none`,
       state5: `d-none`,
       state6: `d-none`,
@@ -98,8 +104,29 @@ function HomePage() {
       statelink6: `d-none`,
       statelink7: `d-none`,
       statelink: `d-none`,
+      statelink8: `d-none`,
     },
-
+    {
+      title: `CAN I POST MY OWN NFT COLLECTION? WHAT KIND OF NFTS CAN I AUCTION TO SELL IN THIS WEBSITE?`,
+      step1: `YOU CAN POST YOUR NFTS HERE RELATED TO HOME DESIGNS, ASSEMBLIES, AND PARTS. WE ACCEPT IMAGE (JPG, GIF, SVG), 3D (GLB) FILES FOR THE NFTS.`,
+      step2: `NOTE: POSTING AN NFT INTO OUR WEBSITE COSTS 1 QUBE.`,
+      state4: `d-none`,
+      state5: `d-none`,
+      state6: `d-none`,
+      state7: `d-none`,
+      state8: `d-none`,
+      state3: `d-none`,
+      statelink1: `d-none`,
+      statelink2: `d-none`,     
+      statelink3: `d-none`,
+      statelink4: `d-none`,
+      statelink5: `d-none`,
+      statelink6: `d-none`,
+      statelink7: `d-none`,
+      statelink: `d-none`,
+      statelink8: `d-none`,
+      
+    },
     {
       title: `HOW TO ADD YOUR HOME DESIGN NFT COLLECTION TO OUR WEBSITE?`,
       step1: `YOU MAY EMAIL US AT`,
@@ -116,6 +143,28 @@ function HomePage() {
       statelink3: `d-none`,
       statelink5: `d-none`,
       statelink6: `d-none`,
+      statelink8: `d-none`,
+    },
+    {
+      title: `HOW CAN I KNOW MORE ABOUT HOMEQUBE?`,
+      step1: `YOU MAY VISIT`,
+      state2: `d-none`,
+      state3: `d-none`,
+      state4: `d-none`,
+      state5: `d-none`,
+      state6: `d-none`,
+      state7: `d-none`,
+      state8: `d-none`,
+      statelink1: `d-none`,
+      statelink2: `d-none`,     
+      statelink3: `d-none`,
+      statelink4: `d-none`,
+      statelink5: `d-none`,
+      statelink6: `d-none`,
+      statelink7: `d-none`,
+      statelink: `d-none`,
+      
+      
     },
   ];
   return (
@@ -381,6 +430,7 @@ function HomePage() {
               statelink5,
               statelink6,
               statelink7,
+              statelink8,
             }) => (
               <Accordion
                 title={title}
@@ -408,6 +458,7 @@ function HomePage() {
                 statelink5={statelink5}
                 statelink6={statelink6}
                 statelink7={statelink7}
+                statelink8={statelink8}
               />
             )
           )}
@@ -428,22 +479,24 @@ function HomePage() {
           className="img-fluid right-box-2nd-animation-3"
         />
         <section className="pt-5 text-center text-center content-eco1-bg text-sm-start">
-          <br />
-          <br />
-          <br />
+        
           <div className="col-md eco-1-title">
             <h3 className="text-uppercase ai-title">NFT COLLECTIONS</h3>
           </div>
-          <p className="q-tokenomics-showcase-intro-lead p-3 text-uppercase"></p>
-          <center>
+           <p className="q-tokenomics-showcase-intro-lead p-3 text-uppercase"></p> 
+          
+           <center> 
             <div className="faq-rectangle"></div>
           </center>
+          <br />
+          <br />
+          <LandingPage />
         </section>
         {/* <nav className="Menu">
             <NftNavLinks />
         </nav> */}
         {/* <Cards /> */}
-        <MarketplaceWithFilter/>
+        
       </section>
 
       {/* <section className="text-center content-eco1-bg p-5">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-const Accordion = ({ title, step1, step2, step3, step4, step5, step6, step7, step8, state1, state2, state3,state4,state5,state6,state7,state8, statelink, statelink1, statelink2,statelink3,statelink4,statelink5,statelink6,statelink7}) => {
+const Accordion = ({ title, step1, step2, step3, step4, step5, step6, step7, step8, state1, state2, state3,state4,state5,state6,state7,state8, statelink, statelink1, statelink2,statelink3,statelink4,statelink5,statelink6,statelink7,statelink8}) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -56,19 +56,29 @@ const Accordion = ({ title, step1, step2, step3, step4, step5, step6, step7, ste
           ABOUT@HOMEQUBE.COM 
         </a>
         &nbsp;FOR YOUR INTEREST IN POSTING YOUR COLLECTION
+        </span>
+        <span class={statelink8}>&nbsp;
+        <a
+          href="https://www.qube.homeqube.com/"
+          target="_blank"
+          class="blog-link blog-link-underline"
+        >
+          WWW.QUBE.HOMEQUBE.COM
+        </a>
+        &nbsp;TO GET MORE DETAILS ABOUT OUR PLATFORM.
         </span> 
         <br/> <br/>
         </div> 
         <div class={state2}> {step2}
         <span class={statelink3}>&nbsp;
         <a
-          href="/claimqubes"
-          
+          href="https://explorer.solana.com/"
+          target={"_blank"}
           class="blog-link blog-link-underline"
         >
-          CLAIM QUBE 
+          (HTTPS://EXPLORER.SOLANA.COM/) 
         </a>
-        &nbsp;IN THE NAVIGATION BAR. YOU WILL SEE A TEXTBOX. 
+        . 
         </span> 
         <span class={statelink4}>&nbsp;
         <a
@@ -91,7 +101,17 @@ const Accordion = ({ title, step1, step2, step3, step4, step5, step6, step7, ste
         >
           CLAIM QUBE 
         </a>
-        &nbsp;IN THE NAVIGATION BAR. 
+        &nbsp;Here
+        </span>
+        <span class={statelink3}>&nbsp;
+        <a
+          href="/claimqubes"
+          
+          class="blog-link blog-link-underline"
+        >
+          CLAIM QUBE 
+        </a>
+        . 
         </span> 
         <br/> <br/>
         </div>
