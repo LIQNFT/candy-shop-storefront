@@ -104,7 +104,7 @@ const NavLinks = (props) => {
       {/* <li className='mx-5 mt-4'>
           <Link to='/sell'>SELL</Link>
         </li> */}
-      {/* <li
+      <li
         className="mx-5 mt-4"
         onClick={() => props.isMobile && props.closeMobileMenu()}
       >
@@ -114,10 +114,10 @@ const NavLinks = (props) => {
           target="_blank"
           rel="noreferrer"
         >
-          BETA
+          HOMEQUBE.AI
         </a>
-      </li> */}
-      <DropDownContainer className="mx-5 mt-4">
+      </li>
+      {/* <DropDownContainer className="mx-5 mt-4">
         <DropDownHeader onClick={toggling} className="text-center dropdown ">
           LEGAL
         </DropDownHeader>
@@ -135,7 +135,7 @@ const NavLinks = (props) => {
             </ListItem>
           </DropDownList>
         )}
-      </DropDownContainer>
+      </DropDownContainer> */}
       {/* <li className='mx-5 mt-4'>
           <a href="https://www.qube.homeqube.com/" key={'qube'} target="_blank" rel="noreferrer">
           ICO <br /> WEBISTE
@@ -155,7 +155,7 @@ const NavLinks = (props) => {
             className="exchange-button-more btn rounded-pill"
             type="button"
           >
-            JOIN TELEGRAM
+            TELEGRAM
           </button>
         </a>
       </li>
@@ -173,7 +173,7 @@ const NavLinks = (props) => {
             className="exchange-button-more2 btn rounded-pill"
             type="button"
           >
-            JOIN DISCORD
+            DISCORD
           </button>
         </a>
       </li>

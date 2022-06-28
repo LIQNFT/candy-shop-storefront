@@ -96,13 +96,9 @@ function Footer() {
               className="footer-logo"
               alt=""
             />
-            <p className="text-uppercase footer-text pt-3">
-              home building process accessible to all through
-              <br /> AI and blockchain technology
-              <br/>
+            
               <p className="text-uppercase footer-text pt-4 mt-5 "><b> POWERED BY CANDY.LIQNFT.COM</b></p>
               
-            </p>
             
 
            
@@ -170,8 +166,8 @@ function Footer() {
                 />
               </a>
               <p className="footer-text-2 mt-2">
-                about@homeqube.com
-                <br />
+                {/* about@homeqube.com
+                <br /> */}
                 <Link to="/terms" className="ahref">
                   Terms of Use
                 </Link>

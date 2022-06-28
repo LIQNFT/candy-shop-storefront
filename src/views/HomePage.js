@@ -124,13 +124,13 @@ function HomePage() {
         <div className="container-bg container">
           <div className="d-sm align-content-center justify-content-between container-content">
             <div>
-              {/* <h1 className="intro">
-                Design explore
+              <h1 className="intro">
+                Deconstructing Systems.
                 <br />
-                And Collect Homeqube
+                Decentralizing Power.
                 <br />
-                Designs as NFT
-              </h1> */}
+                Democratizing Knowledge.
+              </h1>
 
               <p className="intro-sentence text-uppercase mt-5">
                 We are solana based NFT “Launchpad-Marketplace” For home <br />{" "}
@@ -141,12 +141,12 @@ function HomePage() {
               </p>
 
               <div className="intro-btn2">
-                <a href="https://hqnftrial.xyz/" className="a-link">
+                <a href="https://hqnftrial.xyz/#/art/create/0" className="a-link">
                   <button
                     onclick="window.open('https://hqnftrial.xyz/')"
                     className="button2 btn btn-lg rounded-pill"
                   >
-                    Create
+                    Mint
                   </button>
                 </a>
                 <NavLink to="/nftcollection" className="a-link">
@@ -154,7 +154,7 @@ function HomePage() {
                     className="button1 btn btn-lg rounded-pill"
                     type="button"
                   >
-                    Explore
+                    Collections
                   </button>
                 </NavLink>
               </div>

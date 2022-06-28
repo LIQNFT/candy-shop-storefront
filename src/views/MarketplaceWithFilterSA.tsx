@@ -70,9 +70,9 @@ const MarketplaceWithFilterSA: React.FC = () => {
                 "Introducing Homeqube’s Structural Legacy System. Each Structural Configuration is unique. We generated 50 unique combinations (without Cantilever) from our Systems Architecture Platform (SAP). This Legacy System can be used to build limitless design configurations for flat topographies and up to 3 story housing, allowing open architecture. Our composite mix is more sustainable, weather resilient, and emits much less carbon than reinforced concrete/steel, and can be ergonomically assembled at site.",
             },
             {
-              name: "Community",
+              name: "PBU",
               collectionId: "2",
-              identifier: -1434943395,
+              identifier: 393799738,
               description:
                 "Introducing Homeqube’s Structural Legacy System. Each Structural Configuration is unique. We generated 50 unique combinations (without Cantilever) from our Systems Architecture Platform (SAP). This Legacy System can be used to build limitless design configurations for flat topographies and up to 3 story housing, allowing open architecture. Our composite mix is more sustainable, weather resilient, and emits much less carbon than reinforced concrete/steel, and can be ergonomically assembled at site.",
             },

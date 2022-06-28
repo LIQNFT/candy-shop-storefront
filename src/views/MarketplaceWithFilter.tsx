@@ -57,14 +57,14 @@ const MarketplaceWithFilter: React.FC = () => {
                 "Introducing Homeqube’s Structural Legacy System. Each Structural is unique. We generated 2450 unique combinations (without Cantilever) from our Systems Architecture Platform (SAP). This Legacy System can be used to build limitless design configurations for flat topographies and up to 3 story housing, allowing open architecture. Our composite mix is more sustainable,0 weather resilient, and emits much less carbon than reinforced concrete/steel, and can be ergonomically assembled at site.",
             },
             {
-              name: "Home Design",
+              name: "Home Designs",
               collectionId: "2",
               identifier: 1462698944,
               description:
                 "Showcase here in our collection is the award winning Cagbalete Sand Clusters for our Home Designs.",
             },
             {
-              name: "HOME SYSTEM ARCHITECTURE",
+              name: "SYSTEM ARCHITECTURE",
               collectionId: "3",
               identifier: -16541584,
               description:

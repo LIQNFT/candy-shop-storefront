@@ -201,7 +201,7 @@ export const Orders: React.FC<OrdersProps> = ({
                   {collectionFilter?.collectionId === filter.collectionId ? (
                     <div className="item-description text-uppercase">
                       <p className="SL-Des">
-                        <h3 className="des">DESCRIPTION</h3>
+                        <h3 className="des"></h3>
                         {filter.description}
                       </p>
                     </div>
