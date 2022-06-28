@@ -9,12 +9,7 @@ function NFTCollection3() {
             width: "100%",
           }}
         />
-        {/* <div class="container">
-          <h1 class="system-title text-start">
-            OTHER SYSTEM
-            <p class="concepts-title2 text-start">ARCHITECTURE PRODUCTS</p>
-          </h1>
-        </div> */}
+       
       </div>
       <div className="container-grid cards-content container mb-3 cards">
         <div className="card">

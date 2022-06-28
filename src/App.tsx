@@ -51,6 +51,12 @@ import OSAPItems from "./views/OSAP-Items";
 import ClaimQ from "./views/ClaimQ";
 import Faqs from "./views/Faqs";
 import HomePage from "./views/HomePage";
+import NFTCollection1 from "./components/NftCollection1";
+import NftList from "./views/NftList";
+import MarketplaceWithFilterSL from "./views/MarketplaceWithFilterSL";
+import MarketplaceWithFilterHD from "./views/MarketplaceWithFilterHD";
+import MarketplaceWithFilterSA from "./views/MarketplaceWithFilterSA";
+import MarketplaceWithFilterP from "./views/MarketplaceWithFilterP";
 
 require("@solana/wallet-adapter-react-ui/styles.css");
 
@@ -148,11 +154,53 @@ const App = () => {
                       element={
                         <>
                           <TopNav />
-                          <MarketplaceWithFilter/>
+                          <MarketplaceWithFilter />
                           {/* <Footer /> */}
                         </>
                       }
                     />
+                    <Route
+                      path="/structural-legacies"
+                      element={
+                        <>
+                          <TopNav />
+                          <MarketplaceWithFilterSL />
+                          {/* <Footer /> */}
+                        </>
+                      }
+                    />
+
+                    <Route
+                      path="/home-design"
+                      element={
+                        <>
+                          <TopNav />
+                          <MarketplaceWithFilterHD />
+                          {/* <Footer /> */}
+                        </>
+                      }
+                    />
+
+                    <Route
+                      path="/system-architecture"
+                      element={
+                        <>
+                          <TopNav />
+                          <MarketplaceWithFilterSA />
+                        </>
+                      }
+                    />
+
+                    <Route
+                      path="/products"
+                      element={
+                        <>
+                          <TopNav />
+                          <MarketplaceWithFilterP />
+                        </>
+                      }
+                    />
+
                     <Route
                       path="/homeqube"
                       element={
@@ -163,16 +211,15 @@ const App = () => {
                         </>
                       }
                     />
-                    <Route
+                    {/* <Route
                       path="/home-design"
                       element={
                         <>
                           <TopNav />
                           <HomequbeDesignItems />
-                          {/* <Footer /> */}
                         </>
                       }
-                    />
+                    /> */}
                     <Route
                       path="/SLC"
                       element={
@@ -432,8 +479,6 @@ const App = () => {
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-
-
 
   text-align: center;
   justify-content: center;

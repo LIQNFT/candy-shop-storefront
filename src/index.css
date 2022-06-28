@@ -654,7 +654,7 @@ a:active {
   display: inline-flex;
   flex: 1 0 auto;
   margin-bottom: 0;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .Menu li {
   margin: 0 12px;
