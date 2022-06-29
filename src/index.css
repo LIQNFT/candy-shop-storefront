@@ -651,10 +651,10 @@ a:active {
 
 .Menu {
   list-style: none;
-  display: inline-flex;
+  display: inline-flex !important;
   flex: 1 0 auto;
   margin-bottom: 0;
-  justify-content: space-evenly;
+  justify-content: space-evenly !important;
 }
 .Menu li {
   margin: 0 12px;
@@ -866,12 +866,12 @@ main {
   background-color: var(--main-background-color);
 }
 .candy-card-border {
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.125) !important;
+  border-radius: 0.25rem !important;
 }
 .candy-modal-content {
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.125) !important;
+  border-radius: 0.25rem !important;
 }
 
 .full-bg {
