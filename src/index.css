@@ -39,7 +39,7 @@ p {
 h3 {
   font-weight: normal;
 }
-.navbar{
+.navbar {
   background-color: var(--nav-bar-color);
 }
 /* Candy Shop styling overrides */
@@ -84,9 +84,19 @@ footer {
 }
 .footer-logo {
   float: left;
-  padding: 0 20px 20px 0;
   height: 155px;
 }
+@media (min-width: 250px) {
+  .footer-logo {
+    float: none;
+  }
+}
+@media (min-width: 768px) {
+  .footer-logo {
+    float: left;
+  }
+}
+
 .list {
   list-style: none;
   display: inline-block;
@@ -682,7 +692,7 @@ a:active {
 }
 .menu {
   list-style: none;
-  display: inline-flex;
+  display: inline-flex !important;
   flex: 1 0 auto;
   margin-bottom: 0;
   justify-content: space-around;
@@ -712,19 +722,18 @@ a:active {
   border-bottom: 4px solid var(--title-text-color);
 }
 .hamburger {
-  
   display: none;
 }
-.selected{
+.selected {
   font-weight: bold;
 }
 
 @media (max-width: 990px) {
   .Menu {
-    display: none;
+    display: none !important;
     opacity: 1;
   }
-  .navbar-lining{
+  .navbar-lining {
     display: none;
   }
   .mobileNav {
@@ -819,7 +828,7 @@ a:active {
   .conwid-50 {
     width: 70%;
   }
-  .navbar-lining{
+  .navbar-lining {
     display: block;
   }
   .conwid-25 {
@@ -1263,7 +1272,6 @@ h4 {
   display: none;
 }
 .accordion-item {
-
   border: none;
 }
 .item-description {
@@ -1334,7 +1342,7 @@ h4 {
   padding-top: 200px;
   padding-bottom: 100px;
 }
-.container-content-carbon{
+.container-content-carbon {
   text-align: left;
   height: 100vh;
 }
@@ -1412,7 +1420,7 @@ h4 {
 .showcase {
   background-color: #2f2f2f;
 }
-.showcase-1{
+.showcase-1 {
   background-color: #ffffff !important;
 }
 .container-content {
@@ -1920,7 +1928,7 @@ h4 {
     transform: rotate(360deg);
   }
 }
-.spacing{
+.spacing {
   margin-left: 10rem;
 }
 
@@ -1942,7 +1950,7 @@ h4 {
     width: 69.9px;
     height: 65.69px;
   }
-  .spacing{
+  .spacing {
     margin-left: 8.5rem;
   }
 }
@@ -1981,9 +1989,9 @@ h4 {
     width: 94.9px;
     height: 90.69px;
   }
-  .spacing{
+  .spacing {
     margin-left: 10rem;
-  }  
+  }
 }
 @media (min-width: 992px) {
   .left-box-2nd {
@@ -2021,14 +2029,13 @@ h4 {
     height: 105.69px;
   }
 }
-.row-icons{
-  margin-top: 8rem!important;
+.row-icons {
+  margin-top: 8rem !important;
 }
-.margin-bot{
-  margin-bottom: 5rem!important;
+.margin-bot {
+  margin-bottom: 5rem !important;
 }
-.blog-link
-{
+.blog-link {
   color: #5a5a5a;
   font-weight: normal;
 }
@@ -2201,25 +2208,25 @@ h4 {
   height: 6vw;
 }
 
-.blog-link-underline{
+.blog-link-underline {
   text-decoration: underline;
 }
-.candy-orders-filter{
+.candy-orders-filter {
   align-content: center !important;
 }
-.dropdown-list{
+.dropdown-list {
   position: absolute !important;
   left: 46%;
   cursor: pointer;
 }
 @media (min-width: 310px) {
-  .dropdown-list{
+  .dropdown-list {
     position: relative !important;
     left: 0 !important;
   }
 }
 @media (min-width: 992px) {
-  .dropdown-list{
+  .dropdown-list {
     position: absolute !important;
     left: 46% !important;
   }

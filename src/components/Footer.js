@@ -97,7 +97,7 @@ function Footer() {
               alt=""
             />
             
-              <p className="text-uppercase footer-text pt-4 mt-5 "><b> POWERED BY CANDY.LIQNFT.COM</b></p>
+              {/* <p className="text-uppercase footer-text pt-4 mt-5 "><b> POWERED BY CANDY.LIQNFT.COM</b></p> */}
               
             
 
