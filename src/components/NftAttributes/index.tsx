@@ -37,7 +37,7 @@ export const NftAttributes: React.FunctionComponent<NftAttributesProps> = ({ att
      </a> */}
      <p className='shareText'>SHARE: </p>
          <a
-           href="https://www.facebook.com/sharer?u=https%3A%2F%2Fhqnftrialv2.xyz%2F"
+           href="https://www.facebook.com/sharer?u=https%3A%2F%2Fwww.dev.homeqube.io%2F"
            target="_blank"
            rel="noreferrer noopener"
            className="flink-icon"
@@ -49,7 +49,7 @@ export const NftAttributes: React.FunctionComponent<NftAttributesProps> = ({ att
            />
          </a>
          <a
-           href="https://twitter.com/share?url=https://hqnftrialv2.xyz"
+           href="https://twitter.com/share?url=https://www.dev.homeqube.io/"
            target="_blank"
            rel="noreferrer noopener"
            className="flink-icon"
