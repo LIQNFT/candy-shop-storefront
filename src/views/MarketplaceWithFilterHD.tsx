@@ -67,14 +67,14 @@ const MarketplaceWithFilterHD: React.FC = () => {
               collectionId: "1",
               identifier: 1462698944,
               description:
-                "Showcase here in our collection is the award winning Cagbalete Sand Clusters for our Home Designs.",
+                "YOU CAN PLACE VARIOUS HOME DESIGNS HERE THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
             },
             {
               name: "Community",
               collectionId: "2",
               identifier: -16541584,
               description:
-                "Showcase here in our collection is the award winning Cagbalete Sand Clusters for our Home Designs.",
+                "YOU CAN PLACE VARIOUS HOME DESIGNS HERE THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
             },
             // { name: 'Puppies + Shibas', collectionId: '4', identifier: [1235887132, 2036309415] },
             // { name: 'Purple Puppies', collectionId: '4', identifier: 2036309415, attribute: { backgrounds: 'gradient_purple' } }

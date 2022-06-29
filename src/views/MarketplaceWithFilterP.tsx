@@ -67,7 +67,7 @@ const MarketplaceWithFilterP: React.FC = () => {
               collectionId: "1",
               identifier: -1434943395,
               description:
-                "Showcase here in this collection are the sports cruiser and spherical bathrooms made by Architectyourlife14 (AYL).",
+                "YOU CAN PLACE VARIOUS “PRODCUTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
             },
             // { name: 'Puppies + Shibas', collectionId: '4', identifier: [1235887132, 2036309415] },
             // { name: 'Purple Puppies', collectionId: '4', identifier: 2036309415, attribute: { backgrounds: 'gradient_purple' } }

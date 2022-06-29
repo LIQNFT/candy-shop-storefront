@@ -5,15 +5,15 @@ function LandingPage() {
 
     return(
     <>
-     <section className="align-center text-uppercase text-center mt-5" style={{fontSize: "1.5rem"}}>
+     <section className="align-center text-uppercase text-center mt-5" style={{fontSize: "2rem"}}>
         <div>
             <p> Our Marketplace has four types of NFT Collections categories. These are: </p>
-            <ol style={{ listStyleType: "none" }}>
-                <li> 1. STRUCTURAL LEGACIES </li>
-                <li> 2. Home Designs </li>
-                <li> 3. System Architecture </li>
-                <li> 4. Products </li>
-            </ol>
+            <ul style={{ listStyleType: "none" }}>
+                <li> ● STRUCTURAL LEGACIES </li>
+                <li> ● Home Designs </li>
+                <li> ● System Architecture </li>
+                <li> ● Products </li>
+            </ul>
             <br />
             <br />
             <p> CHECK OUR COLLECTIONS: </p>

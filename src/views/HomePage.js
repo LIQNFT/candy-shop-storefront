@@ -391,7 +391,7 @@ function HomePage() {
         <br />
         <br />
         <div className="col-md eco-1-title">
-          <h3 className="text-uppercase ai-title">Getting started</h3>
+          <p className="ai-title-home">Getting started</p>
         </div>
         <p className="q-tokenomics-showcase-intro-lead p-3 text-uppercase"></p>
         <center>
@@ -401,7 +401,7 @@ function HomePage() {
         </center>
       </section>
 
-      <section className="p-4 text-dark text-start bg-white">
+      <section className="p-4 text-dark text-start bg-white" style={{fontSize: "2rem"}}>
         <div className="accordion text-uppercase">
           {accordionData.map(
             ({
@@ -481,7 +481,7 @@ function HomePage() {
         <section className="pt-5 text-center text-center content-eco1-bg text-sm-start">
         
           <div className="col-md eco-1-title">
-            <h3 className="text-uppercase ai-title">NFT COLLECTIONS</h3>
+            <p className="ai-title-home">NFT COLLECTIONS</p>
           </div>
            <p className="q-tokenomics-showcase-intro-lead p-3 text-uppercase"></p> 
           

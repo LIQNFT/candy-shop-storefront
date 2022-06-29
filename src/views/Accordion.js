@@ -18,7 +18,7 @@ const Accordion = ({ title, step1, step2, step3, step4, step5, step6, step7, ste
       </div>
       {isActive && 
 
-      <div className="accordion-content carbon-text">
+      <div className="accordion-content carbon-text" style={{fontSize: "2rem"}}>
         <div class={state1}>{step1} 
         <span class={statelink}>&nbsp;
         <a

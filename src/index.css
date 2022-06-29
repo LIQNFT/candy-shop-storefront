@@ -2191,7 +2191,6 @@ h4 {
 .faq-head {
   padding-top: 20px;
   text-align: left;
-  font-size: 1.2em;
   font-weight: bold;
 }
 .card-img-top {
@@ -2224,4 +2223,9 @@ h4 {
     position: absolute !important;
     left: 46% !important;
   }
+}
+.ai-title-home {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2.2rem;
 }
