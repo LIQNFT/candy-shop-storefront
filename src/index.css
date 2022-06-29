@@ -696,6 +696,7 @@ a:active {
   flex: 1 0 auto;
   margin-bottom: 0;
   justify-content: space-around;
+  font-size: 2rem;
 }
 .menu li {
   margin: 0 12px;
@@ -717,6 +718,38 @@ a:active {
   max-height: 26px;
 }
 .menu a:hover,
+a:active {
+  color: rgb(131, 146, 161);
+  border-bottom: 4px solid var(--title-text-color);
+}
+
+.menu2 {
+  list-style: none;
+  display: inline-flex !important;
+  flex: 1 0 auto;
+  margin-bottom: 0;
+  justify-content: space-around;
+}
+.menu2 li {
+  margin: 0 12px;
+  cursor: pointer;
+}
+.menu2 a {
+  color: var(--main-text-color);
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  outline: none;
+  text-decoration: none;
+  text-size-adjust: 100%;
+  touch-action: manipulation;
+  transition: color 0.3s;
+  padding-bottom: 15px;
+}
+.menu2 img {
+  max-height: 26px;
+}
+.menu2 a:hover,
 a:active {
   color: rgb(131, 146, 161);
   border-bottom: 4px solid var(--title-text-color);

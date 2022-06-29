@@ -187,7 +187,7 @@ export const Orders2: React.FC<OrdersProps> = ({
         })}
         {filters ? (
           <>
-            <nav className="candy-orders-filter menu text-uppercase pb-3 pt-3">
+            <nav className="candy-orders-filter menu2 text-uppercase pb-3 pt-3">
               {filters?.map((filter) => {
                 return (
                   <>

@@ -63,14 +63,14 @@ const MarketplaceWithFilterHD: React.FC = () => {
           // configure filter by collection
           filters={[
             {
-              name: "Cagbalete",
+              name: "Highlighted Projects",
               collectionId: "1",
               identifier: 1462698944,
               description:
                 "YOU CAN PLACE VARIOUS HOME DESIGNS HERE THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
             },
             {
-              name: "Community",
+              name: "Community Projects",
               collectionId: "2",
               identifier: -16541584,
               description:
