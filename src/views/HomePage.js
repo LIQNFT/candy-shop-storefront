@@ -109,7 +109,7 @@ function HomePage() {
     {
       title: `CAN I POST MY OWN NFT COLLECTION? WHAT KIND OF NFTS CAN I AUCTION TO SELL IN THIS WEBSITE?`,
       step1: `YOU CAN POST YOUR NFTS HERE RELATED TO HOME DESIGNS, ASSEMBLIES, AND PARTS. WE ACCEPT IMAGE (JPG, GIF, SVG), 3D (GLB) FILES FOR THE NFTS.`,
-      step2: `NOTE: POSTING AN NFT INTO OUR WEBSITE COSTS 1 QUBE.`,
+      step2: `NOTE: POSTING AN NFT INTO OUR WEBSITE COSTS 5 QUBES.`,
       state4: `d-none`,
       state5: `d-none`,
       state6: `d-none`,
@@ -129,7 +129,7 @@ function HomePage() {
     },
     {
       title: `HOW TO ADD YOUR HOME DESIGN NFT COLLECTION TO OUR WEBSITE?`,
-      step1: `YOU MAY EMAIL US AT`,
+      step1: `We will adding this functionality soon.`,
       statelink: `d-none`,
       state2: `d-none`,
       state3: `d-none`,

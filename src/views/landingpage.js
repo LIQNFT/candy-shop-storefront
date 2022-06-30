@@ -16,7 +16,7 @@ function LandingPage() {
             </ul>
             <br />
             <br />
-            <p> CHECK OUR COLLECTIONS: </p>
+            {/* <p> CHECK OUR COLLECTIONS: </p> */}
          
             <NavLink to="/structural-legacies" className="a-link">
                   <button

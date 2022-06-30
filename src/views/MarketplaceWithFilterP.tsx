@@ -7,7 +7,7 @@ import { PublicKey, Cluster } from "@solana/web3.js";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { Orders2 } from "../public/Orders2";
+import { OrdersP } from "../public/OrdersP";
 
 const CANDY_SHOP_CREATOR_ADDRESS = new PublicKey(
   process.env.REACT_APP_CANDY_SHOP_CREATOR_ADDRESS!
@@ -56,7 +56,7 @@ const MarketplaceWithFilterP: React.FC = () => {
       </nav>
       <DesContainer>
         <Stat candyShop={candyShopRef.current} title={""} description={""} />
-        <Orders2
+        <OrdersP
           wallet={wallet}
           candyShop={candyShopRef.current}
           walletConnectComponent={<WalletMultiButton />}

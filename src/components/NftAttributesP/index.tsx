@@ -5,7 +5,7 @@ interface NftAttributesProps {
   loading: boolean;
 }
 
-export const NftAttributes: React.FunctionComponent<NftAttributesProps> = ({ attributes, loading }) => {
+export const NftAttributesP: React.FunctionComponent<NftAttributesProps> = ({ attributes, loading }) => {
   return (
     <div className="candy-stat">
       <div className="candy-label">ATTRIBUTES</div>
@@ -37,7 +37,7 @@ export const NftAttributes: React.FunctionComponent<NftAttributesProps> = ({ att
      </a> */}
      <p className='shareText'>SHARE: </p>
          <a
-           href="https://www.facebook.com/sharer?u=https%3A%2F%2Fwww.homeqube.io%2Fstructural-legacies"
+           href="https://www.facebook.com/sharer?u=https%3A%2F%2Fwww.homeqube.io%2Fproducts"
            target="_blank"
            rel="noreferrer noopener"
            className="flink-icon"
@@ -50,7 +50,7 @@ export const NftAttributes: React.FunctionComponent<NftAttributesProps> = ({ att
          </a>
          <a
         //  "https://twitter.com/intent/tweet?text=WE%20ARE%20SOLANA%20BASED%20NFT%20%E2%80%9CLAUNCHPAD-MARKETPLACE%E2%80%9D%20FOR%20HOME%20MANUFACTURING%2C%20FROM%203D%20PRINTED%20PARTS%2C%20HOME%20DESIGNS%2C%20HOME%20SYSTEM%20ALGORITHMS%2C%20DECORS%2C%20FIXTURES%20FURNITURES%2C%20PROTOTYPES%2C%20AND%20RELATED%20OTHERS%20TO%20HOMEBUILDING%20BOTH%20FOR%20THE%20METAVERSE%20AND%20IRL.%0A%0AVISIT%20https%3A%2F%2Fwww.homeqube.io%2F"
-           href= "https://twitter.com/share?url=https://www.homeqube.io/structural-legacies"
+           href= "https://twitter.com/share?url=https://www.homeqube.io/products"
            target="_blank"
            rel="noreferrer noopener"
            className="flink-icon"

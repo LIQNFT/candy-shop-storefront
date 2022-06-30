@@ -47,7 +47,7 @@ const Accordion = ({ title, step1, step2, step3, step4, step5, step6, step7, ste
         </a>
         
         </span>
-        <span class={statelink7}>&nbsp;
+        {/* <span class={statelink7}>&nbsp;
         <a
           href="mailto:ABOUT@HOMEQUBE.COM"
           target="_blank"
@@ -56,7 +56,7 @@ const Accordion = ({ title, step1, step2, step3, step4, step5, step6, step7, ste
           ABOUT@HOMEQUBE.COM 
         </a>
         &nbsp;FOR YOUR INTEREST IN POSTING YOUR COLLECTION
-        </span>
+        </span> */}
         <span class={statelink8}>&nbsp;
         <a
           href="https://www.qube.homeqube.com/"
