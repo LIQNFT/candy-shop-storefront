@@ -66,7 +66,7 @@ const NavLinks = (props) => {
   return (
     <>
       <li
-        className="mx-5 mt-4"
+        className="mx-3 mt-4"
         onClick={() =>
           setActive("navItem1") && props.isMobile && props.closeMobileMenu()
         }
@@ -76,7 +76,7 @@ const NavLinks = (props) => {
         </NavLink>
       </li>
       <li
-        className="mx-5 mt-4"
+        className="mx-3 mt-4"
         onClick={() => props.isMobile && props.closeMobileMenu()}
       >
         <NavLink activeClassName="active" to="/claimqubes">
@@ -84,7 +84,7 @@ const NavLinks = (props) => {
         </NavLink>
       </li>
       <li
-        className="mx-5 mt-4"
+        className="mx-3 mt-4"
         onClick={() => props.isMobile && props.closeMobileMenu()}
       >
         <NavLink activeClassName="active" to="/mycollection">
@@ -105,7 +105,7 @@ const NavLinks = (props) => {
           <Link to='/sell'>SELL</Link>
         </li> */}
       <li
-        className="mx-5 mt-4"
+        className="mx-3 mt-4"
         onClick={() => props.isMobile && props.closeMobileMenu()}
       >
         <a
@@ -142,7 +142,7 @@ const NavLinks = (props) => {
           </a>
         </li> */}
       <li
-        className="mx-3 mt-4"
+        className="mx-2 mt-4"
         onClick={() => props.isMobile && props.closeMobileMenu()}
       >
         <a
@@ -160,7 +160,7 @@ const NavLinks = (props) => {
         </a>
       </li>
       <li
-        className="mx-3 mt-4"
+        className="mx-2 mt-4"
         onClick={() => props.isMobile && props.closeMobileMenu()}
       >
         <a
