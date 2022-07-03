@@ -190,9 +190,9 @@ function HomePage() {
               </p>
 
               <div className="intro-btn2">
-                <a href="https://hqnftrial.xyz/#/art/create/0" className="a-link">
+                <a href="https://www.community.homeqube.com/" className="a-link">
                   <button
-                    onclick="window.open('https://hqnftrial.xyz/')"
+                    onclick="window.open('https://www.community.homeqube.com/')"
                     className="button2 btn btn-lg rounded-pill"
                   >
                     Mint
