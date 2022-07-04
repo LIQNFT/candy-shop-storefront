@@ -66,6 +66,7 @@ const MarketplaceWithFilterSA: React.FC = () => {
               name: "Parts",
               collectionId: "1",
               identifier: -16541584,
+              qubeClaims :"",
               description:
                 "YOU CAN PLACE VARIOUS HOME DESIGNS “PARTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES. ",
             },
@@ -73,6 +74,7 @@ const MarketplaceWithFilterSA: React.FC = () => {
               name: "PBU",
               collectionId: "2",
               identifier: 393799738,
+              qubeClaims :"",
               description:
                 "YOU CAN PLACE VARIOUS HOME DESIGNS “PARTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES. ",
             },

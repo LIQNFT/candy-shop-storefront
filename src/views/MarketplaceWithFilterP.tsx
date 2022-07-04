@@ -66,6 +66,7 @@ const MarketplaceWithFilterP: React.FC = () => {
               name: "Marine Leisure",
               collectionId: "1",
               identifier: -1434943395,
+              qubeClaims :"",
               description:
                 "YOU CAN PLACE VARIOUS “PRODCUTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
             },

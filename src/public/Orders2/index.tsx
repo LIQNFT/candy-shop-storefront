@@ -192,7 +192,6 @@ export const Orders2: React.FC<OrdersProps> = ({
                 return (
                   <>
                     <>
-                      {" "}
                       <li
                         key={filter.name}
                         className={
@@ -202,7 +201,7 @@ export const Orders2: React.FC<OrdersProps> = ({
                         }
                         onClick={() => setCollectionFilter(filter)}
                       >
-                        {filter.name}
+                        {filter.name} <span className="text-grey">{filter.qubeClaims}</span>
                       </li>
                       <p className="navbar-lining">|</p>
                     </>

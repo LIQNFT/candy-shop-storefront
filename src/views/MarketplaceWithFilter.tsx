@@ -53,6 +53,7 @@ const MarketplaceWithFilter: React.FC = () => {
               name: "Structural Legacies",
               collectionId: "1",
               identifier: [-354695101, -1775657236],
+              qubeClaims :"",
               description:
                 "INTRODUCING HOMEQUBE’S STRUCTURAL LEGACY SYSTEM. EACH STRUCTURAL IS UNIQUE. WE GENERATED 2500 UNIQUE COMBINATIONS (WITHOUT CANTILEVER) FROM OUR SYSTEMS ARCHITECTURE PLATFORM (SAP). THIS LEGACY SYSTEM CAN BE USED TO BUILD LIMITLESS DESIGN CONFIGURATIONS FOR FLAT TOPOGRAPHIES AND UP TO 3 STORY HOUSING, ALLOWING OPEN ARCHITECTURE. OUR COMPOSITE MIX IS MORE SUSTAINABLE, WEATHER RESILIENT, AND EMITS MUCH LESS CARBON THAN REINFORCED CONCRETE/STEEL, AND CAN BE ERGONOMICALLY ASSEMBLED AT THE SITE.",
             },
@@ -60,6 +61,7 @@ const MarketplaceWithFilter: React.FC = () => {
               name: "Home Designs",
               collectionId: "2",
               identifier: 1462698944,
+              qubeClaims :"",
               description:
                 "YOU CAN PLACE VARIOUS HOME DESIGNS HERE THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
             },
@@ -67,6 +69,7 @@ const MarketplaceWithFilter: React.FC = () => {
               name: "SYSTEM ARCHITECTURE",
               collectionId: "3",
               identifier: -16541584,
+              qubeClaims :"",
               description:
                 "YOU CAN PLACE VARIOUS HOME DESIGNS “PARTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES. ",
             },
@@ -75,6 +78,7 @@ const MarketplaceWithFilter: React.FC = () => {
               name: "PRODUCTS",
               collectionId: "4",
               identifier: [-1434943395, 393799738],
+              qubeClaims :"",
               description:
                 "YOU CAN PLACE VARIOUS “PRODCUTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
             },

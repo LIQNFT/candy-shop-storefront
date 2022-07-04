@@ -66,6 +66,7 @@ const MarketplaceWithFilterHD: React.FC = () => {
               name: "Highlighted Projects",
               collectionId: "1",
               identifier: 1462698944,
+              qubeClaims :"",
               description:
                 "YOU CAN PLACE VARIOUS HOME DESIGNS HERE THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
             },
@@ -73,6 +74,7 @@ const MarketplaceWithFilterHD: React.FC = () => {
               name: "Community Projects",
               collectionId: "2",
               identifier: -16541584,
+              qubeClaims :"",
               description:
                 "YOU CAN PLACE VARIOUS HOME DESIGNS HERE THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
             },
