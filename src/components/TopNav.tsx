@@ -39,7 +39,6 @@ const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
   const anchorRef = useRef<HTMLLIElement>(null);
 
   const { pathname } = useLocation();
-  console.log({ pathname });
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
