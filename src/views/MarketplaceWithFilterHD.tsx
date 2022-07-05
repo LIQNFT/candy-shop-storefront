@@ -47,7 +47,7 @@ const MarketplaceWithFilterHD: React.FC = () => {
           <NavLink to="/structural-legacies" >Structural Legacies</NavLink>
         </li>
         <li>
-          <NavLink to="/home-design" className='active'>Home Designs</NavLink>
+          <NavLink to="/home-designs" className='active'>Home Designs</NavLink>
         </li>
         <li>
         <NavLink to="/system-architecture">SYSTEM ARCHITECTURE</NavLink></li>

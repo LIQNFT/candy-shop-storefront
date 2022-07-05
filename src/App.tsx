@@ -171,7 +171,7 @@ const App = () => {
                     />
 
                     <Route
-                      path="/home-design"
+                      path="/home-designs"
                       element={
                         <>
                           <TopNav />
