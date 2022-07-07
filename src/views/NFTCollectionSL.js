@@ -1,6 +1,7 @@
 import { element } from "prop-types";
 import { useState } from "react";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 import NFTCollection1 from "../components/NftCollection1";
 import NFTCollection2 from "../components/NftCollection2";
 import NFTCollection3 from "../components/NftCollection3";
@@ -12,7 +13,7 @@ function NFTCollectionsSL() {
   const [hoveredItem, setHoveredItem] = useState("");
   const resetHover = () => setHoveredItem("");
 
-  return (
+return (
     <>
       <div className="container content">
         <div className="container-sm conwid-25">

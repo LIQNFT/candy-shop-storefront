@@ -57,6 +57,8 @@ import MarketplaceWithFilterSL from "./views/MarketplaceWithFilterSL";
 import MarketplaceWithFilterHD from "./views/MarketplaceWithFilterHD";
 import MarketplaceWithFilterSA from "./views/MarketplaceWithFilterSA";
 import MarketplaceWithFilterP from "./views/MarketplaceWithFilterP";
+import {Helmet} from "react-helmet";
+
 
 require("@solana/wallet-adapter-react-ui/styles.css");
 
@@ -144,6 +146,27 @@ const App = () => {
                       path="/"
                       element={
                         <>
+                          <Helmet>
+                          <meta
+                            name="description"
+                            content="WE ARE SOLANA BASED NFT “LAUNCHPAD-MARKETPLACE” FOR HOME
+                            MANUFACTURING, FROM 3D PRINTED PARTS, HOME DESIGNS, HOME SYSTEM
+                            ALGORITHMS, DECORS, FIXTURES FURNITURES, PROTOTYPES, AND
+                            RELATED OTHERS TO HOMEBUILDING BOTH FOR THE METAVERSE AND IRL."
+                          />
+    
+                          <meta property="og:image" content="https://www.homeqube.io/Alt-Homeqube-logo-standard@2x.png"/>
+
+                          <meta name="twitter:card" content="summary_large_image" />
+                          <meta name="twitter:site" content="@homeqube_ai" />
+                          <meta name="twitter:title" content="HOMEQUBE.IO" />
+                          <meta name="twitter:description" content="WE ARE SOLANA BASED NFT “LAUNCHPAD-MARKETPLACE” FOR HOME
+                          MANUFACTURING, FROM 3D PRINTED PARTS, HOME DESIGNS, HOME SYSTEM
+                          ALGORITHMS, DECORS, FIXTURES FURNITURES, PROTOTYPES, AND
+                          RELATED OTHERS TO HOMEBUILDING BOTH FOR THE METAVERSE AND IRL." />
+                          <meta name="twitter:image" content="https://www.homeqube.io/Alt-Homeqube-logo-standard@2x.png" />
+
+                          </Helmet>
                           <TopNav />
                           <HomePage />
                         </>
@@ -163,7 +186,23 @@ const App = () => {
                       path="/structural-legacies"
                       element={
                         <>
-                          <TopNav />
+                           <Helmet>
+                           <meta
+                            name="description"
+                            content="INTRODUCING HOMEQUBE’S STRUCTURAL LEGACY SYSTEM. EACH STRUCTURAL IS UNIQUE. WE GENERATED 2500 UNIQUE COMBINATIONS FROM OUR SYSTEMS ARCHITECTURE PLATFORM (DAPP). THIS LEGACY SYSTEM CAN BE USED TO BUILD LIMITLESS DESIGN CONFIGURATIONS FOR FLAT TOPOGRAPHIES AND UP TO 3 STORY HOUSING, ALLOWING OPEN ARCHITECTURE. OUR COMPOSITE MIX IS MORE SUSTAINABLE, WEATHER RESILIENT, AND EMITS MUCH LESS CARBON THAN REINFORCED CONCRETE/STEEL, AND CAN BE ERGONOMICALLY ASSEMBLED AT THE SITE."
+                          />
+    
+                          <meta property="og:image" content="https://www.homeqube.io/Alt-Homeqube-logo-standard@2x.png"/>
+                              <meta name="twitter:card" content="summary_large_image" />
+                              <meta name="twitter:site" content="@homeqube_ai" />
+                              <meta name="twitter:title" content="STRUCTURAL LEGACIES" />
+                              <meta name="twitter:description" content="INTRODUCING HOMEQUBE’S STRUCTURAL LEGACY SYSTEM. EACH STRUCTURAL IS UNIQUE. WE GENERATED 2500 UNIQUE COMBINATIONS FROM OUR SYSTEMS ARCHITECTURE PLATFORM (DAPP). THIS LEGACY SYSTEM CAN BE USED TO BUILD LIMITLESS DESIGN CONFIGURATIONS FOR FLAT TOPOGRAPHIES AND UP TO 3 STORY HOUSING, ALLOWING OPEN ARCHITECTURE. OUR COMPOSITE MIX IS MORE SUSTAINABLE, WEATHER RESILIENT, AND EMITS MUCH LESS CARBON THAN REINFORCED CONCRETE/STEEL, AND CAN BE ERGONOMICALLY ASSEMBLED AT THE SITE." />
+                              <meta name="twitter:image" content="https://www.homeqube.io/Alt-Homeqube-logo-standard@2x.png" />
+  
+                            </Helmet>
+                          <TopNav /> 
+                         
+
                           <MarketplaceWithFilterSL />
                           {/* <Footer /> */}
                         </>
@@ -174,7 +213,21 @@ const App = () => {
                       path="/home-designs"
                       element={
                         <>
+                        <Helmet>
+                        <meta
+                            name="description"
+                            content="YOU CAN PLACE VARIOUS HOME DESIGNS HERE THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES." />
+    
+                          <meta property="og:image" content="https://www.homeqube.io/Alt-Homeqube-logo-standard@2x.png"/>
+                              <meta name="twitter:card" content="summary_large_image" />
+                              <meta name="twitter:site" content="@homeqube_ai" />
+                              <meta name="twitter:title" content="HOME DESIGNS" />
+                              <meta name="twitter:description" content="YOU CAN PLACE VARIOUS HOME DESIGNS HERE THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES." />
+                              <meta name="twitter:image" content="https://www.homeqube.io/Alt-Homeqube-logo-standard@2x.png" />
+  
+                            </Helmet>
                           <TopNav />
+                          
                           <MarketplaceWithFilterHD />
                           {/* <Footer /> */}
                         </>
@@ -185,6 +238,19 @@ const App = () => {
                       path="/system-architecture"
                       element={
                         <>
+                        <Helmet>
+                        <meta
+                              name="description"
+                              content="YOU CAN PLACE VARIOUS HOME DESIGNS “PARTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES." />
+
+                            <meta property="og:image" content="https://www.homeqube.io/Alt-Homeqube-logo-standard@2x.png"/>
+                              <meta name="twitter:card" content="summary_large_image" />
+                              <meta name="twitter:site" content="@homeqube_ai" />
+                              <meta name="twitter:title" content="SYSTEM ARCHITECTURE" />
+                              <meta name="twitter:description" content="YOU CAN PLACE VARIOUS HOME DESIGNS “PARTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES." />
+                              <meta name="twitter:image" content="https://www.homeqube.io/Alt-Homeqube-logo-standard@2x.png" />
+  
+                          </Helmet>
                           <TopNav />
                           <MarketplaceWithFilterSA />
                         </>
@@ -195,6 +261,19 @@ const App = () => {
                       path="/products"
                       element={
                         <>
+                         <Helmet>
+                         <meta
+                              name="description"
+                              content="YOU CAN PLACE VARIOUS “PRODUCTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES." />
+
+                            <meta property="og:image" content="https://www.homeqube.io/Alt-Homeqube-logo-standard@2x.png"/>
+                              <meta name="twitter:card" content="summary_large_image" />
+                              <meta name="twitter:site" content="@homeqube_ai" />
+                              <meta name="twitter:title" content="PRODUCTS" />
+                              <meta name="twitter:description" content="YOU CAN PLACE VARIOUS “PRODUCTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES." />
+                              <meta name="twitter:image" content="https://www.homeqube.io/Alt-Homeqube-logo-standard@2x.png" />
+  
+                          </Helmet>
                           <TopNav />
                           <MarketplaceWithFilterP />
                         </>
