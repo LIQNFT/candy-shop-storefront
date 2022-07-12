@@ -57,7 +57,7 @@ import MarketplaceWithFilterSL from "./views/MarketplaceWithFilterSL";
 import MarketplaceWithFilterHD from "./views/MarketplaceWithFilterHD";
 import MarketplaceWithFilterSA from "./views/MarketplaceWithFilterSA";
 import MarketplaceWithFilterP from "./views/MarketplaceWithFilterP";
-// import {Helmet} from "react-helmet";
+import {Helmet} from "react-helmet";
 
 
 require("@solana/wallet-adapter-react-ui/styles.css");
@@ -146,8 +146,8 @@ const App = () => {
                       path="/"
                       element={
                         <>
-                          {/* <Helmet> */
-                          /* <meta
+                           <Helmet>
+                          <meta
                             name="description"
                             content="WE ARE SOLANA BASED NFT “LAUNCHPAD-MARKETPLACE” FOR HOME
                             MANUFACTURING, FROM 3D PRINTED PARTS, HOME DESIGNS, HOME SYSTEM
@@ -166,7 +166,7 @@ const App = () => {
                           RELATED OTHERS TO HOMEBUILDING BOTH FOR THE METAVERSE AND IRL." />
                           <meta name="twitter:image" content="https://www.homeqube.io/Alt-Homeqube-logo-standard@2x.png" /> 
 
-                           </Helmet> */}
+                           </Helmet>
                           <TopNav />
                           <HomePage />
                         </>
@@ -186,7 +186,7 @@ const App = () => {
                       path="/structural-legacies"
                       element={
                         <>
-                           {/* <Helmet>
+                          <Helmet>
                            <meta
                             name="description"
                             content="INTRODUCING HOMEQUBE’S STRUCTURAL LEGACY SYSTEM. EACH STRUCTURAL IS UNIQUE. WE GENERATED 2500 UNIQUE COMBINATIONS FROM OUR SYSTEMS ARCHITECTURE PLATFORM (DAPP). THIS LEGACY SYSTEM CAN BE USED TO BUILD LIMITLESS DESIGN CONFIGURATIONS FOR FLAT TOPOGRAPHIES AND UP TO 3 STORY HOUSING, ALLOWING OPEN ARCHITECTURE. OUR COMPOSITE MIX IS MORE SUSTAINABLE, WEATHER RESILIENT, AND EMITS MUCH LESS CARBON THAN REINFORCED CONCRETE/STEEL, AND CAN BE ERGONOMICALLY ASSEMBLED AT THE SITE."
@@ -199,7 +199,7 @@ const App = () => {
                               <meta name="twitter:description" content="INTRODUCING HOMEQUBE’S STRUCTURAL LEGACY SYSTEM. EACH STRUCTURAL IS UNIQUE. WE GENERATED 2500 UNIQUE COMBINATIONS FROM OUR SYSTEMS ARCHITECTURE PLATFORM (DAPP). THIS LEGACY SYSTEM CAN BE USED TO BUILD LIMITLESS DESIGN CONFIGURATIONS FOR FLAT TOPOGRAPHIES AND UP TO 3 STORY HOUSING, ALLOWING OPEN ARCHITECTURE. OUR COMPOSITE MIX IS MORE SUSTAINABLE, WEATHER RESILIENT, AND EMITS MUCH LESS CARBON THAN REINFORCED CONCRETE/STEEL, AND CAN BE ERGONOMICALLY ASSEMBLED AT THE SITE." />
                               <meta name="twitter:image" content="https://www.homeqube.io/Alt-Homeqube-logo-standard@2x.png" />
   
-                            </Helmet> */}
+                            </Helmet>
                           <TopNav /> 
                          
 
@@ -213,7 +213,7 @@ const App = () => {
                       path="/home-designs"
                       element={
                         <>
-                        {/* <Helmet>
+                        <Helmet>
                         <meta
                             name="description"
                             content="YOU CAN PLACE VARIOUS HOME DESIGNS HERE THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES." />
@@ -225,7 +225,7 @@ const App = () => {
                               <meta name="twitter:description" content="YOU CAN PLACE VARIOUS HOME DESIGNS HERE THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES." />
                               <meta name="twitter:image" content="https://www.homeqube.io/Alt-Homeqube-logo-standard@2x.png" />
   
-                            </Helmet> */}
+                            </Helmet>
                           <TopNav />
                           
                           <MarketplaceWithFilterHD />
@@ -238,7 +238,7 @@ const App = () => {
                       path="/system-architecture"
                       element={
                         <>
-                        {/* <Helmet>
+                         <Helmet>
                         <meta
                               name="description"
                               content="YOU CAN PLACE VARIOUS HOME DESIGNS “PARTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES." />
@@ -250,7 +250,7 @@ const App = () => {
                               <meta name="twitter:description" content="YOU CAN PLACE VARIOUS HOME DESIGNS “PARTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES." />
                               <meta name="twitter:image" content="https://www.homeqube.io/Alt-Homeqube-logo-standard@2x.png" />
   
-                          </Helmet> */}
+                          </Helmet> 
                           <TopNav />
                           <MarketplaceWithFilterSA />
                         </>
@@ -261,7 +261,7 @@ const App = () => {
                       path="/products"
                       element={
                         <>
-                         {/* <Helmet>
+                          <Helmet>
                          <meta
                               name="description"
                               content="YOU CAN PLACE VARIOUS “PRODUCTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES." />
@@ -273,7 +273,7 @@ const App = () => {
                               <meta name="twitter:description" content="YOU CAN PLACE VARIOUS “PRODUCTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES." />
                               <meta name="twitter:image" content="https://www.homeqube.io/Alt-Homeqube-logo-standard@2x.png" />
   
-                          </Helmet> */}
+                          </Helmet> 
                           <TopNav />
                           <MarketplaceWithFilterP />
                         </>
