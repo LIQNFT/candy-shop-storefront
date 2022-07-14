@@ -9,32 +9,8 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { Orders2 } from "../public/Orders2";
 import {Helmet} from "react-helmet";
+import { MetaTagsPage } from "../utils/Metatags";
 
-const Metatags = () => (
-
-  <div>
-      <Helmet>
-      {/* Primary Meta Tags */}
-      <title>Homeqube NFT Marketplace</title>
-      <meta name="title" content="Homeqube NFT Marketplace - Structural Legacies"/>
-      <meta name="description" content="INTRODUCING HOMEQUBE’S STRUCTURAL LEGACY SYSTEM. EACH STRUCTURAL IS UNIQUE. WE GENERATED 2500 UNIQUE COMBINATIONS FROM OUR SYSTEMS ARCHITECTURE PLATFORM (DAPP). THIS LEGACY SYSTEM CAN BE USED TO BUILD LIMITLESS DESIGN CONFIGURATIONS FOR FLAT TOPOGRAPHIES AND UP TO 3 STORY HOUSING, ALLOWING OPEN ARCHITECTURE. OUR COMPOSITE MIX IS MORE SUSTAINABLE, WEATHER RESILIENT, AND EMITS MUCH LESS CARBON THAN REINFORCED CONCRETE/STEEL, AND CAN BE ERGONOMICALLY ASSEMBLED AT THE SITE."/>
-
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website"/>
-      <meta property="og:url" content="https://www.homeqube.io/structural-legacies"/>
-      <meta property="og:title" content="Homeqube NFT Marketplace - Structural Legacies"/>
-      <meta property="og:description" content="INTRODUCING HOMEQUBE’S STRUCTURAL LEGACY SYSTEM. EACH STRUCTURAL IS UNIQUE. WE GENERATED 2500 UNIQUE COMBINATIONS FROM OUR SYSTEMS ARCHITECTURE PLATFORM (DAPP). THIS LEGACY SYSTEM CAN BE USED TO BUILD LIMITLESS DESIGN CONFIGURATIONS FOR FLAT TOPOGRAPHIES AND UP TO 3 STORY HOUSING, ALLOWING OPEN ARCHITECTURE. OUR COMPOSITE MIX IS MORE SUSTAINABLE, WEATHER RESILIENT, AND EMITS MUCH LESS CARBON THAN REINFORCED CONCRETE/STEEL, AND CAN BE ERGONOMICALLY ASSEMBLED AT THE SITE." />
-      <meta property="og:image" content="https://www.homeqube.io/Alt-Homeqube-logo-standard@2x.png"/>
-
-      {/* Twitter */}
-      <meta property="twitter:card" content="summary_large_image"/>
-      <meta property="twitter:url" content="https://www.homeqube.io/structural-legacies"/>
-      <meta property="twitter:title" content="Homeqube NFT Marketplace - Structural Legacies"/>
-      <meta property="twitter:description" content="INTRODUCING HOMEQUBE’S STRUCTURAL LEGACY SYSTEM. EACH STRUCTURAL IS UNIQUE. WE GENERATED 2500 UNIQUE COMBINATIONS FROM OUR SYSTEMS ARCHITECTURE PLATFORM (DAPP). THIS LEGACY SYSTEM CAN BE USED TO BUILD LIMITLESS DESIGN CONFIGURATIONS FOR FLAT TOPOGRAPHIES AND UP TO 3 STORY HOUSING, ALLOWING OPEN ARCHITECTURE. OUR COMPOSITE MIX IS MORE SUSTAINABLE, WEATHER RESILIENT, AND EMITS MUCH LESS CARBON THAN REINFORCED CONCRETE/STEEL, AND CAN BE ERGONOMICALLY ASSEMBLED AT THE SITE."/>
-      <meta property="twitter:image" content="https://www.homeqube.io/Alt-Homeqube-logo-standard@2x.png"/>        
-      </Helmet>
-  </div>
-);
 
 const CANDY_SHOP_CREATOR_ADDRESS = new PublicKey(
   process.env.REACT_APP_CANDY_SHOP_CREATOR_ADDRESS!
@@ -66,12 +42,11 @@ const MarketplaceWithFilterSL: React.FC = () => {
       NETWORK
     )
   );
-
+  MetaTagsPage("STRUCTURAL LEGACIES", "INTRODUCING HOMEQUBE’S STRUCTURAL LEGACY SYSTEM. EACH STRUCTURAL IS UNIQUE. WE GENERATED 2500 UNIQUE COMBINATIONS FROM OUR SYSTEMS ARCHITECTURE PLATFORM (DAPP). THIS LEGACY SYSTEM CAN BE USED TO BUILD LIMITLESS DESIGN CONFIGURATIONS FOR FLAT TOPOGRAPHIES AND UP TO 3 STORY HOUSING, ALLOWING OPEN ARCHITECTURE. OUR COMPOSITE MIX IS MORE SUSTAINABLE, WEATHER RESILIENT, AND EMITS MUCH LESS CARBON THAN REINFORCED CONCRETE/STEEL, AND CAN BE ERGONOMICALLY ASSEMBLED AT THE SITE.", "https://www.homeqube.io/structural-legacies");
   
-
   return (
     <>
-    <Metatags />
+    
       <nav className="candy-orders-filter menu text-uppercase pb-3 pt-3">
         <li>
           <NavLink to="/structural-legacies" className='active'>Structural Legacies</NavLink>

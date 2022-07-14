@@ -8,7 +8,7 @@ import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { OrdersP } from "../public/OrdersP";
-
+import { MetaTagsPage } from "../utils/Metatags";
 const CANDY_SHOP_CREATOR_ADDRESS = new PublicKey(
   process.env.REACT_APP_CANDY_SHOP_CREATOR_ADDRESS!
 );
@@ -39,7 +39,7 @@ const MarketplaceWithFilterP: React.FC = () => {
       NETWORK
     )
   );
-
+  MetaTagsPage("PRODUCTS", "YOU CAN PLACE VARIOUS “PRODCUTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES..", "https://www.homeqube.io/products");
   return (
     <>
       <nav className="candy-orders-filter menu text-uppercase pb-3 pt-3">

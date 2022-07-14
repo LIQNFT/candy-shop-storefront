@@ -8,7 +8,7 @@ import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { OrdersSA } from "../public/OrdersSA";
-
+import { MetaTagsPage } from "../utils/Metatags";
 const CANDY_SHOP_CREATOR_ADDRESS = new PublicKey(
   process.env.REACT_APP_CANDY_SHOP_CREATOR_ADDRESS!
 );
@@ -39,7 +39,7 @@ const MarketplaceWithFilterSA: React.FC = () => {
       NETWORK
     )
   );
-
+  MetaTagsPage("SYSTEM ARCHITECTURE", "YOU CAN PLACE VARIOUS HOME DESIGNS “PARTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.", "https://www.homeqube.io/system-architecture");
   return (
     <>
       <nav className="candy-orders-filter menu text-uppercase pb-3 pt-3">
