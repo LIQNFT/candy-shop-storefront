@@ -39,7 +39,7 @@ const MarketplaceWithFilterP: React.FC = () => {
       NETWORK
     )
   );
-  MetaTagsPage("PRODUCTS", "YOU CAN PLACE VARIOUS “PRODCUTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES..", "https://www.homeqube.io/products");
+  MetaTagsPage("PRODUCTS", "YOU CAN PLACE VARIOUS “PRODUCTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES..", "https://www.homeqube.io/products");
   return (
     <>
       <nav className="candy-orders-filter menu text-uppercase pb-3 pt-3">
@@ -68,7 +68,7 @@ const MarketplaceWithFilterP: React.FC = () => {
               identifier: -1434943395,
               qubeClaims :"",
               description:
-                "YOU CAN PLACE VARIOUS “PRODCUTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
+                "YOU CAN PLACE VARIOUS “PRODUCTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
             },
             // { name: 'Puppies + Shibas', collectionId: '4', identifier: [1235887132, 2036309415] },
             // { name: 'Purple Puppies', collectionId: '4', identifier: 2036309415, attribute: { backgrounds: 'gradient_purple' } }
