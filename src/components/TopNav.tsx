@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
@@ -11,57 +11,111 @@ import Popper from "@material-ui/core/Popper";
 import styled from "styled-components";
 import MobileNavigation from "./NavBar/MobileNavigation";
 import Navigation from "./NavBar/Navigation";
+import { RouteName } from "../constant/routeNames";
 
 interface TopNavProps {
   showCurrencyToggle?: boolean;
 }
 
+const ROUTES = [
+  { url: RouteName.home, name: "Home" },
+  { url: RouteName.marketplace, name: "Marketplace" },
+  { url: RouteName.sell, name: "Sell" },
+];
+
+const OTHER_LAYOUT_ROUTES = [
+  { url: RouteName.customToken, name: "Custom Token Marketplace" },
+  { url: RouteName.multipleCollection, name: "Multi Collection Marketplace" },
+  { url: RouteName.marketplaceWithUrl, name: "Marketplace With URL" },
+  {
+    url: RouteName.multipleCurrencyMarketplace,
+    name: "Multi Currency Marketplace",
+  },
+  { url: RouteName.multipleCurrencySell, name: "Multi Currency Sell" },
+];
+
 const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
   const wallet = useAnchorWallet();
 
-  const [open, setOpen] = React.useState(false);
-  const anchorRef = React.useRef<HTMLLIElement>(null);
+  const [open, setOpen] = useState(false);
+  const anchorRef = useRef<HTMLLIElement>(null);
+
+  const { pathname } = useLocation();
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
 
   const handleClose = (event: any) => {
-    if (
-      anchorRef?.current &&
-      (anchorRef.current as any).contains(event.target)
-    ) {
-      return;
-    }
+    if (anchorRef.current?.contains(event.target)) return;
     setOpen(false);
   };
 
-  function handleListKeyDown(event: any) {
+  const handleListKeyDown = (event: any) => {
     if (event.key === "Tab") {
       event.preventDefault();
       setOpen(false);
     }
-  }
+  };
 
   // return focus to the button when we transitioned from !open -> open
-  const prevOpen = React.useRef(open);
-  React.useEffect(() => {
+  const prevOpen = useRef(open);
+  useEffect(() => {
     if (prevOpen.current === true && open === false) {
-      if (anchorRef.current !== null) anchorRef.current.focus();
+      anchorRef.current?.focus();
     }
-
     prevOpen.current = open;
   }, [open]);
 
   return (
     <HeaderBar className="navbar navbar-expand-lg navbar-light HeaderBar">
       <Logo>
-        <Link to="/">
-          <img alt="" src="/Homeqube-logo-black_small 1.svg" />
+        <Link to={RouteName.home}>
+          <img alt="" src="/logo.png" />
         </Link>
       </Logo>
-      <MobileNavigation />
-      <Navigation />
+      <Menu>
+        {ROUTES.map((item) => (
+          <li key={item.url} className={pathname === item.url ? "active" : ""}>
+            <Link to={item.url}>{item.name}</Link>
+          </li>
+        ))}
+        <DropdownAnchor
+          ref={anchorRef}
+          onClick={handleToggle}
+          className={
+            OTHER_LAYOUT_ROUTES.some((item) => item.url === pathname)
+              ? "active"
+              : ""
+          }
+        >
+          Other Layouts
+          <Popper
+            open={open}
+            anchorEl={anchorRef.current}
+            role={undefined}
+            transition
+            disablePortal
+          >
+            <Paper>
+              <ClickAwayListener onClickAway={handleClose}>
+                <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
+                  {OTHER_LAYOUT_ROUTES.map((item) => (
+                    <MenuItem
+                      className={
+                        item.url === pathname ? "active active-submenu" : ""
+                      }
+                    >
+                      <Link to={item.url}>{item.name}</Link>
+                    </MenuItem>
+                  ))}
+                </MenuList>
+              </ClickAwayListener>
+            </Paper>
+          </Popper>
+        </DropdownAnchor>
+      </Menu>
+      {showCurrencyToggle && <CurrencyToggle />}
       <Wallet>
         {wallet ? (
           <ConnectButton className="wallet-width" />
@@ -84,11 +138,16 @@ const HeaderBar = styled.div`
   padding-left: 4%;
 `;
 // margin-bottom: 30px;
+`;
+
 const DropdownAnchor = styled.li`
   cursor: pointer;
+  transition: color 0.3s;
 
-  &:hover {
+  &:hover,
+  &:active {
     color: rgb(131, 146, 161);
+    border-bottom: 4px solid var(--title-text-color);
   }
 
   > div {
@@ -97,46 +156,17 @@ const DropdownAnchor = styled.li`
 
   .MuiList-root {
     margin-top: 15px;
+  }
+  a {
+    padding-top: 4px;
+    padding-bottom: 4px;
 
-    a {
-      padding-top: 4px;
-      padding-bottom: 4px;
-
-      &:hover {
-        border-bottom: 0px;
-        color: #fff;
-      }
+    &:hover {
+      border-bottom: 0px;
+      color: #fff;
     }
   }
 `;
-
-// const WalletAmount = styled.div`
-//   color: black;
-//   width: auto;
-//   padding: 5px 5px 5px 16px;
-//   min-width: 48px;
-//   min-height: auto;
-//   border-radius: 22px;
-//   background-color: var(--main-text-color);
-//   box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%),
-//     0px 1px 18px 0px rgb(0 0 0 / 12%);
-//   box-sizing: border-box;
-//   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-//     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-//   font-weight: 500;
-//   line-height: 1.75;
-//   text-transform: uppercase;
-//   border: 0;
-//   margin: 0;
-//   display: inline-flex;
-//   outline: 0;
-//   position: relative;
-//   align-items: center;
-//   user-select: none;
-//   vertical-align: middle;
-//   justify-content: flex-start;
-//   gap: 10px;
-// `
 
 const Wallet = styled.ul`
   flex: 0 0 auto;
@@ -150,8 +180,6 @@ const ConnectButton = styled(WalletMultiButton)`
   border-radius: 50rem !important;
   background-color: #4e44ce;
   margin: 0 auto;
-  margin-top: 1.5rem !important;
-  font-family: "Rajdhani", sans-serif !important;
 `;
 
 const Logo = styled.div`
@@ -168,6 +196,13 @@ const Menu = styled.ul`
   display: inline-flex;
   flex: 1 0 auto;
   margin-bottom: 0;
+
+  .active {
+    border-bottom: 4px solid var(--title-text-color);
+  }
+  .active-submenu {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
 
   li {
     margin: 0 12px;
@@ -189,10 +224,12 @@ const Menu = styled.ul`
       }
     }
 
-    a:hover,
-    a:active {
-      color: rgb(131, 146, 161);
+    &:hover,
+    &:active {
       border-bottom: 4px solid var(--title-text-color);
+    }
+    &:hover > a {
+      color: rgb(131, 146, 161);
     }
   }
 `;
