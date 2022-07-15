@@ -136,7 +136,7 @@ const HeaderBar = styled.div`
  
   padding-right: 4%;
   padding-left: 4%;
-`;
+
 // margin-bottom: 30px;
 `;
 

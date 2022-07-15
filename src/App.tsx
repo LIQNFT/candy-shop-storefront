@@ -24,7 +24,7 @@ import {
 
 import TopNav from "./components/TopNav";
 import { CurrencyProvider } from "./components/Currency";
-import Home from "./views/Home";
+// import Home from "./views/Home";
 import Marketplace from "./views/Marketplace";
 import CustomTokenMarketplace from "./views/CustomTokenMarketplace";
 import MarketplaceWithFilter from "./views/MarketplaceWithFilter";
@@ -123,12 +123,12 @@ const App = () => {
                         element={
                           <>
                             <TopNav />
-                            <Home
+                            {/* <Home
                               candyMachineId={candyMachineId}
                               connection={connection}
                               txTimeout={txTimeout}
                               rpcHost={rpcHost}
-                            />
+                            /> */}
                           </>
                         }
                       />

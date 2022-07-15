@@ -1573,17 +1573,10 @@
   resolved "https://registry.yarnpkg.com/@liqnft/candy-shop-types/-/candy-shop-types-0.2.13.tgz#c6978dbbc61bd6ee0cd18b2ae9f5deb7f4bc161f"
   integrity sha512-x5DEud6Ys7VDDMw3XUdpZ8mVXPt5dM1I5s+GyV6T3wRdqnvThMKX6PmjqGAT9UccOncrttWu1baUvb/TxL7tEg==
 
-<<<<<<< HEAD
-"@liqnft/candy-shop@0.4.47":
-  version "0.4.47"
-  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.4.47.tgz#7fe0101422f3c51f013a681bcf27ec4c8c5cfae9"
-  integrity sha512-Qtgh4cTXvuG/Tn0qS9RyTVTq/0MBzA3zHyt2poB0poRHC0sOqizGDKhQZzVxuKdnCRuLdfm5ZiZNo2nGecnX+A==
-=======
 "@liqnft/candy-shop@0.5.11":
   version "0.5.11"
   resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.5.11.tgz#732f7425d76d917460bb9e6d522c7b73f658865e"
   integrity sha512-jplAV9e3iyRPN/bmE/GeyHkMQGENsf/N+3xsY4WtAAGS13Qyo3hvGC7w04/6BIWJPt+5gZIt5gssHqpAb48S/A==
->>>>>>> 6083ecb82b961cfb9abe2cbaf87000902edcf54e
   dependencies:
     "@google/model-viewer" "1.8.0"
     "@liqnft/candy-shop-sdk" "0.5.14"
@@ -3967,6 +3960,14 @@ buffer@^5.4.3:
   dependencies:
     base64-js "^1.3.1"
     ieee754 "^1.1.13"
+
+buffer@^6.0.3, buffer@~6.0.3:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/buffer/-/buffer-6.0.3.tgz#2ace578459cc8fbe2a70aaa8f52ee63b6a74c6c6"
+  integrity sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==
+  dependencies:
+    base64-js "^1.3.1"
+    ieee754 "^1.2.1"
 
 bufferutil@^4.0.1:
   version "4.0.6"
