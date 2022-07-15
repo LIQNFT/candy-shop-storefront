@@ -1042,6 +1042,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.17.2":
+  version "7.18.6"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.18.6.tgz#6a1ef59f838debd670421f8c7f2cbb8da9751580"
+  integrity sha512-t9wi7/AW6XtKahAe20Yw0/mMljKq0B1r2fPdvaAdV/KPDZewFXdaaa6K7lxmZBZ8FBNpCiAT6iHPmd6QO9bKfQ==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/template@^7.10.4", "@babel/template@^7.16.7", "@babel/template@^7.3.3":
   version "7.16.7"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.16.7.tgz"
@@ -1194,6 +1201,11 @@
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.3.tgz"
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
+
+"@google/model-viewer@1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@google/model-viewer/-/model-viewer-1.8.0.tgz#398c0d9bbd3281933a3a4e6ed8f02da6789df768"
+  integrity sha512-qUwlu4q+sEFs2XOztZpaT5sGdv9G76jyLzEOdttcfAFb0/ZE0HnXU1KPN3Pq5gvdg+jW7fDUUHhsMxM1OBnpUQ==
 
 "@hapi/address@2.x.x":
   version "2.1.4"
@@ -1541,32 +1553,41 @@
   resolved "https://registry.yarnpkg.com/@ledgerhq/logs/-/logs-6.10.0.tgz"
   integrity sha512-lLseUPEhSFUXYTKj6q7s2O3s2vW2ebgA11vMAlKodXGf5AFw4zUoEbTz9CoFOC9jS6xY4Qr8BmRnxP/odT4Uuw==
 
-"@liqnft/candy-shop-sdk@0.4.35":
-  version "0.4.35"
-  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop-sdk/-/candy-shop-sdk-0.4.35.tgz#d41827ff91a90790d24fcba27c020671ecb12bb0"
-  integrity sha512-IYMZmnrTqz1T31tTWkvhY2BCbOsP0vn7ATkG//0jqy059vU/oPyASqONps1IlXYb4+Bgo4eVApkIfj1/i0fuoQ==
+"@liqnft/candy-shop-sdk@0.5.14":
+  version "0.5.14"
+  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop-sdk/-/candy-shop-sdk-0.5.14.tgz#cbcc9dfe517b2e1b97a4fb7e10bc56c310b2f834"
+  integrity sha512-XXbBt7gW9nndIMBY3B9SN1gqPwNlkIfzxV3Sif9hBjbR9Bs/kYd2Gw/V/bj/MXBshzM+tF4PFyIkhSUWM3VHAw==
   dependencies:
-    "@liqnft/candy-shop-types" "^0.1.4"
+    "@liqnft/candy-shop-types" "0.2.13"
     "@project-serum/anchor" "^0.23.0"
     "@solana/spl-token" "^0.2.0"
     "@solana/wallet-adapter-react" "^0.15.4"
+    "@solana/web3.js" "^1.47.3"
     axios "^0.26.1"
     crc-32 "^1.2.2"
     idb "^7.0.1"
     qs "^6.10.3"
 
-"@liqnft/candy-shop-types@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop-types/-/candy-shop-types-0.1.4.tgz#aaf240b1c4898442cf1878a11c2586b193a0deb4"
-  integrity sha512-43ri71gEI+hVISaK3z9AVUIbtDnSBnhqReDiMS+DB5eWNRiI594RBPhDU3muypRc/Nlpc+kZDmEAUfB/axu8Pw==
+"@liqnft/candy-shop-types@0.2.13":
+  version "0.2.13"
+  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop-types/-/candy-shop-types-0.2.13.tgz#c6978dbbc61bd6ee0cd18b2ae9f5deb7f4bc161f"
+  integrity sha512-x5DEud6Ys7VDDMw3XUdpZ8mVXPt5dM1I5s+GyV6T3wRdqnvThMKX6PmjqGAT9UccOncrttWu1baUvb/TxL7tEg==
 
+<<<<<<< HEAD
 "@liqnft/candy-shop@0.4.47":
   version "0.4.47"
   resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.4.47.tgz#7fe0101422f3c51f013a681bcf27ec4c8c5cfae9"
   integrity sha512-Qtgh4cTXvuG/Tn0qS9RyTVTq/0MBzA3zHyt2poB0poRHC0sOqizGDKhQZzVxuKdnCRuLdfm5ZiZNo2nGecnX+A==
+=======
+"@liqnft/candy-shop@0.5.11":
+  version "0.5.11"
+  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.5.11.tgz#732f7425d76d917460bb9e6d522c7b73f658865e"
+  integrity sha512-jplAV9e3iyRPN/bmE/GeyHkMQGENsf/N+3xsY4WtAAGS13Qyo3hvGC7w04/6BIWJPt+5gZIt5gssHqpAb48S/A==
+>>>>>>> 6083ecb82b961cfb9abe2cbaf87000902edcf54e
   dependencies:
-    "@liqnft/candy-shop-sdk" "0.4.35"
-    "@liqnft/candy-shop-types" "^0.1.4"
+    "@google/model-viewer" "1.8.0"
+    "@liqnft/candy-shop-sdk" "0.5.14"
+    "@liqnft/candy-shop-types" "0.2.13"
     "@project-serum/anchor" "^0.23.0"
     "@solana/spl-token" "^0.2.0"
     "@solana/wallet-adapter-react" "^0.15.0"
@@ -2049,6 +2070,29 @@
     jayson "^3.4.4"
     js-sha3 "^0.8.0"
     rpc-websockets "^7.4.2"
+    secp256k1 "^4.0.2"
+    superstruct "^0.14.2"
+    tweetnacl "^1.0.0"
+
+"@solana/web3.js@^1.47.3":
+  version "1.48.0"
+  resolved "https://registry.yarnpkg.com/@solana/web3.js/-/web3.js-1.48.0.tgz#331281b2d80640431fb3b6fdc6b704ec325917aa"
+  integrity sha512-Gb6XvdhGjGI7CdAXLmlMIEvEYvrwqc78JOtwCsSrTqzz7Ek/BhJpZ/Cv89gxRDrWxf6kHegAfaN2FxwuYMmDZQ==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    "@ethersproject/sha2" "^5.5.0"
+    "@solana/buffer-layout" "^4.0.0"
+    bigint-buffer "^1.1.5"
+    bn.js "^5.0.0"
+    borsh "^0.7.0"
+    bs58 "^4.0.1"
+    buffer "6.0.1"
+    fast-stable-stringify "^1.0.0"
+    jayson "^3.4.4"
+    js-sha3 "^0.8.0"
+    node-fetch "2"
+    react-native-url-polyfill "^1.3.0"
+    rpc-websockets "^7.5.0"
     secp256k1 "^4.0.2"
     superstruct "^0.14.2"
     tweetnacl "^1.0.0"
@@ -3916,13 +3960,13 @@ buffer@^4.3.0:
     ieee754 "^1.1.4"
     isarray "^1.0.0"
 
-buffer@^6.0.3, buffer@~6.0.3:
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/buffer/-/buffer-6.0.3.tgz#2ace578459cc8fbe2a70aaa8f52ee63b6a74c6c6"
-  integrity sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==
+buffer@^5.4.3:
+  version "5.7.1"
+  resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.7.1.tgz#ba62e7c13133053582197160851a8f648e99eed0"
+  integrity sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==
   dependencies:
     base64-js "^1.3.1"
-    ieee754 "^1.2.1"
+    ieee754 "^1.1.13"
 
 bufferutil@^4.0.1:
   version "4.0.6"
@@ -6830,7 +6874,7 @@ identity-obj-proxy@3.0.0:
   dependencies:
     harmony-reflect "^1.4.6"
 
-ieee754@^1.1.4, ieee754@^1.2.1:
+ieee754@^1.1.13, ieee754@^1.1.4, ieee754@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.2.1.tgz"
   integrity sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==
@@ -8857,7 +8901,7 @@ node-addon-api@^2.0.0:
   resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-2.0.2.tgz"
   integrity sha512-Ntyt4AIXyaLIuMHF6IOoTakB3K+RWxwtsHNRxllEoA6vPwP9o4866g6YWDLUdnucilZhmkxiHwHr11gAENw+QA==
 
-node-fetch@2.6.7:
+node-fetch@2, node-fetch@2.6.7:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz"
   integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
@@ -10610,6 +10654,13 @@ react-is@^16.12.0, react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-native-url-polyfill@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-url-polyfill/-/react-native-url-polyfill-1.3.0.tgz#c1763de0f2a8c22cc3e959b654c8790622b6ef6a"
+  integrity sha512-w9JfSkvpqqlix9UjDvJjm1EjSt652zVQ6iwCIj1cVVkwXf4jQhQgTNXY6EVTwuAmUjg6BC6k9RHCBynoLFo3IQ==
+  dependencies:
+    whatwg-url-without-unicode "8.0.0-3"
+
 react-refresh@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz"
@@ -11125,6 +11176,19 @@ rpc-websockets@^7.4.2:
     eventemitter3 "^4.0.7"
     uuid "^8.3.0"
     ws "^7.4.5"
+  optionalDependencies:
+    bufferutil "^4.0.1"
+    utf-8-validate "^5.0.2"
+
+rpc-websockets@^7.5.0:
+  version "7.5.0"
+  resolved "https://registry.yarnpkg.com/rpc-websockets/-/rpc-websockets-7.5.0.tgz#bbeb87572e66703ff151e50af1658f98098e2748"
+  integrity sha512-9tIRi1uZGy7YmDjErf1Ax3wtqdSSLIlnmL5OtOzgd5eqPKbsPpwDP5whUDO2LQay3Xp0CcHlcNSGzacNRluBaQ==
+  dependencies:
+    "@babel/runtime" "^7.17.2"
+    eventemitter3 "^4.0.7"
+    uuid "^8.3.2"
+    ws "^8.5.0"
   optionalDependencies:
     bufferutil "^4.0.1"
     utf-8-validate "^5.0.2"
@@ -12984,6 +13048,15 @@ whatwg-mimetype@^2.3.0:
   resolved "https://registry.yarnpkg.com/whatwg-mimetype/-/whatwg-mimetype-2.3.0.tgz"
   integrity sha512-M4yMwr6mAnQz76TbJm914+gPpB/nCwvZbJU28cUD6dR004SAxDLOOSUaB1JDRqLtaOV/vi0IC5lEAGFgrjGv/g==
 
+whatwg-url-without-unicode@8.0.0-3:
+  version "8.0.0-3"
+  resolved "https://registry.yarnpkg.com/whatwg-url-without-unicode/-/whatwg-url-without-unicode-8.0.0-3.tgz#ab6df4bf6caaa6c85a59f6e82c026151d4bb376b"
+  integrity sha512-HoKuzZrUlgpz35YO27XgD28uh/WJH4B0+3ttFqRo//lmq+9T/mIOJ6kqmINI9HpUpz1imRC/nR/lxKpJiv0uig==
+  dependencies:
+    buffer "^5.4.3"
+    punycode "^2.1.1"
+    webidl-conversions "^5.0.0"
+
 whatwg-url@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/whatwg-url/-/whatwg-url-5.0.0.tgz"
@@ -13247,6 +13320,11 @@ ws@^7.4.0, ws@^7.4.5, ws@^7.4.6:
   version "7.5.7"
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.5.7.tgz"
   integrity sha512-KMvVuFzpKBuiIXW3E4u3mySRO2/mCHSyZDJQM5NQ9Q9KHWHWh0NHgfbRMLLrceUK5qAL4ytALJbpRMjixFZh8A==
+
+ws@^8.5.0:
+  version "8.8.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.8.0.tgz#8e71c75e2f6348dbf8d78005107297056cb77769"
+  integrity sha512-JDAgSYQ1ksuwqfChJusw1LSJ8BizJ2e/vVu5Lxjq3YvNJNlROv1ui4i+c/kUUrPheBvQl4c5UbERhTwKa6QBJQ==
 
 xml-name-validator@^3.0.0:
   version "3.0.0"
