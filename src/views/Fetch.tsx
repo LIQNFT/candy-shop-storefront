@@ -1,15 +1,17 @@
-import { CandyShop } from '@liqnft/candy-shop-sdk'
-import { Sell } from '../public/Sell'
-import { useAnchorWallet } from '@solana/wallet-adapter-react'
-import { PublicKey, Cluster } from '@solana/web3.js'
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
-import { useCurrency } from '../components/Currency'
-import styled from 'styled-components'
-import { useEffect, useState } from 'react'
-
-const CANDY_SHOP_CREATOR_ADDRESS = new PublicKey(process.env.REACT_APP_CANDY_SHOP_CREATOR_ADDRESS!)
-const CANDY_SHOP_PROGRAM_ID = new PublicKey(process.env.REACT_APP_CANDY_SHOP_PROGRAM_ID!)
-const NETWORK = process.env.REACT_APP_SOLANA_NETWORK! as Cluster
+import { CandyShop } from "@liqnft/candy-shop-sdk";
+// import { Sell } from "@liqnft/candy-shop";
+import { UserCollection } from "../public/MyCollection";
+import { useAnchorWallet } from "@solana/wallet-adapter-react";
+import { PublicKey } from "@solana/web3.js";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { useCurrency } from "../components/Currency";
+import styled from "styled-components";
+import { useMemo } from "react";
+import {
+  CANDY_SHOP_CREATOR_ADDRESS,
+  CANDY_SHOP_PROGRAM_ID,
+  NETWORK,
+} from "../utils/candy-shop";
 
 const DesContainer = styled.div`
   width: 100%;
@@ -17,28 +19,24 @@ const DesContainer = styled.div`
   .wallet-adapter-button {
     margin: 0 auto;
   }
-`
+`;
 
-const Fecth: React.FC = () => {
-  const wallet = useAnchorWallet()
-  const { getCurrencySettings } = useCurrency()
-  const settings = getCurrencySettings()
+const Fetch: React.FC = () => {
+  const wallet = useAnchorWallet();
+  const { getCurrencySettings } = useCurrency();
+  const settings = getCurrencySettings();
 
-  const [candyShop, setCandyShop] = useState<CandyShop>();
-
-  console.log("Currency Settings", settings);
-
-  useEffect(() => {
-    setCandyShop(
-      new CandyShop(
-        CANDY_SHOP_CREATOR_ADDRESS,
-        new PublicKey(settings.treasuryMint),
-        CANDY_SHOP_PROGRAM_ID,
-        NETWORK,
-        settings
-      )
-    );
-  }, [settings]);
+  const candyShop = useMemo(
+    () =>
+      new CandyShop({
+        candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
+        treasuryMint: new PublicKey(settings.treasuryMint),
+        candyShopProgramId: CANDY_SHOP_PROGRAM_ID,
+        env: NETWORK,
+        settings,
+      }),
+    [settings]
+  );
 
   if (!candyShop) {
     return <></>;
@@ -46,14 +44,15 @@ const Fecth: React.FC = () => {
 
   return (
     <DesContainer>
-      <h1 style={{ marginBottom: 30 }} className="people-title" >My Collection</h1>
-      <Sell
+      <h1 style={{ marginBottom: 30 }}>My Collection</h1>
+      <UserCollection
         wallet={wallet}
         candyShop={candyShop}
-        // walletConnectComponent={<WalletMultiButton />}
+        walletConnectComponent={<WalletMultiButton />}
         enableCacheNFT={true}
       />
     </DesContainer>
-  )
-}
-export default Fecth
+  );
+};
+
+export default Fetch;

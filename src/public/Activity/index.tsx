@@ -6,9 +6,11 @@ import { IconActivity } from '../../assets/IconActivity';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 import { CandyShop } from '@liqnft/candy-shop-sdk';
-import { Trade, ListBase } from '@liqnft/candy-shop-types';
+import { Trade, ListBase, ShopStatusType, SortBy } from '@liqnft/candy-shop-types';
 import { useValidateStatus } from '../../hooks/useValidateStatus';
+// import { useUpdateSubject } from '../Context';
 import { ActivityActionsStatus } from '../../constant';
+import { removeDuplicate } from '../../utils/array';
 
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
@@ -19,6 +21,7 @@ import './style.less';
 interface ActivityProps {
   candyShop: CandyShop;
   identifiers?: number[];
+  orderBy?: SortBy[] | SortBy;
 }
 
 const LIMIT = 10;
@@ -26,26 +29,41 @@ const DO_NOTHING_FUNC = () => {
   // this prevent double call api transaction in useEffect and infinity lib
 };
 
-export const Activity: React.FC<ActivityProps> = ({ candyShop, identifiers }) => {
+const Logger = 'CandyShopUI/Activity';
+
+export const Activity: React.FC<ActivityProps> = ({ candyShop, identifiers, orderBy }) => {
   const [trades, setTrades] = useState<Trade[]>([]);
   const [hasMore, setHasMore] = useState<boolean>(true);
   const [offset, setOffset] = useState<number>(0);
 
+  // useUpdateSubject(ShopStatusType.Trade);
   const updateActivityStatus = useValidateStatus(ActivityActionsStatus);
 
   const getTrades = useCallback(
     (offset: number, limit: number, firstLoad?: boolean) => () => {
-      candyShop.transactions({ identifiers, offset, limit }).then((res: ListBase<Trade>) => {
-        const { result, offset, totalCount, count } = res;
-        const hasMore = offset + count < Number(totalCount);
-        if (hasMore) {
-          setOffset(offset + count + 1);
-        }
-        setHasMore(hasMore);
-        setTrades((list) => (firstLoad ? result : [...list, ...result]));
-      });
+      candyShop
+        .transactions({ identifiers, offset, limit, sortBy: orderBy })
+        .then((res: ListBase<Trade>) => {
+          const { result, offset, totalCount, count, success } = res;
+          if (!success) {
+            return setHasMore(false);
+          }
+          const hasMore = offset + count < Number(totalCount);
+          if (hasMore) {
+            setOffset(offset + count + 1);
+          }
+
+          setHasMore(hasMore);
+          setTrades((list) => {
+            if (firstLoad) return result || [];
+            return removeDuplicate<Trade>(list, result, 'txHashAtCreation');
+          });
+        })
+        .catch((error: any) => {
+          console.log(`${Logger}: candyShop.transactions failed, error=`, error);
+        });
     },
-    [candyShop, identifiers]
+    [candyShop, identifiers, orderBy]
   );
 
   useEffect(() => {
@@ -56,16 +74,20 @@ export const Activity: React.FC<ActivityProps> = ({ candyShop, identifiers }) =>
   useEffect(() => {
     if (!updateActivityStatus) return;
 
-    candyShop.transactions({ identifiers, offset: 0, limit: 10 }).then((res: ListBase<Trade>) => {
-      console.log({ updateActivityStatus, resActivity: res });
-      setTrades((list) => {
-        // prettier-ignore
-        const newItems = res.result.filter((item) => list.findIndex((i) => i.txHashAtCreation === item.txHashAtCreation) === -1);
-
-        if (newItems.length) return [...newItems, ...list];
-        return list;
+    candyShop
+      .transactions({ identifiers, offset: 0, limit: 10 })
+      .then((res: ListBase<Trade>) => {
+        if (!res.success) return;
+        setTrades((list) => {
+          // prettier-ignore
+          const newItems = res.result.filter((item) => list.findIndex((i) => i.txHashAtCreation === item.txHashAtCreation) === -1);
+          if (newItems.length) return [...newItems, ...list];
+          return list;
+        });
+      })
+      .catch((error: any) => {
+        console.log(`${Logger}: candyShop.transactions failed, error=`, error);
       });
-    });
   }, [candyShop, identifiers, updateActivityStatus]);
 
   return (
@@ -106,7 +128,7 @@ export const Activity: React.FC<ActivityProps> = ({ candyShop, identifiers }) =>
                   {`${(Number(trade.price) / candyShop.baseUnitsPerCurrency).toLocaleString(undefined, {
                     minimumFractionDigits: candyShop.priceDecimalsMin,
                     maximumFractionDigits: candyShop.priceDecimals
-                  })} SOL`}
+                  })} ${trade.shopSymbol}`}
                 </div>
                 <div>
                   <ExplorerLink type="address" address={trade.sellerAddress} />

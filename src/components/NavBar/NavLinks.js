@@ -91,19 +91,7 @@ const NavLinks = (props) => {
           MY <br /> COLLECTION
         </NavLink>
       </li>
-      {/* <li className='mx-5 mt-4' onClick={() => props.isMobile && props.closeMobileMenu()}>
-          <a href="#" key={'homeqube'} target="_blank" rel="noreferrer">
-          <NavLink activeClassName="active" to='/faqs'> FAQS </NavLink>
-           
-          </a>
-        </li> */}
 
-      {/* <li className='mx-3'>
-          <Link to='/marketplace'>Marketplace</Link>
-        </li> */}
-      {/* <li className='mx-5 mt-4'>
-          <Link to='/sell'>SELL</Link>
-        </li> */}
       <li
         className="mx-3 mt-4"
         onClick={() => props.isMobile && props.closeMobileMenu()}
@@ -117,30 +105,7 @@ const NavLinks = (props) => {
           HOMEQUBE.AI
         </a>
       </li>
-      {/* <DropDownContainer className="mx-5 mt-4">
-        <DropDownHeader onClick={toggling} className="text-center dropdown ">
-          LEGAL
-        </DropDownHeader>
-        {isOpen && (
-          <DropDownList className="dropdown-list">
-            <ListItem>
-              <NavLink to="/terms" activeClassName="active" className="ahref">
-                Terms of Use
-              </NavLink>
-            </ListItem>
-            <ListItem>
-              <NavLink to="/policy" activeClassName="active" className="ahref">
-                Privacy Policy
-              </NavLink>
-            </ListItem>
-          </DropDownList>
-        )}
-      </DropDownContainer> */}
-      {/* <li className='mx-5 mt-4'>
-          <a href="https://www.qube.homeqube.com/" key={'qube'} target="_blank" rel="noreferrer">
-          ICO <br /> WEBISTE
-          </a>
-        </li> */}
+  
       <li
         className="mx-2 mt-4"
         onClick={() => props.isMobile && props.closeMobileMenu()}
@@ -178,24 +143,6 @@ const NavLinks = (props) => {
         </a>
       </li>
 
-      {/* <DropdownAnchor ref={anchorRef} onClick={handleToggle}>
-          Other Layouts
-          <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
-            {({ TransitionProps, placement }) => (
-              <Paper>
-                <ClickAwayListener onClickAway={handleClose}>
-                  <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
-                    <MenuItem><Link to='/custom-token-marketplace'>Custom Token Marketplace</Link></MenuItem>
-                    <MenuItem><Link to='/multi-collection-marketplace'>Multi Collection Marketplace</Link></MenuItem>
-                    <MenuItem><Link to='/marketplace-with-url'>Marketplace With URL</Link></MenuItem>
-                    <MenuItem><Link to='/multi-currency-marketplace'>Multi Currency Marketplace</Link></MenuItem>
-                    <MenuItem><Link to='/multi-currency-sell'>Multi Currency Sell</Link></MenuItem>
-                  </MenuList>
-                </ClickAwayListener>
-              </Paper>
-            )}
-          </Popper>
-        </DropdownAnchor> */}
     </>
   );
 };
@@ -235,34 +182,6 @@ const DropdownAnchor = styled.li`
     }
   }
 `;
-
-// const WalletAmount = styled.div`
-//   color: black;
-//   width: auto;
-//   padding: 5px 5px 5px 16px;
-//   min-width: 48px;
-//   min-height: auto;
-//   border-radius: 22px;
-//   background-color: var(--main-text-color);
-//   box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%),
-//     0px 1px 18px 0px rgb(0 0 0 / 12%);
-//   box-sizing: border-box;
-//   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-//     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-//   font-weight: 500;
-//   line-height: 1.75;
-//   text-transform: uppercase;
-//   border: 0;
-//   margin: 0;
-//   display: inline-flex;
-//   outline: 0;
-//   position: relative;
-//   align-items: center;
-//   user-select: none;
-//   vertical-align: middle;
-//   justify-content: flex-start;
-//   gap: 10px;
-// `
 
 const Wallet = styled.ul`
   flex: 0 0 auto;

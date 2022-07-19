@@ -1,76 +1,73 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { web3 } from "@project-serum/anchor";
-
-import { LiqImage } from "../LiqImage";
-import { NftStat } from "../NftStat";
-import { NftAttributesP } from "../NftAttributesP";
-
-import { Nft, Order as OrderSchema } from "@liqnft/candy-shop-types";
-import { CandyShop } from "@liqnft/candy-shop-sdk";
-import { ShopExchangeInfo } from "../../model";
-import { getPrice } from "../../utils/getPrice";
+import React, { useEffect, useState } from 'react';
+import { fetchNFTByMintAddress } from '@liqnft/candy-shop-sdk';
+import { Nft, Order as OrderSchema } from '@liqnft/candy-shop-types';
+import { web3 } from '@project-serum/anchor';
+import { NftAttributes } from '../NftAttributes';
+import { NftStat } from '../NftStat';
+import { NftVerification } from '../Tooltip/NftVerification';
+import { Viewer } from '../Viewer';
+import { ShopExchangeInfo } from '../../model';
+import { getPrice } from '../../utils/getPrice';
+// import { PoweredByInBuyModal } from '../PoweredBy/PowerByInBuyModal';
 
 export interface BuyModalDetailProps {
   order: OrderSchema;
   buy: () => void;
   walletPublicKey: web3.PublicKey | undefined;
   walletConnectComponent: React.ReactElement;
-  candyShop: CandyShop;
   exchangeInfo: ShopExchangeInfo;
+  shopPriceDecimalsMin: number;
+  shopPriceDecimals: number;
+  sellerUrl?: string;
 }
 
-const BuyModalDetail: React.FC<BuyModalDetailProps> = ({
+export const BuyModalDetail: React.FC<BuyModalDetailProps> = ({
   order,
   buy,
   walletPublicKey,
   walletConnectComponent,
-  candyShop,
   exchangeInfo,
+  shopPriceDecimalsMin,
+  shopPriceDecimals,
+  sellerUrl
 }) => {
   const [loadingNftInfo, setLoadingNftInfo] = useState(false);
-  const [nftInfo, setNftInfo] = useState<Nft | null>(null);
+  const [nftInfo, setNftInfo] = useState<Nft>();
 
   useEffect(() => {
     setLoadingNftInfo(true);
-    candyShop
-      .nftInfo(order.tokenMint)
-      .then((nft) => setNftInfo(nft))
-      .catch((err) => {
-        console.info("fetchNftByMint failed:", err);
+
+    fetchNFTByMintAddress(order.tokenMint)
+      .then((nft: Nft) => setNftInfo(nft))
+      .catch((error: Error) => {
+        console.info('fetchNftByMint failed:', error);
       })
       .finally(() => {
         setLoadingNftInfo(false);
       });
-  }, [order.tokenMint, candyShop]);
+  }, [order.tokenMint]);
 
-  const orderPrice = getPrice(candyShop, order, exchangeInfo);
+  const orderPrice = getPrice(shopPriceDecimalsMin, shopPriceDecimals, order, exchangeInfo);
 
   return (
     <>
       <div className="candy-buy-modal-thumbnail">
-        <LiqImage
-          src={order?.nftImageLink || ""}
-          alt={order?.name}
-          fit="contain"
-        />
+        <Viewer order={order} />
       </div>
       <div className="candy-buy-modal-container">
-        <div className="candy-title">{order?.name}</div>
+        <div className="candy-buy-modal-title">
+          {order?.name}
+          {order.verifiedNftCollection ? <NftVerification size={24} /> : null}
+        </div>
         <div className="candy-buy-modal-control">
           <div>
             <div className="candy-label">PRICE</div>
-            <div className="candy-price">
-              {orderPrice ? `${orderPrice}` : "N/A"}
-              <img src="./solLogo.svg" className="solLogo" alt="" />
-            </div>
+            <div className="candy-price">{orderPrice ? `${orderPrice} ${exchangeInfo.symbol}` : 'N/A'}</div>
           </div>
           {!walletPublicKey ? (
             walletConnectComponent
           ) : (
-            <button
-              className="candy-button candy-buy-modal-button"
-              onClick={buy}
-            >
+            <button className="candy-button candy-buy-modal-button" onClick={buy}>
               Buy Now
             </button>
           )}
@@ -85,14 +82,10 @@ const BuyModalDetail: React.FC<BuyModalDetailProps> = ({
           owner={order.walletAddress}
           tokenMint={order.tokenMint}
           edition={order.edition}
+          sellerUrl={sellerUrl}
         />
-        <NftAttributesP
-          loading={loadingNftInfo}
-          attributes={nftInfo?.attributes}
-        />
+        <NftAttributes loading={loadingNftInfo} attributes={nftInfo?.attributes} />
       </div>
     </>
   );
 };
-
-export default BuyModalDetail;

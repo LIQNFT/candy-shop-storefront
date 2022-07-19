@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import Player from "react-video-js-player";
+// import Player from "react-video-js-player";
 import Homeqube from "../video/Homeqube-ICO.mp4";
 import HomequbeOGG from "../video/Homeqube-ICO.ogg";
 import Accordion from "./Accordion";

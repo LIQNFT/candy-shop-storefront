@@ -433,7 +433,7 @@ body.active-modal {
 
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.bgTitle {
+/* .bgTitle {
   background-image: url("../src/blockchain-technology-background-gradient-blue\ 1.svg");
   height: 120px !important;
 }
@@ -452,7 +452,7 @@ body.active-modal {
 .bgTitle5 {
   background-image: url("../src/Mask\ group\ 4.svg");
   height: 120px !important;
-}
+} */
 .concepts-title {
   font-family: "Rajdhani";
   font-style: normal;
@@ -795,7 +795,7 @@ a:active {
   .hamburger {
     display: block;
     position: absolute;
-    right: 0%;
+    right: 1.5%;
     cursor: pointer;
   }
 }
@@ -846,17 +846,6 @@ a:active {
   }
 }
 
-@media (min-width: 576px) {
-  /* .conwid-50{
-    width: 50%;
-  }
-  .conwid-25{
-    width: 25%;
-  }
-  .content{
-    display: flex;
-  } */
-}
 @media (min-width: 768px) {
   .conwid-50 {
     width: 70%;
@@ -899,7 +888,7 @@ a:active {
 }
 
 main {
-  min-height: calc(100vh - 211px - 58px);
+  min-height: calc(100.5vh - 269px);
 }
 .name-container {
   height: 62px;
@@ -1380,7 +1369,7 @@ h4 {
   height: 100vh;
 }
 .container-bg {
-  background-image: url("../src/BG\ 1.svg");
+  /* background-image: url("../src/BG\ 1.svg"); */
   background-repeat: no-repeat;
   padding-left: 1em;
   padding-right: 1em;

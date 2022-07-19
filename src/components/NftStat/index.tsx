@@ -1,21 +1,17 @@
 import React from 'react';
 import { ExplorerLink } from '../ExplorerLink';
+import { shortenAddress } from '../../utils/format';
 
 export interface NftStatProps {
   tokenMint: string;
   edition?: number | string | null;
   owner?: string;
-  animation_url?:string;
+  sellerUrl?: string;
 }
 
-export const NftStat: React.FC<NftStatProps> = ({ tokenMint, edition, owner, animation_url}) => {
+export const NftStat: React.FC<NftStatProps> = ({ tokenMint, edition, owner, sellerUrl }) => {
   return (
-  <div className="candy-stat-horizontal" style={{
-      justifyContent: 'space-between'
-    }}>
-      <div style={{
-        display: 'flex'
-      }}>
+    <div className="candy-stat-horizontal">
       <div>
         <div className="candy-label">MINT ADDRESS</div>
         <div className="candy-value">
@@ -24,7 +20,7 @@ export const NftStat: React.FC<NftStatProps> = ({ tokenMint, edition, owner, ani
       </div>
       {edition && edition !== '0' ? (
         <>
-          <div className="candy-stat-horizontal-line mx-2" />
+          <div className="candy-stat-horizontal-line" />
           <div>
             <div className="candy-label">EDITION</div>
             <div className="candy-value">{edition}</div>
@@ -33,27 +29,26 @@ export const NftStat: React.FC<NftStatProps> = ({ tokenMint, edition, owner, ani
       ) : null}
       {owner ? (
         <>
-          <div className="candy-stat-horizontal-line mx-2" />
+          <div className="candy-stat-horizontal-line" />
           <div>
             <div className="candy-label">OWNER</div>
             <div className="candy-value">
-              <ExplorerLink type="address" address={owner} />
+              {sellerUrl ? (
+                <a
+                  href={sellerUrl.replace('{{sellerAddress}}', owner)}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  title="Seller profile"
+                >
+                  {shortenAddress(owner)}
+                </a>
+              ) : (
+                <ExplorerLink type="address" address={owner} />
+              )}
             </div>
           </div>
         </>
       ) : null}
-       {animation_url ? (
-        <>
-          <div className="candy-stat-horizontal-line mx-2" />
-          <div>
-            <div className="candy-label">Animation URL</div>
-            <div className="candy-value">
-              <ExplorerLink type="address" address={animation_url} />
-            </div>
-          </div>
-        </>
-      ) : null}
-      </div>
     </div>
   );
 };

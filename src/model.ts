@@ -11,11 +11,11 @@ export interface ShopExchangeInfo {
 
 export interface CollectionFilter {
   name: string;
-  description : string;
   collectionId: string;
-  qubeClaims : string;
   identifier: number | Array<number>;
-  attribute?: { [key: string]: string };
+  // attribute?: { [key: string]: string };
+  description: string;
+  qubeClaims : string;
 }
 
 export interface ShopFilter {

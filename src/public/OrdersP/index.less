@@ -1,5 +1,10 @@
 @import '../../variable.less';
 
+.candy-buy-modal-container {
+  .candy-modal-content {
+    padding-bottom: 30px;
+  }
+}
 .candy-orders {
   &-container {
     width: 100%;
@@ -8,28 +13,72 @@
     .infinite-scroll-component {
       overflow: unset !important;
     }
+
+    .candy-orders-sort {
+      display: flex;
+      margin-bottom: 16px;
+
+      .candy-search {
+        margin-left: 10px;
+        margin-bottom: 0;
+
+        input {
+          border: 2px solid #000;
+          height: 100%;
+          width: 250px;
+        }
+      }
+
+      &-right {
+        justify-content: flex-end;
+        align-items: stretch;
+        .candy-search {
+          margin-right: 10px;
+        }
+      }
+    }
   }
 
   &-filter {
     display: flex;
     flex-flow: row wrap;
 
+    .candy-filter-all {
+      padding: 8px 0 8px 8px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      cursor: pointer;
+
+      &.candy-filter-all-active {
+        font-weight: bold;
+        color: @primary-color;
+        background-color: #f4edfe;
+        padding: 8px;
+      }
+    }
+
     > .candy-filter {
       text-align: left;
-      width: 200px;
-      padding-right: 20px;
+      width: 220px;
 
       ul {
         list-style-type: none;
 
         li {
-          line-height: 22px;
-          font-size: 14px;
           cursor: pointer;
+          transition: 0.2s all ease-in-out;
+          padding: 8px 0 8px 8px;
+          border-radius: 4px;
+
+          &:hover {
+            background-color: #f4edfe;
+          }
         }
 
         li.selected {
-          font-weight: bold;
+          font-weight: 500;
+          background-color: #f4edfe;
+          color: @primary-color;
         }
       }
 
@@ -40,6 +89,16 @@
         margin-bottom: 5px;
       }
 
+      .candy-filter-attribute {
+        margin-bottom: 4px;
+
+        .candy-dropdown {
+          width: max-content;
+          max-width: 250px;
+          min-width: 150px;
+        }
+      }
+
       @media @tabletM {
         width: 100%;
       }
@@ -47,6 +106,11 @@
 
     > .candy-orders-content {
       flex: 1;
+      padding-left: 10px;
+
+      @media @tabletM {
+        padding-left: 0px;
+      }
     }
 
     @media @tabletM {
@@ -55,15 +119,6 @@
       > * {
         width: 100%;
       }
-    }
-  }
-
-  &-sort {
-    display: flex;
-    margin-bottom: 16px;
-
-    &-right {
-      justify-content: flex-end;
     }
   }
 }

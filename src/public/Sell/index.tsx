@@ -4,16 +4,18 @@ import { AnchorWallet } from '@solana/wallet-adapter-react';
 
 import { Empty } from '../../components/Empty';
 import { Nft } from '../../components/Nft';
-import { Skeleton } from '../../components/Skeleton';
+import { LoadingSkeleton } from '../../components/LoadingSkeleton';
 
 import {
   Order as OrderSchema,
   WhitelistNft,
   ListBase,
   CandyShop as CandyShopResponse,
-  SingleBase
+  SingleBase,
+  ShopStatusType
 } from '@liqnft/candy-shop-types';
 import {
+  CacheNFTParam,
   CandyShop,
   FetchNFTBatchParam,
   fetchNftsFromWallet,
@@ -23,21 +25,22 @@ import {
 
 import { LoadStatus, SellActionsStatus } from '../../constant';
 import { useValidateStatus } from '../../hooks/useValidateStatus';
-import { useUpdateCandyShopContext } from '../Context';
+// import { useUpdateSubject } from '../../public/Context';
+
+const Logger = 'CandyShopUI/Sell';
 
 interface SellProps {
   wallet: AnchorWallet | undefined;
-  // walletConnectComponent: React.ReactElement;
-  style?: { [key: string]: string | number } | undefined;
+  walletConnectComponent: React.ReactElement;
   candyShop: CandyShop;
+  style?: { [key: string]: string | number } | undefined;
   enableCacheNFT?: boolean;
 }
 
 /**
- * React component that allows user to put an NFT for sale
+ * React component that allows user to put wallet's NFT for sale
  */
-
-export const Sell: React.FC<SellProps> = ({ wallet, style, candyShop }) => {
+export const Sell: React.FC<SellProps> = ({ wallet, walletConnectComponent, style, candyShop, enableCacheNFT }) => {
   const [nfts, setNfts] = useState<SingleTokenInfo[]>([]);
   const [sellOrders, setSellOrders] = useState<OrderSchema[]>();
   const [walletPublicKey, setWalletPublicKey] = useState<web3.PublicKey>();
@@ -51,7 +54,7 @@ export const Sell: React.FC<SellProps> = ({ wallet, style, candyShop }) => {
   const firstBatchNFTLoaded = useRef<boolean>(false);
 
   const sellUpdateStatus = useValidateStatus(SellActionsStatus);
-  useUpdateCandyShopContext(candyShop.candyShopAddress);
+  // useUpdateSubject(ShopStatusType.Order, candyShop.candyShopAddress);
 
   useEffect(() => {
     if (!walletPublicKey) return;
@@ -61,7 +64,7 @@ export const Sell: React.FC<SellProps> = ({ wallet, style, candyShop }) => {
         setShop(data.result);
       })
       .catch((error: any) => {
-        console.log('CandyShop: Sell failed to get shop detail, error=', error);
+        console.log(`${Logger}: Sell failed to get shop detail, error=`, error);
       })
       .finally(() => {
         setShopLoading(LoadStatus.Loaded);
@@ -75,19 +78,24 @@ export const Sell: React.FC<SellProps> = ({ wallet, style, candyShop }) => {
     }
   }, [wallet?.publicKey, sellUpdateStatus, candyShop]);
 
-  const getShopIdentifiers = useCallback(async (): Promise<string[]> => {
+  /**
+   * getShopIdentifiers values:
+   * undefined: that shop allow to sell any NFTs
+   * []: that shop only allow to sell whitelisted NFTs and has empty whitelisted Identifiers
+   * */
+  const getShopIdentifiers = useCallback(async (): Promise<string[] | undefined> => {
+    if (shop?.allowSellAnyNft !== 0) return undefined;
     return candyShop
       .shopWlNfts()
       .then((nfts: ListBase<WhitelistNft>) =>
         nfts.result.reduce((arr: string[], item: WhitelistNft) => arr.concat(item.identifier), [])
       );
-  }, [candyShop]);
+  }, [candyShop, shop?.allowSellAnyNft]);
 
   const getUserNFTFromBatch = useCallback((batchNFTs: SingleTokenInfo[]) => {
     if (!firstBatchNFTLoaded.current) {
       firstBatchNFTLoaded.current = true;
     }
-    console.log('getUserNFTBatchResult: amount of valid batch NFTs=', batchNFTs.length);
     allNFTs.current = Object.assign(
       allNFTs.current,
       batchNFTs.reduce((acc: any, item: SingleTokenInfo) => {
@@ -108,15 +116,28 @@ export const Sell: React.FC<SellProps> = ({ wallet, style, candyShop }) => {
         batchCallback: getUserNFTFromBatch,
         batchSize: 8
       };
-      const userNFTs = fetchNftsFromWallet(candyShop.connection(), walletPublicKey, identifiers, fetchBatchParam);
+      // Enable cache nft, store nft token in IDB and get nft token from IDB.
+      // CandyShopSDK will always keep up-to-date status from chain in IDB once fetchNFT is called.
+      const cacheNFTParam: CacheNFTParam = {
+        enable: enableCacheNFT ?? false
+      };
+      const userNFTs = fetchNftsFromWallet(
+        candyShop.connection(),
+        walletPublicKey,
+        identifiers,
+        fetchBatchParam,
+        cacheNFTParam
+      );
       return userNFTs;
     },
-    [candyShop, getShopIdentifiers, getUserNFTFromBatch]
+    [candyShop, getShopIdentifiers, getUserNFTFromBatch, enableCacheNFT]
   );
 
   // fetch current wallet nfts when mount and when publicKey was changed.
+  // shopLoading !== LoadStatus.Loaded: make sure API fetchShopByShopAddress response first, then handle progressiveLoadUserNFTs function
+  // TODO: refactor this function to: fetchShopByShopAddress().then(shop => progressiveLoadUserNFTs(shop)).then()
   useEffect(() => {
-    if (!walletPublicKey) {
+    if (!walletPublicKey || shopLoading !== LoadStatus.Loaded) {
       return;
     }
     if (loadingNFTStatus === LoadStatus.ToLoad) {
@@ -125,16 +146,17 @@ export const Sell: React.FC<SellProps> = ({ wallet, style, candyShop }) => {
       setNFTLoadingStatus(LoadStatus.Loading);
       progressiveLoadUserNFTs(walletPublicKey)
         .then((allUserNFTs: SingleTokenInfo[]) => {
-          console.log(`getUserNFTs success, total amount of user NFTs= ${allUserNFTs.length}`);
+          console.log(`${Logger}: getUserNFTs success, total amount of user NFTs= ${allUserNFTs.length}`);
         })
         .catch((error: any) => {
-          console.log('getUserNFTs failed, error=', error);
+          console.log(`${Logger}: getUserNFTs failed, error=`, error);
+          firstBatchNFTLoaded.current = true;
         })
         .finally(() => {
           setNFTLoadingStatus(LoadStatus.Loaded);
         });
     }
-  }, [candyShop, loadingNFTStatus, walletPublicKey, progressiveLoadUserNFTs]);
+  }, [candyShop, loadingNFTStatus, walletPublicKey, progressiveLoadUserNFTs, shopLoading]);
 
   useEffect(() => {
     if (!walletPublicKey) {
@@ -145,6 +167,9 @@ export const Sell: React.FC<SellProps> = ({ wallet, style, candyShop }) => {
       .activeOrdersByWalletAddress(walletPublicKey.toString())
       .then((sellOrders: OrderSchema[]) => {
         setSellOrders(sellOrders);
+      })
+      .catch((err: Error) => {
+        console.log(`${Logger}: activeOrdersByWalletAddress failed, error=`, err);
       })
       .finally(() => {
         setOrderLoading(LoadStatus.Loaded);
@@ -162,12 +187,8 @@ export const Sell: React.FC<SellProps> = ({ wallet, style, candyShop }) => {
 
   if (!wallet) {
     return (
-      <div className="candy-container" style={{
-        display: 'flex',
-        justifyContent: 'space-around',
-        textAlign: 'center'
-      }}>
-        {/* {walletConnectComponent} */}
+      <div className="candy-container" style={{ textAlign: 'center' }}>
+        {walletConnectComponent}
       </div>
     );
   }
@@ -177,18 +198,8 @@ export const Sell: React.FC<SellProps> = ({ wallet, style, candyShop }) => {
 
   return (
     <div style={style} className="candy-sell-component">
-      <div className="candy-container" >
-        {loading && (
-          <div className="candy-container-list">
-            {Array(4)
-              .fill(0)
-              .map((_, key) => (
-                <div key={key}>
-                  <Skeleton />
-                </div>
-              ))}
-          </div>
-        )}
+      <div className="candy-container">
+        {loading && <LoadingSkeleton />}
         {!loading && (
           <>
             {nfts.length > 0 && shop && (
@@ -206,9 +217,9 @@ export const Sell: React.FC<SellProps> = ({ wallet, style, candyShop }) => {
                 ))}
               </div>
             )}
-            {nfts.length === 0 && <Empty description="No NFTs found" />}
           </>
         )}
+        {loadingNFTStatus === LoadStatus.Loaded && nfts.length === 0 && <Empty description="No NFTs found" />}
       </div>
     </div>
   );

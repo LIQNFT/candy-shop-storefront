@@ -1,21 +1,18 @@
-import React, { useState } from 'react';
-import { web3, BN } from '@project-serum/anchor';
+import { CandyShopTrade, CandyShopTradeBuyParams } from '@liqnft/candy-shop-sdk';
+import { Order as OrderSchema } from '@liqnft/candy-shop-types';
+import { BN, web3 } from '@project-serum/anchor';
 import { AnchorWallet } from '@solana/wallet-adapter-react';
 import { Modal } from '../Modal';
+// import { PoweredByInBuyModal } from '../PoweredBy/PowerByInBuyModal';
 import { Processing } from '../Processing';
-import { getAccount } from '@solana/spl-token';
-
-import BuyModalConfirmed from './BuyModalConfirmed';
-import BuyModalDetail from './BuyModalDetail';
-
-import { ShopExchangeInfo, TransactionState } from '../../model';
-import { useUnmountTimeout } from '../../hooks/useUnmountTimeout';
-import { CandyShop, getAtaForMint, WRAPPED_SOL_MINT } from '@liqnft/candy-shop-sdk';
-import { Order as OrderSchema } from '@liqnft/candy-shop-types';
-import { handleError, ErrorType, ErrorMsgMap } from '../../utils/ErrorHandler';
-import { notification, NotificationType } from '../../utils/rc-notification';
 import { TIMEOUT_EXTRA_LOADING } from '../../constant';
-
+import { useUnmountTimeout } from '../../hooks/useUnmountTimeout';
+import { ShopExchangeInfo, TransactionState } from '../../model';
+import React, { useState } from 'react';
+import { ErrorMsgMap, ErrorType, handleError } from '../../utils/ErrorHandler';
+import { notification, NotificationType } from '../../utils/rc-notification';
+import { BuyModalConfirmed } from './BuyModalConfirmed';
+import { BuyModalDetail } from './BuyModalDetail';
 import './style.less';
 
 export interface BuyModalProps {
@@ -23,8 +20,14 @@ export interface BuyModalProps {
   onClose: () => void;
   wallet: AnchorWallet | undefined;
   walletConnectComponent: React.ReactElement;
-  candyShop: CandyShop;
   exchangeInfo: ShopExchangeInfo;
+  shopAddress: web3.PublicKey;
+  candyShopProgramId: web3.PublicKey;
+  connection: web3.Connection;
+  isEnterprise: boolean;
+  shopPriceDecimalsMin: number;
+  shopPriceDecimals: number;
+  sellerUrl?: string;
 }
 
 export const BuyModal: React.FC<BuyModalProps> = ({
@@ -32,8 +35,14 @@ export const BuyModal: React.FC<BuyModalProps> = ({
   onClose,
   wallet,
   walletConnectComponent,
-  candyShop,
-  exchangeInfo
+  exchangeInfo,
+  shopAddress,
+  candyShopProgramId,
+  connection,
+  isEnterprise,
+  shopPriceDecimalsMin,
+  shopPriceDecimals,
+  sellerUrl
 }) => {
   const [state, setState] = useState<TransactionState>(TransactionState.DISPLAY);
   const [hash, setHash] = useState(''); // txHash
@@ -46,36 +55,23 @@ export const BuyModal: React.FC<BuyModalProps> = ({
       return;
     }
     setState(TransactionState.PROCESSING);
-    // check balance before proceed
-    let balance: BN;
-    const connection = candyShop.connection();
 
-    if (candyShop.treasuryMint.equals(WRAPPED_SOL_MINT)) {
-      const account = await connection.getAccountInfo(wallet.publicKey);
-      if (!account) {
-        notification(ErrorMsgMap[ErrorType.GetAccountInfoFailed], NotificationType.Error);
-        return;
-      }
-      balance = new BN(account.lamports.toString());
-    } else {
-      // prettier-ignore
-      const ata = (await getAtaForMint(candyShop.treasuryMint, wallet.publicKey))[0];
-      try {
-         const account = await getAccount(connection, ata);
-        balance = new BN(account.amount.toString());
-      } catch (err) {
-        balance = new BN('0');
-      }
-    }
+    const tradeBuyParams: CandyShopTradeBuyParams = {
+      tokenAccount: new web3.PublicKey(order.tokenAccount),
+      tokenMint: new web3.PublicKey(order.tokenMint),
+      price: new BN(order.price),
+      wallet: wallet,
+      seller: new web3.PublicKey(order.walletAddress),
+      connection: connection,
+      shopAddress: shopAddress,
+      candyShopProgramId: candyShopProgramId,
+      isEnterprise: isEnterprise,
+      // Replace with the order's
+      shopCreatorAddress: new web3.PublicKey(order.candyShopCreatorAddress),
+      shopTreasuryMint: new web3.PublicKey(order.treasuryMint)
+    };
 
-    return candyShop
-      .buy({
-        seller: new web3.PublicKey(order.walletAddress),
-        tokenAccount: new web3.PublicKey(order.tokenAccount),
-        tokenMint: new web3.PublicKey(order.tokenMint),
-        price: new BN(order.price),
-        wallet
-      })
+    return CandyShopTrade.buy(tradeBuyParams)
       .then((txHash) => {
         setHash(txHash);
         console.log('Buy order made with transaction hash', txHash);
@@ -91,7 +87,11 @@ export const BuyModal: React.FC<BuyModalProps> = ({
   };
 
   return (
-    <Modal onCancel={onClose} width={state !== TransactionState.DISPLAY ? 600 : 1000}>
+    <Modal
+      className="candy-buy-modal-container"
+      onCancel={onClose}
+      width={state !== TransactionState.DISPLAY ? 600 : 1000}
+    >
       <div className="candy-buy-modal">
         {state === TransactionState.DISPLAY && (
           <BuyModalDetail
@@ -99,8 +99,10 @@ export const BuyModal: React.FC<BuyModalProps> = ({
             buy={buy}
             walletPublicKey={wallet?.publicKey}
             walletConnectComponent={walletConnectComponent}
-            candyShop={candyShop}
             exchangeInfo={exchangeInfo}
+            shopPriceDecimalsMin={shopPriceDecimalsMin}
+            shopPriceDecimals={shopPriceDecimals}
+            sellerUrl={sellerUrl}
           />
         )}
         {state === TransactionState.PROCESSING && <Processing text="Processing purchase" />}
@@ -110,11 +112,14 @@ export const BuyModal: React.FC<BuyModalProps> = ({
             order={order}
             txHash={hash}
             onClose={onClose}
-            candyShop={candyShop}
             exchangeInfo={exchangeInfo}
+            shopPriceDecimalsMin={shopPriceDecimalsMin}
+            shopPriceDecimals={shopPriceDecimals}
           />
         )}
       </div>
+
+      {/* <PoweredByInBuyModal /> */}
     </Modal>
   );
 };

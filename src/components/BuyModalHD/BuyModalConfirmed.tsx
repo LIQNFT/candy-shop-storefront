@@ -1,13 +1,11 @@
 import React from 'react';
+import { Order as OrderSchema } from '@liqnft/candy-shop-types';
 
 import { web3 } from '@project-serum/anchor';
 import { formatDate } from '../../utils/format';
-import { Order as OrderSchema } from '@liqnft/candy-shop-types';
 import { ExplorerLink } from '../ExplorerLink';
 import { LiqImage } from '../LiqImage';
 import IconTick from '../../assets/IconTick';
-
-import { CandyShop } from '@liqnft/candy-shop-sdk';
 import { ShopExchangeInfo } from '../../model';
 import { getPrice } from '../../utils/getPrice';
 
@@ -16,21 +14,23 @@ interface BuyModalConfirmedProps {
   txHash: string;
   walletPublicKey: web3.PublicKey | undefined;
   onClose: () => void;
-  candyShop: CandyShop;
   exchangeInfo: ShopExchangeInfo;
+  shopPriceDecimalsMin: number;
+  shopPriceDecimals: number;
 }
 
-const BuyModalConfirmed: React.FC<BuyModalConfirmedProps> = ({
+export const BuyModalConfirmed: React.FC<BuyModalConfirmedProps> = ({
   order,
   txHash,
   walletPublicKey,
   onClose,
-  candyShop,
-  exchangeInfo
+  exchangeInfo,
+  shopPriceDecimalsMin,
+  shopPriceDecimals
 }) => {
   const walletAddress = walletPublicKey?.toBase58();
 
-  const orderPrice = getPrice(candyShop, order, exchangeInfo);
+  const orderPrice = getPrice(shopPriceDecimalsMin, shopPriceDecimals, order, exchangeInfo);
 
   return (
     <div className="candy-buy-modal-confirmed">
@@ -81,5 +81,3 @@ const BuyModalConfirmed: React.FC<BuyModalConfirmedProps> = ({
     </div>
   );
 };
-
-export default BuyModalConfirmed;

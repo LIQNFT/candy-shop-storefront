@@ -3,9 +3,33 @@
   background-color: white;
   position: relative;
 
+  cursor: pointer;
+  user-select: none;
+
   .candy-order-info {
+    position: relative;
     padding: 12px;
     text-align: left;
+  }
+
+  .candy-order-player-icon {
+    position: absolute;
+    top: -55px;
+    right: 15px;
+
+    width: 40px;
+    height: 40px;
+    color: #e5e5e5;
+  }
+
+  .candy-order-name-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    .candy-order-name {
+      max-width: calc(100% - 20px);
+    }
   }
 
   .candy-order-name {

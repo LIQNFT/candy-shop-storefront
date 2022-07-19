@@ -34,9 +34,7 @@ export const Dropdown: React.FC<DropdownProps> = ({ selectedItem, items, onSelec
   };
 
   return (
-    <div className="candy-dropdown" style={{
-      border: 'none'
-    }} ref={dropdownRef} onClick={() => setIsMenuOpen((isOpen) => !isOpen)}>
+    <div className="candy-dropdown" ref={dropdownRef} onClick={() => setIsMenuOpen((isOpen) => !isOpen)}>
       <div className={`candy-dropdown-flex ${currentlySelectedItem?.label ? '' : 'candy-dropdown-flex-placeholder'}`}>
         {currentlySelectedItem?.label ? (
           <div
