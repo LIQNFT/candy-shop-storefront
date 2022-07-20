@@ -53,7 +53,7 @@ const FILTERS = [
     {
         name: "Marine Leisure",
         collectionId: "1",
-        identifier: -1434943395,
+        identifier: [-1434943395,691144404],
         qubeClaims :"",
         description:
           "YOU CAN PLACE VARIOUS “PRODUCTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
