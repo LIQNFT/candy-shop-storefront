@@ -13,7 +13,7 @@ const Marketplace: React.FC = () => {
         candyShop={candyShop}
         title={"Marketplace"}
         description={
-          "Candy Shop is an open source on-chain protocol that empowers DAOs, NFT projects and anyone interested in creating an NFT marketplace to do so within minutes!"
+          "Candy Shop is an open source library that allows you to create NFT storefronts and auctions in minutes!"
         }
         style={{ paddingBottom: 50 }}
       />
@@ -21,6 +21,7 @@ const Marketplace: React.FC = () => {
         wallet={wallet}
         candyShop={candyShop}
         walletConnectComponent={<WalletMultiButton />}
+        search
       />
     </DesContainer>
   );

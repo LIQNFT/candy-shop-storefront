@@ -1,5 +1,7 @@
 export enum RouteName {
   HomePage = "/",
+  activityView = "/activity",
+  auctionsView = "/auctions",
   marketplace = "/marketplace",
   MarketplaceWithFilter = "/multi-collection-marketplace",
   StructuralLegaciesFilter = "/structural-legacies",
