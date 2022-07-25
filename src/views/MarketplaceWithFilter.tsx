@@ -13,7 +13,7 @@ const MarketplaceWithFilter: React.FC = () => {
         candyShop={candyShop}
         title={"Marketplace"}
         description={
-          "Allow users to filter by NFT collection. Configure which NFTs collections to enable in My Shop."
+          "Enable users to filter by collections and search for NFTs."
         }
         style={{ paddingBottom: 50 }}
       />
@@ -22,6 +22,8 @@ const MarketplaceWithFilter: React.FC = () => {
         candyShop={candyShop}
         walletConnectComponent={<WalletMultiButton />}
         filters={FILTERS}
+        filterSearch
+        search
       />
     </DesContainer>
   );

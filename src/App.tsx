@@ -7,7 +7,6 @@ import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
-import * as anchor from "@project-serum/anchor";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import {
@@ -24,7 +23,6 @@ import {
 
 import TopNav from "./components/TopNav";
 import { CurrencyProvider } from "./components/Currency";
-import Home from "./views/Home";
 import Marketplace from "./views/Marketplace";
 import CustomTokenMarketplace from "./views/CustomTokenMarketplace";
 import MarketplaceWithFilter from "./views/MarketplaceWithFilter";
@@ -33,18 +31,14 @@ import MultiCurrencyMarketplace from "./views/MultiCurrencyMarketplace";
 import MultiCurrencySell from "./views/MultiCurrencySell";
 import MyCollection from "./views/MyCollection";
 import SingleOrder from "./views/SingleOrder";
+import AuctionsView from "./views/AuctionsView";
+import ActivityView from "./views/ActivityView";
 import { RouteName } from "./constant/routeNames";
 
 require("@solana/wallet-adapter-react-ui/styles.css");
 
-const candyMachineId = new anchor.web3.PublicKey(
-  process.env.REACT_APP_CANDY_MACHINE_ID!
-);
 const network = process.env.REACT_APP_SOLANA_NETWORK as WalletAdapterNetwork;
 const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST!;
-const connection = new anchor.web3.Connection(rpcHost);
-
-const txTimeout = 30000; // milliseconds (confirm this works for your project)
 
 const theme = createTheme({
   palette: {
@@ -123,12 +117,7 @@ const App = () => {
                         element={
                           <>
                             <TopNav />
-                            <Home
-                              candyMachineId={candyMachineId}
-                              connection={connection}
-                              txTimeout={txTimeout}
-                              rpcHost={rpcHost}
-                            />
+                            <Marketplace />
                           </>
                         }
                       />
@@ -142,20 +131,29 @@ const App = () => {
                         }
                       />
                       <Route
-                        path={RouteName.marketplace}
-                        element={
-                          <>
-                            <TopNav />
-                            <Marketplace />
-                          </>
-                        }
-                      />
-                      <Route
                         path={RouteName.sell}
                         element={
                           <>
                             <TopNav />
                             <MyCollection />
+                          </>
+                        }
+                      />
+                      <Route
+                        path={RouteName.auctionsView}
+                        element={
+                          <>
+                            <TopNav />
+                            <AuctionsView />
+                          </>
+                        }
+                      />
+                      <Route
+                        path={RouteName.activityView}
+                        element={
+                          <>
+                            <TopNav />
+                            <ActivityView />
                           </>
                         }
                       />
