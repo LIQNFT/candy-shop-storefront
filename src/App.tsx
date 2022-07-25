@@ -7,7 +7,6 @@ import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
-import * as anchor from "@project-serum/anchor";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import {
@@ -33,6 +32,8 @@ import MultiCurrencyMarketplace from "./views/MultiCurrencyMarketplace";
 import MultiCurrencySell from "./views/MultiCurrencySell";
 import MyCollection from "./views/MyCollection";
 import SingleOrder from "./views/SingleOrder";
+import AuctionsView from "./views/AuctionsView";
+import ActivityView from "./views/ActivityView";
 import { RouteName } from "./constant/routeNames";
 import HomePage from "./views/HomePage";
 import ClaimQubes from "./views/ClaimQubes";
@@ -44,14 +45,8 @@ import ProductsFilter from "./views/FilterProducts";
 import Fetch from "./views/Fetch";
 require("@solana/wallet-adapter-react-ui/styles.css");
 
-const candyMachineId = new anchor.web3.PublicKey(
-  process.env.REACT_APP_CANDY_MACHINE_ID!
-);
 const network = process.env.REACT_APP_SOLANA_NETWORK as WalletAdapterNetwork;
 const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST!;
-const connection = new anchor.web3.Connection(rpcHost);
-
-const txTimeout = 30000; // milliseconds (confirm this works for your project)
 
 const theme = createTheme({
   palette: {
@@ -202,11 +197,20 @@ const App = () => {
                         }
                       />
                       <Route
-                        path={RouteName.sell}
+                        path={RouteName.auctionsView}
                         element={
                           <>
                             <TopNav />
-                            <MyCollection />
+                            <AuctionsView />
+                          </>
+                        }
+                      />
+                      <Route
+                        path={RouteName.activityView}
+                        element={
+                          <>
+                            <TopNav />
+                            <ActivityView />
                           </>
                         }
                       />

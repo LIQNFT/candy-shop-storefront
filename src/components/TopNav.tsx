@@ -20,7 +20,9 @@ interface TopNavProps {
 const ROUTES = [
   { url: RouteName.HomePage, name: "Home" },
   { url: RouteName.marketplace, name: "Marketplace" },
+  // { url: RouteName.home, name: "Marketplace" },
   { url: RouteName.sell, name: "Sell" },
+  { url: RouteName.auctionsView, name: "Auctions" },
 ];
 
 // const OTHER_LAYOUT_ROUTES = [
@@ -33,6 +35,17 @@ const ROUTES = [
 //   },
 //   { url: RouteName.multipleCurrencySell, name: "Multi Currency Sell" },
 // ];
+const OTHER_LAYOUT_ROUTES = [
+  { url: RouteName.customToken, name: "Custom Token Marketplace" },
+  { url: RouteName.multipleCollection, name: "Multi Collection Marketplace" },
+  { url: RouteName.marketplaceWithUrl, name: "Marketplace With URL" },
+  {
+    url: RouteName.multipleCurrencyMarketplace,
+    name: "Multi Currency Marketplace",
+  },
+  { url: RouteName.multipleCurrencySell, name: "Multi Currency Sell" },
+  { url: RouteName.activityView, name: "Marketplace Activity" },
+];
 
 const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
   const wallet = useAnchorWallet();
@@ -131,7 +144,6 @@ const Wallet = styled.ul`
 `;
 
 const ConnectButton = styled(WalletMultiButton)`
-  border-radius: 18px !important;
   padding: 6px 16px;
   border-radius: 50rem !important;
   background-color: #4e44ce;
@@ -157,6 +169,7 @@ const Menu = styled.ul`
 
   li {
     margin: 0 12px;
+    padding: 5px;
 
     a {
       color: var(--main-text-color);
@@ -168,7 +181,6 @@ const Menu = styled.ul`
       text-size-adjust: 100%;
       touch-action: manipulation;
       transition: color 0.3s;
-      padding-bottom: 15px;
 
       img {
         max-height: 26px;

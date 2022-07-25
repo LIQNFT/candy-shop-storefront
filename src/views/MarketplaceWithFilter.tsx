@@ -26,6 +26,8 @@ const MarketplaceWithFilter: React.FC = () => {
         walletConnectComponent={<WalletMultiButton />}
         filters={FILTERS}
         defaultFilter = {{ collection: "1", shop: "" }}
+        filterSearch
+        search
       />
     </DesContainer>
   );

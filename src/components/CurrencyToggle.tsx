@@ -65,7 +65,7 @@ const CurrencyToggle: React.FC = () => {
 
 const CurrencyToggleDiv = styled.div`
   display: flex;
-  border-radius: 18px !important;
+  border-radius: 12px !important;
   padding: 6px 16px;
   background-color: var(--card-background-lighter-color);
   align-items: center;
