@@ -15,7 +15,7 @@ interface ShopFilterProps {
   candyShop: CandyShop;
   filters?: ShopFilterInfo[] | boolean;
   selectedManual?: ShopFilterInfo;
-  // showAllFilters: boolean;
+  showAllFilters: boolean;
   search?: boolean;
 }
 
@@ -28,7 +28,7 @@ export const ShopFilter: React.FC<ShopFilterProps> = ({
   candyShop,
   filters,
   selectedManual,
-  // showAllFilters,
+  showAllFilters,
   search
 }) => {
   const [options, setOptions] = useState<CandyShopResponse[]>([]);

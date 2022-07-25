@@ -253,7 +253,7 @@ export const OrdersSA: React.FC<OrdersProps> = ({
                   selected={selectedShop}
                   filters={shopFilters}
                   selectedManual={shopFilter}
-                  // showAllFilters={showAll}
+                  showAllFilters={showAll}
                   search={filterSearch}
                 />
               )}

@@ -1,5 +1,6 @@
 // import {  Stat } from "@liqnft/candy-shop";
 // import {Orders, Stat} from "@liqnft/candy-shop"
+import { CandyShopDataValidator } from "../public/Context";
 import { Orders } from "../public/Orders";
 import { Stat } from "../public/Stat";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
@@ -21,6 +22,7 @@ const MarketplaceWithFilter: React.FC = () => {
         }
         style={{ paddingBottom: 50 }}
       />
+      <CandyShopDataValidator>
       <Orders
         wallet={wallet}
         candyShop={candyShop}
@@ -30,6 +32,8 @@ const MarketplaceWithFilter: React.FC = () => {
         filterSearch
         search
       />
+      </CandyShopDataValidator>
+      
     </DesContainer>
   );
 };
