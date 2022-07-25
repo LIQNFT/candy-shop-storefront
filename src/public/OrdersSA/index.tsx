@@ -1,33 +1,33 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from "react";
 
-import { AnchorWallet } from '@solana/wallet-adapter-react';
-import { CandyShop } from '@liqnft/candy-shop-sdk';
+import { AnchorWallet } from "@solana/wallet-adapter-react";
+import { CandyShop } from "@liqnft/candy-shop-sdk";
 
 import {
   ListBase,
   NftCollection,
   Order,
   ShopStatusType,
-  CandyShop as CandyShopResponse
-} from '@liqnft/candy-shop-types';
+  CandyShop as CandyShopResponse,
+} from "@liqnft/candy-shop-types";
 
-import { Search } from '../../components/Search';
-import { Dropdown } from '../../components/Dropdown';
-import { Empty } from '../../components/Empty';
-import { InfiniteOrderList } from '../../components/InfiniteOrderList';
-import { LoadingSkeleton } from '../../components/LoadingSkeleton';
-import { PoweredBy } from '../../components/PoweredBy';
-import { CollectionFilter as CollectionFilterComponent } from '../../components/CollectionFilter';
+import { Search } from "../../components/Search";
+import { Dropdown } from "../../components/Dropdown";
+import { Empty } from "../../components/Empty";
+import { InfiniteOrderList } from "../../components/InfiniteOrderList";
+import { LoadingSkeleton } from "../../components/LoadingSkeleton";
+import { PoweredBy } from "../../components/PoweredBy";
+import { CollectionFilter as CollectionFilterComponent } from "../../components/CollectionFilter";
 import { CollectionFilterDescription } from "../../components/CollectionFilterDescription";
-import { ShopFilter as ShopFilterComponent } from '../../components/ShopFilter';
+import { ShopFilter as ShopFilterComponent } from "../../components/ShopFilter";
 
-import { useValidateStatus } from '../../hooks/useValidateStatus';
-import { useUpdateSubject } from '../../public/Context';
-import { CollectionFilter, ShopFilter, OrderDefaultFilter } from '../../model';
-import { removeDuplicate } from '../../utils/array';
-import { OrdersActionsStatus } from '../../constant';
-import { ORDER_FETCH_LIMIT, SORT_OPTIONS } from '../../constant/Orders';
-import './index.less';
+import { useValidateStatus } from "../../hooks/useValidateStatus";
+import { useUpdateSubject } from "../../public/Context";
+import { CollectionFilter, ShopFilter, OrderDefaultFilter } from "../../model";
+import { removeDuplicate } from "../../utils/array";
+import { OrdersActionsStatus } from "../../constant";
+import { ORDER_FETCH_LIMIT, SORT_OPTIONS } from "../../constant/Orders";
+import "./index.less";
 
 interface OrdersProps {
   walletConnectComponent: React.ReactElement;
@@ -61,7 +61,7 @@ export const OrdersSA: React.FC<OrdersProps> = ({
   defaultFilter,
   sellerUrl,
   search,
-  filterSearch
+  filterSearch,
 }) => {
   const [sortedByOption, setSortedByOption] = useState(SORT_OPTIONS[0]);
   const [orders, setOrders] = useState<any[]>([]);
@@ -69,9 +69,16 @@ export const OrdersSA: React.FC<OrdersProps> = ({
   const [loading, setLoading] = useState(false);
   const [startIndex, setStartIndex] = useState(0);
   // manual collection filter
-  const [collectionFilter, setCollectionFilter] = useState<CollectionFilter | undefined>(() => {
-    if (Array.isArray(filters) && defaultFilter?.[OrderDefaultFilter.COLLECTION]) {
-      return filters?.find((item) => item.collectionId === defaultFilter.collection);
+  const [collectionFilter, setCollectionFilter] = useState<
+    CollectionFilter | undefined
+  >(() => {
+    if (
+      Array.isArray(filters) &&
+      defaultFilter?.[OrderDefaultFilter.COLLECTION]
+    ) {
+      return filters?.find(
+        (item) => item.collectionId === defaultFilter.collection
+      );
     }
   });
   // auto collection filter
@@ -79,7 +86,10 @@ export const OrdersSA: React.FC<OrdersProps> = ({
 
   // manual shop filter
   const [shopFilter, setShopFilter] = useState<ShopFilter | undefined>(() => {
-    if (Array.isArray(shopFilters) && defaultFilter?.[OrderDefaultFilter.SHOP]) {
+    if (
+      Array.isArray(shopFilters) &&
+      defaultFilter?.[OrderDefaultFilter.SHOP]
+    ) {
       return shopFilters?.find((shop) => shop.shopId === defaultFilter.shop);
     }
   });
@@ -104,11 +114,15 @@ export const OrdersSA: React.FC<OrdersProps> = ({
           offset,
           limit: ORDER_FETCH_LIMIT,
           sellerAddress,
-          identifiers: getUniqueIdentifiers(identifiers, collectionFilter?.identifier),
+          identifiers: getUniqueIdentifiers(
+            identifiers,
+            collectionFilter?.identifier
+          ),
           // attribute: collectionFilter?.attribute,
           collectionId: selectedCollection?.id,
-          candyShopAddress: selectedShop?.candyShopAddress || shopFilter?.shopId,
-          nftName: nftKeyword
+          candyShopAddress:
+            selectedShop?.candyShopAddress || shopFilter?.shopId,
+          nftName: nftKeyword,
         })
         .then((res: ListBase<Order>) => {
           if (!res.success) {
@@ -121,11 +135,11 @@ export const OrdersSA: React.FC<OrdersProps> = ({
           setStartIndex((startIndex) => startIndex + ORDER_FETCH_LIMIT);
           setOrders((existingOrders) => {
             if (offset === 0) return result;
-            return removeDuplicate<Order>(existingOrders, result, 'tokenMint');
+            return removeDuplicate<Order>(existingOrders, result, "tokenMint");
           });
         })
         .catch((err: Error) => {
-          console.info('fetchOrdersByStoreId failed: ', err);
+          console.info("fetchOrdersByStoreId failed: ", err);
         })
         .finally(() => {
           setLoading(false);
@@ -140,7 +154,7 @@ export const OrdersSA: React.FC<OrdersProps> = ({
       sortedByOption,
       selectedCollection,
       selectedShop,
-      nftKeyword
+      nftKeyword,
     ]
   );
 
@@ -165,25 +179,35 @@ export const OrdersSA: React.FC<OrdersProps> = ({
     setShopFilter(undefined);
   };
 
-  const onChangeCollection = (item: NftCollection | CollectionFilter | undefined, type: 'auto' | 'manual') => () => {
-    onResetLoadingOrders();
-    onResetShopFilter();
-    if (type === 'auto') {
-      setSelectedCollection(item as NftCollection);
-    } else {
-      setCollectionFilter(item as CollectionFilter);
-    }
-  };
+  const onChangeCollection =
+    (
+      item: NftCollection | CollectionFilter | undefined,
+      type: "auto" | "manual"
+    ) =>
+    () => {
+      onResetLoadingOrders();
+      onResetShopFilter();
+      if (type === "auto") {
+        setSelectedCollection(item as NftCollection);
+      } else {
+        setCollectionFilter(item as CollectionFilter);
+      }
+    };
 
-  const onChangeShop = (item: ShopFilter | CandyShopResponse | undefined, type: 'auto' | 'manual') => () => {
-    onResetLoadingOrders();
-    onResetCollectionFilter();
-    if (type === 'auto') {
-      setSelectedShop(item as CandyShopResponse);
-    } else {
-      setShopFilter(item as ShopFilter);
-    }
-  };
+  const onChangeShop =
+    (
+      item: ShopFilter | CandyShopResponse | undefined,
+      type: "auto" | "manual"
+    ) =>
+    () => {
+      onResetLoadingOrders();
+      onResetCollectionFilter();
+      if (type === "auto") {
+        setSelectedShop(item as CandyShopResponse);
+      } else {
+        setShopFilter(item as ShopFilter);
+      }
+    };
 
   useEffect(() => {
     if (!loadingMountRef.current) {
@@ -218,56 +242,63 @@ export const OrdersSA: React.FC<OrdersProps> = ({
       setShopFilter(undefined);
     };
     const showAll = Boolean(filters && shopFilters);
-    const selectAll = showAll && !selectedCollection && !selectedShop && !shopFilter && !collectionFilter;
+    const selectAll =
+      showAll &&
+      !selectedCollection &&
+      !selectedShop &&
+      !shopFilter &&
+      !collectionFilter;
 
     return (
       <div className="candy-orders-container" style={style}>
         <div className="candy-container">
-        {Boolean(filters) && (
-                <CollectionFilterDescription
-                  onChange={onChangeCollection}
-                  selected={selectedCollection}
-                  candyShop={candyShop}
-                  filters={filters}
-                  selectedManual={collectionFilter}
-                  shopId={selectedShop?.candyShopAddress || shopFilter?.shopId}
-                />
-              )}
-        <nav className="candy-orders-filter menu2 text-uppercase pb-3 pt-3">
-        {Boolean(filters) && (
-                <CollectionFilterComponent
-                  onChange={onChangeCollection}
-                  selected={selectedCollection}
-                  candyShop={candyShop}
-                  filters={filters}
-                  selectedManual={collectionFilter}
-                  shopId={selectedShop?.candyShopAddress || shopFilter?.shopId}
-                  // showAllFilters={showAll}
-                  search={filterSearch}
-                />
-              )}
-              {Boolean(shopFilters) === true && (
-                <ShopFilterComponent
-                  onChange={onChangeShop}
-                  candyShop={candyShop}
-                  selected={selectedShop}
-                  filters={shopFilters}
-                  selectedManual={shopFilter}
-                  showAllFilters={showAll}
-                  search={filterSearch}
-                />
-              )}
-            </nav>
-            <div className="candy-orders-content">
-              {loading ? (
-                <LoadingSkeleton />
-              ) : orders.length ? (
-                infiniteOrderListView
-              ) : (
-                emptyView
-              )}
-              {/* <PoweredBy /> */}
-           
+          {Boolean(filters) && (
+            <CollectionFilterDescription
+              onChange={onChangeCollection}
+              selected={selectedCollection}
+              candyShop={candyShop}
+              filters={filters}
+              selectedManual={collectionFilter}
+              shopId={selectedShop?.candyShopAddress || shopFilter?.shopId}
+            />
+          )}
+          {search && (
+            <Search onSearch={onSearchNft} placeholder="Search NFTs" />
+          )}
+          <nav className="candy-orders-filter menu2 text-uppercase pb-3 pt-3">
+            {Boolean(filters) && (
+              <CollectionFilterComponent
+                onChange={onChangeCollection}
+                selected={selectedCollection}
+                candyShop={candyShop}
+                filters={filters}
+                selectedManual={collectionFilter}
+                shopId={selectedShop?.candyShopAddress || shopFilter?.shopId}
+                // showAllFilters={showAll}
+                search={filterSearch}
+              />
+            )}
+            {Boolean(shopFilters) === true && (
+              <ShopFilterComponent
+                onChange={onChangeShop}
+                candyShop={candyShop}
+                selected={selectedShop}
+                filters={shopFilters}
+                selectedManual={shopFilter}
+                showAllFilters={showAll}
+                search={filterSearch}
+              />
+            )}
+          </nav>
+          <div className="candy-orders-content">
+            {loading ? (
+              <LoadingSkeleton />
+            ) : orders.length ? (
+              infiniteOrderListView
+            ) : (
+              emptyView
+            )}
+            {/* <PoweredBy /> */}
           </div>
         </div>
       </div>
@@ -287,7 +318,13 @@ export const OrdersSA: React.FC<OrdersProps> = ({
             />
             <Search onSearch={onSearchNft} placeholder="Search NFTs" />
           </div>
-          {loading ? <LoadingSkeleton /> : orders.length ? infiniteOrderListView : emptyView}
+          {loading ? (
+            <LoadingSkeleton />
+          ) : orders.length ? (
+            infiniteOrderListView
+          ) : (
+            emptyView
+          )}
           <PoweredBy />
         </div>
       </div>
@@ -295,8 +332,16 @@ export const OrdersSA: React.FC<OrdersProps> = ({
   );
 };
 
-function getUniqueIdentifiers(identifiers: number[] = [], filterIdentifiers: number | number[] = []) {
+function getUniqueIdentifiers(
+  identifiers: number[] = [],
+  filterIdentifiers: number | number[] = []
+) {
   return [
-    ...new Set([...identifiers, ...(typeof filterIdentifiers === 'number' ? [filterIdentifiers] : filterIdentifiers)])
+    ...new Set([
+      ...identifiers,
+      ...(typeof filterIdentifiers === "number"
+        ? [filterIdentifiers]
+        : filterIdentifiers),
+    ]),
   ];
 }

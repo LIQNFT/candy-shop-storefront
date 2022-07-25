@@ -1,5 +1,6 @@
 // import { Orders, Stat } from "@liqnft/candy-shop";
 import { Stat } from "../public/Stat";
+import { CandyShopDataValidator } from "../public/Context";
 import { OrdersSL } from "../public/OrdersSL";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
@@ -8,7 +9,11 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { MetaTagsPage } from "../utils/Metatags";
 const StructuralLegaciesFilter: React.FC = () => {
-  MetaTagsPage("STRUCTURAL LEGACIES","INTRODUCING HOMEQUBE’S STRUCTURAL LEGACY SYSTEM. EACH STRUCTURAL IS UNIQUE. WE GENERATED 2500 UNIQUE COMBINATIONS FROM OUR SYSTEMS ARCHITECTURE PLATFORM (DAPP). THIS LEGACY SYSTEM CAN BE USED TO BUILD LIMITLESS DESIGN CONFIGURATIONS FOR FLAT TOPOGRAPHIES AND UP TO 3 STORY HOUSING, ALLOWING OPEN ARCHITECTURE. OUR COMPOSITE MIX IS MORE SUSTAINABLE, WEATHER RESILIENT, AND EMITS MUCH LESS CARBON THAN REINFORCED CONCRETE/STEEL, AND CAN BE ERGONOMICALLY ASSEMBLED AT THE SITE.","https://www.homeqube.io/structural-legacies");
+  MetaTagsPage(
+    "STRUCTURAL LEGACIES",
+    "INTRODUCING HOMEQUBE’S STRUCTURAL LEGACY SYSTEM. EACH STRUCTURAL IS UNIQUE. WE GENERATED 2500 UNIQUE COMBINATIONS FROM OUR SYSTEMS ARCHITECTURE PLATFORM (DAPP). THIS LEGACY SYSTEM CAN BE USED TO BUILD LIMITLESS DESIGN CONFIGURATIONS FOR FLAT TOPOGRAPHIES AND UP TO 3 STORY HOUSING, ALLOWING OPEN ARCHITECTURE. OUR COMPOSITE MIX IS MORE SUSTAINABLE, WEATHER RESILIENT, AND EMITS MUCH LESS CARBON THAN REINFORCED CONCRETE/STEEL, AND CAN BE ERGONOMICALLY ASSEMBLED AT THE SITE.",
+    "https://www.homeqube.io/structural-legacies"
+  );
   const wallet = useAnchorWallet();
 
   return (
@@ -36,13 +41,17 @@ const StructuralLegaciesFilter: React.FC = () => {
           description={""}
           style={{ paddingBottom: 50 }}
         />
-        <OrdersSL
-          wallet={wallet}
-          candyShop={candyShop}
-          defaultFilter={{ collection: "1", shop: "" }}
-          walletConnectComponent={<WalletMultiButton />}
-          filters={FILTERS}
-        />
+        <CandyShopDataValidator>
+          <OrdersSL
+            wallet={wallet}
+            candyShop={candyShop}
+            defaultFilter={{ collection: "1", shop: "" }}
+            walletConnectComponent={<WalletMultiButton />}
+            filters={FILTERS}
+            filterSearch
+            search
+          />
+        </CandyShopDataValidator>
       </DesContainer>
     </>
   );

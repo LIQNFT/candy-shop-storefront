@@ -1,4 +1,5 @@
 import { Stat } from "../public/Stat";
+import { CandyShopDataValidator } from "../public/Context";
 import { OrdersHD } from "../public/OrdersHD";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
@@ -7,7 +8,11 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { MetaTagsPage } from "../utils/Metatags";
 const HomeDesignFilter: React.FC = () => {
-  MetaTagsPage("HOME DESIGNS","YOU CAN PLACE VARIOUS HOME DESIGNS HERE THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.","https://www.homeqube.io/home-designs");
+  MetaTagsPage(
+    "HOME DESIGNS",
+    "YOU CAN PLACE VARIOUS HOME DESIGNS HERE THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
+    "https://www.homeqube.io/home-designs"
+  );
   const wallet = useAnchorWallet();
 
   return (
@@ -35,13 +40,17 @@ const HomeDesignFilter: React.FC = () => {
           description={""}
           style={{ paddingBottom: 50 }}
         />
-        <OrdersHD
-          wallet={wallet}
-          candyShop={candyShop}
-          defaultFilter={{ collection: "1", shop: "" }}
-          walletConnectComponent={<WalletMultiButton />}
-          filters={FILTERS}
-        />
+        <CandyShopDataValidator>
+          <OrdersHD
+            wallet={wallet}
+            candyShop={candyShop}
+            walletConnectComponent={<WalletMultiButton />}
+            filters={FILTERS}
+            defaultFilter={{ collection: "1", shop: "" }}
+            filterSearch
+            search
+          />
+        </CandyShopDataValidator>
       </DesContainer>
     </>
   );

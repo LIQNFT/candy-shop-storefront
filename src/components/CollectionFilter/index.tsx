@@ -13,7 +13,10 @@ import { LoadStatus } from "../../constant";
 import "../../style/order-filter.less";
 
 interface CollectionFilterProps {
-  onChange: (item: NftCollection | CollectionFilterType | undefined, type: 'auto' | 'manual') => any;
+  onChange: (
+    item: NftCollection | CollectionFilterType | undefined,
+    type: "auto" | "manual"
+  ) => any;
   selected?: NftCollection;
   candyShop: CandyShop;
   filters?: CollectionFilterType[] | boolean;
@@ -23,7 +26,7 @@ interface CollectionFilterProps {
   search?: boolean;
 }
 
-const Logger = 'CandyShopUI/Collection';
+const Logger = "CandyShopUI/Collection";
 const LIMIT = 10;
 
 export const CollectionFilter: React.FC<CollectionFilterProps> = ({
@@ -34,14 +37,16 @@ export const CollectionFilter: React.FC<CollectionFilterProps> = ({
   selectedManual,
   shopId,
   // showAllFilters,
-  search
+  search,
 }) => {
   const [options, setOptions] = useState<NftCollection[]>([]);
   const [offset, setOffset] = useState<number>(0);
   const [loading, setLoading] = useState<LoadStatus>(LoadStatus.ToLoad);
   const [haveNext, setHaveNext] = useState<boolean>(true);
   const [keyword, setKeyword] = useState<string>();
-  const [previousShopId, setPreviousShopId] = useState<string | undefined>(shopId);
+  const [previousShopId, setPreviousShopId] = useState<string | undefined>(
+    shopId
+  );
 
   if (shopId !== previousShopId) {
     setPreviousShopId(shopId);
@@ -59,7 +64,7 @@ export const CollectionFilter: React.FC<CollectionFilterProps> = ({
         offset: startIndex,
         limit: LIMIT,
         shopId: shopId || candyShop.candyShopAddress.toString(),
-        name: keyword
+        name: keyword,
       };
       if (shopId) return fetchCollectionByShopAddress(queryDto);
       return fetchAllCollection(queryDto);
@@ -83,10 +88,12 @@ export const CollectionFilter: React.FC<CollectionFilterProps> = ({
           setOffset((startIndex) => startIndex + LIMIT);
           setOptions((list) => {
             if (offset === 0) return result || [];
-            return removeDuplicate<NftCollection>(list, result, 'id');
+            return removeDuplicate<NftCollection>(list, result, "id");
           });
         })
-        .catch((err: Error) => console.log(`${Logger} fetchAllCollection error=`, err))
+        .catch((err: Error) =>
+          console.log(`${Logger} fetchAllCollection error=`, err)
+        )
         .finally(() => setLoading(LoadStatus.Loaded));
     },
     [candyShop, getFetchCollectionAPI]
@@ -102,7 +109,7 @@ export const CollectionFilter: React.FC<CollectionFilterProps> = ({
     if (!Array.isArray(filters)) return [];
     if (!keyword) return filters;
 
-    const keywordList = keyword.split(' ');
+    const keywordList = keyword.split(" ");
     return filters.filter((item) => {
       const name = (item.name as string).toLowerCase();
       return keywordList.some((word) => name.includes(word));
@@ -113,32 +120,39 @@ export const CollectionFilter: React.FC<CollectionFilterProps> = ({
   if (Array.isArray(filters)) {
     return (
       <>
-        <div className="candy-filter-subtitle">Collections</div>
-        <ul>
-          {search && <Search onSearch={onSearch} placeholder="Search collections" />}
-          {selectedManual ? (
+        <div className="candy-filter-subtitle"></div>
+        <p>|</p>
+        {/* {search && <Search onSearch={onSearch} placeholder="Search collections" />} */}
+        {/* {selectedManual ? (
             <div className="candy-filter-selected-name">
               {selectedManual.name}
               <span className="close-icon" onClick={onChange(undefined, 'manual')} />
             </div>
-          ) : null}
-          {/* {!showAllFilters && (
+          ) : null} */}
+        {/* {!showAllFilters && (
             <li key="All" onClick={onChange(undefined, 'manual')} className={selectedManual ? '' : 'selected'}>
               All
             </li>
           )} */}
-          {filteredList.map((filter) => {
-            return (
+        {filteredList.map((filter) => {
+          return (
+            <>
               <li
                 key={filter.name}
-                className={selectedManual?.collectionId === filter.collectionId ? 'selected' : ''}
-                onClick={onChange(filter, 'manual')}
+                className={
+                  selectedManual?.collectionId === filter.collectionId
+                    ? "selected"
+                    : ""
+                }
+                onClick={onChange(filter, "manual")}
               >
                 {filter.name}
+                {filter.qubeClaims}
               </li>
-            );
-          })}
-        </ul>
+              <p>|</p>
+            </>
+          );
+        })}
       </>
     );
   }
@@ -148,23 +162,31 @@ export const CollectionFilter: React.FC<CollectionFilterProps> = ({
   return (
     <div className="candy-collection-filter">
       <div className="candy-filter-subtitle">Collections</div>
-      {search && <Search onSearch={onSearch} placeholder="Search collections" />}
+      {search && (
+        <Search onSearch={onSearch} placeholder="Search collections" />
+      )}
       {selected ? (
         <div className="candy-filter-selected-name">
           {selected.name}
-          <span className="close-icon" onClick={onChange(undefined, 'auto')} />
+          <span className="close-icon" onClick={onChange(undefined, "auto")} />
         </div>
       ) : null}
       <ul className="candy-filter-options">
         {options.map((item) => (
-          <li key={item.id} onClick={onChange(item, 'auto')} className={selected === item ? 'selected' : ''}>
+          <li
+            key={item.id}
+            onClick={onChange(item, "auto")}
+            className={selected === item ? "selected" : ""}
+          >
             {item.name}
           </li>
         ))}
         {loading === LoadStatus.Loading && <Processing />}
         <button
           disabled={disableLoadMore}
-          className={`candy-filter-load ${disableLoadMore ? 'candy-filter-load-disable' : ''}`}
+          className={`candy-filter-load ${
+            disableLoadMore ? "candy-filter-load-disable" : ""
+          }`}
           onClick={() => fetchOption(offset)}
         >
           + Load more

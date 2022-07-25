@@ -1,4 +1,5 @@
 import { Stat } from "../public/Stat";
+import { CandyShopDataValidator } from "../public/Context";
 import { OrdersSA } from "../public/OrdersSA";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
@@ -8,7 +9,11 @@ import { NavLink } from "react-router-dom";
 import { MetaTagsPage } from "../utils/Metatags";
 
 const SystemArchitectureFilter: React.FC = () => {
-  MetaTagsPage("SYSTEM ARCHITECTURE","YOU CAN PLACE VARIOUS HOME DESIGNS “PARTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.","https://www.homeqube.io/system-architecture");
+  MetaTagsPage(
+    "SYSTEM ARCHITECTURE",
+    "YOU CAN PLACE VARIOUS HOME DESIGNS “PARTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
+    "https://www.homeqube.io/system-architecture"
+  );
   const wallet = useAnchorWallet();
 
   return (
@@ -18,12 +23,12 @@ const SystemArchitectureFilter: React.FC = () => {
           <NavLink to="/structural-legacies">Structural Legacies</NavLink>
         </li>
         <li>
-          <NavLink to="/home-designs">
-            Home Designs
-          </NavLink>
+          <NavLink to="/home-designs">Home Designs</NavLink>
         </li>
         <li>
-          <NavLink to="/system-architecture" className="active">SYSTEM ARCHITECTURE</NavLink>
+          <NavLink to="/system-architecture" className="active">
+            SYSTEM ARCHITECTURE
+          </NavLink>
         </li>
         <li>
           <NavLink to="/products">PRODUCTS</NavLink>
@@ -36,13 +41,17 @@ const SystemArchitectureFilter: React.FC = () => {
           description={""}
           style={{ paddingBottom: 50 }}
         />
-        <OrdersSA
-          wallet={wallet}
-          candyShop={candyShop}
-          defaultFilter={{ collection: "1", shop: "" }}
-          walletConnectComponent={<WalletMultiButton />}
-          filters={FILTERS}
-        />
+        <CandyShopDataValidator>
+          <OrdersSA
+            wallet={wallet}
+            candyShop={candyShop}
+            defaultFilter={{ collection: "1", shop: "" }}
+            walletConnectComponent={<WalletMultiButton />}
+            filters={FILTERS}
+            filterSearch
+            search
+          />
+        </CandyShopDataValidator>
       </DesContainer>
     </>
   );
@@ -51,22 +60,22 @@ const SystemArchitectureFilter: React.FC = () => {
 export default SystemArchitectureFilter;
 
 const FILTERS = [
-    {
-        name: "Parts",
-        collectionId: "1",
-        identifier: -16541584,
-        qubeClaims :"",
-        description:
-          "YOU CAN PLACE VARIOUS HOME DESIGNS “PARTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES. ",
-      },
-      {
-        name: "PBU",
-        collectionId: "2",
-        identifier: 393799738,
-        qubeClaims :"",
-        description:
-          "YOU CAN PLACE VARIOUS HOME DESIGNS “PARTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES. ",
-      },
+  {
+    name: "Parts",
+    collectionId: "1",
+    identifier: -16541584,
+    qubeClaims: "",
+    description:
+      "YOU CAN PLACE VARIOUS HOME DESIGNS “PARTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES. ",
+  },
+  {
+    name: "PBU",
+    collectionId: "2",
+    identifier: 393799738,
+    qubeClaims: "",
+    description:
+      "YOU CAN PLACE VARIOUS HOME DESIGNS “PARTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES. ",
+  },
 ];
 
 const DesContainer = styled.div`
