@@ -1,6 +1,5 @@
 // import {  Stat } from "@liqnft/candy-shop";
-import { Orders } from "../public/Orders";
-import { Stat } from "../public/Stat";
+import {Orders, Stat} from "@liqnft/candy-shop"
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { candyShop } from "../utils/candy-shop";
