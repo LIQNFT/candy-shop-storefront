@@ -16,13 +16,13 @@ import { Dropdown } from '../../components/Dropdown';
 import { Empty } from '../../components/Empty';
 import { InfiniteOrderList } from '../../components/InfiniteOrderList';
 import { LoadingSkeleton } from '../../components/LoadingSkeleton';
-// import { PoweredBy } from '../../components/PoweredBy';
+import { PoweredBy } from '../../components/PoweredBy';
 import { CollectionFilter as CollectionFilterComponent } from '../../components/CollectionFilter';
 import { CollectionFilterDescription } from "../../components/CollectionFilterDescription";
 import { ShopFilter as ShopFilterComponent } from '../../components/ShopFilter';
 
 import { useValidateStatus } from '../../hooks/useValidateStatus';
-// import { useUpdateSubject } from '../Context';
+import { useUpdateSubject } from '../../public/Context';
 import { CollectionFilter, ShopFilter, OrderDefaultFilter } from '../../model';
 import { removeDuplicate } from '../../utils/array';
 import { OrdersActionsStatus } from '../../constant';
@@ -41,6 +41,8 @@ interface OrdersProps {
   candyShop: CandyShop;
   sellerAddress?: string;
   sellerUrl?: string;
+  search?: boolean;
+  filterSearch?: boolean;
 }
 
 /**
@@ -57,7 +59,9 @@ export const OrdersHD: React.FC<OrdersProps> = ({
   sellerAddress,
   shopFilters,
   defaultFilter,
-  sellerUrl
+  sellerUrl,
+  search,
+  filterSearch
 }) => {
   const [sortedByOption, setSortedByOption] = useState(SORT_OPTIONS[0]);
   const [orders, setOrders] = useState<any[]>([]);
@@ -86,7 +90,7 @@ export const OrdersHD: React.FC<OrdersProps> = ({
   const loadingMountRef = useRef(false);
 
   const updateOrderStatus = useValidateStatus(OrdersActionsStatus);
-  // useUpdateSubject(ShopStatusType.Order, candyShop.candyShopAddress);
+  useUpdateSubject(ShopStatusType.Order, candyShop.candyShopAddress);
 
   const onSearchNft = useCallback((nftName: string) => {
     setNftKeyword(nftName);
@@ -104,7 +108,7 @@ export const OrdersHD: React.FC<OrdersProps> = ({
           // attribute: collectionFilter?.attribute,
           collectionId: selectedCollection?.id,
           candyShopAddress: selectedShop?.candyShopAddress || shopFilter?.shopId,
-          // nftName: nftKeyword
+          nftName: nftKeyword
         })
         .then((res: ListBase<Order>) => {
           if (!res.success) {
@@ -190,7 +194,7 @@ export const OrdersHD: React.FC<OrdersProps> = ({
     fetchOrders(0);
   }, [fetchOrders, updateOrderStatus]);
 
-  const emptyView = <Empty description="Add your home designs here" />;
+  const emptyView = <Empty description="No orders found" />;
 
   const infiniteOrderListView = (
     <InfiniteOrderList
@@ -213,12 +217,13 @@ export const OrdersHD: React.FC<OrdersProps> = ({
       setSelectedShop(undefined);
       setShopFilter(undefined);
     };
+    const showAll = Boolean(filters && shopFilters);
+    const selectAll = showAll && !selectedCollection && !selectedShop && !shopFilter && !collectionFilter;
 
     return (
-      <>
-        <div className="candy-orders-container" style={style}>
-          <div className="candy-container">
-          {Boolean(filters) && (
+      <div className="candy-orders-container" style={style}>
+        <div className="candy-container">
+        {Boolean(filters) && (
                 <CollectionFilterDescription
                   onChange={onChangeCollection}
                   selected={selectedCollection}
@@ -228,9 +233,8 @@ export const OrdersHD: React.FC<OrdersProps> = ({
                   shopId={selectedShop?.candyShopAddress || shopFilter?.shopId}
                 />
               )}
-            <nav className="candy-orders-filter menu2 text-uppercase pb-3 pt-3">
-            
-              {Boolean(filters) && (
+        <nav className="candy-orders-filter menu2 text-uppercase pb-3 pt-3">
+        {Boolean(filters) && (
                 <CollectionFilterComponent
                   onChange={onChangeCollection}
                   selected={selectedCollection}
@@ -238,9 +242,10 @@ export const OrdersHD: React.FC<OrdersProps> = ({
                   filters={filters}
                   selectedManual={collectionFilter}
                   shopId={selectedShop?.candyShopAddress || shopFilter?.shopId}
+                  // showAllFilters={showAll}
+                  search={filterSearch}
                 />
               )}
-
               {Boolean(shopFilters) === true && (
                 <ShopFilterComponent
                   onChange={onChangeShop}
@@ -248,6 +253,8 @@ export const OrdersHD: React.FC<OrdersProps> = ({
                   selected={selectedShop}
                   filters={shopFilters}
                   selectedManual={shopFilter}
+                  // showAllFilters={showAll}
+                  search={filterSearch}
                 />
               )}
             </nav>
@@ -260,10 +267,10 @@ export const OrdersHD: React.FC<OrdersProps> = ({
                 emptyView
               )}
               {/* <PoweredBy /> */}
-            </div>
+           
           </div>
         </div>
-      </>
+      </div>
     );
   }
 
@@ -278,32 +285,18 @@ export const OrdersHD: React.FC<OrdersProps> = ({
               onSelectItem={(item) => setSortedByOption(item)}
               defaultValue={SORT_OPTIONS[0]}
             />
-            <Search onSearch={onSearchNft} placeholder="Search NFT name" />
+            <Search onSearch={onSearchNft} placeholder="Search NFTs" />
           </div>
-          {loading ? (
-            <LoadingSkeleton />
-          ) : orders.length ? (
-            infiniteOrderListView
-          ) : (
-            emptyView
-          )}
-          {/* <PoweredBy /> */}
+          {loading ? <LoadingSkeleton /> : orders.length ? infiniteOrderListView : emptyView}
+          <PoweredBy />
         </div>
       </div>
     </>
   );
 };
 
-function getUniqueIdentifiers(
-  identifiers: number[] = [],
-  filterIdentifiers: number | number[] = []
-) {
+function getUniqueIdentifiers(identifiers: number[] = [], filterIdentifiers: number | number[] = []) {
   return [
-    ...new Set([
-      ...identifiers,
-      ...(typeof filterIdentifiers === "number"
-        ? [filterIdentifiers]
-        : filterIdentifiers),
-    ]),
+    ...new Set([...identifiers, ...(typeof filterIdentifiers === 'number' ? [filterIdentifiers] : filterIdentifiers)])
   ];
 }

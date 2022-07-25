@@ -16,4 +16,5 @@ export enum RouteName {
   marketplaceWithUrl = "/marketplace-with-url",
   multipleCurrencyMarketplace = "/multi-currency-marketplace",
   multipleCurrencySell = "/multi-currency-sell",
+  addMyCollections = "/addmycollection"
 }

@@ -15,6 +15,8 @@ interface ShopFilterProps {
   candyShop: CandyShop;
   filters?: ShopFilterInfo[] | boolean;
   selectedManual?: ShopFilterInfo;
+  // showAllFilters: boolean;
+  search?: boolean;
 }
 
 const Logger = 'CandyShopUI/ShopFilter';
@@ -26,6 +28,8 @@ export const ShopFilter: React.FC<ShopFilterProps> = ({
   candyShop,
   filters,
   selectedManual,
+  // showAllFilters,
+  search
 }) => {
   const [options, setOptions] = useState<CandyShopResponse[]>([]);
   const [offset, setOffset] = useState<number>(0);
@@ -90,8 +94,8 @@ export const ShopFilter: React.FC<ShopFilterProps> = ({
   if (Array.isArray(filters)) {
     return (
       <>
-        <div className="candy-filter-title">By Shop</div>
-        <Search onSearch={onSearch} placeholder="Search shops" />
+        <div className="candy-filter-subtitle">Shops</div>
+        {search && <Search onSearch={onSearch} placeholder="Search shops" />}
         {selected ? (
           <div className="candy-filter-selected-name">
             {selected.candyShopName}
@@ -99,6 +103,11 @@ export const ShopFilter: React.FC<ShopFilterProps> = ({
           </div>
         ) : null}
         <ul>
+          {/* {!showAllFilters && (
+            <li key="All" onClick={onChange(undefined, 'manual')} className={selectedManual ? '' : 'selected'}>
+              All
+            </li>
+          )} */}
           {filteredList.map((filter) => (
             <li
               key={filter.name}
@@ -117,8 +126,8 @@ export const ShopFilter: React.FC<ShopFilterProps> = ({
 
   return (
     <div className="candy-collection-filter">
-      <div className="candy-filter-title">By Shop</div>
-      <Search onSearch={onSearch} placeholder="Search shops" />
+      <div className="candy-filter-subtitle">Shops</div>
+      {search && <Search onSearch={onSearch} placeholder="Search shops" />}
       {selected ? (
         <div className="candy-filter-selected-name">
           {selected.candyShopName}

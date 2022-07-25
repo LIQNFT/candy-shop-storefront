@@ -43,6 +43,7 @@ import HomeDesignFilter from "./views/FilterHomeDesign";
 import SystemArchitectureFilter from "./views/FilterSystemArchitecture";
 import ProductsFilter from "./views/FilterProducts";
 import Fetch from "./views/Fetch";
+import AddMyCollections from "./views/AddMyCollection";
 require("@solana/wallet-adapter-react-ui/styles.css");
 
 const network = process.env.REACT_APP_SOLANA_NETWORK as WalletAdapterNetwork;
@@ -129,7 +130,7 @@ const App = () => {
                           </>
                         }
                       />
-                       <Route
+                      <Route
                         path={RouteName.StructuralLegaciesFilter}
                         element={
                           <>
@@ -176,7 +177,15 @@ const App = () => {
                           </>
                         }
                       />
-
+                      <Route
+                        path={RouteName.addMyCollections}
+                        element={
+                          <>
+                            <TopNav showCurrencyToggle={true} />
+                            <AddMyCollections />
+                          </>
+                        }
+                      />
                       <Route
                         path={RouteName.ProductsFilter}
                         element={
