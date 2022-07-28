@@ -64,7 +64,7 @@ export default AlgorithmFilter;
 
 const FILTERS = [
   {
-    name: "Marine Leisure",
+    name: "Algorithms",
     collectionId: "1",
     identifier: [-45564651],
     qubeClaims: "",
