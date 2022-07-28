@@ -270,16 +270,6 @@ export const Orders: React.FC<OrdersProps> = ({
                 />
               )}
 
-              {/* <div className="candy-filter-title">Attributes</div>
-              {FILTER_ATTRIBUTES_MOCK: constant/Orders}
-               {FILTER_ATTRIBUTES_MOCK.map((attr) => {
-                return (
-                  <div className="candy-filter-attribute">
-                    <span>{attr.name}</span>
-                    <Dropdown items={attr.options} onSelectItem={onFilterAttribute} placeholder={attr.placeholder} />
-                  </div>
-                );
-              })} */}
             </div>
             <div className="candy-orders-content">
               {loading ? <LoadingSkeleton /> : orders.length ? infiniteOrderListView : emptyView}

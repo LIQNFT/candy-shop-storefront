@@ -7,7 +7,8 @@ import { candyShop } from "../utils/candy-shop";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { MetaTagsPage } from "../utils/Metatags";
-const ProductsFilter: React.FC = () => {
+import { OrdersA } from "../public/OrdersA";
+const AlgorithmFilter: React.FC = () => {
   MetaTagsPage(
     "PRODUCTS",
     "YOU CAN PLACE VARIOUS “PRODUCTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
@@ -28,12 +29,12 @@ const ProductsFilter: React.FC = () => {
           <NavLink to="/system-architecture">SYSTEM ARCHITECTURE</NavLink>
         </li>
         <li>
-          <NavLink to="/products" className="active">
+          <NavLink to="/products" >
             PRODUCTS
           </NavLink>
         </li>
         <li>
-          <NavLink to="/algorithm">ALGORITHM</NavLink>
+          <NavLink to="/algorithm" className="active">ALGORITHM</NavLink>
         </li>
       </nav>
       <DesContainer>
@@ -44,7 +45,7 @@ const ProductsFilter: React.FC = () => {
           style={{ paddingBottom: 50 }}
         />
         <CandyShopDataValidator>
-          <OrdersP
+          <OrdersA
             wallet={wallet}
             candyShop={candyShop}
             defaultFilter={{ collection: "1", shop: "" }}
@@ -59,16 +60,16 @@ const ProductsFilter: React.FC = () => {
   );
 };
 
-export default ProductsFilter;
+export default AlgorithmFilter;
 
 const FILTERS = [
   {
     name: "Marine Leisure",
     collectionId: "1",
-    identifier: [-1434943395, 691144404],
+    identifier: [-45564651],
     qubeClaims: "",
     description:
-      "YOU CAN PLACE VARIOUS “PRODUCTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
+      "YOU CAN PLACE VARIOUS “ALGORITHM” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
   },
 ];
 
