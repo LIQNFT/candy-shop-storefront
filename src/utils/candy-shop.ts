@@ -18,6 +18,7 @@ const candyShop = new CandyShop({
   candyShopProgramId: CANDY_SHOP_PROGRAM_ID,
   env: NETWORK,
   settings: {
+    mainnetConnectionUrl:'https://solana-mainnet.g.alchemy.com/v2/A8ehUkPDu9a3qpy-ZJl9eW3-j6GHRrG2',
     currencyDecimals: Number(
       process.env.REACT_APP_SPL_TOKEN_TO_MINT_DECIMALS || 9
     ),

@@ -1,4 +1,4 @@
-import { CandyShop } from "@liqnft/candy-shop-sdk";
+import { candyShop } from "../utils/candy-shop";
 // import { Sell } from "@liqnft/candy-shop";
 import { UserCollection } from "../public/MyCollection";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
@@ -23,24 +23,24 @@ const DesContainer = styled.div`
 
 const Fetch: React.FC = () => {
   const wallet = useAnchorWallet();
-  const { getCurrencySettings } = useCurrency();
-  const settings = getCurrencySettings();
+  // const { getCurrencySettings } = useCurrency();
+  // const settings = getCurrencySettings();
 
-  const candyShop = useMemo(
-    () =>
-      new CandyShop({
-        candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
-        treasuryMint: new PublicKey(settings.treasuryMint),
-        candyShopProgramId: CANDY_SHOP_PROGRAM_ID,
-        env: NETWORK,
-        settings,
-      }),
-    [settings]
-  );
+  // const candyShop = useMemo(
+  // //   () =>
+  // //     new CandyShop({
+  // //       candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
+  // //       treasuryMint: new PublicKey(settings.treasuryMint),
+  // //       candyShopProgramId: CANDY_SHOP_PROGRAM_ID,
+  // //       env: NETWORK,
+  // //       settings,
+  // //     }),
+  // //   [settings]
+  // // );
 
-  if (!candyShop) {
-    return <></>;
-  }
+  // // if (!candyShop) {
+  // //   return <></>;
+  // // }
 
   return (
     <DesContainer>

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { CandyShop } from "@liqnft/candy-shop-sdk";
+import { candyShop } from "../utils/candy-shop";
 import { Orders, Stat } from "@liqnft/candy-shop";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import {
@@ -14,26 +14,26 @@ import styled from "styled-components";
 const CustomTokenMarketplace: React.FC = () => {
   const wallet = useAnchorWallet();
 
-  const candyShopRef = useRef<CandyShop>(
-    new CandyShop({
-      candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
-      treasuryMint: CANDY_SHOP_TREASURY_MINT,
-      candyShopProgramId: CANDY_SHOP_PROGRAM_ID,
-      env: NETWORK,
-      // pass additional settings param to configure shop display
-      settings: {
-        currencySymbol: "LQN",
-        currencyDecimals: 9,
-        priceDecimals: 3,
-        volumeDecimals: 1,
-      },
-    })
-  );
+  // const candyShopRef = useRef<CandyShop>(
+  //   new CandyShop({
+  //     candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
+  //     treasuryMint: CANDY_SHOP_TREASURY_MINT,
+  //     candyShopProgramId: CANDY_SHOP_PROGRAM_ID,
+  //     env: NETWORK,
+  //     // pass additional settings param to configure shop display
+  //     settings: {
+  //       currencySymbol: "LQN",
+  //       currencyDecimals: 9,
+  //       priceDecimals: 3,
+  //       volumeDecimals: 1,
+  //     },
+  //   })
+  // );
 
   return (
     <DesContainer>
       <Stat
-        candyShop={candyShopRef.current}
+        candyShop={candyShop}
         title={"Marketplace"}
         description={
           "Candy Shop supports custom SPL tokens as currency. Just specify your token symbol and decimals."
@@ -42,7 +42,7 @@ const CustomTokenMarketplace: React.FC = () => {
       />
       <Orders
         wallet={wallet}
-        candyShop={candyShopRef.current}
+        candyShop={candyShop}
         walletConnectComponent={<WalletMultiButton />}
       />
     </DesContainer>

@@ -1,4 +1,4 @@
-import { CandyShop } from "@liqnft/candy-shop-sdk";
+import { candyShop } from "../utils/candy-shop";
 import { Orders, Stat } from "@liqnft/candy-shop";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { PublicKey } from "@solana/web3.js";
@@ -21,20 +21,20 @@ const MultiCurrencyMarketplace: React.FC = () => {
   const { getCurrencySettings } = useCurrency();
   const settings = getCurrencySettings();
 
-  const candyShop = useMemo(
-    () =>
-      new CandyShop({
-        candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
-        treasuryMint: new PublicKey(settings.treasuryMint),
-        candyShopProgramId: CANDY_SHOP_PROGRAM_ID,
-        env: NETWORK,
-        settings,
-      }),
-    [settings]
-  );
-  console.log("Currency Settings", settings);
+  // const candyShop = useMemo(
+  //   () =>
+  //     new CandyShop({
+  //       candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
+  //       treasuryMint: new PublicKey(settings.treasuryMint),
+  //       candyShopProgramId: CANDY_SHOP_PROGRAM_ID,
+  //       env: NETWORK,
+  //       settings,
+  //     }),
+  //   [settings]
+  // );
+  // console.log("Currency Settings", settings);
 
-  if (!candyShop) return null;
+  // if (!candyShop) return null;
 
   return (
     <DesContainer>
