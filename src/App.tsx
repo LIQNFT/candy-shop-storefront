@@ -140,6 +140,15 @@ const App = () => {
                           </>
                         }
                       />
+                        <Route
+                        path={RouteName.sell}
+                        element={
+                          <>
+                            <TopNav />
+                            <MyCollection />
+                          </>
+                        }
+                      />
                       <Route
                         path={RouteName.MarketplaceWithFilter}
                         element={

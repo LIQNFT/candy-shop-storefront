@@ -11,7 +11,7 @@ export enum RouteName {
   AlgorithmFilter = "/algorithm",
   ClaimQubes = "/claimqubes",
   MyCollection = "/mycollection",
-  sell = "/poZxCBHNsdSwErewqHQSELLlkGfsfGhJZCcxsDDxcdaswevJCiGopcxasedWarDfiGderUrghh",
+  sell = "/sell",
   customToken = "/custom-token-marketplace",
   multipleCollection = "",
   marketplaceWithUrl = "/marketplace-with-url",
