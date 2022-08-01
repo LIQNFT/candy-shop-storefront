@@ -33,6 +33,9 @@ const StructuralLegaciesFilter: React.FC = () => {
         <li>
           <NavLink to="/products">PRODUCTS</NavLink>
         </li>
+        <li>
+          <NavLink to="/algorithm">ALGORITHM</NavLink>
+        </li>
       </nav>
       <DesContainer>
         <Stat

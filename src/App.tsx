@@ -44,6 +44,7 @@ import SystemArchitectureFilter from "./views/FilterSystemArchitecture";
 import ProductsFilter from "./views/FilterProducts";
 import Fetch from "./views/Fetch";
 import AddMyCollections from "./views/AddMyCollection";
+import AlgorithmFilter from "./views/FiltersAlgorithm";
 require("@solana/wallet-adapter-react-ui/styles.css");
 
 const network = process.env.REACT_APP_SOLANA_NETWORK as WalletAdapterNetwork;
@@ -192,6 +193,16 @@ const App = () => {
                           <>
                             <TopNav />
                             <ProductsFilter />
+                          </>
+                        }
+                      />
+
+                      <Route
+                        path={RouteName.AlgorithmFilter}
+                        element={
+                          <>
+                            <TopNav />
+                            <AlgorithmFilter />
                           </>
                         }
                       />

@@ -8,6 +8,7 @@ export enum RouteName {
   SystemArchitectureFilter = "/system-architecture",
   HomeDesignFilter = "/home-designs",
   ProductsFilter = "/products",
+  AlgorithmFilter = "/algorithm",
   ClaimQubes = "/claimqubes",
   MyCollection = "/mycollection",
   sell = "/poZxCBHNsdSwErewqHQSELLlkGfsfGhJZCcxsDDxcdaswevJCiGopcxasedWarDfiGderUrghh",
