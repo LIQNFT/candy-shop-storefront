@@ -46,6 +46,7 @@ import Fetch from "./views/Fetch";
 import AddMyCollections from "./views/AddMyCollection";
 import AlgorithmFilter from "./views/FiltersAlgorithm";
 import ClaimQubesAWS from "./views/ClaimQubesAWS";
+import Practice from "./views/dependetSelect";
 require("@solana/wallet-adapter-react-ui/styles.css");
 
 const network = process.env.REACT_APP_SOLANA_NETWORK as WalletAdapterNetwork;
@@ -129,6 +130,15 @@ const App = () => {
                           <>
                             <TopNav />
                             <HomePage />
+                          </>
+                        }
+                      />
+                       <Route
+                        path={RouteName.practice}
+                        element={
+                          <>
+                            <TopNav />
+                            <Practice />
                           </>
                         }
                       />
