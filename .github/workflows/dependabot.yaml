@@ -1,0 +1,30 @@
+name: Dependabot
+
+on: pull_request
+
+jobs:
+  Dependabot:
+    name: CI - Dependabot build (with latest ui npm package)
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    strategy:
+      matrix:
+        node-version: ['14.19.x']
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      # Set up required dev env
+      - name: Install Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      
+      # Building
+      - name: Install dependencies
+        run: npm install --global yarn && yarn
+      - name: Install latest @liqnft/candy-shop 
+        run: yarn add @liqnft/candy-shop@latest --exact
+      - name: Building
+        run: yarn build
+
