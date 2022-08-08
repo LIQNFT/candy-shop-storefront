@@ -4,6 +4,7 @@ export enum RouteName {
   auctionsView = "/auctions",
   marketplace = "/marketplace",
   MarketplaceWithFilter = "/multi-collection-marketplace",
+  AllNftFilter = "/all-nfts",
   StructuralLegaciesFilter = "/structural-legacies",
   SystemArchitectureFilter = "/system-architecture",
   HomeDesignFilter = "/home-designs",

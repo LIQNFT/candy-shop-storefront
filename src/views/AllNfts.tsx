@@ -1,31 +1,34 @@
+// import { Orders, Stat } from "@liqnft/candy-shop";
 import { Stat } from "../public/Stat";
 import { CandyShopDataValidator } from "../public/Context";
-import { OrdersP } from "../public/OrdersP";
+import { OrdersSL } from "../public/OrdersSL";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { candyShop } from "../utils/candy-shop";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { MetaTagsPage } from "../utils/Metatags";
-import { OrdersA } from "../public/OrdersA";
-const AlgorithmFilter: React.FC = () => {
+import { OrdersALL } from "../public/OrdersALL";
+const AllNftFilter: React.FC = () => {
   MetaTagsPage(
-    "PRODUCTS",
-    "YOU CAN PLACE VARIOUS “PRODUCTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
-    "https://www.homeqube.io/products"
+    "STRUCTURAL LEGACIES",
+    "INTRODUCING HOMEQUBE’S STRUCTURAL LEGACY SYSTEM. EACH STRUCTURAL IS UNIQUE. WE GENERATED 2500 UNIQUE COMBINATIONS FROM OUR SYSTEMS ARCHITECTURE PLATFORM (DAPP). THIS LEGACY SYSTEM CAN BE USED TO BUILD LIMITLESS DESIGN CONFIGURATIONS FOR FLAT TOPOGRAPHIES AND UP TO 3 STORY HOUSING, ALLOWING OPEN ARCHITECTURE. OUR COMPOSITE MIX IS MORE SUSTAINABLE, WEATHER RESILIENT, AND EMITS MUCH LESS CARBON THAN REINFORCED CONCRETE/STEEL, AND CAN BE ERGONOMICALLY ASSEMBLED AT THE SITE.",
+    "https://www.homeqube.io/structural-legacies"
   );
   const wallet = useAnchorWallet();
 
   return (
     <>
       <nav className="candy-orders-filter menu text-uppercase pb-3 pt-3">
-      <li>
-          <NavLink to="/all-nfts">
-            ALL
+        <li>
+          <NavLink to="/all-nfts" className="active">
+           ALL
           </NavLink>
         </li>
         <li>
-          <NavLink to="/structural-legacies">Structural Legacies</NavLink>
+          <NavLink to="/structural-legacies">
+            Structural Legacies
+          </NavLink>
         </li>
         <li>
           <NavLink to="/home-designs">Home Designs</NavLink>
@@ -34,12 +37,10 @@ const AlgorithmFilter: React.FC = () => {
           <NavLink to="/system-architecture">SYSTEM ARCHITECTURE</NavLink>
         </li>
         <li>
-          <NavLink to="/products" >
-            PRODUCTS
-          </NavLink>
+          <NavLink to="/products">PRODUCTS</NavLink>
         </li>
         <li>
-          <NavLink to="/algorithm" className="active">ALGORITHM</NavLink>
+          <NavLink to="/algorithm">ALGORITHM</NavLink>
         </li>
       </nav>
       <DesContainer>
@@ -50,7 +51,7 @@ const AlgorithmFilter: React.FC = () => {
           style={{ paddingBottom: 50 }}
         />
         <CandyShopDataValidator>
-          <OrdersA
+          <OrdersALL
             wallet={wallet}
             candyShop={candyShop}
             defaultFilter={{ collection: "1", shop: "" }}
@@ -65,16 +66,15 @@ const AlgorithmFilter: React.FC = () => {
   );
 };
 
-export default AlgorithmFilter;
+export default AllNftFilter;
 
 const FILTERS = [
   {
-    name: "Algorithms",
+    name: "ALL",
     collectionId: "1",
-    identifier: [-45564651],
+    identifier: 0,
     qubeClaims: "",
-    description:
-      "YOU CAN PLACE VARIOUS “ALGORITHM” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
+    description: "",
   },
 ];
 
