@@ -18,11 +18,6 @@ const ProductsFilter: React.FC = () => {
   return (
     <>
       <nav className="candy-orders-filter menu text-uppercase pb-3 pt-3">
-      <li>
-          <NavLink to="/all-nfts">
-            ALL
-          </NavLink>
-        </li>
         <li>
           <NavLink to="/structural-legacies">Structural Legacies</NavLink>
         </li>

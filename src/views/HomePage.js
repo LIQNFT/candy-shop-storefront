@@ -198,7 +198,7 @@ function HomePage() {
                     Mint
                   </button>
                 </a>
-                <NavLink to="/all-nfts" className="a-link">
+                <NavLink to="/structural-legacies" className="a-link">
                   <button
                     className="button1 btn btn-lg rounded-pill"
                     type="button"
