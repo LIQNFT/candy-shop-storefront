@@ -104,6 +104,7 @@ const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
                       className={
                         item.url === pathname ? "active active-submenu" : ""
                       }
+                      key={item.url}
                     >
                       <Link to={item.url}>{item.name}</Link>
                     </MenuItem>
