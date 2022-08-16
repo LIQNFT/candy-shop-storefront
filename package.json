@@ -68,5 +68,10 @@
     "@types/react-dom": "^17.0.0",
     "@types/styled-components": "^5.1.14",
     "react-app-rewired": "^2.2.1"
+  },
+  "resolutions": {
+    "@ledgerhq/devices": "6.27.1",
+    "@ledgerhq/hw-transport": "6.27.1",
+    "@ledgerhq/hw-transport-webhid": "6.27.1"
   }
 }
