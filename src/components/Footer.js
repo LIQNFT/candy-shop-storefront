@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
+    
     <footer className="p-3 bg-dark text-white text-center pt-5 pb-5 text-uppercase ">
       <div className="container px-4">
         <div className="row gx-3">
@@ -40,7 +41,7 @@ function Footer() {
                   alt=""
                 />
               </a>
-              <a
+              {/* <a
                 href="https://www.facebook.com/Homeqube-Pte-Ltd-SG-110205561591276"
                 target="_blank"
                 rel="noreferrer noopener"
@@ -51,7 +52,7 @@ function Footer() {
                   src="../facebook.svg"
                   alt=""
                 />
-              </a>
+              </a> */}
               <a
                 href="https://www.linkedin.com/company/homeqube-pte-ltd/"
                 target="_blank"
