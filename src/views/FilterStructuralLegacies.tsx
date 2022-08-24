@@ -48,7 +48,7 @@ const StructuralLegaciesFilter: React.FC = () => {
           <OrdersSL
             wallet={wallet}
             candyShop={candyShop}
-            defaultFilter={{ collection: "1", shop: "" }}
+            defaultFilter={{ collection: "2", shop: "" }}
             walletConnectComponent={<WalletMultiButton />}
             filters={FILTERS}
             filterSearch

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as emailjs from "emailjs-com";
+import TweetEmbed from 'react-tweet-embed';
 
 class ClaimQubesAWS extends Component {
   state = {
@@ -158,8 +159,18 @@ class ClaimQubesAWS extends Component {
               )}
             </form>
           </div>
+          
         </section>
+        
+        {/* Twitter */}
+       <div className="hqtweet">
+       <TweetEmbed tweetId="1562007029539307520" />
+       </div>
+        
+                 
+        
       </>
+
     );
   }
 }
