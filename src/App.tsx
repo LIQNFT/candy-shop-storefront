@@ -151,6 +151,15 @@ const App = () => {
                           </>
                         }
                       />
+                       <Route
+                        path={RouteName.ClaimQubes}
+                        element={
+                          <>
+                            <TopNav />
+                            <ClaimQubesAWS />
+                          </>
+                        }
+                      />
                       <Route
                         path={RouteName.StructuralLegaciesFilter}
                         element={
@@ -160,7 +169,52 @@ const App = () => {
                           </>
                         }
                       />
+                       <Route
+                        path={RouteName.HomeDesignFilter}
+                        element={
+                          <>
+                            <TopNav />
+                            <HomeDesignFilter />
+                          </>
+                        }
+                      />
+                      <Route
+                        path={RouteName.SystemArchitectureFilter}
+                        element={
+                          <>
+                            <TopNav />
+                            <SystemArchitectureFilter />
+                          </>
+                        }
+                      />
+                       <Route
+                        path={RouteName.ProductsFilter}
+                        element={
+                          <>
+                            <TopNav />
+                            <ProductsFilter />
+                          </>
+                        }
+                      />
+                       <Route
+                        path={RouteName.AlgorithmFilter}
+                        element={
+                          <>
+                            <TopNav />
+                            <AlgorithmFilter />
+                          </>
+                        }
+                      />
                         <Route
+                        path={RouteName.MyCollection}
+                        element={
+                          <>
+                            <TopNav />
+                            <Fetch />
+                          </>
+                        }
+                      />
+                      <Route
                         path={RouteName.sell}
                         element={
                           <>
@@ -175,6 +229,15 @@ const App = () => {
                           <>
                             <TopNav />
                             <AuctionsView />
+                          </>
+                        }
+                      />
+                      <Route
+                        path={RouteName.addMyCollections}
+                        element={
+                          <>
+                            <TopNav />
+                            <AddMyCollections />
                           </>
                         }
                       />
