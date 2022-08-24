@@ -7,7 +7,6 @@ import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
-import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import {
   getPhantomWallet,
@@ -35,6 +34,7 @@ import SingleOrder from "./views/SingleOrder";
 import AuctionsView from "./views/AuctionsView";
 import ActivityView from "./views/ActivityView";
 import { RouteName } from "./constant/routeNames";
+import { NETWORK, RPC_HOST } from "./utils/candy-shop";
 import HomePage from "./views/HomePage";
 import ClaimQubes from "./views/ClaimQubes";
 import Footer from "./components/Footer";
@@ -49,9 +49,6 @@ import ClaimQubesAWS from "./views/ClaimQubesAWS";
 import Practice from "./views/dependetSelect";
 import AllNftFilter from "./views/AllNfts";
 require("@solana/wallet-adapter-react-ui/styles.css");
-
-const network = process.env.REACT_APP_SOLANA_NETWORK as WalletAdapterNetwork;
-const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST!;
 
 const theme = createTheme({
   palette: {
@@ -86,6 +83,7 @@ const currencyOptions = [
     currencyDecimals: 9,
     priceDecimals: 3,
     volumeDecimals: 1,
+    mainnetConnectionUrl: RPC_HOST,
   },
   {
     currencySymbol: "56p",
@@ -93,6 +91,7 @@ const currencyOptions = [
     currencyDecimals: 9,
     priceDecimals: 2,
     volumeDecimals: 1,
+    mainnetConnectionUrl: RPC_HOST,
   },
 ];
 
@@ -106,8 +105,8 @@ const App = () => {
       getSlopeWallet(),
       getSolflareWallet(),
       getSolflareWebWallet(),
-      getSolletWallet({ network }),
-      getSolletExtensionWallet({ network }),
+      getSolletWallet({ network: NETWORK }),
+      getSolletExtensionWallet({ network: NETWORK }),
       getSolongWallet(),
       getLedgerWallet(),
       getSafePalWallet(),
@@ -117,7 +116,7 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <ConnectionProvider endpoint={rpcHost}>
+      <ConnectionProvider endpoint={RPC_HOST!}>
         <WalletProvider wallets={wallets} autoConnect={true}>
           <CurrencyProvider currencyOptions={currencyOptions}>
             <WalletModalProvider>
@@ -167,92 +166,6 @@ const App = () => {
                           <>
                             <TopNav />
                             <MyCollection />
-                          </>
-                        }
-                      />
-                      <Route
-                        path={RouteName.MarketplaceWithFilter}
-                        element={
-                          <>
-                            <TopNav />
-                            <MarketplaceWithFilter />
-                          </>
-                        }
-                      />
-
-                      <Route
-                        path={RouteName.MyCollection}
-                        element={
-                          <>
-                            <TopNav />
-                            <Fetch />
-                          </>
-                        }
-                      />
-
-                      <Route
-                        path={RouteName.SystemArchitectureFilter}
-                        element={
-                          <>
-                            <TopNav />
-                            <SystemArchitectureFilter />
-                          </>
-                        }
-                      />
-                      <Route
-                        path={RouteName.HomeDesignFilter}
-                        element={
-                          <>
-                            <TopNav />
-                            <HomeDesignFilter />
-                          </>
-                        }
-                      />
-                      <Route
-                        path={RouteName.addMyCollections}
-                        element={
-                          <>
-                            <TopNav showCurrencyToggle={true} />
-                            <AddMyCollections />
-                          </>
-                        }
-                      />
-                      <Route
-                        path={RouteName.ProductsFilter}
-                        element={
-                          <>
-                            <TopNav />
-                            <ProductsFilter />
-                          </>
-                        }
-                      />
-
-                      <Route
-                        path={RouteName.AlgorithmFilter}
-                        element={
-                          <>
-                            <TopNav />
-                            <AlgorithmFilter />
-                          </>
-                        }
-                      />
-
-                      {/* <Route
-                        path={RouteName.ClaimQubes}
-                        element={
-                          <>
-                            <TopNav />
-                            <ClaimQubes />
-                          </>
-                        }
-                      /> */}
-                      
-                       <Route
-                        path={RouteName.ClaimQubes}
-                        element={
-                          <>
-                            <TopNav />
-                            <ClaimQubesAWS />
                           </>
                         }
                       />

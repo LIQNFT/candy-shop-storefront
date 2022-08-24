@@ -1568,10 +1568,10 @@
   resolved "https://registry.yarnpkg.com/@liqnft/candy-shop-types/-/candy-shop-types-0.2.17.tgz#08f396f8127bc644daa6fe112a4a71581052b316"
   integrity sha512-Tpp0Li+dgBUqJyV6IqhqW7ms7DPhvMXexBVo9Y2rIYr0gOZRTPlSyjOpggaHzPyGhQcn3VYt1q1Rmzdg/lLPtg==
 
-"@liqnft/candy-shop@0.5.12":
-  version "0.5.12"
-  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.5.12.tgz#ebb4160f68b4350fc0d47b6aaa7ef3e1c344d67f"
-  integrity sha512-UsIJOABr3L6VD4CD4sC6dVY1wuaBSNN+mx+xjVGmaNGYUHn/Wh3X4Cv7eR5zNGoHwtH/HGG2otAgnxbr1H4wQg==
+"@liqnft/candy-shop@0.5.13":
+  version "0.5.13"
+  resolved "https://registry.yarnpkg.com/@liqnft/candy-shop/-/candy-shop-0.5.13.tgz#92c2b78260262d03848a3f6a11edc0d6dfd8ce12"
+  integrity sha512-XIqamLDYWJivyNKyKTmYS+WkSijElfS7Cwxln4QV5vdvM7+T6P88RMNmAzFGmbA3t15kZTLDBwjv+wblLaJWoA==
   dependencies:
     "@google/model-viewer" "1.8.0"
     "@liqnft/candy-shop-sdk" "0.5.18"
