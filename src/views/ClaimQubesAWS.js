@@ -163,8 +163,8 @@ class ClaimQubesAWS extends Component {
 
         <section className="text-center">
           <p className="people-title">PRIZES AWAITS WHEN YOU BUY OUR NFTs</p>
-          <div className="hqtweet">
-            <TweetEmbed tweetId="1562007029539307520" />
+          <div className="container">
+              <TweetEmbed tweetId="1562007029539307520" className="hqtweet" />
           </div>
         </section>
         {/* Twitter */}

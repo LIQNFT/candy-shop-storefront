@@ -2263,6 +2263,7 @@ h4 {
 }
 
 .hqtweet{
-  display: flex;
-  justify-content: center;
+  display: flex!important;
+  flex-direction: column;
+  align-items: center;
 }
