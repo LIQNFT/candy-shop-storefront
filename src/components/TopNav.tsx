@@ -19,6 +19,7 @@ const ROUTES = [
   { url: RouteName.home, name: "Marketplace" },
   { url: RouteName.sell, name: "Sell" },
   { url: RouteName.auctionsView, name: "Auctions" },
+  { url: RouteName.drop, name: "Edition Drops" },
 ];
 
 const OTHER_LAYOUT_ROUTES = [

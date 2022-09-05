@@ -32,6 +32,8 @@ import MyCollection from "./views/MyCollection";
 import SingleOrder from "./views/SingleOrder";
 import AuctionsView from "./views/AuctionsView";
 import ActivityView from "./views/ActivityView";
+import Drop from "./views/Drop";
+
 import { RouteName } from "./constant/routeNames";
 import { NETWORK, RPC_HOST } from "./utils/candy-shop";
 
@@ -144,6 +146,15 @@ const App = () => {
                           <>
                             <TopNav />
                             <AuctionsView />
+                          </>
+                        }
+                      />
+                      <Route
+                        path={RouteName.drop}
+                        element={
+                          <>
+                            <TopNav />
+                            <Drop />
                           </>
                         }
                       />
