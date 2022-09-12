@@ -7,6 +7,7 @@ import Cards from "./Cards";
 import NftNavLinks from "../components/NavBar/NftNavLinks";
 import MarketplaceWithFilter from "./MarketplaceWithFilter";
 import LandingPage from "./landingpage";
+import RaffleDraw from "../components/RaffleDraw";
 
 function HomePage() {
   const accordionData = [
@@ -464,6 +465,11 @@ function HomePage() {
           )}
         </div>
       </section>
+
+      <section>
+        <RaffleDraw/>
+      </section>
+      
 
       <section className="text-center content-eco1-bg pt-5">
         <img

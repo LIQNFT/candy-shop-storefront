@@ -2267,3 +2267,14 @@ h4 {
   flex-direction: column;
   align-items: center;
 }
+
+.link-main-color{
+  color:  var(--main-text-color);
+  text-decoration: underline;
+}
+.link-main-color:hover{
+  color:#1d1d1d !important;
+}
+.rem-2{
+  font-size: 2rem;
+}
