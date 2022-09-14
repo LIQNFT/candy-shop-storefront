@@ -59,7 +59,7 @@ function HomePage() {
       state7: `d-none`, //Display None for this Step
       state8: `d-none`, //Display None for this Step
       statelink: `d-none`, //Display None for this Link  
-      statelink3: `d-none`, //Display None for this Link  
+     
       statelink6: `d-none`,  //Display None for this Link   
     },
     {
