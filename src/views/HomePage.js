@@ -14,21 +14,20 @@ function HomePage() {
     {
       title: `HOW TO SET UP YOUR WALLET?`,
       step1: ` WE CURRENTLY SUPPORTING PHANTOM WALLET FOR TRANSACTIONS ON OUR WEBSITE. VISIT THIS`,
-      state2: `d-none`,
-      state3: `d-none`,
-      state4: `d-none`,
-      state5: `d-none`,
-      state6: `d-none`,
-      state7: `d-none`,
-      state8: `d-none`,
-      statelink1: `d-none`,
-      statelink2: `d-none`,
-      statelink3: `d-none`,
-      statelink4: `d-none`,
-      statelink5: `d-none`,
-      statelink6: `d-none`,
-      statelink7: `d-none`,
-      statelink8: `d-none`,
+      steplink: `https://help.phantom.app/hc/en-us/articles/4406388623251-How-to-create-a-new-wallet`,//For Links
+      linkname: `guide`, //For LinkName
+      othertext: `TO HELP YOU SET UP YOUR WALLET.`, //For Other Text after Link
+      //--------------Display Attributes--------------
+      state2: `d-none`, //Display None for this Step
+      state3: `d-none`, //Display None for this Step
+      state4: `d-none`, //Display None for this Step
+      state5: `d-none`, //Display None for this Step
+      state6: `d-none`, //Display None for this Step
+      state7: `d-none`, //Display None for this Step
+      state8: `d-none`, //Display None for this Step   
+      statelink3: `d-none`, //Display None for this Link
+      statelink6: `d-none`, //Display None for this Link
+    
     },
     {
       title: "How to buy NFT from this website?",
@@ -38,18 +37,12 @@ function HomePage() {
       step4: `STEP 4: CLICK THE “BUY NOW” BUTTON TO BUY AN NFT.`,
       step5: `STEP 5: CLICK APPROVE FOR THE TRANSACTION ON YOUR WALLET.`,
       step8:  `NOTE: UPON BUYING OUR “STRUCTURAL LEGACIES” COLLECTION, YOU ARE ELIGIBLE TO CLAIM “QUBES”, THE TOKEN OF HOMEQUBE.`,
-      state6: `d-none`,
-      state7: `d-none`,
-      
-      statelink: `d-none`,
-      statelink1: `d-none`,
-      statelink3: `d-none`,
-      statelink4: `d-none`,
-      statelink5: `d-none`,
-      statelink6: `d-none`,
-      statelink7: `d-none`,
-      statelink2: `d-none`,
-      statelink8: `d-none`,
+      //--------------Display Attributes--------------
+      state6: `d-none`, //Display None for this Step
+      state7: `d-none`, //Display None for this Step       
+      statelink: `d-none`,   //Display None for this Link   
+      statelink3: `d-none`, //Display None for this Link
+      statelink6: `d-none`, //Display None for this Link  
     },
     {
       title: "HOW TO DOWNLOAD AND OPEN YOUR 3D MODEL FILES?",
@@ -58,17 +51,16 @@ function HomePage() {
       step3: `STEP 3: CLICK ON THE NFT.`,
       step4: `STEP 4: CLICK “DOWNLOAD GLB”. YOUR 3D FILE WILL BE DOWNLOADED.`,
       step5: `STEP 5: TO OPEN YOUR 3D FILE, ADD A “.GLB” WHEN YOU RENAME IT.`,
-      state6: `d-none`,
-      state7: `d-none`,
-      state8: `d-none`,
-      statelink: `d-none`,
-      statelink1: `d-none`,
-      statelink2: `d-none`,
-      statelink3: `d-none`,
-      statelink5: `d-none`,
-      statelink6: `d-none`,
-      statelink7: `d-none`,
-      statelink8: `d-none`,
+      steplink1: `/mycollection`, //For Links
+      linkname1: `MY COLLECTION`, //For Link Name
+      othertext1: `IN THE NAVIGATION BAR. YOU WILL SEE THE LIST OF NFTS YOU COLLECTED FROM OUR WEBSITE.`, ////For Othertext after Link
+      //--------------Display Attributes--------------
+      state6: `d-none`, //Display None for this Step
+      state7: `d-none`, //Display None for this Step
+      state8: `d-none`, //Display None for this Step
+      statelink: `d-none`, //Display None for this Link  
+      statelink3: `d-none`, //Display None for this Link  
+      statelink6: `d-none`,  //Display None for this Link   
     },
     {
       title: "HOW TO CLAIM YOUR QUBE?",
@@ -78,94 +70,86 @@ function HomePage() {
       step4: `STEP 3: PASTE THE URL IN THE TEXT BOX.`,
       step5: `STEP 4: CLICK THE 'SUBMIT' BUTTON THEN WAIT FOR THE AIRDROP OF THE QUBE TOKEN WITHIN 2 DAYS.`,
       step7: `NOTE: IN CASE YOU DIDN’T RECEIVE THE QUBE TOKEN WITHIN 2 DAYS, YOU MAY EMAIL US AT `,
-
-      statelink4: `d-none`,
-      state8: `d-none`,
-      statelink: `d-none`,
-      statelink1: `d-none`,
-      statelink5: `d-none`,
-      statelink7: `d-none`,
-      statelink8: `d-none`,
+      steplink: `https://explorer.solana.com/address/8VzbpTNAJs5b493qNJVqKAjuNAQWFdjrdf1pd9uUKZcB`, //For Links
+      linkname: `ADDRESS.`, //For Link Name
+      steplink1: `https://explorer.solana.com/`, //For Links
+      linkname1: `(HTTPS://EXPLORER.SOLANA.COM/) `, //For Link Name
+      othertext1: `.`,//For Othertext
+      steplink2: `/claimqubes`,//For Links
+      linkname2: `CLAIM QUBE`,//For Link Name
+      othertext2: `.`,//For Othertext
+      steplink3: `mailto:ABOUT@HOMEQUBE.COM`,//For Links
+      linkname3: ` ABOUT@HOMEQUBE.COM`,//For Link Name
+      othertext3: `.`,//For Othertext
+      //--------------Display Attributes--------------
+      state8: `d-none`,  //Display None for this Step
     },
     {
       title: `HOW MUCH QUBE WILL I RECEIVE AFTER BUYING A HOMEQUBE NFT?`,
       step1: `THE AMOUNT OF QUBE THAT YOU WILL BE RECEIVED WILL BE DEPENDENT ON THE EXCHANGE RATE OF SOLANA TO USD DURING YOUR PURCHASE. WE PEGGED OUR QUBE TOKEN AT $0.75 PER QUBE.`,
       step2: `FOR EXAMPLE, IF YOU BOUGHT OUR NFT AT 9 SOL AT USD 45 PER SOL, YOU WILL RECEIVE 540 QUBES.`,
       step3: `NOTE: YOU WILL NOT ABLE TO RECEIVE QUBE TOKEN AUTOMATICALLY WHEN YOU BUY A HOMEQUBE NFT.`,
-      state4: `d-none`,
-      state5: `d-none`,
-      state6: `d-none`,
-      state7: `d-none`,
-      state8: `d-none`,
-      statelink1: `d-none`,
-      statelink2: `d-none`,
-      statelink1: `d-none`,
-      statelink3: `d-none`,
-      statelink4: `d-none`,
-      statelink6: `d-none`,
-      statelink7: `d-none`,
-      statelink: `d-none`,
-      statelink8: `d-none`,
+      steplink2: `/claimqubes`,//For Links
+      linkname2: `CLAIM QUBE`,//For Link Name
+      othertext2: `Here`,//For Othertext
+      //--------------Display Attributes--------------
+      state4: `d-none`,//Display None for this Step
+      state5: `d-none`,//Display None for this Step
+      state6: `d-none`,//Display None for this Step
+      state7: `d-none`,//Display None for this Step
+      state8: `d-none`,//Display None for this Step
+      statelink6: `d-none`, //Display None for this Link  
+      statelink: `d-none`, //Display None for this Link  
+
     },
     {
       title: `CAN I POST MY OWN NFT COLLECTION? WHAT KIND OF NFTS CAN I AUCTION TO SELL IN THIS WEBSITE?`,
       step1: `YOU CAN POST YOUR NFTS HERE RELATED TO HOME DESIGNS, ASSEMBLIES, AND PARTS. WE ACCEPT IMAGE (JPG, GIF, SVG), 3D (GLB) FILES FOR THE NFTS.`,
       step2: `NOTE: POSTING AN NFT INTO OUR WEBSITE COSTS 5 QUBES.`,
-      state4: `d-none`,
-      state5: `d-none`,
-      state6: `d-none`,
-      state7: `d-none`,
-      state8: `d-none`,
-      state3: `d-none`,
-      statelink1: `d-none`,
-      statelink2: `d-none`,     
-      statelink3: `d-none`,
-      statelink4: `d-none`,
-      statelink5: `d-none`,
-      statelink6: `d-none`,
-      statelink7: `d-none`,
-      statelink: `d-none`,
-      statelink8: `d-none`,
+      //--------------Display Attributes--------------
+      state4: `d-none`,//Display None for this Step
+      state5: `d-none`,//Display None for this Step
+      state6: `d-none`,//Display None for this Step
+      state7: `d-none`,//Display None for this Step
+      state8: `d-none`,//Display None for this Step
+      state3: `d-none`,//Display None for this Step    
+      statelink3: `d-none`,//Display None for this Link 
+      statelink6: `d-none`,//Display None for this Link 
+      statelink: `d-none`,//Display None for this Link 
+
       
     },
     {
       title: `HOW TO ADD YOUR HOME DESIGN NFT COLLECTION TO OUR WEBSITE?`,
       step1: `We will adding this functionality soon.`,
-      statelink: `d-none`,
-      state2: `d-none`,
-      state3: `d-none`,
-      state4: `d-none`,
-      state5: `d-none`,
-      state6: `d-none`,
-      state7: `d-none`,
-      state8: `d-none`,
-      statelink2: `d-none`,
-      statelink1: `d-none`,
-      statelink3: `d-none`,
-      statelink5: `d-none`,
-      statelink6: `d-none`,
-      statelink8: `d-none`,
+      //--------------Display Attributes--------------
+      state2: `d-none`,//Display None for this Step
+      state3: `d-none`,//Display None for this Step
+      state4: `d-none`,//Display None for this Step
+      state5: `d-none`,//Display None for this Step
+      state6: `d-none`,//Display None for this Step
+      state7: `d-none`,//Display None for this Step
+      state8: `d-none`, //Display None for this Step
+      statelink: `d-none`, //Display None for this Link   
+      statelink3: `d-none`, //Display None for this Link 
+      statelink6: `d-none`, //Display None for this Link    
     },
     {
       title: `HOW CAN I KNOW MORE ABOUT HOMEQUBE?`,
       step1: `YOU MAY VISIT`,
-      state2: `d-none`,
-      state3: `d-none`,
-      state4: `d-none`,
-      state5: `d-none`,
-      state6: `d-none`,
-      state7: `d-none`,
-      state8: `d-none`,
-      statelink1: `d-none`,
-      statelink2: `d-none`,     
-      statelink3: `d-none`,
-      statelink4: `d-none`,
-      statelink5: `d-none`,
-      statelink6: `d-none`,
-      statelink7: `d-none`,
-      statelink: `d-none`,
-      
-      
+      steplink: `https://www.qube.homeqube.com/`,//For Links
+      linkname: `WWW.QUBE.HOMEQUBE.COM`,//For Link Name
+      othertext: `TO GET MORE DETAILS ABOUT OUR PLATFORM.`,//For Othertext
+      //--------------Display Attributes--------------
+      state2: `d-none`,//Display None for this Step
+      state3: `d-none`,//Display None for this Step
+      state4: `d-none`,//Display None for this Step
+      state5: `d-none`,//Display None for this Step
+      state6: `d-none`,//Display None for this Step
+      state7: `d-none`,//Display None for this Step
+      state8: `d-none`,//Display None for this Step     
+      statelink3: `d-none`, //Display None for this Link    
+      statelink6: `d-none`, //Display None for this Link         
     },
   ];
   return (
@@ -424,14 +408,20 @@ function HomePage() {
               state7,
               state8,
               statelink,
-              statelink1,
-              statelink2,
-              statelink3,
-              statelink4,
-              statelink5,
+              statelink3,      
               statelink6,
-              statelink7,
-              statelink8,
+              steplink,
+              othertext,
+              linkname,
+              steplink1,
+              othertext1,
+              linkname1,
+              steplink2,
+              othertext2,
+              linkname2,
+              steplink3,
+              othertext3,
+              linkname3
             }) => (
               <Accordion
                 title={title}
@@ -452,14 +442,20 @@ function HomePage() {
                 step8={step8}
                 state8={state8}
                 statelink={statelink}
-                statelink1={statelink1}
-                statelink2={statelink2}
                 statelink3={statelink3}
-                statelink4={statelink4}
-                statelink5={statelink5}
                 statelink6={statelink6}
-                statelink7={statelink7}
-                statelink8={statelink8}
+                steplink={steplink}
+                linkname={linkname}
+                othertext={othertext}
+                steplink1={steplink1}
+                linkname1={linkname1}
+                othertext1={othertext1}
+                steplink2={steplink2}
+                linkname2={linkname2}
+                othertext2={othertext2}
+                steplink3={steplink3}
+                linkname3={linkname3}
+                othertext3={othertext3}
               />
             )
           )}
