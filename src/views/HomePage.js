@@ -8,13 +8,20 @@ import NftNavLinks from "../components/NavBar/NftNavLinks";
 import MarketplaceWithFilter from "./MarketplaceWithFilter";
 import LandingPage from "./landingpage";
 import RaffleDraw from "../components/RaffleDraw";
+import { useTranslation } from "react-i18next";
 
 function HomePage() {
+  const { t, i18n } = useTranslation();
+
+  const handleChangelng = (lng) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem("lng", lng);
+  };
   const accordionData = [
     {
       title: `HOW TO SET UP YOUR WALLET?`,
       step1: ` WE CURRENTLY SUPPORTING PHANTOM WALLET FOR TRANSACTIONS ON OUR WEBSITE. VISIT THIS`,
-      steplink: `https://help.phantom.app/hc/en-us/articles/4406388623251-How-to-create-a-new-wallet`,//For Links
+      steplink: `https://help.phantom.app/hc/en-us/articles/4406388623251-How-to-create-a-new-wallet`, //For Links
       linkname: `guide`, //For LinkName
       othertext: `TO HELP YOU SET UP YOUR WALLET.`, //For Other Text after Link
       //--------------Display Attributes--------------
@@ -24,10 +31,9 @@ function HomePage() {
       state5: `d-none`, //Display None for this Step
       state6: `d-none`, //Display None for this Step
       state7: `d-none`, //Display None for this Step
-      state8: `d-none`, //Display None for this Step   
+      state8: `d-none`, //Display None for this Step
       statelink3: `d-none`, //Display None for this Link
       statelink6: `d-none`, //Display None for this Link
-    
     },
     {
       title: "How to buy NFT from this website?",
@@ -36,13 +42,13 @@ function HomePage() {
       step3: `STEP 3: FIND YOUR PREFERRED NFT. YOU CAN ALSO VIEW ALL THE INFORMATION ABOUT THAT NFT WITH THEIR ATTRIBUTES AND PRICE. `,
       step4: `STEP 4: CLICK THE “BUY NOW” BUTTON TO BUY AN NFT.`,
       step5: `STEP 5: CLICK APPROVE FOR THE TRANSACTION ON YOUR WALLET.`,
-      step8:  `NOTE: UPON BUYING OUR “STRUCTURAL LEGACIES” COLLECTION, YOU ARE ELIGIBLE TO CLAIM “QUBES”, THE TOKEN OF HOMEQUBE.`,
+      step8: `NOTE: UPON BUYING OUR “STRUCTURAL LEGACIES” COLLECTION, YOU ARE ELIGIBLE TO CLAIM “QUBES”, THE TOKEN OF HOMEQUBE.`,
       //--------------Display Attributes--------------
       state6: `d-none`, //Display None for this Step
-      state7: `d-none`, //Display None for this Step       
-      statelink: `d-none`,   //Display None for this Link   
+      state7: `d-none`, //Display None for this Step
+      statelink: `d-none`, //Display None for this Link
       statelink3: `d-none`, //Display None for this Link
-      statelink6: `d-none`, //Display None for this Link  
+      statelink6: `d-none`, //Display None for this Link
     },
     {
       title: "HOW TO DOWNLOAD AND OPEN YOUR 3D MODEL FILES?",
@@ -58,9 +64,9 @@ function HomePage() {
       state6: `d-none`, //Display None for this Step
       state7: `d-none`, //Display None for this Step
       state8: `d-none`, //Display None for this Step
-      statelink: `d-none`, //Display None for this Link  
-     
-      statelink6: `d-none`,  //Display None for this Link   
+      statelink: `d-none`, //Display None for this Link
+
+      statelink6: `d-none`, //Display None for this Link
     },
     {
       title: "HOW TO CLAIM YOUR QUBE?",
@@ -74,82 +80,79 @@ function HomePage() {
       linkname: `ADDRESS.`, //For Link Name
       steplink1: `https://explorer.solana.com/`, //For Links
       linkname1: `(HTTPS://EXPLORER.SOLANA.COM/) `, //For Link Name
-      othertext1: `.`,//For Othertext
-      steplink2: `/claimqubes`,//For Links
-      linkname2: `CLAIM QUBE`,//For Link Name
-      othertext2: `.`,//For Othertext
-      steplink3: `mailto:ABOUT@HOMEQUBE.COM`,//For Links
-      linkname3: ` ABOUT@HOMEQUBE.COM`,//For Link Name
-      othertext3: `.`,//For Othertext
+      othertext1: `.`, //For Othertext
+      steplink2: `/claimqubes`, //For Links
+      linkname2: `CLAIM QUBE`, //For Link Name
+      othertext2: `.`, //For Othertext
+      steplink3: `mailto:ABOUT@HOMEQUBE.COM`, //For Links
+      linkname3: ` ABOUT@HOMEQUBE.COM`, //For Link Name
+      othertext3: `.`, //For Othertext
       //--------------Display Attributes--------------
-      state8: `d-none`,  //Display None for this Step
+      state8: `d-none`, //Display None for this Step
     },
     {
       title: `HOW MUCH QUBE WILL I RECEIVE AFTER BUYING A HOMEQUBE NFT?`,
       step1: `THE AMOUNT OF QUBE THAT YOU WILL BE RECEIVED WILL BE DEPENDENT ON THE EXCHANGE RATE OF SOLANA TO USD DURING YOUR PURCHASE. WE PEGGED OUR QUBE TOKEN AT $0.75 PER QUBE.`,
       step2: `FOR EXAMPLE, IF YOU BOUGHT OUR NFT AT 9 SOL AT USD 45 PER SOL, YOU WILL RECEIVE 540 QUBES.`,
       step3: `NOTE: YOU WILL NOT ABLE TO RECEIVE QUBE TOKEN AUTOMATICALLY WHEN YOU BUY A HOMEQUBE NFT.`,
-      steplink2: `/claimqubes`,//For Links
-      linkname2: `CLAIM QUBE`,//For Link Name
-      othertext2: `Here`,//For Othertext
+      steplink2: `/claimqubes`, //For Links
+      linkname2: `CLAIM QUBE`, //For Link Name
+      othertext2: `Here`, //For Othertext
       //--------------Display Attributes--------------
-      state4: `d-none`,//Display None for this Step
-      state5: `d-none`,//Display None for this Step
-      state6: `d-none`,//Display None for this Step
-      state7: `d-none`,//Display None for this Step
-      state8: `d-none`,//Display None for this Step
-      statelink6: `d-none`, //Display None for this Link  
-      statelink: `d-none`, //Display None for this Link  
-
+      state4: `d-none`, //Display None for this Step
+      state5: `d-none`, //Display None for this Step
+      state6: `d-none`, //Display None for this Step
+      state7: `d-none`, //Display None for this Step
+      state8: `d-none`, //Display None for this Step
+      statelink6: `d-none`, //Display None for this Link
+      statelink: `d-none`, //Display None for this Link
     },
     {
       title: `CAN I POST MY OWN NFT COLLECTION? WHAT KIND OF NFTS CAN I AUCTION TO SELL IN THIS WEBSITE?`,
       step1: `YOU CAN POST YOUR NFTS HERE RELATED TO HOME DESIGNS, ASSEMBLIES, AND PARTS. WE ACCEPT IMAGE (JPG, GIF, SVG), 3D (GLB) FILES FOR THE NFTS.`,
       step2: `NOTE: POSTING AN NFT INTO OUR WEBSITE COSTS 5 QUBES.`,
       //--------------Display Attributes--------------
-      state4: `d-none`,//Display None for this Step
-      state5: `d-none`,//Display None for this Step
-      state6: `d-none`,//Display None for this Step
-      state7: `d-none`,//Display None for this Step
-      state8: `d-none`,//Display None for this Step
-      state3: `d-none`,//Display None for this Step    
-      statelink3: `d-none`,//Display None for this Link 
-      statelink6: `d-none`,//Display None for this Link 
-      statelink: `d-none`,//Display None for this Link 
-
-      
+      state4: `d-none`, //Display None for this Step
+      state5: `d-none`, //Display None for this Step
+      state6: `d-none`, //Display None for this Step
+      state7: `d-none`, //Display None for this Step
+      state8: `d-none`, //Display None for this Step
+      state3: `d-none`, //Display None for this Step
+      statelink3: `d-none`, //Display None for this Link
+      statelink6: `d-none`, //Display None for this Link
+      statelink: `d-none`, //Display None for this Link
     },
     {
       title: `HOW TO ADD YOUR HOME DESIGN NFT COLLECTION TO OUR WEBSITE?`,
       step1: `We will adding this functionality soon.`,
       //--------------Display Attributes--------------
-      state2: `d-none`,//Display None for this Step
-      state3: `d-none`,//Display None for this Step
-      state4: `d-none`,//Display None for this Step
-      state5: `d-none`,//Display None for this Step
-      state6: `d-none`,//Display None for this Step
-      state7: `d-none`,//Display None for this Step
+      state2: `d-none`, //Display None for this Step
+      state3: `d-none`, //Display None for this Step
+      state4: `d-none`, //Display None for this Step
+      state5: `d-none`, //Display None for this Step
+      state6: `d-none`, //Display None for this Step
+      state7: `d-none`, //Display None for this Step
       state8: `d-none`, //Display None for this Step
-      statelink: `d-none`, //Display None for this Link   
-      statelink3: `d-none`, //Display None for this Link 
-      statelink6: `d-none`, //Display None for this Link    
+      statelink: `d-none`, //Display None for this Link
+      statelink3: `d-none`, //Display None for this Link
+      statelink6: `d-none`, //Display None for this Link
     },
     {
       title: `HOW CAN I KNOW MORE ABOUT HOMEQUBE?`,
       step1: `YOU MAY VISIT`,
-      steplink: `https://www.qube.homeqube.com/`,//For Links
-      linkname: `WWW.QUBE.HOMEQUBE.COM`,//For Link Name
-      othertext: `TO GET MORE DETAILS ABOUT OUR PLATFORM.`,//For Othertext
+      steplink: `https://www.qube.homeqube.com/`, //For Links
+      linkname: `WWW.QUBE.HOMEQUBE.COM`, //For Link Name
+      othertext: `TO GET MORE DETAILS ABOUT OUR PLATFORM.`, //For Othertext
       //--------------Display Attributes--------------
-      state2: `d-none`,//Display None for this Step
-      state3: `d-none`,//Display None for this Step
-      state4: `d-none`,//Display None for this Step
-      state5: `d-none`,//Display None for this Step
-      state6: `d-none`,//Display None for this Step
-      state7: `d-none`,//Display None for this Step
-      state8: `d-none`,//Display None for this Step     
-      statelink3: `d-none`, //Display None for this Link    
-      statelink6: `d-none`, //Display None for this Link         
+      state2: `d-none`, //Display None for this Step
+      state3: `d-none`, //Display None for this Step
+      state4: `d-none`, //Display None for this Step
+      state5: `d-none`, //Display None for this Step
+      state6: `d-none`, //Display None for this Step
+      state7: `d-none`, //Display None for this Step
+      state8: `d-none`, //Display None for this Step
+      statelink3: `d-none`, //Display None for this Link
+      statelink6: `d-none`, //Display None for this Link
     },
   ];
   return (
@@ -378,6 +381,7 @@ function HomePage() {
         <div className="col-md eco-1-title">
           <p className="ai-title-home">Getting started</p>
         </div>
+        <div></div>
         <p className="q-tokenomics-showcase-intro-lead p-3 text-uppercase"></p>
         <center>
           <div className="faq-rectangle"></div>
@@ -385,8 +389,15 @@ function HomePage() {
           <br />
         </center>
       </section>
+      <section>
+        <button onClick={() => handleChangelng("en")}>English</button>
+        <button onClick={() => handleChangelng("tg")}>Filipino</button>
+      </section>
 
-      <section className="p-4 text-dark text-start bg-white" style={{fontSize: "2rem"}}>
+      <section
+        className="p-4 text-dark text-start bg-white"
+        style={{ fontSize: "2rem" }}
+      >
         <div className="accordion text-uppercase">
           {accordionData.map(
             ({
@@ -408,7 +419,7 @@ function HomePage() {
               state7,
               state8,
               statelink,
-              statelink3,      
+              statelink3,
               statelink6,
               steplink,
               othertext,
@@ -421,7 +432,7 @@ function HomePage() {
               linkname2,
               steplink3,
               othertext3,
-              linkname3
+              linkname3,
             }) => (
               <Accordion
                 title={title}
@@ -463,9 +474,8 @@ function HomePage() {
       </section>
 
       <section>
-        <RaffleDraw/>
+        <RaffleDraw />
       </section>
-      
 
       <section className="text-center content-eco1-bg pt-5">
         <img
@@ -481,13 +491,12 @@ function HomePage() {
           className="img-fluid right-box-2nd-animation-3"
         />
         <section className="pt-5 text-center text-center content-eco1-bg text-sm-start">
-        
           <div className="col-md eco-1-title">
             <p className="ai-title-home">NFT COLLECTIONS</p>
           </div>
-           <p className="q-tokenomics-showcase-intro-lead p-3 text-uppercase"></p> 
-          
-           <center> 
+          <p className="q-tokenomics-showcase-intro-lead p-3 text-uppercase"></p>
+
+          <center>
             <div className="faq-rectangle"></div>
           </center>
           <br />
@@ -498,7 +507,6 @@ function HomePage() {
             <NftNavLinks />
         </nav> */}
         {/* <Cards /> */}
-        
       </section>
 
       {/* <section className="text-center content-eco1-bg p-5">
