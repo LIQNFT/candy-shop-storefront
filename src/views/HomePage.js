@@ -211,8 +211,8 @@ function HomePage() {
             </div>
             <div className="yt-vid">
               <video width="100%" height="100%" autoPlay loop muted>
-                <source src={Homeqube} type="video/mp4" />
-                <source src={HomequbeOGG} type="video/ogg" />
+                <source src="https://qube-website-react.s3.amazonaws.com/Homeqube-ICO.mp4.mp4" type="video/mp4" />
+                <source src="https://qube-website-react.s3.amazonaws.com/Homeqube-ICO.ogg.ogg" type="video/ogg" />
               </video>
               {/* <Player 
              src={videoSrc}
