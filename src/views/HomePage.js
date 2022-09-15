@@ -17,13 +17,26 @@ function HomePage() {
     i18n.changeLanguage(lng);
     localStorage.setItem("lng", lng);
   };
+
+  const GlobeIcon = ({ width = 40, height = 40, color = "#4e4e4e" }) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      fill={color}
+      class="bi bi-globe"
+      viewBox="0 0 16 16"
+    >
+      <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z" />
+    </svg>
+  );
   const accordionData = [
     {
-      title: `HOW TO SET UP YOUR WALLET?`,
-      step1: ` WE CURRENTLY SUPPORTING PHANTOM WALLET FOR TRANSACTIONS ON OUR WEBSITE. VISIT THIS`,
+      title: `${t("ITEM1")}`,
+      step1: ` ${t("SUBITEM1")}`,
       steplink: `https://help.phantom.app/hc/en-us/articles/4406388623251-How-to-create-a-new-wallet`, //For Links
-      linkname: `guide`, //For LinkName
-      othertext: `TO HELP YOU SET UP YOUR WALLET.`, //For Other Text after Link
+      linkname: `${t("LINKITEM1")}`, //For LinkName
+      othertext: `${t("OTHERTEXT1")}`, //For Other Text after Link
       //--------------Display Attributes--------------
       state2: `d-none`, //Display None for this Step
       state3: `d-none`, //Display None for this Step
@@ -36,13 +49,13 @@ function HomePage() {
       statelink6: `d-none`, //Display None for this Link
     },
     {
-      title: "How to buy NFT from this website?",
-      step1: `STEP 1: CONNECT YOUR WALLET TO OUR MARKETPLACE BY CLICKING ‘CONNECT WALLET’`,
-      step2: `STEP 2: ON OUR WEBSITE, YOU WILL SEE DIFFERENT CATEGORIES TO CHOOSE FROM. CLICK AND SEE THE LIST OF THE NFTS BASED ON THAT CATEGORY.`,
-      step3: `STEP 3: FIND YOUR PREFERRED NFT. YOU CAN ALSO VIEW ALL THE INFORMATION ABOUT THAT NFT WITH THEIR ATTRIBUTES AND PRICE. `,
-      step4: `STEP 4: CLICK THE “BUY NOW” BUTTON TO BUY AN NFT.`,
-      step5: `STEP 5: CLICK APPROVE FOR THE TRANSACTION ON YOUR WALLET.`,
-      step8: `NOTE: UPON BUYING OUR “STRUCTURAL LEGACIES” COLLECTION, YOU ARE ELIGIBLE TO CLAIM “QUBES”, THE TOKEN OF HOMEQUBE.`,
+      title: `${t("ITEM2")}`,
+      step1: `STEP 1: ${t("ITEM2-SUBITEM1")}`,
+      step2: `STEP 2: ${t("ITEM2-SUBITEM2")}`,
+      step3: `STEP 3: ${t("ITEM2-SUBITEM3")}`,
+      step4: `STEP 4: ${t("ITEM2-SUBITEM4")}`,
+      step5: `STEP 5: ${t("ITEM2-SUBITEM5")}`,
+      step8: `${t("ITEM2-SUBITEM6")}`,
       //--------------Display Attributes--------------
       state6: `d-none`, //Display None for this Step
       state7: `d-none`, //Display None for this Step
@@ -51,15 +64,15 @@ function HomePage() {
       statelink6: `d-none`, //Display None for this Link
     },
     {
-      title: "HOW TO DOWNLOAD AND OPEN YOUR 3D MODEL FILES?",
-      step1: `STEP 1: CONNECT YOUR WALLET TO OUR MARKETPLACE BY CLICKING ‘CONNECT WALLET’`,
-      step2: `STEP 2: GO TO `,
-      step3: `STEP 3: CLICK ON THE NFT.`,
-      step4: `STEP 4: CLICK “DOWNLOAD GLB”. YOUR 3D FILE WILL BE DOWNLOADED.`,
-      step5: `STEP 5: TO OPEN YOUR 3D FILE, ADD A “.GLB” WHEN YOU RENAME IT.`,
+      title: `${t("ITEM3")}`,
+      step1: `STEP 1: ${t("ITEM3-SUBITEM1")}`,
+      step2: `STEP 2: ${t("ITEM3-SUBITEM2")}`,
+      step3: `STEP 3: ${t("ITEM3-SUBITEM3")}`,
+      step4: `STEP 4: ${t("ITEM3-SUBITEM4")}`,
+      step5: `STEP 5: ${t("ITEM3-SUBITEM5")}`,
       steplink1: `/mycollection`, //For Links
-      linkname1: `MY COLLECTION`, //For Link Name
-      othertext1: `IN THE NAVIGATION BAR. YOU WILL SEE THE LIST OF NFTS YOU COLLECTED FROM OUR WEBSITE.`, ////For Othertext after Link
+      linkname1: `${t("ITEM3-LINKITEM1")}`, //For Link Name
+      othertext1: `${t("ITEM3-OTHERTEXT1")}`, ////For Othertext after Link
       //--------------Display Attributes--------------
       state6: `d-none`, //Display None for this Step
       state7: `d-none`, //Display None for this Step
@@ -69,20 +82,20 @@ function HomePage() {
       statelink6: `d-none`, //Display None for this Link
     },
     {
-      title: "HOW TO CLAIM YOUR QUBE?",
-      step1: `YOU ARE ELIGIBLE TO CLAIM QUBE TOKEN WHEN YOU BUY OUR STRUCTURAL LEGACY NFTS. MAKE SURE THAT THE NFT YOU BOUGHT HAS THE SYMBOL “HOMEQUBE” AND IS MINTED FROM THIS`,
-      step2: `STEP 1: FIND THE URL CONTAINING YOUR NFT AT SOLANA EXPLORER `,
-      step3: `STEP 2: GO TO`,
-      step4: `STEP 3: PASTE THE URL IN THE TEXT BOX.`,
-      step5: `STEP 4: CLICK THE 'SUBMIT' BUTTON THEN WAIT FOR THE AIRDROP OF THE QUBE TOKEN WITHIN 2 DAYS.`,
-      step7: `NOTE: IN CASE YOU DIDN’T RECEIVE THE QUBE TOKEN WITHIN 2 DAYS, YOU MAY EMAIL US AT `,
+      title: `${t("ITEM4")}`,
+      step1: `${t("ITEM4-SUBITEM1")}`,
+      step2: `STEP 1: ${t("ITEM4-SUBITEM2")} `,
+      step3: `STEP 2: ${t("ITEM4-SUBITEM3")}`,
+      step4: `STEP 3: ${t("ITEM4-SUBITEM4")}`,
+      step5: `STEP 4: ${t("ITEM4-SUBITEM5")}`,
+      step7: `${t("ITEM4-SUBITEM6")}`,
       steplink: `https://explorer.solana.com/address/8VzbpTNAJs5b493qNJVqKAjuNAQWFdjrdf1pd9uUKZcB`, //For Links
-      linkname: `ADDRESS.`, //For Link Name
+      linkname: `${t("ITEM4-LINKITEM1")}.`, //For Link Name
       steplink1: `https://explorer.solana.com/`, //For Links
       linkname1: `(HTTPS://EXPLORER.SOLANA.COM/) `, //For Link Name
       othertext1: `.`, //For Othertext
       steplink2: `/claimqubes`, //For Links
-      linkname2: `CLAIM QUBE`, //For Link Name
+      linkname2: `CLAIM QUBES`, //For Link Name
       othertext2: `.`, //For Othertext
       steplink3: `mailto:ABOUT@HOMEQUBE.COM`, //For Links
       linkname3: ` ABOUT@HOMEQUBE.COM`, //For Link Name
@@ -91,13 +104,13 @@ function HomePage() {
       state8: `d-none`, //Display None for this Step
     },
     {
-      title: `HOW MUCH QUBE WILL I RECEIVE AFTER BUYING A HOMEQUBE NFT?`,
-      step1: `THE AMOUNT OF QUBE THAT YOU WILL BE RECEIVED WILL BE DEPENDENT ON THE EXCHANGE RATE OF SOLANA TO USD DURING YOUR PURCHASE. WE PEGGED OUR QUBE TOKEN AT $0.75 PER QUBE.`,
-      step2: `FOR EXAMPLE, IF YOU BOUGHT OUR NFT AT 9 SOL AT USD 45 PER SOL, YOU WILL RECEIVE 540 QUBES.`,
-      step3: `NOTE: YOU WILL NOT ABLE TO RECEIVE QUBE TOKEN AUTOMATICALLY WHEN YOU BUY A HOMEQUBE NFT.`,
+      title: `${t("ITEM5")}`,
+      step1: `${t("ITEM5-SUBITEM1")}`,
+      step2: `${t("ITEM5-SUBITEM2")}`,
+      step3: `${t("ITEM5-SUBITEM3")}`,
       steplink2: `/claimqubes`, //For Links
       linkname2: `CLAIM QUBE`, //For Link Name
-      othertext2: `Here`, //For Othertext
+      othertext2: `${t("ITEM5-LINKITEM1")}`, //For Othertext
       //--------------Display Attributes--------------
       state4: `d-none`, //Display None for this Step
       state5: `d-none`, //Display None for this Step
@@ -108,9 +121,9 @@ function HomePage() {
       statelink: `d-none`, //Display None for this Link
     },
     {
-      title: `CAN I POST MY OWN NFT COLLECTION? WHAT KIND OF NFTS CAN I AUCTION TO SELL IN THIS WEBSITE?`,
-      step1: `YOU CAN POST YOUR NFTS HERE RELATED TO HOME DESIGNS, ASSEMBLIES, AND PARTS. WE ACCEPT IMAGE (JPG, GIF, SVG), 3D (GLB) FILES FOR THE NFTS.`,
-      step2: `NOTE: POSTING AN NFT INTO OUR WEBSITE COSTS 5 QUBES.`,
+      title: `${t("ITEM6")}`,
+      step1: `${t("ITEM6-SUBITEM1")}`,
+      step2: `${t("ITEM6-SUBITEM2")}`,
       //--------------Display Attributes--------------
       state4: `d-none`, //Display None for this Step
       state5: `d-none`, //Display None for this Step
@@ -123,8 +136,8 @@ function HomePage() {
       statelink: `d-none`, //Display None for this Link
     },
     {
-      title: `HOW TO ADD YOUR HOME DESIGN NFT COLLECTION TO OUR WEBSITE?`,
-      step1: `We will adding this functionality soon.`,
+      title: `${t("ITEM7")}`,
+      step1: `${t("ITEM7-SUBITEM1")}`,
       //--------------Display Attributes--------------
       state2: `d-none`, //Display None for this Step
       state3: `d-none`, //Display None for this Step
@@ -138,11 +151,11 @@ function HomePage() {
       statelink6: `d-none`, //Display None for this Link
     },
     {
-      title: `HOW CAN I KNOW MORE ABOUT HOMEQUBE?`,
-      step1: `YOU MAY VISIT`,
+      title: `${t("ITEM8")}`,
+      step1: `${t("ITEM8-SUBITEM1")}`,
       steplink: `https://www.qube.homeqube.com/`, //For Links
       linkname: `WWW.QUBE.HOMEQUBE.COM`, //For Link Name
-      othertext: `TO GET MORE DETAILS ABOUT OUR PLATFORM.`, //For Othertext
+      othertext: `${t("ITEM8-OTHERTEXT1")}`, //For Othertext
       //--------------Display Attributes--------------
       state2: `d-none`, //Display None for this Step
       state3: `d-none`, //Display None for this Step
@@ -389,9 +402,71 @@ function HomePage() {
           <br />
         </center>
       </section>
-      <section>
-        <button onClick={() => handleChangelng("en")}>English</button>
-        <button onClick={() => handleChangelng("tg")}>Filipino</button>
+      <section className="ms-auto">
+        <div class="dropdown">
+          <button
+            class="btn btn-link dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="true"
+          >
+            <GlobeIcon />
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <button
+                class="dropdown-item"
+                onClick={() => handleChangelng("en")}
+              >
+                <img
+                  src="/icons8-great-britain-20.png"
+                  className="mx-2"
+                  alt="image"
+                />
+                English
+              </button>
+            </li>
+            <li>
+              <button
+                class="dropdown-item"
+                onClick={() => handleChangelng("tg")}
+              >
+                <img
+                  src="/icons8-philippines-20.png"
+                  className="mx-2"
+                  alt="image"
+                />
+                Filipino
+              </button>
+            </li>
+            <li>
+              <button
+                class="dropdown-item"
+                onClick={() => handleChangelng("por")}
+              >
+                <img
+                  src="/icons8-portugal-20.png"
+                  className="mx-2"
+                  alt="image"
+                />
+                Portuguese
+              </button>
+            </li>
+            <li>
+              <button
+                class="dropdown-item"
+                onClick={() => handleChangelng("ind")}
+              >
+                <img
+                  src="/icons8-indonesia-20.png"
+                  className="mx-2"
+                  alt="image"
+                />
+                Indonesian
+              </button>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <section
