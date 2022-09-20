@@ -1,5 +1,6 @@
-import { candyShop } from "../utils/candy-shop";
-import { Orders, Stat } from "@liqnft/candy-shop";
+import { CandyShop } from "@liqnft/candy-shop-sdk";
+import { Orders } from "@liqnft/candy-shop";
+import { Stat } from "../public/Stat";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { PublicKey } from "@solana/web3.js";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
@@ -21,29 +22,31 @@ const MultiCurrencyMarketplace: React.FC = () => {
   const { getCurrencySettings } = useCurrency();
   const settings = getCurrencySettings();
 
-  // const candyShop = useMemo(
-  //   () =>
-  //     new CandyShop({
-  //       candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
-  //       treasuryMint: new PublicKey(settings.treasuryMint),
-  //       candyShopProgramId: CANDY_SHOP_PROGRAM_ID,
-  //       env: NETWORK,
-  //       settings,
-  //     }),
-  //   [settings]
-  // );
-  // console.log("Currency Settings", settings);
+  const candyShop = useMemo(
+    () =>
+      new CandyShop({
+        candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
+        treasuryMint: new PublicKey(
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        ),
+        candyShopProgramId: new PublicKey(
+          "csbMUULiQfGjT8ezT16EoEBaiarS6VWRevTw1JMydrS"
+        ),
+        env: NETWORK,
+        settings,
+      }),
+    [settings]
+  );
+  console.log("Currency Settings", settings);
 
-  // if (!candyShop) return null;
+  if (!candyShop) return null;
 
   return (
     <DesContainer>
       <Stat
         candyShop={candyShop}
-        title={"Marketplace"}
-        description={
-          "Candy Shop is an open source on-chain protocol that empowers DAOs, NFT projects and anyone interested in creating an NFT marketplace to do so within minutes!"
-        }
+        title={""}
+        description={""}
         style={{ paddingBottom: 50 }}
       />
       <Orders

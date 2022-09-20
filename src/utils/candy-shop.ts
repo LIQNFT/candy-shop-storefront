@@ -18,7 +18,8 @@ const RPC_HOST = process.env.REACT_APP_SOLANA_RPC_HOST!;
 const candyShop = new CandyShop({
   candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
   treasuryMint: CANDY_SHOP_TREASURY_MINT,
-  candyShopProgramId: CANDY_SHOP_PROGRAM_ID,
+  candyShopProgramId:
+    CANDY_SHOP_PROGRAM_ID || "csbMUULiQfGjT8ezT16EoEBaiarS6VWRevTw1JMydrS",
   env: NETWORK,
   settings: {
     // mainnetConnectionUrl:'https://solana-mainnet.g.alchemy.com/v2/A8ehUkPDu9a3qpy-ZJl9eW3-j6GHRrG2',

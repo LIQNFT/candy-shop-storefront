@@ -84,11 +84,12 @@ const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
     <HeaderBar className="navbar navbar-expand-lg navbar-light HeaderBar">
       <Logo>
         <Link to={RouteName.HomePage}>
-        <img alt="" src="/Homeqube-logo-black_small 1.svg" />
+          <img alt="" src="/Homeqube-logo-black_small 1.svg" />
         </Link>
       </Logo>
       <MobileNavigation />
       <Navigation />
+      {showCurrencyToggle && <CurrencyToggle />}
       <Wallet>
         {wallet ? (
           <ConnectButton className="wallet-width" />
@@ -106,7 +107,7 @@ const HeaderBar = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
- 
+
   padding-right: 4%;
   padding-left: 4%;
 `;

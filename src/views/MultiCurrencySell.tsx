@@ -1,4 +1,4 @@
-import { candyShop } from "../utils/candy-shop";
+import { CandyShop } from "@liqnft/candy-shop-sdk";
 import { Sell } from "@liqnft/candy-shop";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { PublicKey } from "@solana/web3.js";
@@ -20,26 +20,30 @@ const DesContainer = styled.div`
   }
 `;
 
-const MyCollection: React.FC = () => {
+const MultiCurrencySell: React.FC = () => {
   const wallet = useAnchorWallet();
   const { getCurrencySettings } = useCurrency();
   const settings = getCurrencySettings();
 
-  // const candyShop = useMemo(
-  //   () =>
-  //     new CandyShop({
-  //       candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
-  //       treasuryMint: new PublicKey(settings.treasuryMint),
-  //       candyShopProgramId: CANDY_SHOP_PROGRAM_ID,
-  //       env: NETWORK,
-  //       settings,
-  //     }),
-  //   [settings]
-  // );
+  const candyShop = useMemo(
+    () =>
+      new CandyShop({
+        candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
+        treasuryMint: new PublicKey(
+          "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        ),
+        candyShopProgramId: new PublicKey(
+          "csbMUULiQfGjT8ezT16EoEBaiarS6VWRevTw1JMydrS"
+        ),
+        env: NETWORK,
+        settings,
+      }),
+    [settings]
+  );
 
-  // if (!candyShop) {
-  //   return <></>;
-  // }
+  if (!candyShop) {
+    return <></>;
+  }
 
   return (
     <DesContainer>
@@ -54,4 +58,4 @@ const MyCollection: React.FC = () => {
   );
 };
 
-export default MyCollection;
+export default MultiCurrencySell;

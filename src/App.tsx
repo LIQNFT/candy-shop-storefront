@@ -78,17 +78,9 @@ const theme = createTheme({
 // Used for a multi-currency shop
 const currencyOptions = [
   {
-    currencySymbol: "SOL",
-    treasuryMint: "So11111111111111111111111111111111111111112",
-    currencyDecimals: 9,
-    priceDecimals: 3,
-    volumeDecimals: 1,
-    mainnetConnectionUrl: RPC_HOST,
-  },
-  {
-    currencySymbol: "56p",
-    treasuryMint: "56pdaHboK66cxRLkzkYVvFSAjfoNEETJUsrdmAYaTXMJ",
-    currencyDecimals: 9,
+    currencySymbol: "USDC",
+    treasuryMint: "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+    currencyDecimals: 6,
     priceDecimals: 2,
     volumeDecimals: 1,
     mainnetConnectionUrl: RPC_HOST,
@@ -133,7 +125,7 @@ const App = () => {
                           </>
                         }
                       />
-                       <Route
+                      <Route
                         path={RouteName.practice}
                         element={
                           <>
@@ -151,7 +143,7 @@ const App = () => {
                           </>
                         }
                       />
-                       <Route
+                      <Route
                         path={RouteName.ClaimQubes}
                         element={
                           <>
@@ -169,7 +161,7 @@ const App = () => {
                           </>
                         }
                       />
-                       <Route
+                      <Route
                         path={RouteName.HomeDesignFilter}
                         element={
                           <>
@@ -187,7 +179,7 @@ const App = () => {
                           </>
                         }
                       />
-                       <Route
+                      <Route
                         path={RouteName.ProductsFilter}
                         element={
                           <>
@@ -196,7 +188,7 @@ const App = () => {
                           </>
                         }
                       />
-                       <Route
+                      <Route
                         path={RouteName.AlgorithmFilter}
                         element={
                           <>
@@ -205,7 +197,7 @@ const App = () => {
                           </>
                         }
                       />
-                        <Route
+                      <Route
                         path={RouteName.MyCollection}
                         element={
                           <>
@@ -280,7 +272,7 @@ const App = () => {
                         path={RouteName.multipleCurrencyMarketplace}
                         element={
                           <>
-                            <TopNav showCurrencyToggle={true} />
+                            <TopNav />
                             <MultiCurrencyMarketplace />
                           </>
                         }
@@ -289,7 +281,7 @@ const App = () => {
                         path={RouteName.multipleCurrencySell}
                         element={
                           <>
-                            <TopNav showCurrencyToggle={true} />
+                            <TopNav />
                             <MultiCurrencySell />
                           </>
                         }
