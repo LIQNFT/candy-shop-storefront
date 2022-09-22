@@ -47,7 +47,7 @@ const MultiCurrencySell: React.FC = () => {
 
   return (
     <DesContainer>
-      <h1 style={{ marginBottom: 30 }}>My Collection</h1>
+      <h1 style={{ marginBottom: 30 }}>My Collection (USDC)</h1>
       <Sell
         wallet={wallet}
         candyShop={candyShop}

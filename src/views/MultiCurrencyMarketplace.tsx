@@ -1,5 +1,6 @@
 import { CandyShop } from "@liqnft/candy-shop-sdk";
-import { Orders } from "@liqnft/candy-shop";
+import { OrdersUSDC } from "../public/OrdersUSDC";
+import { CandyShopDataValidator } from "../public/Context";
 import { Stat } from "../public/Stat";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { PublicKey } from "@solana/web3.js";
@@ -12,10 +13,6 @@ import {
   CANDY_SHOP_PROGRAM_ID,
   NETWORK,
 } from "../utils/candy-shop";
-
-const DesContainer = styled.div`
-  width: 100%;
-`;
 
 const MultiCurrencyMarketplace: React.FC = () => {
   const wallet = useAnchorWallet();
@@ -49,13 +46,47 @@ const MultiCurrencyMarketplace: React.FC = () => {
         description={""}
         style={{ paddingBottom: 50 }}
       />
-      <Orders
-        wallet={wallet}
-        candyShop={candyShop}
-        walletConnectComponent={<WalletMultiButton />}
-      />
+      <CandyShopDataValidator>
+        <OrdersUSDC
+            wallet={wallet}
+            candyShop={candyShop}
+            defaultFilter={{ collection: "1", shop: "" }}
+            walletConnectComponent={<WalletMultiButton />}
+            filters={FILTERS}
+            filterSearch
+            search
+        />
+      </CandyShopDataValidator>
+      
     </DesContainer>
   );
 };
 
 export default MultiCurrencyMarketplace;
+const FILTERS = [
+  {
+    name: "USDC NFTS",
+    collectionId: "1",
+    identifier: -0,
+    qubeClaims: "",
+    description:
+      "",
+  },
+];
+
+const DesContainer = styled.div`
+  width: 100%;
+
+  .candy-filter {
+    color: #fff;
+
+    li:hover {
+      color: #7522f5;
+    }
+
+    .candy-search input {
+      padding: 10px 4px 10px 24px;
+      width: 100%;
+    }
+  }
+`;
