@@ -72,9 +72,19 @@ const NavLinks = (props) => {
         }
       >
         <NavLink to="/structural-legacies">
-          NFT <br /> COLLECTIONS
+          HOMEQUBE <br /> NFT
         </NavLink>
       </li>
+
+      <li
+        className="mx-3 mt-4"
+        onClick={() => props.isMobile && props.closeMobileMenu()}
+      >
+        <NavLink activeClassName="active" to="/usdcnft">
+          DAO <br /> NFT
+        </NavLink>
+      </li>
+
       <li
         className="mx-3 mt-4"
         onClick={() => props.isMobile && props.closeMobileMenu()}

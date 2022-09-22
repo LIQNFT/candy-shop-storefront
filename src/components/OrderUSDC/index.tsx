@@ -52,7 +52,7 @@ export const Order: React.FC<OrderProps> = ({ order, wallet, url, candyShop, onO
         <div className="candy-order-ticker candy-line-limit-1">{order?.ticker}</div>
         <div className="candy-order-price candy-line-limit-1">
           {orderPrice ? `${orderPrice}` : 'N/A'}
-          <img src="./solLogo.svg" className="solLogoPrice" alt="" />
+          <img src="./usdc-coin-icon.svg" className="solLogoPrice" alt="" />
         </div>
       </div>
     </div>

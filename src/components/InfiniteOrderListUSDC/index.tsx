@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Order as OrderComponent } from '../Order';
+import { Order as OrderComponent } from '../OrderUSDC';
 import { Order } from '@liqnft/candy-shop-types';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { AnchorWallet } from '@solana/wallet-adapter-react';
