@@ -17,7 +17,8 @@ import { Empty } from "../../components/Empty";
 import { InfiniteOrderList } from "../../components/InfiniteOrderList";
 import { LoadingSkeleton } from "../../components/LoadingSkeleton";
 import { PoweredBy } from "../../components/PoweredBy";
-import { CollectionFilter as CollectionFilterComponent } from "../../components/CollectionFilter";
+// import { CollectionFilter as CollectionFilterComponent } from "../../components/CollectionFilter";
+import { CollectionFilterJFF as CollectionFilterComponent } from "../../components/CollectionFilterJFF";
 import { CollectionFilterDescription } from "../../components/CollectionFilterDescription";
 import { ShopFilter as ShopFilterComponent } from "../../components/ShopFilter";
 

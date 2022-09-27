@@ -18,22 +18,18 @@ const HomeDesignFilter: React.FC = () => {
   return (
     <>
       <nav className="candy-orders-filter menu text-uppercase pb-3 pt-3">
-        <li>
-          <NavLink to="/structural-legacies">Structural Legacies</NavLink>
-        </li>
-        <li>
+      <li>
           <NavLink to="/home-designs" className="active">
-            Home Designs
+            Home Generative Designs and Algorithms
           </NavLink>
         </li>
         <li>
-          <NavLink to="/system-architecture">SYSTEM ARCHITECTURE</NavLink>
+          <NavLink to="/home-products">
+            Home Products
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/products">PRODUCTS</NavLink>
-        </li>
-        <li>
-          <NavLink to="/algorithm">ALGORITHM</NavLink>
+          <NavLink to="/just-for-fun" >JFF Just-for-Fun</NavLink>
         </li>
       </nav>
       <DesContainer>
@@ -68,7 +64,7 @@ const FILTERS = [
     identifier: 1462698944,
     qubeClaims: "",
     description:
-      "YOU CAN PLACE VARIOUS HOME DESIGNS HERE THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
+      "THESE ARE OUR COMMUNITY COLLECTIONS OF HOME DESIGNS, THAT WILL GENERATE BOTTOM-UP ARCHITECTURE.",
   },
   {
     name: "Community Projects",
@@ -76,7 +72,7 @@ const FILTERS = [
     identifier: -16541584,
     qubeClaims: "",
     description:
-      "YOU CAN PLACE VARIOUS HOME DESIGNS HERE THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
+      "THESE ARE OUR COMMUNITY COLLECTIONS OF HOME DESIGNS, THAT WILL GENERATE BOTTOM-UP ARCHITECTURE.",
   },
 ];
 

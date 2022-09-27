@@ -19,21 +19,17 @@ const ProductsFilter: React.FC = () => {
     <>
       <nav className="candy-orders-filter menu text-uppercase pb-3 pt-3">
         <li>
-          <NavLink to="/structural-legacies">Structural Legacies</NavLink>
-        </li>
-        <li>
-          <NavLink to="/home-designs">Home Designs</NavLink>
-        </li>
-        <li>
-          <NavLink to="/system-architecture">SYSTEM ARCHITECTURE</NavLink>
-        </li>
-        <li>
-          <NavLink to="/products" className="active">
-            PRODUCTS
+          <NavLink to="/home-designs">
+            Home Generative Designs and Algorithms
           </NavLink>
         </li>
         <li>
-          <NavLink to="/algorithm">ALGORITHM</NavLink>
+          <NavLink to="/home-products">
+            Home Products
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/just-for-fun" className="active">JFF Just-for-Fun</NavLink>
         </li>
       </nav>
       <DesContainer>
@@ -63,12 +59,12 @@ export default ProductsFilter;
 
 const FILTERS = [
   {
-    name: "Marine Leisure",
+    name: "",
     collectionId: "1",
     identifier: [-1434943395, 691144404],
     qubeClaims: "",
     description:
-      "YOU CAN PLACE VARIOUS “PRODUCTS” THAT FIT SYSTEM ARCHITECTURE BOTTOMS-UP APPROACHES.",
+      "",
   },
 ];
 

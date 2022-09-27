@@ -71,8 +71,8 @@ const NavLinks = (props) => {
           setActive("navItem1") && props.isMobile && props.closeMobileMenu()
         }
       >
-        <NavLink to="/structural-legacies">
-          HOMEQUBE <br /> NFT
+        <NavLink to="/home-designs">
+          COMMUNITY <br /> COLLECTION
         </NavLink>
       </li>
 
@@ -81,7 +81,7 @@ const NavLinks = (props) => {
         onClick={() => props.isMobile && props.closeMobileMenu()}
       >
         <NavLink activeClassName="active" to="/usdcnft">
-          DAO <br /> NFT
+          DAO <br /> PROJECTS
         </NavLink>
       </li>
 

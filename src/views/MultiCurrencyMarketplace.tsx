@@ -8,6 +8,7 @@ import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import styled from "styled-components";
 import { useCurrency } from "../components/Currency";
 import { useMemo } from "react";
+import { NavLink } from "react-router-dom";
 import {
   CANDY_SHOP_CREATOR_ADDRESS,
   CANDY_SHOP_PROGRAM_ID,
@@ -39,15 +40,23 @@ const MultiCurrencyMarketplace: React.FC = () => {
   if (!candyShop) return null;
 
   return (
-    <DesContainer>
-      <Stat
-        candyShop={candyShop}
-        title={""}
-        description={""}
-        style={{ paddingBottom: 50 }}
-      />
-      <CandyShopDataValidator>
-        <OrdersUSDC
+    <>
+       <nav className="candy-orders-filter menu text-uppercase pb-3 pt-3">
+        <li>
+          <NavLink to="/usdcnft" className="active">
+           REAL ESTATE
+          </NavLink>
+        </li>
+      </nav>
+      <DesContainer>
+        <Stat
+          candyShop={candyShop}
+          title={""}
+          description={""}
+          style={{ paddingBottom: 50 }}
+        />
+        <CandyShopDataValidator>
+          <OrdersUSDC
             wallet={wallet}
             candyShop={candyShop}
             defaultFilter={{ collection: "1", shop: "" }}
@@ -55,22 +64,28 @@ const MultiCurrencyMarketplace: React.FC = () => {
             filters={FILTERS}
             filterSearch
             search
-        />
-      </CandyShopDataValidator>
-      
-    </DesContainer>
+          />
+        </CandyShopDataValidator>
+      </DesContainer>
+    </>
   );
 };
 
 export default MultiCurrencyMarketplace;
 const FILTERS = [
   {
-    name: "USDC NFTS",
+    name: "HOTEL",
     collectionId: "1",
     identifier: -0,
     qubeClaims: "",
-    description:
-      "",
+    description: "",
+  },
+  {
+    name: "Commercial/Residential",
+    collectionId: "2",
+    identifier: -16541584,
+    qubeClaims: "",
+    description: "",
   },
 ];
 
