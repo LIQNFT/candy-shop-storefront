@@ -50,11 +50,11 @@ function HomePage() {
     },
     {
       title: `${t("ITEM2")}`,
-      step1: `STEP 1: ${t("ITEM2-SUBITEM1")}`,
-      step2: `STEP 2: ${t("ITEM2-SUBITEM2")}`,
-      step3: `STEP 3: ${t("ITEM2-SUBITEM3")}`,
-      step4: `STEP 4: ${t("ITEM2-SUBITEM4")}`,
-      step5: `STEP 5: ${t("ITEM2-SUBITEM5")}`,
+      step1: `Step 1: ${t("ITEM2-SUBITEM1")}`,
+      step2: `Step 2: ${t("ITEM2-SUBITEM2")}`,
+      step3: `Step 3: ${t("ITEM2-SUBITEM3")}`,
+      step4: `Step 4: ${t("ITEM2-SUBITEM4")}`,
+      step5: `Step 5: ${t("ITEM2-SUBITEM5")}`,
       step8: `${t("ITEM2-SUBITEM6")}`,
       //--------------Display Attributes--------------
       state6: `d-none`, //Display None for this Step
@@ -65,11 +65,11 @@ function HomePage() {
     },
     {
       title: `${t("ITEM3")}`,
-      step1: `STEP 1: ${t("ITEM3-SUBITEM1")}`,
-      step2: `STEP 2: ${t("ITEM3-SUBITEM2")}`,
-      step3: `STEP 3: ${t("ITEM3-SUBITEM3")}`,
-      step4: `STEP 4: ${t("ITEM3-SUBITEM4")}`,
-      step5: `STEP 5: ${t("ITEM3-SUBITEM5")}`,
+      step1: `Step 1: ${t("ITEM3-SUBITEM1")}`,
+      step2: `Step 2: ${t("ITEM3-SUBITEM2")}`,
+      step3: `Step 3: ${t("ITEM3-SUBITEM3")}`,
+      step4: `Step 4: ${t("ITEM3-SUBITEM4")}`,
+      step5: `Step 5: ${t("ITEM3-SUBITEM5")}`,
       steplink1: `/mycollection`, //For Links
       linkname1: `${t("ITEM3-LINKITEM1")}`, //For Link Name
       othertext1: `${t("ITEM3-OTHERTEXT1")}`, ////For Othertext after Link
@@ -84,21 +84,21 @@ function HomePage() {
     {
       title: `${t("ITEM4")}`,
       step1: `${t("ITEM4-SUBITEM1")}`,
-      step2: `STEP 1: ${t("ITEM4-SUBITEM2")} `,
-      step3: `STEP 2: ${t("ITEM4-SUBITEM3")}`,
-      step4: `STEP 3: ${t("ITEM4-SUBITEM4")}`,
-      step5: `STEP 4: ${t("ITEM4-SUBITEM5")}`,
+      step2: `Step 1: ${t("ITEM4-SUBITEM2")} `,
+      step3: `Step 2: ${t("ITEM4-SUBITEM3")}`,
+      step4: `Step 3: ${t("ITEM4-SUBITEM4")}`,
+      step5: `Step 4: ${t("ITEM4-SUBITEM5")}`,
       step7: `${t("ITEM4-SUBITEM6")}`,
       steplink: `https://explorer.solana.com/address/8VzbpTNAJs5b493qNJVqKAjuNAQWFdjrdf1pd9uUKZcB`, //For Links
       linkname: `${t("ITEM4-LINKITEM1")}.`, //For Link Name
       steplink1: `https://explorer.solana.com/`, //For Links
-      linkname1: `(HTTPS://EXPLORER.SOLANA.COM/) `, //For Link Name
+      linkname1: `(https://explorer.solana.com/)`, //For Link Name
       othertext1: `.`, //For Othertext
       steplink2: `/claimqubes`, //For Links
-      linkname2: `CLAIM QUBES`, //For Link Name
+      linkname2: `claim qubes`, //For Link Name
       othertext2: `.`, //For Othertext
-      steplink3: `mailto:ABOUT@HOMEQUBE.COM`, //For Links
-      linkname3: ` ABOUT@HOMEQUBE.COM`, //For Link Name
+      steplink3: `mailto:about@homeqube.com`, //For Links
+      linkname3: ` about@homeqube.com`, //For Link Name
       othertext3: `.`, //For Othertext
       //--------------Display Attributes--------------
       state8: `d-none`, //Display None for this Step
@@ -109,7 +109,7 @@ function HomePage() {
       step2: `${t("ITEM5-SUBITEM2")}`,
       step3: `${t("ITEM5-SUBITEM3")}`,
       steplink2: `/claimqubes`, //For Links
-      linkname2: `CLAIM QUBE`, //For Link Name
+      linkname2: `Claim qube`, //For Link Name
       othertext2: `${t("ITEM5-LINKITEM1")}`, //For Othertext
       //--------------Display Attributes--------------
       state4: `d-none`, //Display None for this Step
@@ -154,7 +154,7 @@ function HomePage() {
       title: `${t("ITEM8")}`,
       step1: `${t("ITEM8-SUBITEM1")}`,
       steplink: `https://www.qube.homeqube.com/`, //For Links
-      linkname: `WWW.QUBE.HOMEQUBE.COM`, //For Link Name
+      linkname: `www.qube.homeqube.com`, //For Link Name
       othertext: `${t("ITEM8-OTHERTEXT1")}`, //For Othertext
       //--------------Display Attributes--------------
       state2: `d-none`, //Display None for this Step
@@ -182,10 +182,10 @@ function HomePage() {
                 Democratizing Knowledge.
               </h1>
 
-              <p className="intro-sentence text-uppercase mt-5">
-                We are solana based NFT “Launchpad-Marketplace” For home <br />{" "}
-                manufacturing, from 3d printed parts, home designs, home system{" "}
-                <br /> algorithms, decors, fixtures Furnitures, Prototypes, and{" "}
+              <p className="intro-sentence mt-5">
+                We are solana based NFT “Launchpad-Marketplace” for home <br />{" "}
+                manufacturing, from 3d printed parts, home designs, home <br />
+                system algorithms, decors, fixtures furniture's, prototypes, and{" "}
                 <br /> related others to homebuilding both for the metaverse and
                 IRL.
               </p>
@@ -211,8 +211,14 @@ function HomePage() {
             </div>
             <div className="yt-vid">
               <video width="100%" height="100%" autoPlay loop muted>
-                <source src="https://s3.amazonaws.com/www.qube.homeqube.com/homeqube+IO+Video/Homeqube-ICO.mp4" type="video/mp4" />
-                <source src="https://s3.amazonaws.com/www.qube.homeqube.com/homeqube+IO+Video/Homeqube-ICO.ogg" type="video/ogg" />
+                <source
+                  src="https://s3.amazonaws.com/www.qube.homeqube.com/homeqube+IO+Video/Homeqube-ICO.mp4"
+                  type="video/mp4"
+                />
+                <source
+                  src="https://s3.amazonaws.com/www.qube.homeqube.com/homeqube+IO+Video/Homeqube-ICO.ogg"
+                  type="video/ogg"
+                />
               </video>
               {/* <Player 
              src={videoSrc}
@@ -473,7 +479,7 @@ function HomePage() {
         className="p-4 text-dark text-start bg-white"
         style={{ fontSize: "2rem" }}
       >
-        <div className="accordion text-uppercase">
+        <div className="accordion">
           {accordionData.map(
             ({
               title,
