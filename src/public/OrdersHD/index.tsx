@@ -265,7 +265,10 @@ export const OrdersHD: React.FC<OrdersProps> = ({
           {search && (
             <Search onSearch={onSearchNft} placeholder="Search NFTs" />
           )}
-          <nav className="candy-orders-filter menu2 text-uppercase pb-3 pt-3">
+          {/* <nav className="candy-orders-filter menu2 text-uppercase pb-3 pt-3"> */}
+          <nav className="bg-dark text-white navbar navbar-expand-lg navbar-light mb-3 rounded">
+            <div className="container">
+             
             {Boolean(filters) && (
               <CollectionFilterComponent
                 onChange={onChangeCollection}
@@ -289,6 +292,7 @@ export const OrdersHD: React.FC<OrdersProps> = ({
                 search={filterSearch}
               />
             )}
+            </div>
           </nav>
           <div className="candy-orders-content">
             {loading ? (

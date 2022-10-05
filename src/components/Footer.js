@@ -13,7 +13,8 @@ function Footer() {
               className="footer-logo"
               alt=""
             />
-             
+              <p class="text-uppercase footer-text pt-3">home building process accessible to all through
+               <br/> AI and blockchain technology</p>
           </div>
           <div className="col link d-flex align-items justify-content-center">
             <div>
@@ -78,7 +79,8 @@ function Footer() {
                 />
               </a>
               <p className="footer-text-2 mt-2">
-
+              about@homeqube.com
+              <br/>
                 <Link to="/terms" className="ahref">
                   Terms of Use
                 </Link>
@@ -92,6 +94,8 @@ function Footer() {
                 Homeqube Pte. Ltd.™
                 <br />
                 Homeqube inc.
+                <br/>
+                Homqube Dao, LLC
               </p>
             </div>
           </div>

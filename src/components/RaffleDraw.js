@@ -11,7 +11,7 @@ function RaffleDraw() {
                 rel="noreferrer noopener" href="https://twitter.com/QubeToken/status/1562007029539307520?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1562007029539307520%7Ctwgr%5E42ad0887d6de936618e77eb922fd85c4656841c5%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fwww.homeqube.io%2Fclaimqubes"className='link-main-color'>ACONDOMINUM</a>  FROM CALMA PROPERTIES INC
           </p>
         </div>
-        
+        <p class="q-tokenomics-showcase-intro-lead p-3 text-uppercase"></p>
          <center> 
           <div className="faq-rectangle"></div>
         </center>

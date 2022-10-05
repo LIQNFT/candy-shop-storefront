@@ -565,7 +565,7 @@ body.active-modal {
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
-  line-height: 23px;
+  line-height: 35px;
   color: #5a5a5a;
   text-align: left;
 }
@@ -2277,4 +2277,18 @@ h4 {
 }
 .rem-2{
   font-size: 2rem;
+}
+.nav-item-pipehome {
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.nav-item-pipehome:hover{
+  cursor: pointer;
+}
+.candy-container-list{
+  margin-left: 0 !important;
 }

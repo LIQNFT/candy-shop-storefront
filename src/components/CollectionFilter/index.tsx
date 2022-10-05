@@ -120,8 +120,39 @@ export const CollectionFilter: React.FC<CollectionFilterProps> = ({
   if (Array.isArray(filters)) {
     return (
       <>
-        <div className="candy-filter-subtitle"></div>
-        <p>|</p>
+      {/* <div className="collapse navbar-collapse" id="navmenu">
+                <ul className="navbar-nav">
+                    <li className="nav-item ms-3">
+                        <a href="pipeline.html" className="nav-link">
+                            <p className="nav-item-pipehome px-4 pt-4">
+                                stakeholders
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+      </div> */}
+        <div className="collapse navbar-collapse d-flex justify-content-center" id="navmenu">
+        <ul className="navbar-nav text-uppercase">
+        {filteredList.map((filter) => {
+          return (
+            <>
+              <li
+                key={filter.name}
+                className={
+                  selectedManual?.collectionId === filter.collectionId
+                    ? "nav-item ms-3 selected"
+                    : "nav-item ms-3"
+                }
+                onClick={onChange(filter, "manual")}
+              >
+              <p className="nav-item-pipehome px-4 pt-4">
+              {filter.name}   {filter.qubeClaims}
+              </p>
+              </li>
+            </>
+          );
+        })}
+        </ul>
         {/* {search && <Search onSearch={onSearch} placeholder="Search collections" />} */}
         {/* {selectedManual ? (
             <div className="candy-filter-selected-name">
@@ -134,25 +165,7 @@ export const CollectionFilter: React.FC<CollectionFilterProps> = ({
               All
             </li>
           )} */}
-        {filteredList.map((filter) => {
-          return (
-            <>
-              <li
-                key={filter.name}
-                className={
-                  selectedManual?.collectionId === filter.collectionId
-                    ? "selected"
-                    : ""
-                }
-                onClick={onChange(filter, "manual")}
-              >
-                {filter.name}
-                {filter.qubeClaims}
-              </li>
-              <p>|</p>
-            </>
-          );
-        })}
+        </div>
       </>
     );
   }

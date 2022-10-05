@@ -199,7 +199,7 @@ function HomePage() {
                     Mint
                   </button>
                 </a>
-                <NavLink to="/structural-legacies" className="a-link">
+                <NavLink to="/home-designs" className="a-link">
                   <button
                     className="button1 btn btn-lg rounded-pill"
                     type="button"
