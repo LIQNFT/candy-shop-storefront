@@ -70,7 +70,7 @@ function RaffleDraw() {
         </section> */}
         <div className="banner">
           <div className="slider">
-            <img id="sliderImg" src="Pablo_Residence_2.PNG" />
+            <img id="sliderImg" src="/Pablo_Residence_2.PNG" />
           </div>
           <div className="overlayBack">
             <div className="raffle_content">
