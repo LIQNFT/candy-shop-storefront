@@ -4,6 +4,7 @@
   --card-background-color: #51576d;
   --card-background-lighter-color: #7a7f92;
   --main-text-color: #000000;
+  --main-text-revert-color: #fff;
   --nav-bar-color: #cfcfcf;
   /* --title-text-color: #3cba8b; */
 }
@@ -2258,24 +2259,24 @@ h4 {
   font-weight: 700;
   font-size: 2.2rem;
 }
-.text-grey{
+.text-grey {
   color: #a7a7a7 !important;
 }
 
-.hqtweet{
-  display: flex!important;
+.hqtweet {
+  display: flex !important;
   flex-direction: column;
   align-items: center;
 }
 
-.link-main-color{
-  color:  var(--main-text-color);
+.link-main-color {
+  color: var(--main-text-color);
   text-decoration: underline;
 }
-.link-main-color:hover{
-  color:#1d1d1d !important;
+.link-main-color:hover {
+  color: #1d1d1d !important;
 }
-.rem-2{
+.rem-2 {
   font-size: 2rem;
 }
 .nav-item-pipehome {
@@ -2286,9 +2287,79 @@ h4 {
   text-transform: uppercase;
   color: #fff;
 }
-.nav-item-pipehome:hover{
+.nav-item-pipehome:hover {
   cursor: pointer;
 }
-.candy-container-list{
+.candy-container-list {
   margin-left: 0 !important;
+}
+
+.slider {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+}
+.banner {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#sliderImg {
+  width: 100%;
+  height: 100%;
+}
+
+.overlayBack {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
+  position: absolute;
+}
+
+.raffle_content {
+  width: 60%;
+  margin: 420px auto 0;
+  text-align: center;
+  color: #fff;
+}
+.link-main-revert-color {
+  color: var(--main-text-revert-color-color);
+  text-decoration: underline;
+}
+
+.raffle_content h1 {
+  font-size: 60px;
+}
+
+.raffle_content h3 {
+  width: 80%;
+  margin: 20px auto 100px;
+  font-weight: 100;
+  line-height: 25px;
+}
+
+.button1_raffle {
+  background: linear-gradient(44.73deg, #7c7c7c 11.32%, #4e4e4e 92.96%);
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+  width: 200px;
+  height: 50px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #d7d7d8;
+  padding: 15px 0;
+  margin: 0 10px;
+  border: 2px solid #7c7c7c 11.32%, #4e4e4e 92.96%;
+}
+.button1_raffle:hover {
+  border: 2px solid #fff;
+  color: #fff;
 }
