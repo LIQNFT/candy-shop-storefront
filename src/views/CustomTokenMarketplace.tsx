@@ -7,6 +7,7 @@ import {
   CANDY_SHOP_TREASURY_MINT,
   CANDY_SHOP_PROGRAM_ID,
   NETWORK,
+  RPC_HOST,
 } from "../utils/candy-shop";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import styled from "styled-components";
@@ -26,6 +27,7 @@ const CustomTokenMarketplace: React.FC = () => {
         currencyDecimals: 9,
         priceDecimals: 3,
         volumeDecimals: 1,
+        mainnetConnectionUrl: RPC_HOST,
       },
     })
   );
