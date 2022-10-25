@@ -1,4 +1,5 @@
 import { useContext, createContext, useState, useEffect } from "react";
+import { RPC_HOST } from "../utils/candy-shop";
 
 interface CurrencyType {
   currency: string;
@@ -10,6 +11,7 @@ interface CurrencyType {
     currencyDecimals: number;
     priceDecimals: number;
     volumeDecimals: number;
+    mainnetConnectionUrl: string;
   }[];
 }
 
@@ -24,6 +26,7 @@ const CurrencyContext = createContext<CurrencyType>({
       currencyDecimals: 9,
       priceDecimals: 3,
       volumeDecimals: 1,
+      mainnetConnectionUrl: RPC_HOST,
     },
   ],
 });
