@@ -1,5 +1,5 @@
-import { useContext, createContext, useState, useEffect } from "react";
-import { RPC_HOST } from "../utils/candy-shop";
+import { createContext, useContext, useEffect, useState } from 'react';
+import { CANDY_SHOP_CREATOR_ADDRESS, RPC_HOST } from '@/utils/candy-shop';
 
 interface CurrencyType {
   currency: string;
@@ -16,13 +16,13 @@ interface CurrencyType {
 }
 
 const CurrencyContext = createContext<CurrencyType>({
-  currency: "SOL",
+  currency: 'SOL',
   setCurrency: () => {},
   getCurrencySettings: () => {},
   currencyOptions: [
     {
-      currencySymbol: "SOL",
-      treasuryMint: "So11111111111111111111111111111111111111112",
+      currencySymbol: 'SOL',
+      treasuryMint: 'So11111111111111111111111111111111111111112',
       currencyDecimals: 9,
       priceDecimals: 3,
       volumeDecimals: 1,
@@ -32,8 +32,7 @@ const CurrencyContext = createContext<CurrencyType>({
 });
 
 // create local storage key from creator wallet address
-const CANDY_SHOP_CURRENCY_SYMBOL =
-  "CandyShop" + process.env.REACT_APP_CANDY_SHOP_CREATOR_ADDRESS!.slice(0, 8);
+const CANDY_SHOP_CURRENCY_SYMBOL = 'CandyShop' + CANDY_SHOP_CREATOR_ADDRESS.slice(0, 8);
 
 export function useCurrency() {
   return useContext(CurrencyContext);
@@ -43,14 +42,12 @@ export function CurrencyProvider({
   currencyOptions,
   children,
 }: {
-  currencyOptions: CurrencyType["currencyOptions"];
+  currencyOptions: CurrencyType['currencyOptions'];
   children: any;
 }) {
   const [currency, setCurrency] = useState(() => {
     const localSymbol = localStorage.getItem(CANDY_SHOP_CURRENCY_SYMBOL);
-    const currency = currencyOptions.find(
-      (currency) => currency.currencySymbol === localSymbol
-    );
+    const currency = currencyOptions.find((currency) => currency.currencySymbol === localSymbol);
     if (currency) return currency.currencySymbol;
     return currencyOptions[0].currencySymbol;
   });
@@ -70,9 +67,5 @@ export function CurrencyProvider({
     currencyOptions,
   };
 
-  return (
-    <CurrencyContext.Provider value={value}>
-      {children}
-    </CurrencyContext.Provider>
-  );
+  return <CurrencyContext.Provider value={value}>{children}</CurrencyContext.Provider>;
 }

@@ -1,20 +1,21 @@
-import { Sell } from "@liqnft/candy-shop";
-import { useAnchorWallet } from "@solana/wallet-adapter-react";
-
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { candyShop } from "../utils/candy-shop";
-import styled from "styled-components";
+import styled from 'styled-components';
+import { Sell } from '@liqnft/candy-shop';
+import { ConnectButton } from '@/components/ConnectButton';
+import { useUserWallet } from '@/hooks/useUserWallet';
+import { useShopStore } from '@/store/useShopStore';
 
 const MyCollection: React.FC = () => {
-  const wallet = useAnchorWallet();
+  const candyShop = useShopStore((s) => s.candyShop);
+  const userWallet = useUserWallet();
+  if (!candyShop) return null;
 
   return (
     <DesContainer>
       <h1 style={{ marginBottom: 30 }}>My Collection</h1>
       <Sell
-        wallet={wallet}
+        wallet={userWallet}
         candyShop={candyShop}
-        walletConnectComponent={<WalletMultiButton />}
+        walletConnectComponent={<ConnectButton />}
         enableCacheNFT={true}
       />
     </DesContainer>

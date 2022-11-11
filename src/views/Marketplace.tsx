@@ -1,26 +1,30 @@
-import { Orders, Stat } from "@liqnft/candy-shop";
-import { useAnchorWallet } from "@solana/wallet-adapter-react";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { candyShop } from "../utils/candy-shop";
-import styled from "styled-components";
+import styled from 'styled-components';
+import { Orders, Stat } from '@liqnft/candy-shop';
+import { ConnectButton } from '@/components/ConnectButton';
+import { useUserWallet } from '@/hooks/useUserWallet';
+import { useShopStore } from '@/store/useShopStore';
 
 const Marketplace: React.FC = () => {
-  const wallet = useAnchorWallet();
+  const candyShop = useShopStore((s) => s.candyShop);
+  const userWallet = useUserWallet();
+
+  if (!candyShop) return null;
 
   return (
     <DesContainer>
       <Stat
         candyShop={candyShop}
-        title={"Marketplace"}
+        title={'Marketplace'}
         description={
-          "Candy Shop is an open source library that allows you to create NFT storefronts and auctions in minutes!"
+          'Candy Shop is an open source library that allows you to create NFT storefronts and auctions in minutes!'
         }
         style={{ paddingBottom: 50 }}
       />
+
       <Orders
-        wallet={wallet}
+        wallet={userWallet}
         candyShop={candyShop}
-        walletConnectComponent={<WalletMultiButton />}
+        walletConnectComponent={<ConnectButton />}
         search
       />
     </DesContainer>
