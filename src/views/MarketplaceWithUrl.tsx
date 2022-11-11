@@ -1,28 +1,28 @@
-import { Orders, Stat } from "@liqnft/candy-shop";
-import { useAnchorWallet } from "@solana/wallet-adapter-react";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { candyShop } from "../utils/candy-shop";
-import styled from "styled-components";
+import styled from 'styled-components';
+import { Orders, Stat } from '@liqnft/candy-shop';
+import { ConnectButton } from '@/components/ConnectButton';
+import { useUserWallet } from '@/hooks/useUserWallet';
+import { useShopStore } from '@/store/useShopStore';
 
 const MarketplaceWithUrl: React.FC = () => {
-  const wallet = useAnchorWallet();
+  const userWallet = useUserWallet();
+  const candyShop = useShopStore((s) => s.candyShop);
+
+  if (!candyShop) return null;
 
   return (
     <DesContainer>
       <Stat
         candyShop={candyShop}
-        title={"Marketplace"}
-        description={
-          "You can use a single NFT order URL instead of a buy modal."
-        }
-        style={{ paddingBottom: 50 }}
+        title={'Marketplace'}
+        description={'You can use a single NFT order URL instead of a buy modal.'}
       />
       <Orders
-        wallet={wallet}
+        wallet={userWallet}
         candyShop={candyShop}
-        walletConnectComponent={<WalletMultiButton />}
+        walletConnectComponent={<ConnectButton />}
         // redirect to single NFT order URL instead of using buy modal
-        url={"/marketplace/:tokenMint"}
+        url={'/marketplace/:tokenMint'}
       />
     </DesContainer>
   );

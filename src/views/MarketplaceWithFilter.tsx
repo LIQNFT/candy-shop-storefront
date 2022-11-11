@@ -1,26 +1,26 @@
-import { Orders, Stat } from "@liqnft/candy-shop";
-import { useAnchorWallet } from "@solana/wallet-adapter-react";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { candyShop } from "../utils/candy-shop";
-import styled from "styled-components";
+import styled from 'styled-components';
+import { Orders, Stat } from '@liqnft/candy-shop';
+import { ConnectButton } from '@/components/ConnectButton';
+import { useUserWallet } from '@/hooks/useUserWallet';
+import { useShopStore } from '@/store/useShopStore';
 
 const MarketplaceWithFilter: React.FC = () => {
-  const wallet = useAnchorWallet();
+  const userWallet = useUserWallet();
+  const candyShop = useShopStore((s) => s.candyShop);
+  if (!candyShop) return null;
 
   return (
     <DesContainer>
       <Stat
         candyShop={candyShop}
-        title={"Marketplace"}
-        description={
-          "Enable users to filter by collections and search for NFTs."
-        }
+        title={'Marketplace'}
+        description={'Enable users to filter by collections and search for NFTs.'}
         style={{ paddingBottom: 50 }}
       />
       <Orders
-        wallet={wallet}
+        wallet={userWallet}
         candyShop={candyShop}
-        walletConnectComponent={<WalletMultiButton />}
+        walletConnectComponent={<ConnectButton />}
         filters={FILTERS}
         filterSearch
         search
@@ -32,8 +32,8 @@ const MarketplaceWithFilter: React.FC = () => {
 export default MarketplaceWithFilter;
 
 const FILTERS = [
-  { name: "Puppies", collectionId: "1", identifier: 2036309415 },
-  { name: "Shibas", collectionId: "2", identifier: 1235887132 },
+  { name: 'Puppies', collectionId: '1', identifier: 2036309415 },
+  { name: 'Shibas', collectionId: '2', identifier: 1235887132 },
 ];
 
 const DesContainer = styled.div`

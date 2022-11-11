@@ -1,8 +1,11 @@
-import { Activity } from "@liqnft/candy-shop";
-import { candyShop } from "../utils/candy-shop";
-import styled from "styled-components";
+import styled from 'styled-components';
+import { Activity } from '@liqnft/candy-shop';
+import { useShopStore } from '@/store/useShopStore';
 
 const ActivityView: React.FC = () => {
+  const candyShop = useShopStore((s) => s.candyShop);
+  if (!candyShop) return null;
+
   return (
     <DesContainer>
       <h1 style={{ marginTop: 40, marginBottom: 40 }}>Activity</h1>

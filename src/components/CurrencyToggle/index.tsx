@@ -1,11 +1,11 @@
-import React from 'react'
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
-import styled from 'styled-components'
-import { useCurrency } from './Currency'
+import React from 'react';
+import styled from 'styled-components';
+import { useCurrency } from '@/components/Currency';
 
 const CurrencyToggle: React.FC = () => {
   const [open, setOpen] = React.useState(false);
@@ -49,8 +49,11 @@ const CurrencyToggle: React.FC = () => {
           <Paper>
             <ClickAwayListener onClickAway={handleClose}>
               <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
-                {currencyOptions.map(option => (
-                  <MenuItem key={option.currencySymbol} onClick={() => setCurrency(option.currencySymbol)}>
+                {currencyOptions.map((option) => (
+                  <MenuItem
+                    key={option.currencySymbol}
+                    onClick={() => setCurrency(option.currencySymbol)}
+                  >
                     {option.currencySymbol}
                   </MenuItem>
                 ))}
@@ -60,8 +63,8 @@ const CurrencyToggle: React.FC = () => {
         )}
       </Popper>
     </CurrencyToggleDiv>
-  )
-}
+  );
+};
 
 const CurrencyToggleDiv = styled.div`
   display: flex;
@@ -86,6 +89,6 @@ const CurrencyToggleDiv = styled.div`
       }
     }
   }
-`
+`;
 
-export default CurrencyToggle
+export default CurrencyToggle;

@@ -1,25 +1,25 @@
-import { OrderDetail } from "@liqnft/candy-shop";
-import { useAnchorWallet } from "@solana/wallet-adapter-react";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { useParams } from "react-router-dom";
-import { candyShop } from "../utils/candy-shop";
-import styled from "styled-components";
+import { useParams } from 'react-router-dom';
+import styled from 'styled-components';
+import { OrderDetail } from '@liqnft/candy-shop';
+import { ConnectButton } from '@/components/ConnectButton';
+import { useUserWallet } from '@/hooks/useUserWallet';
+import { useShopStore } from '@/store/useShopStore';
 
 const SingleOrder: React.FC = () => {
   const { tokenMint } = useParams();
 
-  const wallet = useAnchorWallet();
-
-  if (!tokenMint) return null;
+  const userWallet = useUserWallet();
+  const candyShop = useShopStore((s) => s.candyShop);
+  if (!candyShop || !tokenMint) return null;
 
   return (
     <DesContainer>
       <OrderDetail
         tokenMint={tokenMint}
-        backUrl={"/marketplace-with-url"}
-        wallet={wallet}
+        backUrl={'/marketplace-with-url'}
+        wallet={userWallet}
         candyShop={candyShop}
-        walletConnectComponent={<WalletMultiButton />}
+        walletConnectComponent={<ConnectButton />}
       />
     </DesContainer>
   );

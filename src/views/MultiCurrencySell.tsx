@@ -1,16 +1,11 @@
-import { CandyShop } from "@liqnft/candy-shop-sdk";
-import { Sell } from "@liqnft/candy-shop";
-import { useAnchorWallet } from "@solana/wallet-adapter-react";
-import { PublicKey } from "@solana/web3.js";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { useCurrency } from "../components/Currency";
-import styled from "styled-components";
-import { useMemo } from "react";
-import {
-  CANDY_SHOP_CREATOR_ADDRESS,
-  CANDY_SHOP_PROGRAM_ID,
-  NETWORK,
-} from "../utils/candy-shop";
+import styled from 'styled-components';
+import { Sell } from '@liqnft/candy-shop';
+import { CandyShop } from '@liqnft/candy-shop-sdk';
+import { ConnectButton } from '@/components/ConnectButton';
+import { useCurrency } from '@/components/Currency';
+import { CANDY_SHOP_CREATOR_ADDRESS, CANDY_SHOP_PROGRAM_ID, NETWORK } from '@/utils/candy-shop';
+import { useGetPromise } from '@/hooks/useGetPromise';
+import { useUserWallet } from '@/hooks/useUserWallet';
 
 const DesContainer = styled.div`
   width: 100%;
@@ -21,33 +16,30 @@ const DesContainer = styled.div`
 `;
 
 const MyCollection: React.FC = () => {
-  const wallet = useAnchorWallet();
+  const userWallet = useUserWallet();
+
   const { getCurrencySettings } = useCurrency();
   const settings = getCurrencySettings();
 
-  const candyShop = useMemo(
-    () =>
-      new CandyShop({
-        candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
-        treasuryMint: new PublicKey(settings.treasuryMint),
-        candyShopProgramId: CANDY_SHOP_PROGRAM_ID,
-        env: NETWORK,
-        settings,
-      }),
-    [settings]
+  const candyShop = useGetPromise(
+    CandyShop.initSolCandyShop({
+      shopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
+      treasuryMint: settings.treasuryMint,
+      programId: CANDY_SHOP_PROGRAM_ID,
+      env: NETWORK,
+      // pass additional settings param to configure shop display
+      settings,
+    })
   );
-
-  if (!candyShop) {
-    return <></>;
-  }
+  if (!candyShop) return null;
 
   return (
     <DesContainer>
       <h1 style={{ marginBottom: 30 }}>My Collection</h1>
       <Sell
-        wallet={wallet}
+        wallet={userWallet}
         candyShop={candyShop}
-        walletConnectComponent={<WalletMultiButton />}
+        walletConnectComponent={<ConnectButton />}
         enableCacheNFT={true}
       />
     </DesContainer>

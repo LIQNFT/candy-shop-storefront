@@ -1,0 +1,14 @@
+{
+  "singleQuote": true,
+  "printWidth": 100,
+  "importOrder": [
+    "~@material-ui|antd",
+    "@liqnft",
+    "^[./]",
+    "@/views|@/components",
+    "@/assets|@/utils|@/constant",
+    "@/store|@/hooks"
+  ],
+  "importOrderSeparation": false,
+  "importOrderSortSpecifiers": true
+}
