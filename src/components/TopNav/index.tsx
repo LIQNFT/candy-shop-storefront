@@ -8,21 +8,16 @@ import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { BlockchainType } from '@liqnft/candy-shop-sdk';
 import { ConnectButton } from '@/components/ConnectButton';
-import CurrencyToggle from '@/components/CurrencyToggle';
 import { RouteName } from '@/constant/routeNames';
 import { NETWORK } from '@/utils/candy-shop';
 import { getBlockchain } from '@/utils/shop';
 
-interface TopNavProps {
-  showCurrencyToggle?: boolean;
-}
-
-let ROUTES_ETH = [
+const ROUTES_ETH = [
   { url: RouteName.home, name: 'Marketplace' },
   { url: RouteName.sell, name: 'Sell' },
 ];
 
-let ROUTES_SOLANA = [
+const ROUTES_SOLANA = [
   { url: RouteName.home, name: 'Marketplace' },
   { url: RouteName.sell, name: 'Sell' },
   { url: RouteName.auctionsView, name: 'Auctions' },
@@ -41,15 +36,10 @@ const OTHER_LAYOUT_ROUTES = [
   { url: RouteName.customToken, name: 'Custom Token Marketplace' },
   { url: RouteName.multipleCollection, name: 'Multi Collection Marketplace' },
   { url: RouteName.marketplaceWithUrl, name: 'Marketplace With URL' },
-  {
-    url: RouteName.multipleCurrencyMarketplace,
-    name: 'Multi Currency Marketplace',
-  },
-  { url: RouteName.multipleCurrencySell, name: 'Multi Currency Sell' },
   { url: RouteName.activityView, name: 'Marketplace Activity' },
 ];
 
-const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
+const TopNav: React.FC = () => {
   const [open, setOpen] = useState(false);
   const anchorRef = useRef<HTMLLIElement>(null);
   const blockchain = getBlockchain(NETWORK);
@@ -126,7 +116,6 @@ const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
           </DropdownAnchor>
         )}
       </Menu>
-      {showCurrencyToggle && <CurrencyToggle />}
       <Wallet>
         <ConnectButton />
       </Wallet>

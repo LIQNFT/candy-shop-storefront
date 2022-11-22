@@ -7,8 +7,6 @@ import Drop from './Drop';
 import Marketplace from './Marketplace';
 import MarketplaceWithFilter from './MarketplaceWithFilter';
 import MarketplaceWithUrl from './MarketplaceWithUrl';
-import MultiCurrencyMarketplace from './MultiCurrencyMarketplace';
-import MultiCurrencySell from './MultiCurrencySell';
 import MyCollection from './MyCollection';
 import SingleOrder from './SingleOrder';
 import TopNav from '@/components/TopNav';
@@ -31,11 +29,6 @@ export const ShopRouter = () => {
           <Route path={RouteName.customToken} element={<CustomTokenMarketplace />} />
           <Route path={RouteName.multipleCollection} element={<MarketplaceWithFilter />} />
           <Route path={RouteName.marketplaceWithUrl} element={<MarketplaceWithUrl />} />
-          <Route
-            path={RouteName.multipleCurrencyMarketplace}
-            element={<MultiCurrencyMarketplace />}
-          />
-          <Route path={RouteName.multipleCurrencySell} element={<MultiCurrencySell />} />
         </Routes>
       </MainContainer>
     </main>
