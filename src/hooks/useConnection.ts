@@ -38,14 +38,14 @@ const checkInstalledWallet = (
   onConnect: () => Promise<Wallet | undefined>
 ): Promise<Wallet | undefined> => {
   return new Promise((resolve) => {
-    let checkWalletTimeout: NodeJS.Timeout;
+    let checkWalletTimeout: NodeJS.Timeout | undefined = undefined;
 
     if (isInstalledWallet()) resolve(onConnect());
 
     const checkWalletInterval = setInterval(async () => {
       if (isInstalledWallet()) {
         clearInterval(checkWalletInterval);
-        clearTimeout(checkWalletTimeout);
+        checkWalletTimeout && clearTimeout(checkWalletTimeout);
         resolve(onConnect());
       }
     }, INTERVAL_CHECK_WALLET);

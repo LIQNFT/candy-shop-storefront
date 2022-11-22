@@ -9,6 +9,4 @@ export enum RouteName {
   customToken = '/custom-token-marketplace',
   multipleCollection = '/multi-collection-marketplace',
   marketplaceWithUrl = '/marketplace-with-url',
-  multipleCurrencyMarketplace = '/multi-currency-marketplace',
-  multipleCurrencySell = '/multi-currency-sell',
 }
