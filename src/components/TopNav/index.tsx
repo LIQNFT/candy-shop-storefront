@@ -75,7 +75,7 @@ const TopNav: React.FC = () => {
     <HeaderBar>
       <Logo>
         <Link to={RouteName.home}>
-          <img alt="" src="/logo.png" />
+          <img alt="" src="/king.png" />
         </Link>
       </Logo>
       <Menu>
@@ -172,6 +172,7 @@ const Logo = styled.div`
 
   img {
     height: 60px;
+    border-radius:30px;
   }
 `;
 
