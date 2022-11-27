@@ -1,13 +1,13 @@
 # Candy Shop Storefront
 
-Solana NFT storefront powered by [Candy Shop](https://github.com/LIQNFT/candy-shop).
+Ethereum, Polygon and Solana NFT storefront powered by [Candy Shop](https://github.com/LIQNFT/candy-shop).
 
 * [Docs](https://liqnft.gitbook.io/candy-shop/candy-shop/getting-started)
-* [Website](https://candy.liqnft.com/)
+* [Website](https://candyshop.space/)
 
 Key features:
-* SOL and SPL token marketplace
-* SOL and SPL token auctions
+* ETH, MATIC, SOL, SPL and ERC20 token marketplace
+* SOL and SPL token NFT auctions
 * Marketplace with modal or single NFT view
 * NFT filtering, sort and search
 * Multi collection marketplace
@@ -22,7 +22,7 @@ One-click solution to clone this project to your GitHub and deploy the prod pack
 Your only task will be to customize your GitHub fork of this project and commit updates.
 Vercel will automatically deploy new prod packages for each new commit.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLIQNFT%2Fcandy-shop-storefront&env=REACT_APP_SOLANA_NETWORK,REACT_APP_SOLANA_RPC_HOST,REACT_APP_CANDY_SHOP_CREATOR_ADDRESS,REACT_APP_CANDY_SHOP_TREASURY_MINT,REACT_APP_CANDY_SHOP_PROGRAM_ID&envDescription=Please%20refer%20to%20the%20README&envLink=https%3A%2F%2Fgithub.com%2FLIQNFT%2Fcandy-machine-v2-with-marketplace&demo-title=Solana%20NFT%20Marketplace&demo-description=Host%20your%20own%20marketplace%20with%20Candy%20Shop&demo-url=https%3A%2F%2Fgithub.com%2FLIQNFT%2Fcandy-shop-storefront&demo-image=https%3A%2F%2Fuser-images.githubusercontent.com%2F89616076%2F163665962-f8f9fa00-2143-4234-bb35-13955b55220e.png)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FLIQNFT%2Fcandy-shop-storefront&env=REACT_APP_NETWORK,REACT_APP_RPC_HOST,REACT_APP_CANDY_SHOP_CREATOR_ADDRESS,REACT_APP_CANDY_SHOP_TREASURY_MINT,REACT_APP_CANDY_SHOP_PROGRAM_ID&envDescription=Please%20refer%20to%20the%20README&envLink=https%3A%2F%2Fgithub.com%2FLIQNFT%2Fcandy-shop-storefront&demo-title=NFT%20Marketplace&demo-description=Host%20your%20own%20marketplace%20with%20Candy%20Shop&demo-url=https%3A%2F%2Fgithub.com%2FLIQNFT%2Fcandy-shop-storefront&demo-image=https%3A%2F%2Fuser-images.githubusercontent.com%2F89616076%2F163665962-f8f9fa00-2143-4234-bb35-13955b55220e.png)
 
 ## Setup
 
@@ -45,21 +45,25 @@ Rename the `.env.example` file at the root directory to `.env` and update the fo
 ```
 REACT_APP_CANDY_SHOP_CREATOR_ADDRESS=__PLACEHOLDER__
 REACT_APP_CANDY_SHOP_TREASURY_MINT=__PLACEHOLDER__
-REACT_APP_CANDY_SHOP_PROGRAM_ID=csa8JpYfKSZajP7JzxnJipUL3qagub1z29hLvp578iN
+REACT_APP_CANDY_SHOP_PROGRAM_ID=__PLACEHOLDER__
 ```
-You may get these parameters by creating a shop [here](https://candy.liqnft.com/shop).
+You may get these parameters by creating a shop [here](https://candyshop.space).
 
 ```
-REACT_APP_SOLANA_NETWORK=devnet
+REACT_APP_NETWORK=devnet
 ```
 
-This identifies the Solana network you want to connect to. Options are `devnet`, `testnet`, and `mainnet-beta`.
+This identifies the Ethereum, Polygon or Solana network you want to connect to. Options are:
+
+* Ethereum: `ETH` (mainnet) and `GOERLI` (testnet)
+* Polygon: `MATIC` (mainnet) and `MUMBAI` (testnet)
+* Solana: `mainnet-beta` (mainnet) and `devnet` (testnet)
 
 ```
-REACT_APP_SOLANA_RPC_HOST=https://api.devnet.solana.com
+REACT_APP_RPC_HOST=https://api.devnet.solana.com
 ```
 
-This identifies the RPC server your web app will access the Solana network through.
+This identifies the RPC server your web app will access the Ethereum, Polygon or Solana network through.
 
 #### 4. Customize your storefront:
 
