@@ -8,6 +8,7 @@ import {
   CANDY_SHOP_PROGRAM_ID,
   CANDY_SHOP_TREASURY_MINT,
   NETWORK,
+  RPC_HOST,
 } from '@/utils/candy-shop';
 import { getBlockchain } from '@/utils/shop';
 
@@ -64,7 +65,9 @@ export const useUpdateShop = () => {
         treasuryMint: CANDY_SHOP_TREASURY_MINT,
         programId: CANDY_SHOP_PROGRAM_ID,
         env: NETWORK,
-        settings: {} as any,
+        settings: {
+          connectionUrl: RPC_HOST,
+        },
         isEnterprise: false,
       };
       CandyShop.initSolCandyShop(params)
