@@ -79,11 +79,13 @@ const TopNav: React.FC = () => {
 
   return (
     <HeaderBar>
+      
       <Logo>
         <Link to={RouteName.home}>
           <img alt="" src="/logo.png" />
         </Link>
       </Logo>
+      
       <Menu>
         {getRoutes().map((item) => (
           <li key={item.url} className={pathname === item.url ? 'active' : ''}>
@@ -119,16 +121,40 @@ const TopNav: React.FC = () => {
                 </ClickAwayListener>
               </Paper>
             </Popper>
-          </DropdownAnchor>
-          
-          
-           
-          
-          
-          
-          
-          
+          </DropdownAnchor> 
         )}
+         {blockchain === BlockchainType.SOL && (
+          <DropdownAnchor2
+            ref={anchorRef}
+            onClick={handleToggle}
+            className={OTHER_LAYOUT_ROUTES.some((item) => item.url === pathname) ? 'active' : ''}
+          >
+            KlausenArt
+            <Popper
+              open={open}
+              anchorEl={anchorRef.current}
+              role={undefined}
+              transition
+              disablePortal
+            >
+              <Paper>
+                <ClickAwayListener onClickAway={handleClose}>
+                  <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
+                    {ROUTES_KLAUSENART.map((item) => (
+                      <MenuItem
+                        className={item.url === pathname ? 'active active-submenu' : ''}
+                        key={item.url}
+                      >
+                        <Link to={item.url}>{item.name}</Link>
+                      </MenuItem>
+                    ))}
+                  </MenuList>
+                </ClickAwayListener>
+              </Paper>
+            </Popper>
+          </DropdownAnchor> 
+        )}
+        
       </Menu>
       <Wallet>
         <ConnectButton />
@@ -147,6 +173,34 @@ const HeaderBar = styled.div`
 `;
 
 const DropdownAnchor = styled.li`
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover,
+  &:active {
+    color: rgb(131, 146, 161);
+    border-bottom: 4px solid var(--title-text-color);
+  }
+
+  > div {
+    z-index: 1000;
+  }
+
+  .MuiList-root {
+    margin-top: 15px;
+  }
+  a {
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+    &:hover {
+      border-bottom: 0px;
+      color: #fff;
+    }
+  }
+`;
+
+const DropdownAnchor2 = styled.li`
   cursor: pointer;
   transition: color 0.3s;
 
