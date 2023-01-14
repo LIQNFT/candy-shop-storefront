@@ -133,7 +133,7 @@ const TopNav: React.FC = () => {
           <DropdownAnchor2
             ref={anchorRef}
             onClick={handleToggle}
-            className={OTHER_LAYOUT_ROUTES.some((item) => item.url === pathname) ? 'active' : ''}
+            className={ROUTES_KLAUSENART.some((item) => item.url === pathname) ? 'active' : ''}
           >
             KlausenArt
             <Popper
