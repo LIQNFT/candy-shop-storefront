@@ -122,7 +122,7 @@ const TopNav: React.FC = () => {
           </DropdownAnchor>
           
           
-           <DropdownAnchor
+           <DropdownAnchor2
             ref={anchorRef}
             onClick={handleToggle}
             className={ROUTES_KLAUSENART.some((item) => item.url === pathname) ? 'active' : ''}
@@ -150,7 +150,7 @@ const TopNav: React.FC = () => {
                 </ClickAwayListener>
               </Paper>
             </Popper>
-          </DropdownAnchor>
+          </DropdownAnchor2>
           
           
           
@@ -214,6 +214,34 @@ const Logo = styled.div`
 
   img {
     height: 60px;
+  }
+`;
+
+const DropdownAnchor2 = styled.li`
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover,
+  &:active {
+    color: rgb(131, 146, 161);
+    border-bottom: 4px solid var(--title-text-color);
+  }
+
+  > div {
+    z-index: 1000;
+  }
+
+  .MuiList-root {
+    margin-top: 15px;
+  }
+  a {
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+    &:hover {
+      border-bottom: 0px;
+      color: #fff;
+    }
   }
 `;
 
