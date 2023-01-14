@@ -122,35 +122,7 @@ const TopNav: React.FC = () => {
           </DropdownAnchor>
           
           
-           <DropdownAnchor2
-            ref={anchorRef}
-            onClick={handleToggle}
-            className={ROUTES_KLAUSENART.some((item) => item.url === pathname) ? 'active' : ''}
-          >
-            KlausenArt
-            <Popper
-              open={open}
-              anchorEl={anchorRef.current}
-              role={undefined}
-              transition
-              disablePortal
-            >
-              <Paper>
-                <ClickAwayListener onClickAway={handleClose}>
-                  <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
-                    {ROUTES_KLAUSENART.map((item) => (
-                      <MenuItem
-                        className={item.url === pathname ? 'active active-submenu' : ''}
-                        key={item.url}
-                      >
-                        <Link to={item.url}>{item.name}</Link>
-                      </MenuItem>
-                    ))}
-                  </MenuList>
-                </ClickAwayListener>
-              </Paper>
-            </Popper>
-          </DropdownAnchor2>
+           
           
           
           
@@ -217,33 +189,7 @@ const Logo = styled.div`
   }
 `;
 
-const DropdownAnchor2 = styled.li`
-  cursor: pointer;
-  transition: color 0.3s;
 
-  &:hover,
-  &:active {
-    color: rgb(131, 146, 161);
-    border-bottom: 4px solid var(--title-text-color);
-  }
-
-  > div {
-    z-index: 1000;
-  }
-
-  .MuiList-root {
-    margin-top: 15px;
-  }
-  a {
-    padding-top: 4px;
-    padding-bottom: 4px;
-
-    &:hover {
-      border-bottom: 0px;
-      color: #fff;
-    }
-  }
-`;
 
 const Menu = styled.ul`
   list-style: none;
