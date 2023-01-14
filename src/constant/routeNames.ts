@@ -9,4 +9,16 @@ export enum RouteName {
   customToken = '/custom-token-marketplace',
   multipleCollection = '/multi-collection-marketplace',
   marketplaceWithUrl = '/marketplace-with-url',
+  klausenart = 'klausenart',
+  news = 'news',
+  gallery = 'gallery',
+  roadmap = 'roadmap',
+  nfts = 'nfts',
+  pfps = 'pfps',
+  digitalColectibles = 'digitalCollectibles',
+  digitalArt = 'digitalArt',
+  token = 'token',
+  tokenKart = 'tokenKart',
+  tocenomics = 'tokenomics'
+  
 }
