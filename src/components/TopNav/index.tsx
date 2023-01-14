@@ -20,7 +20,7 @@ const ROUTES_ETH = [
 const ROUTES_SOLANA = [
   { url: RouteName.klausenart, name: 'Klausen Art' },
   { url: RouteName.nfts, name: 'NFT' },
-  { url: RouteName.auctionsView, name: 'Token' },
+  { url: RouteName.token, name: 'Token' },
 ];
 
 const getRoutes = () => {
@@ -37,6 +37,13 @@ const OTHER_LAYOUT_ROUTES = [
   { url: RouteName.marketplaceWithUrl, name: 'Marketplace With URL' },
   { url: RouteName.activityView, name: 'Marketplace Activity' },
 ];
+
+const ROUTES_KLAUSENART = [
+  { url: RouteName.news, name: 'News' },
+  { url: RouteName.gallery, name: 'Gallery' },
+  { url: RouteName.roadmap, name: 'Roadmap' },
+];
+
 
 const TopNav: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -113,6 +120,42 @@ const TopNav: React.FC = () => {
               </Paper>
             </Popper>
           </DropdownAnchor>
+          
+          
+           <DropdownAnchor
+            ref={anchorRef}
+            onClick={handleToggle}
+            className={ROUTES_KLAUSENART.some((item) => item.url === pathname) ? 'active' : ''}
+          >
+            KlausenArt
+            <Popper
+              open={open}
+              anchorEl={anchorRef.current}
+              role={undefined}
+              transition
+              disablePortal
+            >
+              <Paper>
+                <ClickAwayListener onClickAway={handleClose}>
+                  <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
+                    {ROUTES_KLAUSENART.map((item) => (
+                      <MenuItem
+                        className={item.url === pathname ? 'active active-submenu' : ''}
+                        key={item.url}
+                      >
+                        <Link to={item.url}>{item.name}</Link>
+                      </MenuItem>
+                    ))}
+                  </MenuList>
+                </ClickAwayListener>
+              </Paper>
+            </Popper>
+          </DropdownAnchor>
+          
+          
+          
+          
+          
         )}
       </Menu>
       <Wallet>
