@@ -18,10 +18,9 @@ const ROUTES_ETH = [
 ];
 
 const ROUTES_SOLANA = [
-  { url: RouteName.home, name: 'Marketplace' },
-  { url: RouteName.sell, name: 'Sell' },
-  { url: RouteName.auctionsView, name: 'Auctions' },
-  { url: RouteName.drop, name: 'Edition Drops' },
+  { url: RouteName.klausenArt, name: 'Klausen Art' },
+  { url: RouteName.nfts, name: 'NFT' },
+  { url: RouteName.auctionsView, name: 'Token' },
 ];
 
 const getRoutes = () => {
