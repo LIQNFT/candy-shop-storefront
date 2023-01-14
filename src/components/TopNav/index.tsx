@@ -123,6 +123,12 @@ const TopNav: React.FC = () => {
             </Popper>
           </DropdownAnchor> 
         )}
+        
+        {getRoutes().map((item) => (
+          <li key={item.url} className={pathname === item.url ? 'active' : ''}>
+            <Link to={item.url}>{item.name}</Link>
+          </li>
+        ))}
          {blockchain === BlockchainType.SOL && (
           <DropdownAnchor2
             ref={anchorRef}
