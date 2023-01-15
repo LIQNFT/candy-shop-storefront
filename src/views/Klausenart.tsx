@@ -21,3 +21,8 @@ export default Klausenart;
 const DesContainer = styled.div`
   width: 100%;
 `;
+
+const bg_img = styled.div`
+  width: 100%;
+  height: auto;
+`;
