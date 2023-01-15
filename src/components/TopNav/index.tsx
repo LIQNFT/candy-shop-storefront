@@ -206,6 +206,7 @@ const Wallet = styled.ul`
 const Logo = styled.div`
   flex: 0 0 auto;
   margin-right: 10px;
+  margin-bottom: 50px;
 
   img {
     height: 60px;
