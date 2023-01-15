@@ -9,8 +9,9 @@ const Klausenart: React.FC = () => {
     <DesContainer>
 
       <h1> Klausenart</h1>
-      <img src="/Digital_Artwork_01.png" alt="Klausenart"/>
-       
+        <div class="bg_img">
+           <img src="/Digital_Artwork_01.png" alt="Klausenart"/>
+        </div>
     </DesContainer>
   );
 };
@@ -20,3 +21,8 @@ export default Klausenart;
 const DesContainer = styled.div`
   width: 100%;
 `;
+
+.bg_img{
+ width: 100%;
+ height: auto;
+}
