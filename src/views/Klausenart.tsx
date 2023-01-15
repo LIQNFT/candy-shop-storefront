@@ -4,7 +4,7 @@ import { ConnectButton } from '@/components/ConnectButton';
 import { useUserWallet } from '@/hooks/useUserWallet';
 import { useShopStore } from '@/store/useShopStore';
 
-const klausenart: React.FC = () => {
+const Klausenart: React.FC = () => {
  return(
     <DesContainer>
 
