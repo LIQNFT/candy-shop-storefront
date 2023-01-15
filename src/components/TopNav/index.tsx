@@ -92,50 +92,13 @@ const TopNav: React.FC = () => {
             <Link to={item.url}>{item.name}</Link>
           </li>
         ))}
-        {blockchain === BlockchainType.SOL && (
-          <DropdownAnchor
-            ref={anchorRef}
-            onClick={handleToggle}
-            className={OTHER_LAYOUT_ROUTES.some((item) => item.url === pathname) ? 'active' : ''}
-          >
-            Other Layouts
-            <Popper
-              open={open}
-              anchorEl={anchorRef.current}
-              role={undefined}
-              transition
-              disablePortal
-            >
-              <Paper>
-                <ClickAwayListener onClickAway={handleClose}>
-                  <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
-                    {OTHER_LAYOUT_ROUTES.map((item) => (
-                      <MenuItem
-                        className={item.url === pathname ? 'active active-submenu' : ''}
-                        key={item.url}
-                      >
-                        <Link to={item.url}>{item.name}</Link>
-                      </MenuItem>
-                    ))}
-                  </MenuList>
-                </ClickAwayListener>
-              </Paper>
-            </Popper>
-          </DropdownAnchor> 
-        )}
-        
-        {getRoutes().map((item) => (
-          <li key={item.url} className={pathname === item.url ? 'active' : ''}>
-            <Link to={item.url}>{item.name}</Link>
-          </li>
-        ))}
          {blockchain === BlockchainType.SOL && (
           <DropdownAnchor2
             ref={anchorRef}
             onClick={handleToggle}
             className={ROUTES_KLAUSENART.some((item) => item.url === pathname) ? 'active' : ''}
           >
-            KlausenArt
+            Info
             <Popper
               open={open}
               anchorEl={anchorRef.current}
