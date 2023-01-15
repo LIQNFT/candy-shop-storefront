@@ -22,8 +22,6 @@ const MarketplaceWithFilter: React.FC = () => {
         candyShop={candyShop}
         walletConnectComponent={<ConnectButton />}
         filters={FILTERS}
-        filterSearch
-        search
       />
     </DesContainer>
   );
