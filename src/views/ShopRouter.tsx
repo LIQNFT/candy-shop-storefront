@@ -29,6 +29,7 @@ export const ShopRouter = () => {
           <Route path={RouteName.customToken} element={<CustomTokenMarketplace />} />
           <Route path={RouteName.multipleCollection} element={<MarketplaceWithFilter />} />
           <Route path={RouteName.marketplaceWithUrl} element={<MarketplaceWithUrl />} />
+          <Route path={RouteName.klausenart} element={<klausenart />} />
         </Routes>
       </MainContainer>
     </main>
