@@ -4,13 +4,14 @@ import { ConnectButton } from '@/components/ConnectButton';
 import { useUserWallet } from '@/hooks/useUserWallet';
 import { useShopStore } from '@/store/useShopStore';
 
-const Marketplace: React.FC = () => {
-
+const klausenart: React.FC = () => {
+ return(
     <DesContainer>
 
       <h1> Klausenart</h1>
       
     </DesContainer>
+  );
 };
 
 const DesContainer = styled.div`
