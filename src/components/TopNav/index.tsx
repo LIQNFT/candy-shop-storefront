@@ -19,7 +19,7 @@ const ROUTES_ETH = [
 
 const ROUTES_SOLANA = [
   { url: RouteName.klausenart, name: 'Klausen Art' },
-  { url: RouteName.nfts, name: 'NFT' },
+  { url: RouteName.multipleCollection, name: 'NFTs' },
   { url: RouteName.token, name: 'Token' },
 ];
 
