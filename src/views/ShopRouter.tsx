@@ -9,6 +9,7 @@ import MarketplaceWithFilter from './MarketplaceWithFilter';
 import MarketplaceWithUrl from './MarketplaceWithUrl';
 import MyCollection from './MyCollection';
 import SingleOrder from './SingleOrder';
+import Klausenart from './Klausenart';
 import TopNav from '@/components/TopNav';
 import { RouteName } from '@/constant/routeNames';
 import { useUpdateShop } from '@/hooks/useUpdateShop';
@@ -29,7 +30,7 @@ export const ShopRouter = () => {
           <Route path={RouteName.customToken} element={<CustomTokenMarketplace />} />
           <Route path={RouteName.multipleCollection} element={<MarketplaceWithFilter />} />
           <Route path={RouteName.marketplaceWithUrl} element={<MarketplaceWithUrl />} />
-          <Route path={RouteName.klausenart} element={<klausenart />} />
+          <Route path={RouteName.klausenart} element={<Klausenart />} />
         </Routes>
       </MainContainer>
     </main>
