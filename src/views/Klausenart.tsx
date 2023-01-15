@@ -9,7 +9,7 @@ const Klausenart: React.FC = () => {
     <DesContainer>
 
       <h1> Klausenart</h1>
-      <img src="Digital_Artwork_01.png" alt="Klausenart">
+      <img src="/Digital_Artwork_01.png" alt="Klausenart">
        
     </DesContainer>
   );
