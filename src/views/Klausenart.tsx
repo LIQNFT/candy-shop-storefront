@@ -14,6 +14,8 @@ const Klausenart: React.FC = () => {
   );
 };
 
+export default Klausenart;
+
 const DesContainer = styled.div`
   width: 100%;
 `;
