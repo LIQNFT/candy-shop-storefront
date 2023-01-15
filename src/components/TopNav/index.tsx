@@ -206,7 +206,7 @@ const Wallet = styled.ul`
 const Logo = styled.div`
   flex: 0 0 auto;
   margin-right: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 
   img {
     height: 60px;
@@ -219,7 +219,7 @@ const Menu = styled.ul`
   list-style: none;
   display: inline-flex;
   flex: 1 0 auto;
-  margin-bottom: 0;
+  margin-bottom: 20;
 
   > .active {
     border-bottom: 4px solid var(--title-text-color);
