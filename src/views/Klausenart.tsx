@@ -12,7 +12,12 @@ const Klausenart: React.FC = () => {
       
         <div style={BG_Img}>
           <h1> Klausenart</h1>
-           <img src="/Digital_Artwork_01.png" alt="Klausenart" style="height:auto; width:100%;" />
+            <div style ={{display:'flex', justifyContent:'center'}}>
+             <img
+              src="/Digital_Artwork_01.png"
+              alt="Klausenart"
+              style={{maxWidth: '100%', height:'auto'}} />
+            </div>
         </div>
     </DesContainer>
   );
