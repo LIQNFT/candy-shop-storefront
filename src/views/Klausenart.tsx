@@ -9,8 +9,9 @@ const Klausenart: React.FC = () => {
  return(
     <DesContainer>
 
-      <h1> Klausenart</h1>
-        <div className="BG_Img">
+      
+        <div style="BG_Img">
+          <h1> Klausenart</h1>
            <img src="/Digital_Artwork_01.png" alt="Klausenart" />
         </div>
     </DesContainer>
@@ -25,7 +26,7 @@ const DesContainer = styled.div`
 `;
 
 const BG_Img = styled.div`
-  display:felx;
+  display:flex;
   justify-content:center;
   align-items: center;
   height: 100vh;
