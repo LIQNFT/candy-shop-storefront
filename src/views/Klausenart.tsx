@@ -10,7 +10,7 @@ const Klausenart: React.FC = () => {
     <DesContainer>
 
       
-        <div style="BG_Img">
+        <div style={BG_Img}>
           <h1> Klausenart</h1>
            <img src="/Digital_Artwork_01.png" alt="Klausenart" />
         </div>
@@ -25,10 +25,8 @@ const DesContainer = styled.div`
   width: 100%;
 `;
 
-const BG_Img = styled.div`
-  display:flex;
-  justify-content:center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-`;
+const BG_Img = {
+  display:"flex",
+  justifyContent:"center",
+  alignItems:"center",
+}
