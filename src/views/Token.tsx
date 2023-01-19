@@ -22,7 +22,7 @@ const Token: React.FC = () => {
         candyShop={candyShop}
         walletConnectComponent={<ConnectButton />}
         filters={FILTERS}
-        shopFilters = {true}
+        filters={'auto'}
       />
     </DesContainer>
   );
