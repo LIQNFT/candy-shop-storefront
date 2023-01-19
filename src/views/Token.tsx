@@ -24,7 +24,7 @@ const Token: React.FC = () => {
         walletConnectComponent={<ConnectButton />}
         filters={FILTERS}
         shopFilters = {false}
-
+        search
         
 
         
