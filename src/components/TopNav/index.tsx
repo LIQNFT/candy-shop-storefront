@@ -18,9 +18,9 @@ const ROUTES_ETH = [
 ];
 
 const ROUTES_SOLANA = [
-  { url: RouteName.klausenart, name: 'Klausen Art' },
-  { url: RouteName.multipleCollection, name: 'NFTs' },
-  { url: RouteName.token, name: 'Token' },
+  { url: RouteName.pfps, name: 'PFPs' },
+  { url: RouteName.digitalColectibles, name: 'Colectibles' },
+  { url: RouteName.digitalArt, name: 'Art' },
 ];
 
 const getRoutes = () => {
