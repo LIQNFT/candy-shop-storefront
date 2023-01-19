@@ -19,7 +19,7 @@ const ROUTES_ETH = [
 
 const ROUTES_SOLANA = [
   { url: RouteName.pfps, name: 'PFPs' },
-  { url: RouteName.digitalColectibles, name: 'Colectibles' },
+  { url: RouteName.digitalCollectibles, name: 'Collectibles' },
   { url: RouteName.digitalArt, name: 'Art' },
 ];
 
@@ -81,7 +81,7 @@ const TopNav: React.FC = () => {
     <HeaderBar>
       
       <Logo>
-        <Link to={RouteName.home}>
+        <Link to={RouteName.klausenart}>
           <img alt="" src="/logo.png" />
         </Link>
       </Logo>
@@ -217,6 +217,7 @@ const Logo = styled.div`
 
 const Menu = styled.ul`
   list-style: none;
+  justify-content: center
   display: inline-flex;
   flex: 1 0 auto;
   margin-bottom: 20;
