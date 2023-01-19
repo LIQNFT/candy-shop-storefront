@@ -4,7 +4,7 @@ import { ConnectButton } from '@/components/ConnectButton';
 import { useUserWallet } from '@/hooks/useUserWallet';
 import { useShopStore } from '@/store/useShopStore';
 
-const Token: React.FC = () => {
+const Art: React.FC = () => {
   const userWallet = useUserWallet();
   const candyShop = useShopStore((s) => s.candyShop);
   if (!candyShop) return null;
