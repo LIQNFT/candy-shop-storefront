@@ -32,7 +32,7 @@ const Token: React.FC = () => {
   );
 };
 
-export default Token;
+export default Art;
 
 const FILTERS = [
   { name: 'Fine Deko Art Flowers', collectionId: '4', identifier: 1235887134 },
