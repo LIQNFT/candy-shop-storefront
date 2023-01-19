@@ -12,7 +12,7 @@
 
 body {
   background-color: var(--main-background-color);
-  background: url('assets/img/background.jpg');
+  background: url('assets/img/background.png');
   background-size: cover;
 
   margin: 0;
