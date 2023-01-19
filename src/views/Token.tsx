@@ -23,7 +23,7 @@ const Token: React.FC = () => {
         walletConnectComponent={<ConnectButton />}
         filters={FILTERS}
         shopFilters = {false}
-        defaultFilter = {collection: 'Shibas'}
+        defaultFilter = {{collection: 'Shibas'}}
       />
     </DesContainer>
   );
