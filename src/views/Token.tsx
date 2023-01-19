@@ -8,8 +8,7 @@ const Token: React.FC = () => {
   const userWallet = useUserWallet();
   const candyShop = useShopStore((s) => s.candyShop);
   if (!candyShop) return null;
-  Orders.setSelectedCollection(undefined);
-  Orders.setCollectionFilter(undefined);
+
   return (
     <DesContainer>
       <Stat
