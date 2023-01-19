@@ -4,7 +4,7 @@ import { ConnectButton } from '@/components/ConnectButton';
 import { useUserWallet } from '@/hooks/useUserWallet';
 import { useShopStore } from '@/store/useShopStore';
 
-const Token: React.FC = () => {
+const PFPs: React.FC = () => {
   const userWallet = useUserWallet();
   const candyShop = useShopStore((s) => s.candyShop);
   if (!candyShop) return null;
@@ -32,7 +32,7 @@ const Token: React.FC = () => {
   );
 };
 
-export default Token;
+export default PFPs;
 
 const FILTERS = [
   { name: 'Birdman', collectionId: '2', identifier: 1235887132 },
