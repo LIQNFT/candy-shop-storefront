@@ -30,7 +30,7 @@ const MarketplaceWithFilter: React.FC = () => {
 export default MarketplaceWithFilter;
 
 const FILTERS = [
-  { name: 'Puppies', collectionId: '1', identifier: 2036309415 },
+  { name: 'Fine Art Deko Flowers', collectionId: '1', identifier: -415216279 },
   { name: 'Shibas', collectionId: '2', identifier: 1235887132 },
 ];
 
