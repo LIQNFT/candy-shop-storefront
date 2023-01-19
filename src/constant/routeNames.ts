@@ -15,7 +15,7 @@ export enum RouteName {
   roadmap = 'roadmap',
   nfts = 'nfts',
   pfps = 'pfps',
-  digitalColectibles = 'digitalCollectibles',
+  digitalCollectibles = 'digitalCollectibles',
   digitalArt = 'digitalArt',
   token = 'token',
   tokenKart = 'tokenKart',
