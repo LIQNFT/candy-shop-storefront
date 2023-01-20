@@ -13,8 +13,8 @@ const Collectibles: React.FC = () => {
     <DesContainer>
       <Stat
         candyShop={candyShop}
-        title={'Marketplace'}
-        description={'Enable users to filter by collections and search for NFTs.'}
+        title={'Collectibles'}
+        description={'With our digital collectibles become a premium digital art collector.'}
         style={{ paddingBottom: 50 }}
       />
       <Orders
@@ -23,7 +23,6 @@ const Collectibles: React.FC = () => {
         walletConnectComponent={<ConnectButton />}
         filters={FILTERS}
         shopFilters = {false}
-        search
         filterSearch
         
 
