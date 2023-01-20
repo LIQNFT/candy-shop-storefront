@@ -36,7 +36,7 @@ export const ShopRouter = () => {
           <Route path={RouteName.klausenart} element={<Klausenart />} />
           <Route path={RouteName.digitalCollectibles} element={<Collectibles />} />
           <Route path={RouteName.digitalArt} element={<Art />} />
-          <Route path={RouteName.Info} element={<Info />} />
+          <Route path={RouteName.info} element={<Info />} />
         </Routes>
       </MainContainer>
     </main>
