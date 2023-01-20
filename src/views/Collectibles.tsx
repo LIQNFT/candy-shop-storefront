@@ -24,6 +24,7 @@ const Collectibles: React.FC = () => {
         filters={FILTERS}
         shopFilters = {false}
         search
+        searchFilter
         
 
         
@@ -35,8 +36,7 @@ const Collectibles: React.FC = () => {
 export default Collectibles;
 
 const FILTERS = [
-  { name: 'Birdman', collectionId: '2', identifier: 1235887132 },
-  { name: 'Mr. Doodle', collectionId: '3', identifier: 1235887133 },
+  { name: 'Dragon Coin', collectionId: '1', identifier: -1827299029 },
 ];
 
 const DesContainer = styled.div`
