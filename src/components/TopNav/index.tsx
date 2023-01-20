@@ -201,6 +201,7 @@ const Wallet = styled.ul`
   flex: 0 0 auto;
   margin: 0;
   padding: 0;
+  margin-bottom: 20px;
 `;
 
 const Logo = styled.div`
