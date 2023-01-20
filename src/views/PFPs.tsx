@@ -13,8 +13,8 @@ const PFPs: React.FC = () => {
     <DesContainer>
       <Stat
         candyShop={candyShop}
-        title={'Marketplace'}
-        description={'Enable users to filter by collections and search for NFTs.'}
+        title={'Profil Pics'}
+        description={'Want to impress with new style and push your social media to the next level? Then this is for you!'}
         style={{ paddingBottom: 50 }}
       />
       <Orders
@@ -23,7 +23,6 @@ const PFPs: React.FC = () => {
         walletConnectComponent={<ConnectButton />}
         filters={FILTERS}
         shopFilters = {false}
-        search
         
 
         
