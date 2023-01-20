@@ -18,6 +18,7 @@ export enum RouteName {
   digitalCollectibles = 'digitalCollectibles',
   digitalArt = 'digitalArt',
   token = 'token',
+  info = 'info',
   tokenKart = 'tokenKart',
   tocenomics = 'tokenomics'
   
