@@ -217,7 +217,6 @@ const Logo = styled.div`
 
 const Menu = styled.ul`
   list-style: none;
-  justify-content: center
   display: inline-flex;
   flex: 1 0 auto;
   margin-bottom: 20;
