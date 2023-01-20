@@ -13,8 +13,8 @@ const Art: React.FC = () => {
     <DesContainer>
       <Stat
         candyShop={candyShop}
-        title={'Collectibles'}
-        description={'With our digital collectibles become a premium digital art collector.'}
+        title={'Digital Art'}
+        description={'Here you can find hand selected artwork by Klausen Art. This masterpieces are for true art lovers.'}
         style={{ paddingBottom: 50 }}
       />
       <Orders
