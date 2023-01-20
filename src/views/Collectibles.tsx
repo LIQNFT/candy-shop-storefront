@@ -24,7 +24,7 @@ const Collectibles: React.FC = () => {
         filters={FILTERS}
         shopFilters = {false}
         search
-        searchFilter
+        filterSearch
         
 
         
