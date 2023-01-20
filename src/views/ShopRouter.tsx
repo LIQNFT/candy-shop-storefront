@@ -10,6 +10,7 @@ import MarketplaceWithUrl from './MarketplaceWithUrl';
 import MyCollection from './MyCollection';
 import SingleOrder from './SingleOrder';
 import Klausenart from './Klausenart';
+import PFPs from './PFPs';
 import Collectibles from './Collectibles';
 import Art from './Art';
 import Info from './Info';
@@ -35,6 +36,7 @@ export const ShopRouter = () => {
           <Route path={RouteName.multipleCollection} element={<MarketplaceWithFilter />} />
           <Route path={RouteName.marketplaceWithUrl} element={<MarketplaceWithUrl />} />
           <Route path={RouteName.klausenart} element={<Klausenart />} />
+          <Route path={RouteName.pfps} element={<PFPs />} />
           <Route path={RouteName.digitalCollectibles} element={<Collectibles />} />
           <Route path={RouteName.digitalArt} element={<Art />} />
           <Route path={RouteName.info} element={<Info />} />
