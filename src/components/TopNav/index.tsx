@@ -220,6 +220,7 @@ const Menu = styled.ul`
   display: inline-flex;
   flex: 1 0 auto;
   margin-bottom: 20;
+  align-items: center;
 
   > .active {
     border-bottom: 4px solid var(--title-text-color);
