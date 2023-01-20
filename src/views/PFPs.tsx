@@ -13,7 +13,7 @@ const PFPs: React.FC = () => {
     <DesContainer>
       <Stat
         candyShop={candyShop}
-        title={'Profil Pics'}
+        title={'Profile Pics'}
         description={'Want to impress with new style and push your social media to the next level? Then this is for you!'}
         style={{ paddingBottom: 50 }}
       />
