@@ -19,7 +19,7 @@ const Klausenart: React.FC = () => {
              <img
               src="/Digital_Artwork_01.png"
               alt="Klausenart"
-              style={{maxWidth: '100%', height:'auto'}} />
+              style={{maxWidth: '100%', maxHeight: '600px',  height:'auto'}} />
             </div>
         </div>
     </DesContainer>
