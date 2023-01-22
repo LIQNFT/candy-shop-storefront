@@ -38,7 +38,7 @@ const BG_Img = {
   justifyContent:"center",
   alignItems:"center",
 }
-const BG_Img = {
+const BG_Txt = {
   justifyContent:"left",
   alignItems:"center",
 }
