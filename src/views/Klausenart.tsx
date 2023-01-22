@@ -33,3 +33,9 @@ const DesContainer = styled.div`
   width: 100%;
 `;
 
+const BG_Img = {
+
+}
+const BG_Txt = {
+
+}
