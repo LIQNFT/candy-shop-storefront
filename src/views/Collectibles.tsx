@@ -34,7 +34,8 @@ const Collectibles: React.FC = () => {
 export default Collectibles;
 
 const FILTERS = [
-  { name: 'Dragon Coin', collectionId: '1', identifier: -1827299029 },
+  { name: 'Bonsai Dreams', collectionId: '1', identifier: 278310531 },
+  { name: 'Dragon Coin', collectionId: '2', identifier: -1827299029 },
 ];
 
 const DesContainer = styled.div`
