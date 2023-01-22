@@ -33,12 +33,3 @@ const DesContainer = styled.div`
   width: 100%;
 `;
 
-const BG_Img = {
-  display:"flex",
-  justifyContent:"center",
-  alignItems:"center",
-}
-const BG_Txt = {
-  justifyContent:"left",
-  alignItems:"left",
-}
