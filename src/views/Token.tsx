@@ -40,5 +40,5 @@ const BG_Img = {
 }
 const BG_Txt = {
   justifyContent:"left",
-  alignItems:"center",
+  alignItems:"left",
 }
