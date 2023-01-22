@@ -4,50 +4,41 @@ import { ConnectButton } from '@/components/ConnectButton';
 import { useUserWallet } from '@/hooks/useUserWallet';
 import { useShopStore } from '@/store/useShopStore';
 
+
 const Token: React.FC = () => {
-  const userWallet = useUserWallet();
-  const candyShop = useShopStore((s) => s.candyShop);
-  if (!candyShop) return null;
-
-  return (
+ return(
     <DesContainer>
-      <Stat
-        candyShop={candyShop}
-        title={'Marketplace'}
-        description={'Enable users to filter by collections and search for NFTs.'}
-        style={{ paddingBottom: 50 }}
-      />
-      <Orders
-        wallet={userWallet}
-        candyShop={candyShop}
-        walletConnectComponent={<ConnectButton />}
-        filters={FILTERS}
-        shopFilters = {false}
-        search
-        
 
         
-      />
+        <div style={BG_Img}>
+          <div style={BG_Txt}>
+           <h1> Our Token: $KART</h1>
+            <p>$KART is the natural token of the Klausen Art ecosystem and is used for buying NFTs. More features comming soon.</p>
+           </div>
+           <div style ={{display:'flex', justifyContent:'center'}}>
+             <img
+              src="/Digital_Artwork_01.png"
+              alt="Klausenart"
+              style={{maxWidth: '100%', height:'auto'}} />
+            </div>
+        </div>
     </DesContainer>
   );
 };
 
 export default Token;
 
-const FILTERS = [
-  { name: 'Shibas', collectionId: '2', identifier: 1235887132 },
-];
 
 const DesContainer = styled.div`
   width: 100%;
-  .candy-filter {
-    color: #fff;
-    li:hover {
-      color: #7522f5;
-    }
-    .candy-search input {
-      padding: 10px 4px 10px 24px;
-      width: 100%;
-    }
-  }
 `;
+
+const BG_Img = {
+  display:"flex",
+  justifyContent:"center",
+  alignItems:"center",
+}
+const BG_Txt = {
+  justifyContent:"left",
+  alignItems:"center",
+}
