@@ -11,8 +11,8 @@ const Klausenart: React.FC = () => {
 
       
         <div style={BG_Img}>
-          <h1> Klausenart</h1>
-         <p>Klausen art Design is combining art, artificial intelligence and blockchain technology to create next level art and pushing the boundaries of imagination.<p>
+          <h1> Our Vision</h1>
+          <p>Klausen art Design is combining art, artificial intelligence and blockchain technology to create next level art and pushing the boundaries of imagination.</p>
             <div style ={{display:'flex', justifyContent:'center'}}>
              <img
               src="/Digital_Artwork_01.png"
