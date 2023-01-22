@@ -9,11 +9,13 @@ const Klausenart: React.FC = () => {
  return(
     <DesContainer>
 
-        <h1> Our Vision</h1>
+        
         <div style={BG_Img}>
-          
+          <div style={BG_Txt}>
+           <h1> Our Vision</h1>
             <p>Klausen art Design is combining art, artificial intelligence and blockchain technology to create next level art and pushing the boundaries of imagination.</p>
-            <div style ={{display:'flex', justifyContent:'center'}}>
+           </div>
+           <div style ={{display:'flex', justifyContent:'center'}}>
              <img
               src="/Digital_Artwork_01.png"
               alt="Klausenart"
@@ -34,5 +36,9 @@ const DesContainer = styled.div`
 const BG_Img = {
   display:"flex",
   justifyContent:"center",
+  alignItems:"center",
+}
+const BG_Img = {
+  justifyContent:"left",
   alignItems:"center",
 }
